@@ -1,0 +1,9 @@
+{"case": "original-desktop-a", "wall_ms": 6573, "exit_code": 2, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+{"case": "original-mobile-b", "wall_ms": 6164, "exit_code": 1, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+{"case": "original-desktop-b", "wall_ms": 6202, "exit_code": 1, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+{"case": "original-mobile-a", "wall_ms": 7989, "exit_code": 2, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+{"case": "wide-q4", "wall_ms": 6710, "exit_code": 2, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+{"case": "wide-q9", "wall_ms": 6544, "exit_code": 1, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+{"case": "narrow-q4", "wall_ms": 6822, "exit_code": 2, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+{"case": "narrow-q9", "wall_ms": 6367, "exit_code": 1, "score": {"correct": 10, "total": 10, "missed_defects": 0, "false_passes": 0}}
+/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v4/runs/regression-20260917T233222Z

@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57931/fresh?build=s8",
+    "goal": "Current objective: Select Audio in Category.\nVerified previous objectives: none. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#category",
+        "expected": "audio"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 60,
+    "max_seconds": 179.3613176670624,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Borrower name",
+      "Contact email",
+      "Search equipment"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#category",
+      "expected": "audio",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e3",
+      "kind": "select",
+      "label": "Category → Audio"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 369,
+        "usage": {
+          "input_tokens": 1537,
+          "output_tokens": 97
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 529,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

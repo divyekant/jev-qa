@@ -1,0 +1,17 @@
+{
+  "url": "http://127.0.0.1:50042/?build=m4",
+  "goal": "Choose Design systems in Track. Enter Responsive interfaces in Search sessions. Click Apply filters. Then click Inspect session for Responsive interfaces in practice. Stop with session details open; do not reserve seats yet.",
+  "values": {
+    "Search sessions": "Responsive interfaces"
+  },
+  "assertions": [
+    {
+      "kind": "visible",
+      "selector": "#details-panel",
+      "expected": true
+    }
+  ],
+  "max_steps": 12,
+  "max_seconds": 60,
+  "min_confidence": 0.8
+}

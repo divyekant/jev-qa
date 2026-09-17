@@ -1,0 +1,762 @@
+{
+  "steps": [
+    {
+      "name": "Track",
+      "navigation_status": "pass",
+      "navigation_report": "step-01/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#track-select",
+          "expected": "design-systems",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Search",
+      "navigation_status": "pass",
+      "navigation_report": "step-02/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#search-sessions",
+          "expected": "Responsive interfaces",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Filter",
+      "navigation_status": "pass",
+      "navigation_report": "step-03/report.json",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#filter-feedback",
+          "expected": "Showing 1 session",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Details",
+      "navigation_status": "pass",
+      "design": {
+        "status": "fail",
+        "checks": [
+          {
+            "id": "title",
+            "kind": "unclipped",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 347.5,
+                "width": 330,
+                "height": 22,
+                "right": 346,
+                "bottom": 369.5
+              },
+              "textBox": {
+                "x": 16,
+                "y": 348.5,
+                "width": 239.7,
+                "height": 62,
+                "right": 255.7,
+                "bottom": 410.5
+              },
+              "fullText": "Responsive interfaces in practice",
+              "fullTextTruncated": false,
+              "overflowX": "hidden",
+              "overflowY": "hidden",
+              "whiteSpace": "normal",
+              "textOverflow": "clip",
+              "clientWidth": 330,
+              "scrollWidth": 330,
+              "clientHeight": 22,
+              "scrollHeight": 64
+            },
+            "reason": "content_clipped"
+          },
+          {
+            "id": "badge",
+            "kind": "decorative_overlap",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "subject": {
+                "x": 35,
+                "y": 264,
+                "width": 104.48,
+                "height": 31,
+                "right": 139.48,
+                "bottom": 295
+              },
+              "decorative": {
+                "x": 16,
+                "y": 94,
+                "width": 358,
+                "height": 190,
+                "right": 374,
+                "bottom": 284
+              },
+              "content": {
+                "x": 16,
+                "y": 347.5,
+                "width": 330,
+                "height": 22,
+                "right": 346,
+                "bottom": 369.5
+              },
+              "decorativeIntersectionPx2": 2089.6,
+              "contentIntersectionPx2": 0
+            }
+          },
+          {
+            "id": "artwork",
+            "kind": "artwork",
+            "assessment": "uncertain",
+            "source": "unsupported",
+            "evidence": {
+              "status": "unsupported",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 513.5,
+                "width": 94,
+                "height": 94,
+                "right": 110,
+                "bottom": 607.5
+              },
+              "pixelContentInspected": false,
+              "reason": "pixel_content_not_inspected"
+            },
+            "reason": "pixel_content_not_inspected"
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": true,
+          "contrast": false,
+          "hitTesting": false,
+          "pixelContentInspected": false
+        }
+      },
+      "navigation_report": "step-04/report.json",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#details-panel",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#session-title",
+          "expected": "Responsive interfaces in practice",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 2,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Reserve",
+      "navigation_status": "pass",
+      "navigation_report": "step-05/report.json",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#booking-panel",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Name",
+      "navigation_status": "pass",
+      "navigation_report": "step-06/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#attendee-name",
+          "expected": "Avery Example",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Email",
+      "navigation_status": "pass",
+      "navigation_report": "step-07/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#attendee-email",
+          "expected": "avery@example.com",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Seats",
+      "navigation_status": "pass",
+      "navigation_report": "step-08/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#seats-select",
+          "expected": "2",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Code",
+      "navigation_status": "pass",
+      "navigation_report": "step-09/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#access-code",
+          "expected": "OPEN",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Apply code",
+      "navigation_status": "pass",
+      "design": {
+        "status": "fail",
+        "checks": [
+          {
+            "id": "status",
+            "kind": "contrast",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 620.22,
+                "width": 358,
+                "height": 74.38,
+                "right": 374,
+                "bottom": 694.59
+              },
+              "foreground": [
+                190,
+                198,
+                202
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrastSupported": true,
+              "contrastRatio": 1.73
+            },
+            "reason": "contrast_below_minimum"
+          },
+          {
+            "id": "disabled",
+            "kind": "disabled",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 820.59,
+                "width": 99.06,
+                "height": 38,
+                "right": 115.06,
+                "bottom": 858.59
+              },
+              "nativeDisabled": true,
+              "ariaDisabled": false,
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "id": "alignment",
+            "kind": "aligned",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "first": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "width": "[truncated]",
+                  "height": "[truncated]",
+                  "right": "[truncated]",
+                  "bottom": "[truncated]"
+                }
+              },
+              "second": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "width": "[truncated]",
+                  "height": "[truncated]",
+                  "right": "[truncated]",
+                  "bottom": "[truncated]"
+                }
+              }
+            }
+          },
+          {
+            "id": "acceptance_message",
+            "kind": "contextual",
+            "assessment": "pass",
+            "source": "jev",
+            "evidence": {
+              "status": "measured",
+              "observation": {
+                "tag": "p",
+                "role": "status",
+                "visible": true,
+                "box": {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "width": "[truncated]",
+                  "height": "[truncated]",
+                  "right": "[truncated]",
+                  "bottom": "[truncated]"
+                },
+                "textBox": {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "width": "[truncated]",
+                  "height": "[truncated]",
+                  "right": "[truncated]",
+                  "bottom": "[truncated]"
+                },
+                "text": "Access code accepted. Two seats reserved for review."
+              },
+              "model": {
+                "criterion": "Assess observation 0 only. The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred.",
+                "assessment": "pass",
+                "confidence": 0.99,
+                "probabilities": {
+                  "fail": "[truncated]",
+                  "uncertain": "[truncated]",
+                  "pass": "[truncated]"
+                },
+                "model_assessment": true,
+                "model": "jev-1.13.0",
+                "latency_ms": 134
+              }
+            },
+            "advisory": true
+          }
+        ],
+        "model_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 134,
+            "usage": {
+              "input_tokens": 603,
+              "output_tokens": 44
+            }
+          }
+        ],
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": true,
+          "contrast": true,
+          "hitTesting": false,
+          "pixelContentInspected": false
+        }
+      },
+      "navigation_report": "step-10/report.json",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#code-status",
+          "expected": "Access code accepted. Two seats reserved for review.",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Review",
+      "navigation_status": "pass",
+      "design": {
+        "status": "fail",
+        "checks": [
+          {
+            "id": "confirm",
+            "kind": "unobstructed",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 504.97,
+                "width": 184,
+                "height": 44,
+                "right": 200,
+                "bottom": 548.97
+              },
+              "inViewport": true,
+              "hitSamples": [
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                },
+                {
+                  "x": "[truncated]",
+                  "y": "[truncated]",
+                  "targetReceivesHit": "[truncated]",
+                  "topElement": "[truncated]"
+                }
+              ]
+            },
+            "reason": "target_is_obstructed"
+          },
+          {
+            "id": "overflow",
+            "kind": "horizontal_fit",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "viewportWidth": 390,
+              "documentWidth": 536
+            },
+            "reason": "horizontal_overflow"
+          },
+          {
+            "id": "reference",
+            "kind": "ellipsis",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 378,
+                "y": 451.97,
+                "width": 140,
+                "height": 14.3,
+                "right": 518,
+                "bottom": 466.27
+              },
+              "textBox": {
+                "x": 378,
+                "y": 451.97,
+                "width": 325.42,
+                "height": 13,
+                "right": 703.42,
+                "bottom": 464.97
+              },
+              "fullText": "Workshop reservation for the regional interface research team",
+              "fullTextTruncated": false,
+              "overflowX": "hidden",
+              "overflowY": "hidden",
+              "whiteSpace": "nowrap",
+              "textOverflow": "ellipsis",
+              "clientWidth": 140,
+              "scrollWidth": 325,
+              "clientHeight": 14,
+              "scrollHeight": 14,
+              "title": "Workshop reservation for the regional interface research team"
+            }
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 536
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": true,
+          "contrast": false,
+          "hitTesting": true,
+          "pixelContentInspected": false
+        }
+      },
+      "navigation_report": "step-11/report.json",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#review-panel",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#review-attendee",
+          "expected": "Avery Example",
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#review-seats",
+          "expected": "2 seats",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    }
+  ],
+  "routing": {
+    "decision_model": "jev-latest",
+    "text_helper": "disabled"
+  },
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 431,
+        "usage": {
+          "input_tokens": 1943,
+          "output_tokens": 131
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 107,
+        "usage": {
+          "input_tokens": 1976,
+          "output_tokens": 131
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 169,
+        "usage": {
+          "input_tokens": 2014,
+          "output_tokens": 131
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 153,
+        "usage": {
+          "input_tokens": 1833,
+          "output_tokens": 105
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 639,
+        "usage": {
+          "input_tokens": 1902,
+          "output_tokens": 105
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 124,
+        "usage": {
+          "input_tokens": 1389,
+          "output_tokens": 57
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 124,
+        "usage": {
+          "input_tokens": 1924,
+          "output_tokens": 113
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 125,
+        "usage": {
+          "input_tokens": 1969,
+          "output_tokens": 113
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 199,
+        "usage": {
+          "input_tokens": 2006,
+          "output_tokens": 113
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 166,
+        "usage": {
+          "input_tokens": 2039,
+          "output_tokens": 113
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 138,
+        "usage": {
+          "input_tokens": 2082,
+          "output_tokens": 113
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 162,
+        "usage": {
+          "input_tokens": 2252,
+          "output_tokens": 123
+        }
+      }
+    ],
+    "text": [],
+    "review": [],
+    "design": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 134,
+        "usage": {
+          "input_tokens": 603,
+          "output_tokens": 44
+        }
+      }
+    ]
+  },
+  "errors": [],
+  "status": "fail",
+  "navigation_status": "pass",
+  "design_status": "fail",
+  "reached": 11,
+  "total": 11,
+  "execution_status": "completed",
+  "product_status": "fail",
+  "elapsed_ms": 18346,
+  "actions": 12
+}

@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:61026/holdout?build=q4",
+    "goal": "Current objective: Select Level 2 in Floor.\nVerified previous objectives: none. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#floor-select",
+        "expected": "Level 2"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 60,
+    "max_seconds": 179.40271470905282,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Email",
+      "Search rooms",
+      "Your name"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#floor-select",
+      "expected": "Level 2",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e5",
+      "kind": "select",
+      "label": "Floor → Level 2"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 328,
+        "usage": {
+          "input_tokens": 1908,
+          "output_tokens": 140
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 507,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

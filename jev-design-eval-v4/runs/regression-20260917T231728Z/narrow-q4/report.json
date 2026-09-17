@@ -1,0 +1,228 @@
+{
+  "steps": [
+    {
+      "name": "Choose the floor",
+      "navigation_status": "pass",
+      "navigation_report": "step-01/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#floor-select",
+          "expected": "Level 2",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Search for Willow",
+      "navigation_status": "pass",
+      "navigation_report": "step-02/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#search-rooms",
+          "expected": "Willow",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Apply the room search",
+      "navigation_status": "blocked",
+      "design": {
+        "status": "needs_review",
+        "reason": "navigation_not_reached",
+        "checks": [
+          {
+            "id": "room-note-unclipped",
+            "kind": "unclipped",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "room-title-ellipsis",
+            "kind": "ellipsis",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "brand-artwork",
+            "kind": "artwork",
+            "assessment": "not_reached",
+            "source": "not_run"
+          }
+        ]
+      },
+      "navigation_report": "step-03/report.json",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#filter-status",
+          "expected": "Showing 1 room",
+          "passed": false,
+          "reason": "text_mismatch"
+        },
+        {
+          "kind": "visible",
+          "selector": "#room-card-willow",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 0,
+      "execution_status": "blocked",
+      "assertion_status": "fail",
+      "product_status": "not_tested"
+    },
+    {
+      "name": "Open Willow Room",
+      "navigation_status": "not_reached",
+      "design": {
+        "status": "needs_review",
+        "reason": "navigation_not_reached",
+        "checks": [
+          {
+            "id": "time-hint-contrast",
+            "kind": "contrast",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "after-hours-disabled",
+            "kind": "disabled",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "review-aligned",
+            "kind": "aligned",
+            "assessment": "not_reached",
+            "source": "not_run"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Choose the date",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Choose the start time",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Choose the length",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Enter your name",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Enter your email",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Accept the room rules",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Open the review",
+      "navigation_status": "not_reached",
+      "design": {
+        "status": "needs_review",
+        "reason": "navigation_not_reached",
+        "checks": [
+          {
+            "id": "review-unobstructed",
+            "kind": "unobstructed",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "header-badge-overlap",
+            "kind": "decorative_overlap",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "prepared-status-context",
+            "kind": "contextual",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "details-horizontal-fit",
+            "kind": "horizontal_fit",
+            "assessment": "not_reached",
+            "source": "not_run"
+          }
+        ]
+      }
+    }
+  ],
+  "routing": {
+    "decision_model": "jev-latest",
+    "text_helper": "disabled"
+  },
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 328,
+        "usage": {
+          "input_tokens": 1908,
+          "output_tokens": 140
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 147,
+        "usage": {
+          "input_tokens": 1942,
+          "output_tokens": 140
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 210,
+        "usage": {
+          "input_tokens": 1989,
+          "output_tokens": 140
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 225,
+        "usage": {
+          "input_tokens": 1989,
+          "output_tokens": 140
+        }
+      }
+    ],
+    "text": [],
+    "review": [],
+    "design": []
+  },
+  "errors": [],
+  "status": "blocked",
+  "navigation_status": "blocked",
+  "design_status": "needs_review",
+  "reached": 2,
+  "total": 11,
+  "execution_status": "blocked",
+  "product_status": "not_tested",
+  "elapsed_ms": 2363,
+  "actions": 2
+}

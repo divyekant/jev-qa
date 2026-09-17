@@ -1,0 +1,1981 @@
+{
+  "attempts_per_case": 1,
+  "confidence": 0.8,
+  "cases": [
+    {
+      "name": "original-desktop-a",
+      "build": "k7",
+      "width": 1280,
+      "height": 900,
+      "task": {
+        "goal": "Reserve two seats for Responsive interfaces in practice, then review without confirming.",
+        "values": {
+          "Search sessions": "Responsive interfaces",
+          "Attendee name": "Avery Example",
+          "Attendee email": "avery@example.com",
+          "Access code": "OPEN"
+        },
+        "steps": [
+          {
+            "name": "Track",
+            "goal": "Choose Design systems in Track.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#track-select",
+                "expected": "design-systems"
+              }
+            ]
+          },
+          {
+            "name": "Search",
+            "goal": "Enter Responsive interfaces in Search sessions.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-sessions",
+                "expected": "Responsive interfaces"
+              }
+            ]
+          },
+          {
+            "name": "Filter",
+            "goal": "Click Apply filters.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-feedback",
+                "expected": "Showing 1 session"
+              }
+            ]
+          },
+          {
+            "name": "Details",
+            "goal": "Click Inspect session for Responsive interfaces in practice.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#session-title",
+                "expected": "Responsive interfaces in practice"
+              }
+            ],
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "selector": "#session-title"
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#session-art",
+                "content": "#session-title"
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "selector": "#brand-art"
+              }
+            ]
+          },
+          {
+            "name": "Reserve",
+            "goal": "Click Reserve seats.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#booking-panel",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "name": "Name",
+            "goal": "Enter Avery Example in Attendee name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-name",
+                "expected": "Avery Example"
+              }
+            ]
+          },
+          {
+            "name": "Email",
+            "goal": "Enter avery@example.com in Attendee email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-email",
+                "expected": "avery@example.com"
+              }
+            ]
+          },
+          {
+            "name": "Seats",
+            "goal": "Choose 2 in Seats.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#seats-select",
+                "expected": "2"
+              }
+            ]
+          },
+          {
+            "name": "Code",
+            "goal": "Enter OPEN in Access code.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#access-code",
+                "expected": "OPEN"
+              }
+            ]
+          },
+          {
+            "name": "Apply code",
+            "goal": "Click Apply code.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#code-status",
+                "expected": "Access code accepted. Two seats reserved for review."
+              }
+            ],
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "selector": "#code-status"
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "selector": "#receipt-button"
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "selector": "#attendee-name",
+                "other": "#attendee-email"
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "selector": "#code-status",
+                "criterion": "The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred."
+              }
+            ]
+          },
+          {
+            "name": "Review",
+            "goal": "Click Review reservation. Do not click Confirm reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-attendee",
+                "expected": "Avery Example"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-seats",
+                "expected": "2 seats"
+              }
+            ],
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "selector": "#confirm-button"
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit"
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "selector": "#project-label"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "original-mobile-b",
+      "build": "m4",
+      "width": 390,
+      "height": 844,
+      "task": {
+        "goal": "Reserve two seats for Responsive interfaces in practice, then review without confirming.",
+        "values": {
+          "Search sessions": "Responsive interfaces",
+          "Attendee name": "Avery Example",
+          "Attendee email": "avery@example.com",
+          "Access code": "OPEN"
+        },
+        "steps": [
+          {
+            "name": "Track",
+            "goal": "Choose Design systems in Track.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#track-select",
+                "expected": "design-systems"
+              }
+            ]
+          },
+          {
+            "name": "Search",
+            "goal": "Enter Responsive interfaces in Search sessions.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-sessions",
+                "expected": "Responsive interfaces"
+              }
+            ]
+          },
+          {
+            "name": "Filter",
+            "goal": "Click Apply filters.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-feedback",
+                "expected": "Showing 1 session"
+              }
+            ]
+          },
+          {
+            "name": "Details",
+            "goal": "Click Inspect session for Responsive interfaces in practice.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#session-title",
+                "expected": "Responsive interfaces in practice"
+              }
+            ],
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "selector": "#session-title"
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#session-art",
+                "content": "#session-title"
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "selector": "#brand-art"
+              }
+            ]
+          },
+          {
+            "name": "Reserve",
+            "goal": "Click Reserve seats.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#booking-panel",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "name": "Name",
+            "goal": "Enter Avery Example in Attendee name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-name",
+                "expected": "Avery Example"
+              }
+            ]
+          },
+          {
+            "name": "Email",
+            "goal": "Enter avery@example.com in Attendee email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-email",
+                "expected": "avery@example.com"
+              }
+            ]
+          },
+          {
+            "name": "Seats",
+            "goal": "Choose 2 in Seats.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#seats-select",
+                "expected": "2"
+              }
+            ]
+          },
+          {
+            "name": "Code",
+            "goal": "Enter OPEN in Access code.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#access-code",
+                "expected": "OPEN"
+              }
+            ]
+          },
+          {
+            "name": "Apply code",
+            "goal": "Click Apply code.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#code-status",
+                "expected": "Access code accepted. Two seats reserved for review."
+              }
+            ],
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "selector": "#code-status"
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "selector": "#receipt-button"
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "selector": "#attendee-name",
+                "other": "#attendee-email"
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "selector": "#code-status",
+                "criterion": "The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred."
+              }
+            ]
+          },
+          {
+            "name": "Review",
+            "goal": "Click Review reservation. Do not click Confirm reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-attendee",
+                "expected": "Avery Example"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-seats",
+                "expected": "2 seats"
+              }
+            ],
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "selector": "#confirm-button"
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit"
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "selector": "#project-label"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "original-desktop-b",
+      "build": "m4",
+      "width": 1280,
+      "height": 900,
+      "task": {
+        "goal": "Reserve two seats for Responsive interfaces in practice, then review without confirming.",
+        "values": {
+          "Search sessions": "Responsive interfaces",
+          "Attendee name": "Avery Example",
+          "Attendee email": "avery@example.com",
+          "Access code": "OPEN"
+        },
+        "steps": [
+          {
+            "name": "Track",
+            "goal": "Choose Design systems in Track.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#track-select",
+                "expected": "design-systems"
+              }
+            ]
+          },
+          {
+            "name": "Search",
+            "goal": "Enter Responsive interfaces in Search sessions.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-sessions",
+                "expected": "Responsive interfaces"
+              }
+            ]
+          },
+          {
+            "name": "Filter",
+            "goal": "Click Apply filters.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-feedback",
+                "expected": "Showing 1 session"
+              }
+            ]
+          },
+          {
+            "name": "Details",
+            "goal": "Click Inspect session for Responsive interfaces in practice.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#session-title",
+                "expected": "Responsive interfaces in practice"
+              }
+            ],
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "selector": "#session-title"
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#session-art",
+                "content": "#session-title"
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "selector": "#brand-art"
+              }
+            ]
+          },
+          {
+            "name": "Reserve",
+            "goal": "Click Reserve seats.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#booking-panel",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "name": "Name",
+            "goal": "Enter Avery Example in Attendee name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-name",
+                "expected": "Avery Example"
+              }
+            ]
+          },
+          {
+            "name": "Email",
+            "goal": "Enter avery@example.com in Attendee email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-email",
+                "expected": "avery@example.com"
+              }
+            ]
+          },
+          {
+            "name": "Seats",
+            "goal": "Choose 2 in Seats.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#seats-select",
+                "expected": "2"
+              }
+            ]
+          },
+          {
+            "name": "Code",
+            "goal": "Enter OPEN in Access code.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#access-code",
+                "expected": "OPEN"
+              }
+            ]
+          },
+          {
+            "name": "Apply code",
+            "goal": "Click Apply code.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#code-status",
+                "expected": "Access code accepted. Two seats reserved for review."
+              }
+            ],
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "selector": "#code-status"
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "selector": "#receipt-button"
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "selector": "#attendee-name",
+                "other": "#attendee-email"
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "selector": "#code-status",
+                "criterion": "The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred."
+              }
+            ]
+          },
+          {
+            "name": "Review",
+            "goal": "Click Review reservation. Do not click Confirm reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-attendee",
+                "expected": "Avery Example"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-seats",
+                "expected": "2 seats"
+              }
+            ],
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "selector": "#confirm-button"
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit"
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "selector": "#project-label"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "original-mobile-a",
+      "build": "k7",
+      "width": 390,
+      "height": 844,
+      "task": {
+        "goal": "Reserve two seats for Responsive interfaces in practice, then review without confirming.",
+        "values": {
+          "Search sessions": "Responsive interfaces",
+          "Attendee name": "Avery Example",
+          "Attendee email": "avery@example.com",
+          "Access code": "OPEN"
+        },
+        "steps": [
+          {
+            "name": "Track",
+            "goal": "Choose Design systems in Track.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#track-select",
+                "expected": "design-systems"
+              }
+            ]
+          },
+          {
+            "name": "Search",
+            "goal": "Enter Responsive interfaces in Search sessions.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-sessions",
+                "expected": "Responsive interfaces"
+              }
+            ]
+          },
+          {
+            "name": "Filter",
+            "goal": "Click Apply filters.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-feedback",
+                "expected": "Showing 1 session"
+              }
+            ]
+          },
+          {
+            "name": "Details",
+            "goal": "Click Inspect session for Responsive interfaces in practice.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#session-title",
+                "expected": "Responsive interfaces in practice"
+              }
+            ],
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "selector": "#session-title"
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#session-art",
+                "content": "#session-title"
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "selector": "#brand-art"
+              }
+            ]
+          },
+          {
+            "name": "Reserve",
+            "goal": "Click Reserve seats.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#booking-panel",
+                "expected": true
+              }
+            ]
+          },
+          {
+            "name": "Name",
+            "goal": "Enter Avery Example in Attendee name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-name",
+                "expected": "Avery Example"
+              }
+            ]
+          },
+          {
+            "name": "Email",
+            "goal": "Enter avery@example.com in Attendee email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#attendee-email",
+                "expected": "avery@example.com"
+              }
+            ]
+          },
+          {
+            "name": "Seats",
+            "goal": "Choose 2 in Seats.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#seats-select",
+                "expected": "2"
+              }
+            ]
+          },
+          {
+            "name": "Code",
+            "goal": "Enter OPEN in Access code.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#access-code",
+                "expected": "OPEN"
+              }
+            ]
+          },
+          {
+            "name": "Apply code",
+            "goal": "Click Apply code.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#code-status",
+                "expected": "Access code accepted. Two seats reserved for review."
+              }
+            ],
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "selector": "#code-status"
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "selector": "#receipt-button"
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "selector": "#attendee-name",
+                "other": "#attendee-email"
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "selector": "#code-status",
+                "criterion": "The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred."
+              }
+            ]
+          },
+          {
+            "name": "Review",
+            "goal": "Click Review reservation. Do not click Confirm reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-panel",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-attendee",
+                "expected": "Avery Example"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-seats",
+                "expected": "2 seats"
+              }
+            ],
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "selector": "#confirm-button"
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit"
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "selector": "#project-label"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "wide-q4",
+      "build": "q4",
+      "width": 1280,
+      "height": 900,
+      "task": {
+        "goal": "Prepare a local Civic Library reservation for Willow Room on October 14, 2026 at 2:00 PM for 60 minutes for Avery Chen using avery.chen@example.test.",
+        "values": {
+          "Search rooms": "Willow",
+          "Your name": "Avery Chen",
+          "Email": "avery.chen@example.test"
+        },
+        "steps": [
+          {
+            "name": "Choose the floor",
+            "goal": "Select Level 2 in Floor.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#floor-select",
+                "expected": "Level 2"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Search for Willow",
+            "goal": "Enter Willow in Search rooms.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-rooms",
+                "expected": "Willow"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Apply the room search",
+            "goal": "Apply the filters so one matching room remains visible.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-status",
+                "expected": "Showing 1 room"
+              },
+              {
+                "kind": "visible",
+                "selector": "#room-card-willow",
+                "expected": true
+              }
+            ],
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "selector": "#room-note"
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "selector": "#room-title"
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "selector": "#brand-motif"
+              }
+            ]
+          },
+          {
+            "name": "Open Willow Room",
+            "goal": "Open the visible Willow Room details.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#details-title",
+                "expected": "Willow Room"
+              }
+            ],
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "selector": "#time-hint",
+                "min_ratio": 4.5
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "selector": "#after-hours-button"
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "selector": "#guest-name",
+                "other": "#reservation-date",
+                "tolerance": 2
+              }
+            ]
+          },
+          {
+            "name": "Choose the date",
+            "goal": "Select October 14, 2026 in Date.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#reservation-date",
+                "expected": "2026-10-14"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the start time",
+            "goal": "Select 2:00 PM in Start time.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#start-time",
+                "expected": "2:00 PM"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the length",
+            "goal": "Select 60 minutes in Length.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#length-select",
+                "expected": "60 minutes"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your name",
+            "goal": "Enter Avery Chen in Your name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-name",
+                "expected": "Avery Chen"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your email",
+            "goal": "Enter avery.chen@example.test in Email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-email",
+                "expected": "avery.chen@example.test"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Accept the room rules",
+            "goal": "Check I agree to the room rules.",
+            "assertions": [
+              {
+                "kind": "checked",
+                "selector": "#rules-check",
+                "expected": true
+              },
+              {
+                "kind": "visible",
+                "selector": "#review-button",
+                "expected": true
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Open the review",
+            "goal": "Open the local review summary for the prepared reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-room",
+                "expected": "Willow Room"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-date",
+                "expected": "October 14, 2026"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-time",
+                "expected": "2:00 PM \u00b7 60 minutes"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-guest",
+                "expected": "Avery Chen"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-email",
+                "expected": "avery.chen@example.test"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#prepared-status",
+                "expected": "Prepared for review \u00b7 no request sent."
+              }
+            ],
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "selector": "#send-request"
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#brand-motif",
+                "content": ".brand-name"
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "selector": "#prepared-status",
+                "criterion": "clearly states no request was sent"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "tolerance": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "wide-q9",
+      "build": "q9",
+      "width": 1280,
+      "height": 900,
+      "task": {
+        "goal": "Prepare a local Civic Library reservation for Willow Room on October 14, 2026 at 2:00 PM for 60 minutes for Avery Chen using avery.chen@example.test.",
+        "values": {
+          "Search rooms": "Willow",
+          "Your name": "Avery Chen",
+          "Email": "avery.chen@example.test"
+        },
+        "steps": [
+          {
+            "name": "Choose the floor",
+            "goal": "Select Level 2 in Floor.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#floor-select",
+                "expected": "Level 2"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Search for Willow",
+            "goal": "Enter Willow in Search rooms.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-rooms",
+                "expected": "Willow"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Apply the room search",
+            "goal": "Apply the filters so one matching room remains visible.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-status",
+                "expected": "Showing 1 room"
+              },
+              {
+                "kind": "visible",
+                "selector": "#room-card-willow",
+                "expected": true
+              }
+            ],
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "selector": "#room-note"
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "selector": "#room-title"
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "selector": "#brand-motif"
+              }
+            ]
+          },
+          {
+            "name": "Open Willow Room",
+            "goal": "Open the visible Willow Room details.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#details-title",
+                "expected": "Willow Room"
+              }
+            ],
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "selector": "#time-hint",
+                "min_ratio": 4.5
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "selector": "#after-hours-button"
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "selector": "#guest-name",
+                "other": "#reservation-date",
+                "tolerance": 2
+              }
+            ]
+          },
+          {
+            "name": "Choose the date",
+            "goal": "Select October 14, 2026 in Date.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#reservation-date",
+                "expected": "2026-10-14"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the start time",
+            "goal": "Select 2:00 PM in Start time.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#start-time",
+                "expected": "2:00 PM"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the length",
+            "goal": "Select 60 minutes in Length.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#length-select",
+                "expected": "60 minutes"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your name",
+            "goal": "Enter Avery Chen in Your name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-name",
+                "expected": "Avery Chen"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your email",
+            "goal": "Enter avery.chen@example.test in Email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-email",
+                "expected": "avery.chen@example.test"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Accept the room rules",
+            "goal": "Check I agree to the room rules.",
+            "assertions": [
+              {
+                "kind": "checked",
+                "selector": "#rules-check",
+                "expected": true
+              },
+              {
+                "kind": "visible",
+                "selector": "#review-button",
+                "expected": true
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Open the review",
+            "goal": "Open the local review summary for the prepared reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-room",
+                "expected": "Willow Room"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-date",
+                "expected": "October 14, 2026"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-time",
+                "expected": "2:00 PM \u00b7 60 minutes"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-guest",
+                "expected": "Avery Chen"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-email",
+                "expected": "avery.chen@example.test"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#prepared-status",
+                "expected": "Prepared for review \u00b7 no request sent."
+              }
+            ],
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "selector": "#send-request"
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#brand-motif",
+                "content": ".brand-name"
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "selector": "#prepared-status",
+                "criterion": "clearly states no request was sent"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "tolerance": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "narrow-q4",
+      "build": "q4",
+      "width": 390,
+      "height": 844,
+      "task": {
+        "goal": "Prepare a local Civic Library reservation for Willow Room on October 14, 2026 at 2:00 PM for 60 minutes for Avery Chen using avery.chen@example.test.",
+        "values": {
+          "Search rooms": "Willow",
+          "Your name": "Avery Chen",
+          "Email": "avery.chen@example.test"
+        },
+        "steps": [
+          {
+            "name": "Choose the floor",
+            "goal": "Select Level 2 in Floor.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#floor-select",
+                "expected": "Level 2"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Search for Willow",
+            "goal": "Enter Willow in Search rooms.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-rooms",
+                "expected": "Willow"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Apply the room search",
+            "goal": "Apply the filters so one matching room remains visible.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-status",
+                "expected": "Showing 1 room"
+              },
+              {
+                "kind": "visible",
+                "selector": "#room-card-willow",
+                "expected": true
+              }
+            ],
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "selector": "#room-note"
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "selector": "#room-title"
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "selector": "#brand-motif"
+              }
+            ]
+          },
+          {
+            "name": "Open Willow Room",
+            "goal": "Open the visible Willow Room details.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#details-title",
+                "expected": "Willow Room"
+              }
+            ],
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "selector": "#time-hint",
+                "min_ratio": 4.5
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "selector": "#after-hours-button"
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "selector": "#guest-name",
+                "other": "#reservation-date",
+                "tolerance": 2
+              }
+            ]
+          },
+          {
+            "name": "Choose the date",
+            "goal": "Select October 14, 2026 in Date.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#reservation-date",
+                "expected": "2026-10-14"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the start time",
+            "goal": "Select 2:00 PM in Start time.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#start-time",
+                "expected": "2:00 PM"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the length",
+            "goal": "Select 60 minutes in Length.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#length-select",
+                "expected": "60 minutes"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your name",
+            "goal": "Enter Avery Chen in Your name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-name",
+                "expected": "Avery Chen"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your email",
+            "goal": "Enter avery.chen@example.test in Email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-email",
+                "expected": "avery.chen@example.test"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Accept the room rules",
+            "goal": "Check I agree to the room rules.",
+            "assertions": [
+              {
+                "kind": "checked",
+                "selector": "#rules-check",
+                "expected": true
+              },
+              {
+                "kind": "visible",
+                "selector": "#review-button",
+                "expected": true
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Open the review",
+            "goal": "Open the local review summary for the prepared reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-room",
+                "expected": "Willow Room"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-date",
+                "expected": "October 14, 2026"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-time",
+                "expected": "2:00 PM \u00b7 60 minutes"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-guest",
+                "expected": "Avery Chen"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-email",
+                "expected": "avery.chen@example.test"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#prepared-status",
+                "expected": "Prepared for review \u00b7 no request sent."
+              }
+            ],
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "selector": "#send-request"
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#brand-motif",
+                "content": ".brand-name"
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "selector": "#prepared-status",
+                "criterion": "clearly states no request was sent"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "tolerance": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "narrow-q9",
+      "build": "q9",
+      "width": 390,
+      "height": 844,
+      "task": {
+        "goal": "Prepare a local Civic Library reservation for Willow Room on October 14, 2026 at 2:00 PM for 60 minutes for Avery Chen using avery.chen@example.test.",
+        "values": {
+          "Search rooms": "Willow",
+          "Your name": "Avery Chen",
+          "Email": "avery.chen@example.test"
+        },
+        "steps": [
+          {
+            "name": "Choose the floor",
+            "goal": "Select Level 2 in Floor.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#floor-select",
+                "expected": "Level 2"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Search for Willow",
+            "goal": "Enter Willow in Search rooms.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#search-rooms",
+                "expected": "Willow"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Apply the room search",
+            "goal": "Apply the filters so one matching room remains visible.",
+            "assertions": [
+              {
+                "kind": "text_equals",
+                "selector": "#filter-status",
+                "expected": "Showing 1 room"
+              },
+              {
+                "kind": "visible",
+                "selector": "#room-card-willow",
+                "expected": true
+              }
+            ],
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "selector": "#room-note"
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "selector": "#room-title"
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "selector": "#brand-motif"
+              }
+            ]
+          },
+          {
+            "name": "Open Willow Room",
+            "goal": "Open the visible Willow Room details.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#details-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#details-title",
+                "expected": "Willow Room"
+              }
+            ],
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "selector": "#time-hint",
+                "min_ratio": 4.5
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "selector": "#after-hours-button"
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "selector": "#guest-name",
+                "other": "#reservation-date",
+                "tolerance": 2
+              }
+            ]
+          },
+          {
+            "name": "Choose the date",
+            "goal": "Select October 14, 2026 in Date.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#reservation-date",
+                "expected": "2026-10-14"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the start time",
+            "goal": "Select 2:00 PM in Start time.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#start-time",
+                "expected": "2:00 PM"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Choose the length",
+            "goal": "Select 60 minutes in Length.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#length-select",
+                "expected": "60 minutes"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your name",
+            "goal": "Enter Avery Chen in Your name.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-name",
+                "expected": "Avery Chen"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Enter your email",
+            "goal": "Enter avery.chen@example.test in Email.",
+            "assertions": [
+              {
+                "kind": "value_equals",
+                "selector": "#guest-email",
+                "expected": "avery.chen@example.test"
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Accept the room rules",
+            "goal": "Check I agree to the room rules.",
+            "assertions": [
+              {
+                "kind": "checked",
+                "selector": "#rules-check",
+                "expected": true
+              },
+              {
+                "kind": "visible",
+                "selector": "#review-button",
+                "expected": true
+              }
+            ],
+            "checks": []
+          },
+          {
+            "name": "Open the review",
+            "goal": "Open the local review summary for the prepared reservation.",
+            "assertions": [
+              {
+                "kind": "visible",
+                "selector": "#review-state",
+                "expected": true
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-room",
+                "expected": "Willow Room"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-date",
+                "expected": "October 14, 2026"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-time",
+                "expected": "2:00 PM \u00b7 60 minutes"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-guest",
+                "expected": "Avery Chen"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#review-email",
+                "expected": "avery.chen@example.test"
+              },
+              {
+                "kind": "text_equals",
+                "selector": "#prepared-status",
+                "expected": "Prepared for review \u00b7 no request sent."
+              }
+            ],
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "selector": "#send-request"
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "selector": "#availability-badge",
+                "decorative": "#brand-motif",
+                "content": ".brand-name"
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "selector": "#prepared-status",
+                "criterion": "clearly states no request was sent"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "tolerance": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "expected": {
+    "original-desktop-a": {
+      "title": "pass",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "pass",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "pass",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "original-mobile-b": {
+      "title": "fail",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "fail",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "fail",
+      "overflow": "fail",
+      "reference": "pass"
+    },
+    "original-desktop-b": {
+      "title": "fail",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "fail",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "fail",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "original-mobile-a": {
+      "title": "pass",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "pass",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "pass",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "wide-q4": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "pass",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "pass",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    },
+    "wide-q9": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "fail",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "fail",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    },
+    "narrow-q4": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "pass",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "pass",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    },
+    "narrow-q9": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "fail",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "fail",
+      "details-horizontal-fit": "fail",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    }
+  },
+  "routing": "Jev-only actions and contextual assessment; deterministic measurements authoritative",
+  "source_sha256": {
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/original-truth.json": "1f93b4c27b0d7ff494f7b7da945f05615c452ceaa49e65e7c95828709c27eddd",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/original-cases.json": "1fe8ccc1923419319dd321e3e3ca6a7b48317eb016bfe89053c07814f0e93279",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/original-preflight.json": "548b117f6de0dfe6f05bb44e0e29ca5e3e4f865e80130b263dc8073543e79879",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/holdout/manifest.sha256": "1c5a8a1500772bcc8d2982ca98406cc34ae1a5163ac39ab9bbda125527cad0d6",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/holdout/index.html": "3679d1ae27a649346610cbe0da8651dca0b284b497a52c18c55ea8825ac6b838",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/holdout/oracle.json": "298ae23236c26927174781c93f18a70bcfedc72451c0f2168a6cd261dccaa122",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/holdout/cases.json": "1b7a6f03b8c906ae9ad44241c2b29987786250e41bfaa4fc20a1fb2fe0d2f3b7",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/holdout/truth.json": "bda4f99dd74b677b47d1d9fe61300273af4c78d65a89160209a0e15468a39635",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/holdout/preflight.json": "34d2f9e779ad51c302b0bd8c73240e046c861c809eb5c728fdc153ce68cb840d",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval/index.html": "533624d826fd70e86d477c12d19bab5a632f2ad5f8e20787c0623e09f9f4e38f",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/evaluate.py": "6d7287eb59d80c04ff023f0a6f9d8a6a6d0a546a04990ace65224a668b57eb8f",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/runner.py": "9707036c3a1fe89d14cf21f2378152c71086611d6129375ff2992262d731a170",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/design.py": "8e6dd8f7b485d7c88163314cca6f317035c2b740fae1624b5c73a78a9c73647c",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/__init__.py": "cc3cd6a42f3a313e7ed621dee14d34fe9d4e2b1fd77fc028d78aecb8f59aa07f",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/browser.py": "0a53bd62fab2b53e1599b514963efe7c732ed13ded7424de9525ba42a245bb5e",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/journey.py": "faf3bed67d7f13918a11247876aa0e7eaee378471bee8d9c66e275a3b913aa25",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/__main__.py": "539039509dce55be0f7a2d776e5d3b7edcfefc67d5eca8892c8fa90abb5fd241",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/measure.js": "425d22e709f7ab95c0c4ebc84cbf63f9c52ec92fe60856171afafe0142a3acce"
+  }
+}

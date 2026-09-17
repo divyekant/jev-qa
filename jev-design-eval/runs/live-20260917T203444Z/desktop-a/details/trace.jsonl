@@ -1,0 +1,4 @@
+{"elapsed_ms":63,"event":"observe","url":"http://127.0.0.1:50042/?build=k7","title":"Fieldwork / Studio sessions","action_count":13}
+{"elapsed_ms":571,"event":"decision","operation":"SELECT","target":"4:1","confidence":0.71,"target_confidence":1.0}
+{"elapsed_ms":571,"event":"needs_review","reason":"low_operation_confidence"}
+{"elapsed_ms":596,"event":"observe","reason":"final","url":"http://127.0.0.1:50042/?build=k7","title":"Fieldwork / Studio sessions"}

@@ -1,0 +1,555 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 900,
+    "scrollX": 0,
+    "scrollY": 0,
+    "documentWidth": 1280
+  },
+  "coverage": {
+    "geometry": true,
+    "computedStyles": true,
+    "hitTesting": "nine sampled points per visible element",
+    "images": false,
+    "canvasContents": false,
+    "complexBackgroundContrast": false
+  },
+  "elements": {
+    "session-title": {
+      "tag": "h2",
+      "role": null,
+      "text": "Responsive interfaces in practice",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 564.84,
+        "y": 274.75,
+        "width": 380,
+        "height": 22,
+        "right": 944.84,
+        "bottom": 296.75
+      },
+      "textBox": {
+        "x": 564.84,
+        "y": 275.75,
+        "width": 377.64,
+        "height": 30,
+        "right": 942.48,
+        "bottom": 305.75
+      },
+      "clientWidth": 380,
+      "scrollWidth": 380,
+      "clientHeight": 22,
+      "scrollHeight": 32,
+      "style": {
+        "fontSize": "26px",
+        "lineHeight": "32px",
+        "color": "oklch(0.25 0.028 170)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 621.84,
+          "y": 279.15,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 621.84,
+          "y": 285.75,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 621.84,
+          "y": 292.35,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 754.84,
+          "y": 279.15,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 754.84,
+          "y": 285.75,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 754.84,
+          "y": 292.35,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 887.84,
+          "y": 279.15,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 887.84,
+          "y": 285.75,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        },
+        {
+          "x": 887.84,
+          "y": 292.35,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "h2",
+            "role": null,
+            "text": "Responsive interfaces in practice"
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    },
+    "session-art": {
+      "tag": "div",
+      "role": null,
+      "text": "FIELD / 04\n17\u201409\u201426\n6 seats open",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 50,
+        "y": 197,
+        "width": 425.25,
+        "height": 228,
+        "right": 475.25,
+        "bottom": 425
+      },
+      "textBox": {
+        "x": 69,
+        "y": 217,
+        "width": 381.25,
+        "height": 219,
+        "right": 450.25,
+        "bottom": 436
+      },
+      "clientWidth": 425,
+      "scrollWidth": 425,
+      "clientHeight": 228,
+      "scrollHeight": 239,
+      "style": {
+        "fontSize": "15px",
+        "lineHeight": "22.5px",
+        "color": "oklch(0.25 0.028 170)",
+        "backgroundColor": "oklch(0.36 0.07 170)",
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 113.79,
+          "y": 242.6,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 113.79,
+          "y": 311,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 113.79,
+          "y": 379.4,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 262.63,
+          "y": 242.6,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 262.63,
+          "y": 311,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 262.63,
+          "y": 379.4,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 411.46,
+          "y": 242.6,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 411.46,
+          "y": 311,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        },
+        {
+          "x": 411.46,
+          "y": 379.4,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "div",
+            "role": null,
+            "text": "FIELD / 04\n17\u201409\u201426\n6 seats open"
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    },
+    "availability-badge": {
+      "tag": "span",
+      "role": null,
+      "text": "6 seats open",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 69,
+        "y": 405,
+        "width": 104.48,
+        "height": 31,
+        "right": 173.48,
+        "bottom": 436
+      },
+      "textBox": {
+        "x": 82,
+        "y": 412.5,
+        "width": 78.48,
+        "height": 15,
+        "right": 160.48,
+        "bottom": 427.5
+      },
+      "clientWidth": 104,
+      "scrollWidth": 104,
+      "clientHeight": 31,
+      "scrollHeight": 31,
+      "style": {
+        "fontSize": "12px",
+        "lineHeight": "18px",
+        "color": "oklch(0.36 0.07 170)",
+        "backgroundColor": "oklch(0.82 0.095 106)",
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 84.67,
+          "y": 411.2,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 84.67,
+          "y": 420.5,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 84.67,
+          "y": 429.8,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 121.24,
+          "y": 411.2,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 121.24,
+          "y": 420.5,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 121.24,
+          "y": 429.8,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 157.81,
+          "y": 411.2,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 157.81,
+          "y": 420.5,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        },
+        {
+          "x": 157.81,
+          "y": 429.8,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "6 seats open"
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    },
+    "brand-art": {
+      "tag": "canvas",
+      "role": null,
+      "text": "",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 50,
+        "y": 501,
+        "width": 120,
+        "height": 120,
+        "right": 170,
+        "bottom": 621
+      },
+      "textBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "clientWidth": 120,
+      "scrollWidth": 120,
+      "clientHeight": 120,
+      "scrollHeight": 120,
+      "style": {
+        "fontSize": "15px",
+        "lineHeight": "22.5px",
+        "color": "oklch(0.25 0.028 170)",
+        "backgroundColor": "oklch(0.935 0.014 11)",
+        "overflowX": "clip",
+        "overflowY": "clip",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 68,
+          "y": 525,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 68,
+          "y": 561,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 68,
+          "y": 597,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 110,
+          "y": 525,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 110,
+          "y": 561,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 110,
+          "y": 597,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 152,
+          "y": 525,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 152,
+          "y": 561,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 152,
+          "y": 597,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "canvas",
+            "role": null,
+            "text": ""
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    }
+  },
+  "relationships": {
+    "badgeArtIntersectionPx2": 2089.6,
+    "badgeTitleIntersectionPx2": 0
+  }
+}

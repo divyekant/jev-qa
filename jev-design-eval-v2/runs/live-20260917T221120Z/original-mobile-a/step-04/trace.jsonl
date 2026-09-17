@@ -1,0 +1,7 @@
+{"elapsed_ms":48,"event":"observe","url":"http://127.0.0.1:58490/original?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":199,"event":"decision","operation":"CLICK","target":"6","confidence":0.53,"target_confidence":0.55}
+{"elapsed_ms":199,"event":"recovery","reason":"low_operation_confidence","attempt":1}
+{"elapsed_ms":215,"event":"observe","reason":"recovery","url":"http://127.0.0.1:58490/original?build=k7","title":"Fieldwork / Studio sessions"}
+{"elapsed_ms":387,"event":"decision","operation":"CLICK","target":"6","confidence":0.45,"target_confidence":0.7}
+{"elapsed_ms":387,"event":"needs_review","reason":"low_operation_confidence"}
+{"elapsed_ms":398,"event":"observe","reason":"final","url":"http://127.0.0.1:58490/original?build=k7","title":"Fieldwork / Studio sessions"}

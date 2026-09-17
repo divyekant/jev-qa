@@ -1,0 +1,106 @@
+{
+  "frozen_fixtures_match": true,
+  "runs": [
+    {
+      "run": "outputs/jev-design-eval-v4/runs/regression-20260917T232922Z",
+      "counts": {
+        "journeys": 8,
+        "checkpoints": 88,
+        "supported_checks": 64,
+        "seeded_defects": 14,
+        "false_passes": 0,
+        "false_failures": 0
+      },
+      "acceptance_passed": true,
+      "decisions": 94,
+      "accepted_reveals": 6,
+      "source_hashes_match": true,
+      "models": [
+        "jev-1.13.0"
+      ],
+      "text_helper_calls": 0,
+      "private_decisions": true
+    },
+    {
+      "run": "outputs/jev-design-eval-v4/runs/regression-20260917T233051Z",
+      "counts": {
+        "journeys": 8,
+        "checkpoints": 88,
+        "supported_checks": 64,
+        "seeded_defects": 14,
+        "false_passes": 0,
+        "false_failures": 0
+      },
+      "acceptance_passed": true,
+      "decisions": 94,
+      "accepted_reveals": 6,
+      "source_hashes_match": true,
+      "models": [
+        "jev-1.13.0"
+      ],
+      "text_helper_calls": 0,
+      "private_decisions": true
+    },
+    {
+      "run": "outputs/jev-design-eval-v4/runs/regression-20260917T233222Z",
+      "counts": {
+        "journeys": 8,
+        "checkpoints": 88,
+        "supported_checks": 64,
+        "seeded_defects": 14,
+        "false_passes": 0,
+        "false_failures": 0
+      },
+      "acceptance_passed": true,
+      "decisions": 94,
+      "accepted_reveals": 6,
+      "source_hashes_match": true,
+      "models": [
+        "jev-1.13.0"
+      ],
+      "text_helper_calls": 0,
+      "private_decisions": true
+    },
+    {
+      "run": "outputs/jev-design-eval-v4/runs/fresh-20260917T233335Z",
+      "counts": {
+        "journeys": 4,
+        "checkpoints": 40,
+        "supported_checks": 32,
+        "seeded_defects": 6,
+        "false_passes": 0,
+        "false_failures": 0
+      },
+      "acceptance_passed": true,
+      "decisions": 44,
+      "accepted_reveals": 4,
+      "source_hashes_match": true,
+      "models": [
+        "jev-1.13.0"
+      ],
+      "text_helper_calls": 0,
+      "private_decisions": true
+    }
+  ],
+  "local_tests": {
+    "passed": 61,
+    "seconds": 5.209
+  },
+  "independent_reviews": {
+    "runtime": "Luna, no material findings after schema correction",
+    "browser_cli": "Luna, no material findings"
+  },
+  "build": "wheel and source distribution passed",
+  "compileall": "passed",
+  "skill_validation": "passed",
+  "doctor": "passed; Jev key present, text helper absent",
+  "installed_skill_matches": true,
+  "luna_role_matches": true,
+  "credential_mode": "600",
+  "credential_scan": {
+    "files": 2258,
+    "matches": 0
+  },
+  "owned_browser_processes_remaining": 0,
+  "original_preview_available": true
+}

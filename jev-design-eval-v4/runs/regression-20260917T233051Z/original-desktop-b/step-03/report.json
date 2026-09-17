@@ -1,0 +1,73 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57221/original?build=m4",
+    "goal": "Current objective: Click Apply filters.\nVerified previous objectives: Track; Search. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "text_equals",
+        "selector": "#filter-feedback",
+        "expected": "Showing 1 session"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 58,
+    "max_seconds": 177.70864683296531,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Access code",
+      "Attendee email",
+      "Attendee name",
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#filter-feedback",
+      "expected": "Showing 1 session",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e7",
+      "kind": "click",
+      "label": "Apply filters"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 164,
+        "usage": {
+          "input_tokens": 2144,
+          "output_tokens": 131
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 373,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

@@ -1,0 +1,11 @@
+{
+  "visible": true,
+  "log": [
+    "filter",
+    "inspect",
+    "reserve",
+    "apply_code"
+  ],
+  "reservation": null,
+  "codeText": "Access code accepted. Two seats reserved for review."
+}

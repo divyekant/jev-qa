@@ -1,0 +1,124 @@
+{
+  "arm": "computer-use",
+  "model": "inherited; unchanged",
+  "firstExecutionMs": 1789674048357,
+  "reportReadyMs": 1789674184173,
+  "elapsedToReportReadyMs": 135816,
+  "browser": {
+    "requested": "Chrome",
+    "sessionName": "\ud83e\uddea Invoice comparison",
+    "chromeTabId": "689024119",
+    "recovery": "Codex in-app browser, hidden",
+    "recoveryAuthorizedByParent": true,
+    "recoveryStartMs": 1789674159867
+  },
+  "phases": {
+    "CREATE": {
+      "startMs": 1789674060014,
+      "initialBlockedEndMs": 1789674131009,
+      "endMs": 1789674171955,
+      "elapsedMs": 111941,
+      "over90Seconds": true,
+      "status": "pass after browser setup recovery",
+      "invoiceMutations": 5,
+      "saveDraftClicks": 1,
+      "displayed": {
+        "customer": "Ada Example",
+        "email": "ada@example.com",
+        "quantity": "3",
+        "unitPrice": "$19.95",
+        "total": "$59.85",
+        "status": "Draft",
+        "payment": "Unpaid",
+        "notice": "Draft saved."
+      },
+      "evidence": "In-app browser AX definition list after Save draft; URL /invoice/a."
+    },
+    "QA-A": {
+      "initialBlocked": {
+        "startMs": 1789674131009,
+        "endMs": 1789674136110,
+        "status": "untested",
+        "reason": "Chrome page body blank in screenshot and accessibility tree"
+      },
+      "startMs": 1789674178900,
+      "endMs": 1789674179132,
+      "elapsedMs": 232,
+      "over90Seconds": false,
+      "actionsCount": 0,
+      "navigation": "Creation already landed at exact /invoice/a URL; inspected fresh full AX state without reloading.",
+      "displayed": {
+        "customer": "Ada Example",
+        "email": "ada@example.com",
+        "quantity": "3",
+        "unitPrice": "$19.95",
+        "total": "$59.85",
+        "status": "Draft",
+        "payment": "Unpaid",
+        "notice": "Draft saved."
+      },
+      "judgments": {
+        "customerAndEmail": "pass",
+        "quantityPriceAndTotal": "pass",
+        "draftAndUnpaid": "pass"
+      },
+      "evidence": "AX nodes 8, 11, 14, 17, 20, 23, 26 respectively."
+    },
+    "QA-B": {
+      "initialBlocked": {
+        "startMs": 1789674148150,
+        "endMs": 1789674153281,
+        "status": "untested",
+        "reason": "Chrome page body blank in screenshot and accessibility tree"
+      },
+      "startMs": 1789674183954,
+      "endMs": 1789674184173,
+      "elapsedMs": 219,
+      "over90Seconds": false,
+      "actionsCount": 1,
+      "displayed": {
+        "customer": "Ada Example",
+        "email": "ada@example.com",
+        "quantity": "3",
+        "unitPrice": "$19.95",
+        "total": "$69.85",
+        "status": "Draft",
+        "payment": "Unpaid",
+        "notice": "Draft saved."
+      },
+      "judgments": {
+        "customerAndEmail": "pass",
+        "quantityPriceAndTotal": "fail",
+        "draftAndUnpaid": "pass"
+      },
+      "evidence": "AX nodes 8, 11, 14, 17, 20, 23, 26 respectively. 3 x $19.95 = $59.85; displayed total is $10.00 too high."
+    }
+  },
+  "actionCounts": {
+    "invoiceMutations": 5,
+    "saveDraftClicks": 1,
+    "initialChromeSetupSuccessfulCalls": 5,
+    "initialChromeSetupRejectedCalls": 1,
+    "recoveryTabCreationSuccessfulCalls": 1,
+    "recoveryTabCreationRejectedCalls": 1,
+    "creationIncludingSuccessfulSetupCalls": 11,
+    "creationIncludingRejectedSetupAttempts": 13,
+    "initialQaNavigationCalls": 4,
+    "recoveredQaNavigationCalls": 1,
+    "notes": "Successful setup calls include Chrome tab creation, window-cycle key, Window menu, window selection, invoice tab selection, and hidden IAB creation. Two rejected calls did not execute mutations. Chrome creation succeeded despite returned debugger error."
+  },
+  "failuresAndBlockers": [
+    "Chrome createBrowserTab and getTab returned Debugger unattached.",
+    "Chrome native accessibility and screenshots showed a blank body for the form and both QA URLs.",
+    "Native Window click was initially rejected because UI state had changed; refreshed state before later menu action.",
+    "Visible IAB creation unsupported in subagent thread; hidden IAB creation succeeded.",
+    "Creation exceeded the 90-second target when original time and setup recovery are retained."
+  ],
+  "screenshots": {
+    "saved": [],
+    "note": "Screenshots emitted inline for blank Chrome form/A/B. Documented Target screenshot API returns bytes but provides no file-save method; no screenshot files saved."
+  },
+  "tokenCounts": null,
+  "tokenCountsNote": "Unavailable to this agent; parent will inspect runtime usage.",
+  "independentEvidenceNote": "Did not read fixture source, prior results, protocol.json, or persisted server data. Parent supplied only setup recovery authorization and note that no record had been saved."
+}

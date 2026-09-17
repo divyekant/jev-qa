@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+launcher=$0
+while [ -L "$launcher" ]; do
+  link=$(readlink "$launcher")
+  case "$link" in
+    /*) launcher=$link ;;
+    *) launcher=$(dirname -- "$launcher")/$link ;;
+  esac
+done
+project=$(CDPATH= cd -- "$(dirname -- "$launcher")" && pwd -P)
+# Codex can mark editable-install .pth files hidden; Python 3.14 skips them.
+export PYTHONPATH="$project${PYTHONPATH:+:$PYTHONPATH}"
+if ! uv=$(command -v uv); then
+  echo "jev-qa: uv is required on PATH" >&2
+  exit 127
+fi
+exec "$uv" run --quiet --frozen --project "$project" python -m jev_qa "$@"

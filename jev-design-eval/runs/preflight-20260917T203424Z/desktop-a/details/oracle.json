@@ -1,0 +1,21 @@
+{
+  "visible": true,
+  "log": [
+    "filter",
+    "inspect"
+  ],
+  "reservation": null,
+  "track": "design-systems",
+  "search": "Responsive interfaces",
+  "filtered": [
+    "Responsive interfaces in practice"
+  ],
+  "selected": "Responsive interfaces in practice",
+  "fields": {
+    "name": "",
+    "email": "",
+    "seats": "1",
+    "code": ""
+  },
+  "codeText": "Enter attendee details and your code."
+}

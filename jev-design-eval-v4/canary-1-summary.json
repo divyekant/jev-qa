@@ -1,0 +1,113 @@
+{
+  "run": "outputs/jev-design-eval-v4/runs/regression-20260917T231728Z",
+  "totals": {
+    "steps": 4,
+    "steps_total": 22,
+    "actions": 4,
+    "runner_ms": 4498,
+    "process_ms": 4770,
+    "api_ms": 1736,
+    "calls": 8,
+    "input_tokens": 15656,
+    "output_tokens": 1120,
+    "journeys_completed": 0,
+    "journeys_total": 2,
+    "median_process_ms": 2385.0,
+    "groups": {
+      "rule": {
+        "correct": 0,
+        "total": 16
+      },
+      "artwork": {
+        "correct": 0,
+        "total": 2
+      },
+      "contextual": {
+        "correct": 0,
+        "total": 2
+      }
+    },
+    "score": {
+      "correct": 0,
+      "total": 20,
+      "missed_defects": 4,
+      "false_passes": 0
+    }
+  },
+  "cases": [
+    {
+      "case": "narrow-q4",
+      "status": "blocked",
+      "navigation": "blocked",
+      "steps": 2,
+      "steps_total": 11,
+      "actions": 2,
+      "score": {
+        "correct": 0,
+        "total": 10,
+        "missed_defects": 0,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 0,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 0,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "runner_ms": 2363,
+      "process_ms": 2497,
+      "api_ms": 910,
+      "calls": 4,
+      "input_tokens": 7828,
+      "output_tokens": 560,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "narrow-q9",
+      "status": "blocked",
+      "navigation": "blocked",
+      "steps": 2,
+      "steps_total": 11,
+      "actions": 2,
+      "score": {
+        "correct": 0,
+        "total": 10,
+        "missed_defects": 4,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 0,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 0,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "runner_ms": 2135,
+      "process_ms": 2273,
+      "api_ms": 826,
+      "calls": 4,
+      "input_tokens": 7828,
+      "output_tokens": 560,
+      "models": [
+        "jev-1.13.0"
+      ]
+    }
+  ]
+}

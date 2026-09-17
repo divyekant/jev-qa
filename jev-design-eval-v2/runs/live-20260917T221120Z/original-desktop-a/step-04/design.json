@@ -1,0 +1,111 @@
+{
+  "status": "needs_review",
+  "checks": [
+    {
+      "id": "title",
+      "kind": "unclipped",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 564.84,
+          "y": 269.75,
+          "width": 380,
+          "height": 32,
+          "right": 944.84,
+          "bottom": 301.75
+        },
+        "textBox": {
+          "x": 564.84,
+          "y": 270.75,
+          "width": 377.64,
+          "height": 30,
+          "right": 942.48,
+          "bottom": 300.75
+        },
+        "fullText": "Responsive interfaces in practice",
+        "fullTextTruncated": false,
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "clientWidth": 380,
+        "scrollWidth": 380,
+        "clientHeight": 32,
+        "scrollHeight": 32
+      }
+    },
+    {
+      "id": "badge",
+      "kind": "decorative_overlap",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "subject": {
+          "x": 69,
+          "y": 405,
+          "width": 104.48,
+          "height": 31,
+          "right": 173.48,
+          "bottom": 436
+        },
+        "decorative": {
+          "x": 50,
+          "y": 197,
+          "width": 425.25,
+          "height": 228,
+          "right": 475.25,
+          "bottom": 425
+        },
+        "content": {
+          "x": 564.84,
+          "y": 269.75,
+          "width": 380,
+          "height": 32,
+          "right": 944.84,
+          "bottom": 301.75
+        },
+        "decorativeIntersectionPx2": 2089.6,
+        "contentIntersectionPx2": 0
+      }
+    },
+    {
+      "id": "artwork",
+      "kind": "artwork",
+      "assessment": "uncertain",
+      "source": "unsupported",
+      "evidence": {
+        "status": "unsupported",
+        "visible": true,
+        "box": {
+          "x": 50,
+          "y": 501,
+          "width": 120,
+          "height": 120,
+          "right": 170,
+          "bottom": 621
+        },
+        "pixelContentInspected": false,
+        "reason": "pixel_content_not_inspected"
+      },
+      "reason": "pixel_content_not_inspected"
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 1280,
+    "height": 900,
+    "documentWidth": 1280
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": false,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

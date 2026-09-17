@@ -1,0 +1,7 @@
+{"elapsed_ms":71,"event":"observe","url":"http://127.0.0.1:8772/?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":547,"event":"decision","operation":"SELECT","target":"4:1","confidence":0.87,"target_confidence":1.0}
+{"elapsed_ms":547,"event":"action_intent","action":"e4","kind":"select","label":"Track → Design systems","confidence":0.87,"target_confidence":1.0}
+{"elapsed_ms":560,"event":"action_result","action":"e4","ok":true,"result":{"executed":"e4"}}
+{"elapsed_ms":638,"event":"observe","url":"http://127.0.0.1:8772/?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":640,"event":"assertions_passed","count":1}
+{"elapsed_ms":673,"event":"observe","reason":"final","url":"http://127.0.0.1:8772/?build=k7","title":"Fieldwork / Studio sessions"}

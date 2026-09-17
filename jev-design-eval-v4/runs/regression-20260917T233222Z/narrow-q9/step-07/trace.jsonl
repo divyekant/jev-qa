@@ -1,0 +1,7 @@
+{"elapsed_ms":51,"event":"observe","url":"http://127.0.0.1:57628/holdout?build=q9","title":"Civic Library room reservations","action_count":18}
+{"elapsed_ms":391,"event":"decision","operation":"SELECT","target":"4:2","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":391,"event":"action_intent","action":"e9","kind":"select","label":"Length → 60 minutes","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":397,"event":"action_result","action":"e9","ok":true,"result":{"executed":"e9"}}
+{"elapsed_ms":460,"event":"observe","url":"http://127.0.0.1:57628/holdout?build=q9","title":"Civic Library room reservations","action_count":18}
+{"elapsed_ms":464,"event":"assertions_passed","count":1}
+{"elapsed_ms":492,"event":"observe","reason":"final","url":"http://127.0.0.1:57628/holdout?build=q9","title":"Civic Library room reservations"}

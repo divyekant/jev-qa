@@ -1,0 +1,214 @@
+{
+  "goal": "Reserve two seats for Responsive interfaces in practice, then review without confirming.",
+  "values": {
+    "Search sessions": "Responsive interfaces",
+    "Attendee name": "Avery Example",
+    "Attendee email": "avery@example.com",
+    "Access code": "OPEN"
+  },
+  "steps": [
+    {
+      "name": "Track",
+      "goal": "Choose Design systems in Track.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#track-select",
+          "expected": "design-systems"
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "goal": "Enter Responsive interfaces in Search sessions.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#search-sessions",
+          "expected": "Responsive interfaces"
+        }
+      ]
+    },
+    {
+      "name": "Filter",
+      "goal": "Click Apply filters.",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#filter-feedback",
+          "expected": "Showing 1 session"
+        }
+      ]
+    },
+    {
+      "name": "Details",
+      "goal": "Click Inspect session for Responsive interfaces in practice.",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#details-panel",
+          "expected": true
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#session-title",
+          "expected": "Responsive interfaces in practice"
+        }
+      ],
+      "checks": [
+        {
+          "id": "title",
+          "kind": "unclipped",
+          "selector": "#session-title"
+        },
+        {
+          "id": "badge",
+          "kind": "decorative_overlap",
+          "selector": "#availability-badge",
+          "decorative": "#session-art",
+          "content": "#session-title"
+        },
+        {
+          "id": "artwork",
+          "kind": "artwork",
+          "selector": "#brand-art"
+        }
+      ]
+    },
+    {
+      "name": "Reserve",
+      "goal": "Click Reserve seats.",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#booking-panel",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "name": "Name",
+      "goal": "Enter Avery Example in Attendee name.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#attendee-name",
+          "expected": "Avery Example"
+        }
+      ]
+    },
+    {
+      "name": "Email",
+      "goal": "Enter avery@example.com in Attendee email.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#attendee-email",
+          "expected": "avery@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Seats",
+      "goal": "Choose 2 in Seats.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#seats-select",
+          "expected": "2"
+        }
+      ]
+    },
+    {
+      "name": "Code",
+      "goal": "Enter OPEN in Access code.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#access-code",
+          "expected": "OPEN"
+        }
+      ]
+    },
+    {
+      "name": "Apply code",
+      "goal": "Click Apply code.",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#code-status",
+          "expected": "Access code accepted. Two seats reserved for review."
+        }
+      ],
+      "checks": [
+        {
+          "id": "status",
+          "kind": "contrast",
+          "selector": "#code-status"
+        },
+        {
+          "id": "disabled",
+          "kind": "disabled",
+          "selector": "#receipt-button"
+        },
+        {
+          "id": "alignment",
+          "kind": "aligned",
+          "selector": "#attendee-name",
+          "other": "#attendee-email"
+        },
+        {
+          "id": "acceptance_message",
+          "kind": "contextual",
+          "selector": "#code-status",
+          "criterion": "The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred."
+        }
+      ]
+    },
+    {
+      "name": "Review",
+      "goal": "Click Review reservation. Do not click Confirm reservation.",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#review-panel",
+          "expected": true
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#review-attendee",
+          "expected": "Avery Example"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#review-seats",
+          "expected": "2 seats"
+        }
+      ],
+      "checks": [
+        {
+          "id": "confirm",
+          "kind": "unobstructed",
+          "selector": "#confirm-button"
+        },
+        {
+          "id": "overflow",
+          "kind": "horizontal_fit"
+        },
+        {
+          "id": "reference",
+          "kind": "ellipsis",
+          "selector": "#project-label"
+        }
+      ]
+    }
+  ],
+  "url": "http://127.0.0.1:61972/original?build=m4",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "max_steps": 60,
+  "max_seconds": 180,
+  "min_confidence": 0.8
+}

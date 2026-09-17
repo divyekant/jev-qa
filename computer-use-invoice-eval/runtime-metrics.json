@@ -1,0 +1,226 @@
+{
+  "model": {
+    "name": "gpt-6-astra",
+    "effort": "high"
+  },
+  "session_id": "01a0b0e2-b248-76e3-8225-b87843caf20d",
+  "dispatch_started_ms": 1789674041917,
+  "final_response_completed_ms": 1789674230006,
+  "dispatch_to_final_ms": 188089,
+  "before_recovery_ms": 117936,
+  "recovery_to_last_browser_result_ms": 24443,
+  "last_browser_result_to_final_ms": 45710,
+  "tool_elapsed_ms": 17701,
+  "browser_tool_elapsed_ms": 17450,
+  "tool_calls": 22,
+  "model_responses": 23,
+  "usage": {
+    "input_tokens": 1745634,
+    "cached_input_tokens": 1671168,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2999,
+    "reasoning_output_tokens": 538,
+    "total_tokens": 1748633
+  },
+  "uncached_input_tokens": 74466,
+  "creation_oracle": {
+    "checks_passed": 9,
+    "checks_total": 9
+  },
+  "qa_scores": {
+    "QA-A": {
+      "actual": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "expected": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "correct": 3,
+      "total": 3
+    },
+    "QA-B": {
+      "actual": [
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "expected": [
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "correct": 3,
+      "total": 3
+    }
+  },
+  "tool_timeline": [
+    {
+      "name": "exec",
+      "title": null,
+      "start_ms": 1789674048340,
+      "end_ms": 1789674048458,
+      "elapsed_ms": 118
+    },
+    {
+      "name": "js",
+      "title": "Open invoice comparison tab",
+      "start_ms": 1789674052940,
+      "end_ms": 1789674056092,
+      "elapsed_ms": 3152
+    },
+    {
+      "name": "js",
+      "title": "Inspect comparison browser state",
+      "start_ms": 1789674059985,
+      "end_ms": 1789674060543,
+      "elapsed_ms": 558
+    },
+    {
+      "name": "js",
+      "title": "Read created invoice tab",
+      "start_ms": 1789674065457,
+      "end_ms": 1789674065835,
+      "elapsed_ms": 378
+    },
+    {
+      "name": "js",
+      "title": "Inspect Chrome invoice window",
+      "start_ms": 1789674077122,
+      "end_ms": 1789674078560,
+      "elapsed_ms": 1438
+    },
+    {
+      "name": "js",
+      "title": "Find the comparison window",
+      "start_ms": 1789674083358,
+      "end_ms": 1789674085466,
+      "elapsed_ms": 2108
+    },
+    {
+      "name": "js",
+      "title": "Refresh Chrome window state",
+      "start_ms": 1789674088392,
+      "end_ms": 1789674089031,
+      "elapsed_ms": 639
+    },
+    {
+      "name": "js",
+      "title": "Select invoice Chrome window",
+      "start_ms": 1789674096716,
+      "end_ms": 1789674097770,
+      "elapsed_ms": 1054
+    },
+    {
+      "name": "js",
+      "title": "Inspect available Chrome windows",
+      "start_ms": 1789674107011,
+      "end_ms": 1789674107855,
+      "elapsed_ms": 844
+    },
+    {
+      "name": "js",
+      "title": "Select Chrome window containing invoice tab",
+      "start_ms": 1789674110841,
+      "end_ms": 1789674112290,
+      "elapsed_ms": 1449
+    },
+    {
+      "name": "js",
+      "title": "Read invoice form",
+      "start_ms": 1789674116083,
+      "end_ms": 1789674117171,
+      "elapsed_ms": 1088
+    },
+    {
+      "name": "js",
+      "title": "Inspect missing invoice content",
+      "start_ms": 1789674123094,
+      "end_ms": 1789674123220,
+      "elapsed_ms": 126
+    },
+    {
+      "name": "js",
+      "title": "Inspect invoice A",
+      "start_ms": 1789674130986,
+      "end_ms": 1789674132253,
+      "elapsed_ms": 1267
+    },
+    {
+      "name": "js",
+      "title": "Capture invoice A evidence",
+      "start_ms": 1789674136006,
+      "end_ms": 1789674136120,
+      "elapsed_ms": 114
+    },
+    {
+      "name": "js",
+      "title": "Inspect invoice B",
+      "start_ms": 1789674148127,
+      "end_ms": 1789674149280,
+      "elapsed_ms": 1153
+    },
+    {
+      "name": "js",
+      "title": "Capture invoice B evidence",
+      "start_ms": 1789674153197,
+      "end_ms": 1789674153311,
+      "elapsed_ms": 114
+    },
+    {
+      "name": "js",
+      "title": "Recover evaluation in the in-app browser",
+      "start_ms": 1789674159853,
+      "end_ms": 1789674160089,
+      "elapsed_ms": 236
+    },
+    {
+      "name": "js",
+      "title": "Open supported hidden recovery tab",
+      "start_ms": 1789674165891,
+      "end_ms": 1789674166615,
+      "elapsed_ms": 724
+    },
+    {
+      "name": "js",
+      "title": "Create the requested draft once",
+      "start_ms": 1789674171657,
+      "end_ms": 1789674172049,
+      "elapsed_ms": 392
+    },
+    {
+      "name": "js",
+      "title": "Judge invoice A independently",
+      "start_ms": 1789674178878,
+      "end_ms": 1789674179136,
+      "elapsed_ms": 258
+    },
+    {
+      "name": "js",
+      "title": "Judge invoice B independently",
+      "start_ms": 1789674183938,
+      "end_ms": 1789674184296,
+      "elapsed_ms": 358
+    },
+    {
+      "name": "exec",
+      "title": null,
+      "start_ms": 1789674222930,
+      "end_ms": 1789674223063,
+      "elapsed_ms": 133
+    }
+  ],
+  "notes": [
+    "Pure model inference time is not exposed; non-tool time includes reasoning, generation, scheduling, and orchestration.",
+    "Agent reportReadyMs was last browser observation, not final response. Use runtime dispatch_to_final_ms.",
+    "Agent QA elapsedMs measures tool execution only; it excludes reasoning between calls.",
+    "Chrome setup failed; in-app browser recovered. This is not an equal-browser latency benchmark.",
+    "Creation exceeded the 90-second target. No duplicate invoice mutation occurred.",
+    "Input tokens include cache hits across repeated model requests. Output tokens already include reasoning tokens.",
+    "No native subagent dispatch was measured in the earlier Jev arm.",
+    "Subagent tabs were left open at final response; their later cleanup is excluded."
+  ]
+}

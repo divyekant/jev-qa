@@ -1,0 +1,90 @@
+{
+  "wide-q4": {
+    "state": "review",
+    "finalselection": {"room": "Willow Room", "floor": "Level 2", "date": "2026-10-14", "start": "2:00 PM", "length": "60 minutes"},
+    "values": {
+      "Search rooms": "Willow",
+      "Your name": "Avery Chen",
+      "Email": "avery.chen@example.test"
+    },
+    "actions": [
+      {"kind": "select", "label": "Floor", "value": "Level 2"},
+      {"kind": "fill", "label": "Search rooms", "value": "Willow"},
+      {"kind": "click", "label": "Find rooms"},
+      {"kind": "click", "label": "View room", "value": "Willow Room"},
+      {"kind": "select", "label": "Date", "value": "2026-10-14"},
+      {"kind": "select", "label": "Start time", "value": "2:00 PM"},
+      {"kind": "select", "label": "Length", "value": "60 minutes"},
+      {"kind": "fill", "label": "Your name", "value": "Avery Chen"},
+      {"kind": "fill", "label": "Email", "value": "avery.chen@example.test"},
+      {"kind": "click", "label": "I agree to the room rules"},
+      {"kind": "click", "label": "Review reservation"}
+    ]
+  },
+  "wide-q9": {
+    "state": "review",
+    "finalselection": {"room": "Willow Room", "floor": "Level 2", "date": "2026-10-14", "start": "2:00 PM", "length": "60 minutes"},
+    "values": {
+      "Search rooms": "Willow",
+      "Your name": "Avery Chen",
+      "Email": "avery.chen@example.test"
+    },
+    "actions": [
+      {"kind": "select", "label": "Floor", "value": "Level 2"},
+      {"kind": "fill", "label": "Search rooms", "value": "Willow"},
+      {"kind": "click", "label": "Find rooms"},
+      {"kind": "click", "label": "View room", "value": "Willow Room"},
+      {"kind": "select", "label": "Date", "value": "2026-10-14"},
+      {"kind": "select", "label": "Start time", "value": "2:00 PM"},
+      {"kind": "select", "label": "Length", "value": "60 minutes"},
+      {"kind": "fill", "label": "Your name", "value": "Avery Chen"},
+      {"kind": "fill", "label": "Email", "value": "avery.chen@example.test"},
+      {"kind": "click", "label": "I agree to the room rules"},
+      {"kind": "click", "label": "Review reservation"}
+    ]
+  },
+  "narrow-q4": {
+    "state": "review",
+    "finalselection": {"room": "Willow Room", "floor": "Level 2", "date": "2026-10-14", "start": "2:00 PM", "length": "60 minutes"},
+    "values": {
+      "Search rooms": "Willow",
+      "Your name": "Avery Chen",
+      "Email": "avery.chen@example.test"
+    },
+    "actions": [
+      {"kind": "select", "label": "Floor", "value": "Level 2"},
+      {"kind": "fill", "label": "Search rooms", "value": "Willow"},
+      {"kind": "click", "label": "Find rooms"},
+      {"kind": "click", "label": "View room", "value": "Willow Room"},
+      {"kind": "select", "label": "Date", "value": "2026-10-14"},
+      {"kind": "select", "label": "Start time", "value": "2:00 PM"},
+      {"kind": "select", "label": "Length", "value": "60 minutes"},
+      {"kind": "fill", "label": "Your name", "value": "Avery Chen"},
+      {"kind": "fill", "label": "Email", "value": "avery.chen@example.test"},
+      {"kind": "click", "label": "I agree to the room rules"},
+      {"kind": "click", "label": "Review reservation"}
+    ]
+  },
+  "narrow-q9": {
+    "state": "review",
+    "finalselection": {"room": "Willow Room", "floor": "Level 2", "date": "2026-10-14", "start": "2:00 PM", "length": "60 minutes"},
+    "values": {
+      "Search rooms": "Willow",
+      "Your name": "Avery Chen",
+      "Email": "avery.chen@example.test"
+    },
+    "actions": [
+      {"kind": "select", "label": "Floor", "value": "Level 2"},
+      {"kind": "fill", "label": "Search rooms", "value": "Willow"},
+      {"kind": "click", "label": "Find rooms"},
+      {"kind": "click", "label": "View room", "value": "Willow Room"},
+      {"kind": "select", "label": "Date", "value": "2026-10-14"},
+      {"kind": "select", "label": "Start time", "value": "2:00 PM"},
+      {"kind": "select", "label": "Length", "value": "60 minutes"},
+      {"kind": "fill", "label": "Your name", "value": "Avery Chen"},
+      {"kind": "fill", "label": "Email", "value": "avery.chen@example.test"},
+      {"kind": "click", "label": "I agree to the room rules"},
+      {"kind": "click", "label": "Review reservation"}
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{"elapsed_ms":50,"event":"observe","url":"http://127.0.0.1:57931/fresh?build=s3","title":"Borrow Studio — equipment desk","action_count":14}
+{"elapsed_ms":178,"event":"decision","operation":"REVEAL_R1","target":null,"confidence":0.99,"target_confidence":null}
+{"elapsed_ms":178,"event":"action_intent","action":"REVEAL_R1","kind":"reveal","label":"Reveal below: checkbox I accept the equipment care terms","confidence":0.99,"target_confidence":null}
+{"elapsed_ms":216,"event":"action_result","action":"REVEAL_R1","ok":true,"result":{"executed":"REVEAL_R1","direction":"below","delta_x":0,"delta_y":844}}
+{"elapsed_ms":291,"event":"observe","url":"http://127.0.0.1:57931/fresh?build=s3","title":"Borrow Studio — equipment desk","action_count":13}
+{"elapsed_ms":458,"event":"decision","operation":"CLICK","target":"5","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":458,"event":"action_intent","action":"e10","kind":"click","label":"I accept the equipment care terms","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":466,"event":"action_result","action":"e10","ok":true,"result":{"executed":"e10"}}
+{"elapsed_ms":553,"event":"observe","url":"http://127.0.0.1:57931/fresh?build=s3","title":"Borrow Studio — equipment desk","action_count":13}
+{"elapsed_ms":559,"event":"assertions_passed","count":1}
+{"elapsed_ms":608,"event":"observe","reason":"final","url":"http://127.0.0.1:57931/fresh?build=s3","title":"Borrow Studio — equipment desk"}

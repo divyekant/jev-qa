@@ -1,0 +1,7 @@
+{"elapsed_ms":42,"event":"observe","url":"http://127.0.0.1:51496/jev-session-2bbe959a49964adf92610a612fb6fdfd/app","title":"Jev local authenticated fixture","action_count":2}
+{"elapsed_ms":376,"event":"decision","operation":"CLICK","target":"1","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":377,"event":"action_intent","action":"e1","kind":"click","label":"Verify session","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":386,"event":"action_result","action":"e1","ok":true,"result":{"executed":"e1"}}
+{"elapsed_ms":452,"event":"observe","url":"http://127.0.0.1:51496/jev-session-2bbe959a49964adf92610a612fb6fdfd/app","title":"Jev local authenticated fixture","action_count":2}
+{"elapsed_ms":454,"event":"assertions_passed","count":1}
+{"elapsed_ms":487,"event":"observe","reason":"final","url":"http://127.0.0.1:51496/jev-session-2bbe959a49964adf92610a612fb6fdfd/app","title":"Jev local authenticated fixture"}

@@ -1,0 +1,452 @@
+{
+  "status": "fail",
+  "report": "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/runs/live-20260917T224548Z/wide-q9/report.json",
+  "result": {
+    "steps": [
+      {
+        "name": "Choose the floor",
+        "navigation_status": "pass",
+        "navigation_report": "step-01/report.json",
+        "assertions": [
+          {
+            "kind": "value_equals",
+            "selector": "#floor-select",
+            "expected": "Level 2",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Search for Willow",
+        "navigation_status": "pass",
+        "navigation_report": "step-02/report.json",
+        "assertions": [
+          {
+            "kind": "value_equals",
+            "selector": "#search-rooms",
+            "expected": "Willow",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Apply the room search",
+        "navigation_status": "pass",
+        "design": {
+          "status": "fail",
+          "checks": [
+            {
+              "id": "room-note-unclipped",
+              "kind": "unclipped",
+              "assessment": "fail",
+              "source": "rule",
+              "evidence": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 364,
+                  "y": 654.25,
+                  "width": 373,
+                  "height": 13.75,
+                  "right": 737,
+                  "bottom": 668
+                },
+                "textBox": {
+                  "x": 364,
+                  "y": 655.25,
+                  "width": 367.38,
+                  "height": 35.95,
+                  "right": 731.38,
+                  "bottom": 691.2
+                },
+                "fullText": "Soft daylight, power at every seat, and a small whiteboard for quiet planning or one-to-one study.",
+                "fullTextTruncated": false,
+                "overflowX": "hidden",
+                "overflowY": "hidden",
+                "whiteSpace": "normal",
+                "textOverflow": "clip",
+                "clientWidth": 373,
+                "scrollWidth": 373,
+                "clientHeight": 14,
+                "scrollHeight": 40
+              },
+              "reason": "content_clipped"
+            },
+            {
+              "id": "room-title-ellipsis",
+              "kind": "ellipsis",
+              "assessment": "pass",
+              "source": "rule",
+              "evidence": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 364,
+                  "y": 596.45,
+                  "width": 230,
+                  "height": 19.31,
+                  "right": 594,
+                  "bottom": 615.77
+                },
+                "textBox": {
+                  "x": 364,
+                  "y": 595.45,
+                  "width": 247.63,
+                  "height": 20,
+                  "right": 611.63,
+                  "bottom": 615.45
+                },
+                "fullText": "Willow Room for Quiet Reading",
+                "fullTextTruncated": false,
+                "overflowX": "hidden",
+                "overflowY": "hidden",
+                "whiteSpace": "nowrap",
+                "textOverflow": "ellipsis",
+                "clientWidth": 230,
+                "scrollWidth": 248,
+                "clientHeight": 19,
+                "scrollHeight": 19,
+                "title": "Willow Room for Quiet Reading"
+              }
+            },
+            {
+              "id": "brand-artwork",
+              "kind": "artwork",
+              "assessment": "uncertain",
+              "source": "unsupported",
+              "evidence": {
+                "status": "unsupported",
+                "visible": true,
+                "box": {
+                  "x": 50,
+                  "y": 16,
+                  "width": 56,
+                  "height": 56,
+                  "right": 106,
+                  "bottom": 72
+                },
+                "pixelContentInspected": false,
+                "reason": "pixel_content_not_inspected"
+              },
+              "reason": "pixel_content_not_inspected"
+            }
+          ],
+          "model_usage": [],
+          "viewport": {
+            "width": 1280,
+            "height": 900,
+            "documentWidth": 1280
+          },
+          "coverage": {
+            "geometry": true,
+            "textBounds": true,
+            "contrast": false,
+            "hitTesting": false,
+            "pixelContentInspected": false
+          }
+        },
+        "navigation_report": "step-03/report.json",
+        "assertions": [
+          {
+            "kind": "text_equals",
+            "selector": "#filter-status",
+            "expected": "Showing 1 room",
+            "passed": true,
+            "reason": ""
+          },
+          {
+            "kind": "visible",
+            "selector": "#room-card-willow",
+            "expected": true,
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Open Willow Room",
+        "navigation_status": "pass",
+        "design": {
+          "status": "fail",
+          "checks": [
+            {
+              "id": "time-hint-contrast",
+              "kind": "contrast",
+              "assessment": "fail",
+              "source": "rule",
+              "evidence": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 368,
+                  "y": 462.27,
+                  "width": 435.89,
+                  "height": 18.09,
+                  "right": 803.89,
+                  "bottom": 480.36
+                },
+                "foreground": [
+                  166,
+                  177,
+                  171
+                ],
+                "background": [
+                  247,
+                  250,
+                  247
+                ],
+                "contrastSupported": true,
+                "contrastRatio": 2.1
+              },
+              "reason": "contrast_below_minimum"
+            },
+            {
+              "id": "after-hours-disabled",
+              "kind": "disabled",
+              "assessment": "pass",
+              "source": "rule",
+              "evidence": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 368,
+                  "y": 685.86,
+                  "width": 435.89,
+                  "height": 42,
+                  "right": 803.89,
+                  "bottom": 727.86
+                },
+                "nativeDisabled": true,
+                "ariaDisabled": false,
+                "tag": "button",
+                "role": null
+              }
+            },
+            {
+              "id": "review-aligned",
+              "kind": "aligned",
+              "assessment": "pass",
+              "source": "rule",
+              "evidence": {
+                "status": "measured",
+                "first": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 368,
+                    "y": 568.86,
+                    "width": 210.94,
+                    "height": 42,
+                    "right": 578.94,
+                    "bottom": 610.86
+                  }
+                },
+                "second": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 368,
+                    "y": 333.02,
+                    "width": 210.94,
+                    "height": 42,
+                    "right": 578.94,
+                    "bottom": 375.02
+                  }
+                }
+              }
+            }
+          ],
+          "model_usage": [],
+          "viewport": {
+            "width": 1280,
+            "height": 900,
+            "documentWidth": 1280
+          },
+          "coverage": {
+            "geometry": true,
+            "textBounds": false,
+            "contrast": true,
+            "hitTesting": false,
+            "pixelContentInspected": false
+          }
+        },
+        "navigation_report": "step-04/report.json",
+        "assertions": [
+          {
+            "kind": "visible",
+            "selector": "#details-state",
+            "expected": true,
+            "passed": true,
+            "reason": ""
+          },
+          {
+            "kind": "text_equals",
+            "selector": "#details-title",
+            "expected": "Willow Room",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Choose the date",
+        "navigation_status": "blocked",
+        "navigation_report": "step-05/report.json",
+        "assertions": [
+          {
+            "kind": "value_equals",
+            "selector": "#reservation-date",
+            "expected": "2026-10-14",
+            "passed": false,
+            "reason": "value_mismatch"
+          }
+        ],
+        "actions": 0,
+        "execution_status": "blocked",
+        "assertion_status": "fail",
+        "product_status": "not_tested"
+      },
+      {
+        "name": "Choose the start time",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Choose the length",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Enter your name",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Enter your email",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Accept the room rules",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Open the review",
+        "navigation_status": "not_reached",
+        "design": {
+          "status": "needs_review",
+          "reason": "navigation_not_reached",
+          "checks": [
+            {
+              "id": "review-unobstructed",
+              "kind": "unobstructed",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "header-badge-overlap",
+              "kind": "decorative_overlap",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "prepared-status-context",
+              "kind": "contextual",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "details-horizontal-fit",
+              "kind": "horizontal_fit",
+              "assessment": "not_reached",
+              "source": "not_run"
+            }
+          ]
+        }
+      }
+    ],
+    "routing": {
+      "decision_model": "jev-latest",
+      "text_helper": "disabled"
+    },
+    "model_usage": {
+      "operation": [
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 311,
+          "usage": {
+            "input_tokens": 2999,
+            "output_tokens": 213
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 152,
+          "usage": {
+            "input_tokens": 3036,
+            "output_tokens": 214
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 199,
+          "usage": {
+            "input_tokens": 3109,
+            "output_tokens": 213
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 131,
+          "usage": {
+            "input_tokens": 2986,
+            "output_tokens": 186
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 184,
+          "usage": {
+            "input_tokens": 3956,
+            "output_tokens": 264
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 130,
+          "usage": {
+            "input_tokens": 3956,
+            "output_tokens": 264
+          }
+        }
+      ],
+      "text": [],
+      "review": [],
+      "design": []
+    },
+    "errors": [],
+    "status": "fail",
+    "navigation_status": "blocked",
+    "design_status": "fail",
+    "reached": 4,
+    "total": 11,
+    "execution_status": "blocked",
+    "product_status": "fail",
+    "elapsed_ms": 3308,
+    "actions": 4
+  }
+}

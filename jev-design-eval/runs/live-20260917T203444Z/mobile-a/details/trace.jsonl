@@ -1,0 +1,16 @@
+{"elapsed_ms":74,"event":"observe","url":"http://127.0.0.1:50042/?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":364,"event":"decision","operation":"SELECT","target":"4:1","confidence":0.81,"target_confidence":1.0}
+{"elapsed_ms":365,"event":"action_intent","action":"e4","kind":"select","label":"Track → Design systems","confidence":0.81,"target_confidence":1.0}
+{"elapsed_ms":369,"event":"action_result","action":"e4","ok":true,"result":{"executed":"e4"}}
+{"elapsed_ms":438,"event":"observe","url":"http://127.0.0.1:50042/?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":704,"event":"decision","operation":"TYPE_TEXT","target":"5","confidence":0.94,"target_confidence":1.0}
+{"elapsed_ms":705,"event":"action_intent","action":"e5","kind":"fill","label":"Search sessions","confidence":0.94,"target_confidence":1.0}
+{"elapsed_ms":730,"event":"action_result","action":"e5","ok":true,"result":{"executed":"e5"}}
+{"elapsed_ms":802,"event":"observe","url":"http://127.0.0.1:50042/?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":1037,"event":"decision","operation":"CLICK","target":"6","confidence":0.94,"target_confidence":0.92}
+{"elapsed_ms":1037,"event":"action_intent","action":"e7","kind":"click","label":"Apply filters","confidence":0.94,"target_confidence":0.92}
+{"elapsed_ms":1051,"event":"action_result","action":"e7","ok":true,"result":{"executed":"e7"}}
+{"elapsed_ms":1124,"event":"observe","url":"http://127.0.0.1:50042/?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":1241,"event":"decision","operation":"CLICK","target":"5","confidence":0.62,"target_confidence":0.38}
+{"elapsed_ms":1241,"event":"needs_review","reason":"low_operation_confidence"}
+{"elapsed_ms":1273,"event":"observe","reason":"final","url":"http://127.0.0.1:50042/?build=k7","title":"Fieldwork / Studio sessions"}

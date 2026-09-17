@@ -1,0 +1,69 @@
+{
+  "case": "desktop-b",
+  "stages": {
+    "details": {
+      "navigation_status": "fail",
+      "navigation_oracle": {
+        "visible": false,
+        "log": [],
+        "reservation": null,
+        "track": "all",
+        "search": "",
+        "filtered": [
+          "Responsive interfaces in practice",
+          "The shared language workshop",
+          "Field notes for new spaces",
+          "A better brief in one afternoon"
+        ],
+        "selected": null,
+        "fields": {
+          "name": "",
+          "email": "",
+          "seats": "1",
+          "code": ""
+        },
+        "codeText": "Enter attendee details and your code."
+      },
+      "navigation_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 340,
+            "usage": {
+              "input_tokens": 3102,
+              "output_tokens": 199
+            }
+          }
+        ],
+        "text": [],
+        "review": []
+      },
+      "navigation_elapsed_ms": 433,
+      "actions": [],
+      "status": "not_reached"
+    }
+  },
+  "mode": "live",
+  "final_oracle": {
+    "visible": false,
+    "log": [],
+    "reservation": null,
+    "track": "all",
+    "search": "",
+    "filtered": [
+      "Responsive interfaces in practice",
+      "The shared language workshop",
+      "Field notes for new spaces",
+      "A better brief in one afternoon"
+    ],
+    "selected": null,
+    "fields": {
+      "name": "",
+      "email": "",
+      "seats": "1",
+      "code": ""
+    },
+    "codeText": "Enter attendee details and your code."
+  },
+  "elapsed_ms": 1039
+}

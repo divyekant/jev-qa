@@ -1,0 +1,622 @@
+[
+  {
+    "case": "desktop-a",
+    "stages": {
+      "details": {
+        "model": {
+          "title": "pass",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "rules": {
+          "title": "pass",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "combined": {
+          "title": "pass",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "expected": {
+          "title": "pass",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 392,
+            "usage": {
+              "input_tokens": 4962,
+              "output_tokens": 128
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "model": {
+          "status": "pass",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "rules": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "combined": {
+          "status": "pass",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "expected": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 163,
+            "usage": {
+              "input_tokens": 4799,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "model": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "rules": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "uncertain"
+        },
+        "combined": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "expected": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 189,
+            "usage": {
+              "input_tokens": 2976,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    }
+  },
+  {
+    "case": "mobile-b",
+    "stages": {
+      "details": {
+        "model": {
+          "title": "uncertain",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "rules": {
+          "title": "fail",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "combined": {
+          "title": "fail",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "expected": {
+          "title": "fail",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 163,
+            "usage": {
+              "input_tokens": 4883,
+              "output_tokens": 128
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 1,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 1
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "model": {
+          "status": "fail",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "rules": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "combined": {
+          "status": "fail",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "expected": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 142,
+            "usage": {
+              "input_tokens": 4716,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "model": {
+          "confirm": "uncertain",
+          "overflow": "fail",
+          "reference": "pass"
+        },
+        "rules": {
+          "confirm": "fail",
+          "overflow": "fail",
+          "reference": "uncertain"
+        },
+        "combined": {
+          "confirm": "fail",
+          "overflow": "fail",
+          "reference": "pass"
+        },
+        "expected": {
+          "confirm": "fail",
+          "overflow": "fail",
+          "reference": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 188,
+            "usage": {
+              "input_tokens": 2694,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 1
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    }
+  },
+  {
+    "case": "desktop-b",
+    "stages": {
+      "details": {
+        "model": {
+          "title": "uncertain",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "rules": {
+          "title": "fail",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "combined": {
+          "title": "fail",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "expected": {
+          "title": "fail",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 190,
+            "usage": {
+              "input_tokens": 4962,
+              "output_tokens": 128
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 1,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 1
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "model": {
+          "status": "fail",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "rules": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "combined": {
+          "status": "fail",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "expected": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 128,
+            "usage": {
+              "input_tokens": 4801,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "model": {
+          "confirm": "uncertain",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "rules": {
+          "confirm": "fail",
+          "overflow": "pass",
+          "reference": "uncertain"
+        },
+        "combined": {
+          "confirm": "fail",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "expected": {
+          "confirm": "fail",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 110,
+            "usage": {
+              "input_tokens": 2976,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 1
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    }
+  },
+  {
+    "case": "mobile-a",
+    "stages": {
+      "details": {
+        "model": {
+          "title": "uncertain",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "rules": {
+          "title": "pass",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "combined": {
+          "title": "uncertain",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "expected": {
+          "title": "pass",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 281,
+            "usage": {
+              "input_tokens": 4883,
+              "output_tokens": 128
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 1,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 1,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "model": {
+          "status": "pass",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "rules": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "combined": {
+          "status": "pass",
+          "disabled": "uncertain",
+          "alignment": "pass"
+        },
+        "expected": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 137,
+            "usage": {
+              "input_tokens": 4783,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "model": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "rules": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "uncertain"
+        },
+        "combined": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "expected": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "review_usage": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 186,
+            "usage": {
+              "input_tokens": 2982,
+              "output_tokens": 126
+            }
+          }
+        ],
+        "model_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        },
+        "combined_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    }
+  }
+]

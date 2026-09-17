@@ -1,0 +1,546 @@
+[
+  {
+    "case": "desktop-a",
+    "stages": {
+      "details": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect"
+          ],
+          "reservation": null,
+          "codeText": "Enter attendee details and your code."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "title": "pass",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "elapsed_ms": 216,
+        "expected": {
+          "title": "pass",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code"
+          ],
+          "reservation": null,
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "elapsed_ms": 257,
+        "expected": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code",
+            "review"
+          ],
+          "reservation": {
+            "name": "Avery Example",
+            "email": "avery@example.com",
+            "seats": 2,
+            "code": "OPEN",
+            "status": "review"
+          },
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "uncertain"
+        },
+        "elapsed_ms": 75,
+        "expected": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    },
+    "mode": "preflight",
+    "final_oracle": {
+      "visible": true,
+      "log": [
+        "filter",
+        "inspect",
+        "reserve",
+        "apply_code",
+        "review"
+      ],
+      "reservation": {
+        "name": "Avery Example",
+        "email": "avery@example.com",
+        "seats": 2,
+        "code": "OPEN",
+        "status": "review"
+      },
+      "codeText": "Access code accepted. Two seats reserved for review."
+    },
+    "elapsed_ms": 1573,
+    "wall_ms": 1641
+  },
+  {
+    "case": "mobile-b",
+    "stages": {
+      "details": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect"
+          ],
+          "reservation": null,
+          "codeText": "Enter attendee details and your code."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "title": "fail",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "elapsed_ms": 283,
+        "expected": {
+          "title": "fail",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code"
+          ],
+          "reservation": null,
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "elapsed_ms": 244,
+        "expected": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code",
+            "review"
+          ],
+          "reservation": {
+            "name": "Avery Example",
+            "email": "avery@example.com",
+            "seats": 2,
+            "code": "OPEN",
+            "status": "review"
+          },
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "confirm": "fail",
+          "overflow": "fail",
+          "reference": "uncertain"
+        },
+        "elapsed_ms": 83,
+        "expected": {
+          "confirm": "fail",
+          "overflow": "fail",
+          "reference": "pass"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    },
+    "mode": "preflight",
+    "final_oracle": {
+      "visible": true,
+      "log": [
+        "filter",
+        "inspect",
+        "reserve",
+        "apply_code",
+        "review"
+      ],
+      "reservation": {
+        "name": "Avery Example",
+        "email": "avery@example.com",
+        "seats": 2,
+        "code": "OPEN",
+        "status": "review"
+      },
+      "codeText": "Access code accepted. Two seats reserved for review."
+    },
+    "elapsed_ms": 1294,
+    "wall_ms": 1360
+  },
+  {
+    "case": "desktop-b",
+    "stages": {
+      "details": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect"
+          ],
+          "reservation": null,
+          "codeText": "Enter attendee details and your code."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "title": "fail",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "elapsed_ms": 185,
+        "expected": {
+          "title": "fail",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code"
+          ],
+          "reservation": null,
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "elapsed_ms": 350,
+        "expected": {
+          "status": "fail",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code",
+            "review"
+          ],
+          "reservation": {
+            "name": "Avery Example",
+            "email": "avery@example.com",
+            "seats": 2,
+            "code": "OPEN",
+            "status": "review"
+          },
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "confirm": "fail",
+          "overflow": "pass",
+          "reference": "uncertain"
+        },
+        "elapsed_ms": 77,
+        "expected": {
+          "confirm": "fail",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    },
+    "mode": "preflight",
+    "final_oracle": {
+      "visible": true,
+      "log": [
+        "filter",
+        "inspect",
+        "reserve",
+        "apply_code",
+        "review"
+      ],
+      "reservation": {
+        "name": "Avery Example",
+        "email": "avery@example.com",
+        "seats": 2,
+        "code": "OPEN",
+        "status": "review"
+      },
+      "codeText": "Access code accepted. Two seats reserved for review."
+    },
+    "elapsed_ms": 1235,
+    "wall_ms": 1301
+  },
+  {
+    "case": "mobile-a",
+    "stages": {
+      "details": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect"
+          ],
+          "reservation": null,
+          "codeText": "Enter attendee details and your code."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "title": "pass",
+          "badge": "uncertain",
+          "artwork": "uncertain"
+        },
+        "elapsed_ms": 960,
+        "expected": {
+          "title": "pass",
+          "badge": "pass",
+          "artwork": "uncertain"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "booking": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code"
+          ],
+          "reservation": null,
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "elapsed_ms": 302,
+        "expected": {
+          "status": "pass",
+          "disabled": "pass",
+          "alignment": "pass"
+        },
+        "rules_score": {
+          "correct": 3,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      },
+      "review": {
+        "navigation_status": "scripted",
+        "navigation_oracle": {
+          "visible": true,
+          "log": [
+            "filter",
+            "inspect",
+            "reserve",
+            "apply_code",
+            "review"
+          ],
+          "reservation": {
+            "name": "Avery Example",
+            "email": "avery@example.com",
+            "seats": 2,
+            "code": "OPEN",
+            "status": "review"
+          },
+          "codeText": "Access code accepted. Two seats reserved for review."
+        },
+        "navigation_usage": {},
+        "navigation_elapsed_ms": null,
+        "actions": [],
+        "status": "measured",
+        "rules": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "uncertain"
+        },
+        "elapsed_ms": 82,
+        "expected": {
+          "confirm": "pass",
+          "overflow": "pass",
+          "reference": "pass"
+        },
+        "rules_score": {
+          "correct": 2,
+          "total": 3,
+          "false_passes": 0,
+          "missed_defects": 0
+        }
+      }
+    },
+    "mode": "preflight",
+    "final_oracle": {
+      "visible": true,
+      "log": [
+        "filter",
+        "inspect",
+        "reserve",
+        "apply_code",
+        "review"
+      ],
+      "reservation": {
+        "name": "Avery Example",
+        "email": "avery@example.com",
+        "seats": 2,
+        "code": "OPEN",
+        "status": "review"
+      },
+      "codeText": "Access code accepted. Two seats reserved for review."
+    },
+    "elapsed_ms": 2032,
+    "wall_ms": 2101
+  }
+]

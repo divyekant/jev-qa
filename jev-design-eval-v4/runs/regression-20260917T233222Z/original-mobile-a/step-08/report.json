@@ -1,0 +1,73 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57628/original?build=k7",
+    "goal": "Current objective: Choose 2 in Seats.\nVerified previous objectives: Filter; Details; Reserve; Name; Email. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#seats-select",
+        "expected": "2"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 52,
+    "max_seconds": 174.91206175007392,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Access code",
+      "Attendee email",
+      "Attendee name",
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#seats-select",
+      "expected": "2",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e5",
+      "kind": "select",
+      "label": "Seats → 2"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 150,
+        "usage": {
+          "input_tokens": 2006,
+          "output_tokens": 113
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 307,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

@@ -1,0 +1,11 @@
+{"elapsed_ms":30,"event":"observe","url":"http://127.0.0.1:57628/holdout?build=q4","title":"Civic Library room reservations","action_count":18}
+{"elapsed_ms":300,"event":"decision","operation":"REVEAL_R4","target":null,"confidence":0.99,"target_confidence":null}
+{"elapsed_ms":300,"event":"action_intent","action":"REVEAL_R4","kind":"reveal","label":"Reveal below: button Review reservation","confidence":0.99,"target_confidence":null}
+{"elapsed_ms":349,"event":"action_result","action":"REVEAL_R4","ok":true,"result":{"executed":"REVEAL_R4","direction":"below","delta_x":0,"delta_y":844}}
+{"elapsed_ms":420,"event":"observe","url":"http://127.0.0.1:57628/holdout?build=q4","title":"Civic Library room reservations","action_count":11}
+{"elapsed_ms":636,"event":"decision","operation":"CLICK","target":"5","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":637,"event":"action_intent","action":"e9","kind":"click","label":"Review reservation","confidence":1.0,"target_confidence":1.0}
+{"elapsed_ms":668,"event":"action_result","action":"e9","ok":true,"result":{"executed":"e9"}}
+{"elapsed_ms":739,"event":"observe","url":"http://127.0.0.1:57628/holdout?build=q4","title":"Civic Library room reservations","action_count":7}
+{"elapsed_ms":773,"event":"assertions_passed","count":7}
+{"elapsed_ms":798,"event":"observe","reason":"final","url":"http://127.0.0.1:57628/holdout?build=q4","title":"Civic Library room reservations"}

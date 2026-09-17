@@ -1,0 +1,73 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:62889/original?build=m4",
+    "goal": "Current objective: Enter Avery Example in Attendee name.\nVerified previous objectives: Track; Search; Filter; Details; Reserve. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#attendee-name",
+        "expected": "Avery Example"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 54,
+    "max_seconds": 176.56720612500794,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Access code",
+      "Attendee email",
+      "Attendee name",
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#attendee-name",
+      "expected": "Avery Example",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e1",
+      "kind": "fill",
+      "label": "Attendee name"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 160,
+        "usage": {
+          "input_tokens": 3017,
+          "output_tokens": 196
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 457,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

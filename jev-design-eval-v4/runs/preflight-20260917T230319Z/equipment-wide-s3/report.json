@@ -1,0 +1,556 @@
+{
+  "steps": [
+    {
+      "name": "Choose category",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#category",
+          "expected": "audio",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Search equipment",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#search",
+          "expected": "sound",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Apply search",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#filter-status",
+          "expected": "Showing 1 equipment kit",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "status": "needs_review",
+        "checks": [
+          {
+            "id": "kit-description",
+            "kind": "unclipped",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 652,
+                "y": 619.44,
+                "width": 477,
+                "height": 48,
+                "right": 1129,
+                "bottom": 667.44
+              },
+              "textBox": {
+                "x": 652,
+                "y": 622.44,
+                "width": 465,
+                "height": 42,
+                "right": 1117,
+                "bottom": 664.44
+              },
+              "fullText": "A portable recorder, two microphones, a stand, and headphones for small interviews and community projects.",
+              "fullTextTruncated": false,
+              "overflowX": "visible",
+              "overflowY": "visible",
+              "whiteSpace": "normal",
+              "textOverflow": "clip",
+              "clientWidth": 477,
+              "scrollWidth": 477,
+              "clientHeight": 48,
+              "scrollHeight": 48
+            }
+          },
+          {
+            "id": "kit-reference",
+            "kind": "ellipsis",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 652,
+                "y": 563.53,
+                "width": 240,
+                "height": 36,
+                "right": 892,
+                "bottom": 599.53
+              },
+              "textBox": {
+                "x": 652,
+                "y": 567.53,
+                "width": 491.55,
+                "height": 28,
+                "right": 1143.55,
+                "bottom": 595.53
+              },
+              "fullText": "Portable sound kit \u2014 complete recording set",
+              "fullTextTruncated": false,
+              "overflowX": "hidden",
+              "overflowY": "hidden",
+              "whiteSpace": "nowrap",
+              "textOverflow": "ellipsis",
+              "clientWidth": 240,
+              "scrollWidth": 492,
+              "clientHeight": 36,
+              "scrollHeight": 36,
+              "title": "Portable sound kit \u2014 complete recording set"
+            }
+          },
+          {
+            "id": "catalog-width",
+            "kind": "horizontal_fit",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "viewportWidth": 1280,
+              "documentWidth": 1280
+            }
+          },
+          {
+            "id": "kit-artwork",
+            "kind": "artwork",
+            "assessment": "uncertain",
+            "source": "unsupported",
+            "evidence": {
+              "status": "unsupported",
+              "visible": true,
+              "box": {
+                "x": 151,
+                "y": 511.63,
+                "width": 477,
+                "height": 150,
+                "right": 628,
+                "bottom": 661.63
+              },
+              "pixelContentInspected": false,
+              "reason": "pixel_content_not_inspected"
+            },
+            "reason": "pixel_content_not_inspected"
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 1280,
+          "height": 900,
+          "documentWidth": 1280
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": true,
+          "contrast": false,
+          "hitTesting": false,
+          "pixelContentInspected": false
+        }
+      }
+    },
+    {
+      "name": "Inspect kit",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#details",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "status": "pass",
+        "checks": [
+          {
+            "id": "pickup-contrast",
+            "kind": "contrast",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 151,
+                "y": 295.63,
+                "width": 978,
+                "height": 24,
+                "right": 1129,
+                "bottom": 319.63
+              },
+              "foreground": [
+                32,
+                40,
+                36
+              ],
+              "background": [
+                255,
+                253,
+                247
+              ],
+              "contrastSupported": true,
+              "contrastRatio": 14.85
+            }
+          },
+          {
+            "id": "delivery-disabled",
+            "kind": "disabled",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 151,
+                "y": 521.63,
+                "width": 227.13,
+                "height": 48,
+                "right": 378.13,
+                "bottom": 569.63
+              },
+              "nativeDisabled": true,
+              "ariaDisabled": false,
+              "tag": "button",
+              "role": null
+            }
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 1280,
+          "height": 900,
+          "documentWidth": 1280
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": false,
+          "contrast": true,
+          "hitTesting": false,
+          "pixelContentInspected": false
+        }
+      }
+    },
+    {
+      "name": "Choose length",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#duration",
+          "expected": "3",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Choose window",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#pickup",
+          "expected": "afternoon",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Enter borrower",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#borrower",
+          "expected": "Taylor Reed",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Enter contact",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#email",
+          "expected": "taylor.reed@example.test",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Accept terms",
+      "assertions": [
+        {
+          "kind": "checked",
+          "selector": "#terms",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Review request",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#summary",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-name",
+          "expected": "Taylor Reed",
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-email",
+          "expected": "taylor.reed@example.test",
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-loan",
+          "expected": "3 days \u00b7 Afternoon \u00b7 14\u201316",
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-status",
+          "expected": "Draft prepared locally. No request has been sent.",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "status": "pass",
+        "checks": [
+          {
+            "id": "summary-alignment",
+            "kind": "aligned",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "first": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 151,
+                  "y": 339.44,
+                  "width": 978,
+                  "height": 52,
+                  "right": 1129,
+                  "bottom": 391.44
+                }
+              },
+              "second": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 151,
+                  "y": 399.44,
+                  "width": 978,
+                  "height": 52,
+                  "right": 1129,
+                  "bottom": 451.44
+                }
+              }
+            }
+          },
+          {
+            "id": "ready-unobstructed",
+            "kind": "unobstructed",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 124,
+                "y": 120,
+                "width": 131.63,
+                "height": 32,
+                "right": 255.63,
+                "bottom": 152
+              },
+              "inViewport": true,
+              "hitSamples": [
+                {
+                  "x": 143.74,
+                  "y": 126.4,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 143.74,
+                  "y": 136,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 143.74,
+                  "y": 145.6,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 189.82,
+                  "y": 126.4,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 189.82,
+                  "y": 136,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 189.82,
+                  "y": 145.6,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 235.89,
+                  "y": 126.4,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 235.89,
+                  "y": 136,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 235.89,
+                  "y": 145.6,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "summary-message",
+            "kind": "unclipped",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 151,
+                "y": 507.44,
+                "width": 978,
+                "height": 24,
+                "right": 1129,
+                "bottom": 531.44
+              },
+              "textBox": {
+                "x": 151,
+                "y": 510.44,
+                "width": 354.31,
+                "height": 18,
+                "right": 505.31,
+                "bottom": 528.44
+              },
+              "fullText": "Draft prepared locally. No request has been sent.",
+              "fullTextTruncated": false,
+              "overflowX": "visible",
+              "overflowY": "visible",
+              "whiteSpace": "normal",
+              "textOverflow": "clip",
+              "clientWidth": 978,
+              "scrollWidth": 978,
+              "clientHeight": 24,
+              "scrollHeight": 24
+            }
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 1280,
+          "height": 900,
+          "documentWidth": 1280
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": true,
+          "contrast": false,
+          "hitTesting": true,
+          "pixelContentInspected": false
+        }
+      }
+    }
+  ],
+  "errors": []
+}

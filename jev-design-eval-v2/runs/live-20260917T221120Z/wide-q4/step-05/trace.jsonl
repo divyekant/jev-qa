@@ -1,0 +1,10 @@
+{"elapsed_ms":46,"event":"observe","url":"http://127.0.0.1:58490/holdout?build=q4","title":"Civic Library room reservations","action_count":20}
+{"elapsed_ms":228,"event":"decision","operation":"SELECT","target":"5:2","confidence":0.79,"target_confidence":1.0}
+{"elapsed_ms":228,"event":"recovery","reason":"low_operation_confidence","attempt":1}
+{"elapsed_ms":245,"event":"observe","reason":"recovery","url":"http://127.0.0.1:58490/holdout?build=q4","title":"Civic Library room reservations"}
+{"elapsed_ms":465,"event":"decision","operation":"SELECT","target":"5:2","confidence":0.84,"target_confidence":1.0}
+{"elapsed_ms":465,"event":"action_intent","action":"e6","kind":"select","label":"Date → October 14, 2026","confidence":0.84,"target_confidence":1.0}
+{"elapsed_ms":467,"event":"action_result","action":"e6","ok":true,"result":{"executed":"e6"}}
+{"elapsed_ms":546,"event":"observe","url":"http://127.0.0.1:58490/holdout?build=q4","title":"Civic Library room reservations","action_count":20}
+{"elapsed_ms":548,"event":"assertions_passed","count":1}
+{"elapsed_ms":596,"event":"observe","reason":"final","url":"http://127.0.0.1:58490/holdout?build=q4","title":"Civic Library room reservations"}

@@ -1,0 +1,7 @@
+{"elapsed_ms":28,"event":"observe","url":"http://127.0.0.1:57931/fresh?build=s8","title":"Borrow Studio — equipment desk","action_count":15}
+{"elapsed_ms":206,"event":"decision","operation":"SELECT","target":"5:2","confidence":0.99,"target_confidence":0.99}
+{"elapsed_ms":207,"event":"action_intent","action":"e8","kind":"select","label":"Collection window → Afternoon · 14–16","confidence":0.99,"target_confidence":0.99}
+{"elapsed_ms":210,"event":"action_result","action":"e8","ok":true,"result":{"executed":"e8"}}
+{"elapsed_ms":279,"event":"observe","url":"http://127.0.0.1:57931/fresh?build=s8","title":"Borrow Studio — equipment desk","action_count":15}
+{"elapsed_ms":280,"event":"assertions_passed","count":1}
+{"elapsed_ms":342,"event":"observe","reason":"final","url":"http://127.0.0.1:57931/fresh?build=s8","title":"Borrow Studio — equipment desk"}

@@ -1,0 +1,50 @@
+{
+  "original-desktop-a": {
+    "title": "pass",
+    "badge": "pass",
+    "artwork": "uncertain",
+    "status": "pass",
+    "disabled": "pass",
+    "alignment": "pass",
+    "acceptance_message": "pass",
+    "confirm": "pass",
+    "overflow": "pass",
+    "reference": "pass"
+  },
+  "original-mobile-b": {
+    "title": "fail",
+    "badge": "pass",
+    "artwork": "uncertain",
+    "status": "fail",
+    "disabled": "pass",
+    "alignment": "pass",
+    "acceptance_message": "pass",
+    "confirm": "fail",
+    "overflow": "fail",
+    "reference": "pass"
+  },
+  "original-desktop-b": {
+    "title": "fail",
+    "badge": "pass",
+    "artwork": "uncertain",
+    "status": "fail",
+    "disabled": "pass",
+    "alignment": "pass",
+    "acceptance_message": "pass",
+    "confirm": "fail",
+    "overflow": "pass",
+    "reference": "pass"
+  },
+  "original-mobile-a": {
+    "title": "pass",
+    "badge": "pass",
+    "artwork": "uncertain",
+    "status": "pass",
+    "disabled": "pass",
+    "alignment": "pass",
+    "acceptance_message": "pass",
+    "confirm": "pass",
+    "overflow": "pass",
+    "reference": "pass"
+  }
+}

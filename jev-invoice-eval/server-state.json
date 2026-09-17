@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "customer": "Ada Example",
+      "email": "ada@example.com",
+      "quantity": 3,
+      "unit_cents": 1995,
+      "status": "Draft",
+      "payment": "Unpaid",
+      "total_cents": 5985
+    }
+  ],
+  "submissions": 1
+}

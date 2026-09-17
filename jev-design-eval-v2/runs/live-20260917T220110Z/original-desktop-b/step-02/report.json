@@ -1,0 +1,67 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "task": {
+    "url": "http://127.0.0.1:62589/original?build=m4",
+    "goal": "Current objective: Enter Responsive interfaces in Search sessions.\nVerified previous objectives: Track. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#search-sessions",
+        "expected": "Responsive interfaces"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 59,
+    "max_seconds": 178.9074862919515,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Access code",
+      "Attendee email",
+      "Attendee name",
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#search-sessions",
+      "expected": "Responsive interfaces",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e5",
+      "kind": "fill",
+      "label": "Search sessions"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 213,
+        "usage": {
+          "input_tokens": 3112,
+          "output_tokens": 200
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 383,
+  "trace": "trace.jsonl",
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

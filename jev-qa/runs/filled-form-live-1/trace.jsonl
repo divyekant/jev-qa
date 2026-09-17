@@ -1,0 +1,11 @@
+{"elapsed_ms":750,"event":"observe","url":"http://127.0.0.1:8769/form.html","title":"Jev QA local fixture","action_count":4}
+{"elapsed_ms":1038,"event":"decision","operation":"TYPE_TEXT","target":"1","confidence":0.92,"target_confidence":1.0}
+{"elapsed_ms":1039,"event":"action_intent","action":"e1","kind":"fill","label":"Email","confidence":0.92,"target_confidence":1.0}
+{"elapsed_ms":1532,"event":"action_result","action":"e1","ok":true,"result":{"executed":"e1"}}
+{"elapsed_ms":1627,"event":"observe","url":"http://127.0.0.1:8769/form.html","title":"Jev QA local fixture","action_count":4}
+{"elapsed_ms":1756,"event":"decision","operation":"CLICK","target":"2","confidence":0.95,"target_confidence":0.97}
+{"elapsed_ms":1756,"event":"action_intent","action":"e3","kind":"click","label":"Subscribe","confidence":0.95,"target_confidence":0.97}
+{"elapsed_ms":1813,"event":"action_result","action":"e3","ok":true,"result":{"executed":"e3"}}
+{"elapsed_ms":1886,"event":"observe","url":"http://127.0.0.1:8769/form.html","title":"Jev QA local fixture","action_count":4}
+{"elapsed_ms":2125,"event":"decision","operation":"DONE","target":null,"confidence":0.98,"target_confidence":null}
+{"elapsed_ms":2152,"event":"observe","reason":"final","url":"http://127.0.0.1:8769/form.html","title":"Jev QA local fixture"}

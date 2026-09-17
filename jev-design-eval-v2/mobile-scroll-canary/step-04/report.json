@@ -1,0 +1,81 @@
+{
+  "status": "fail",
+  "terminal_status": "low_confidence",
+  "task": {
+    "url": "http://127.0.0.1:8772/?build=k7",
+    "goal": "Current objective: Click Inspect session for Responsive interfaces in practice.\nVerified previous objectives: Track; Search; Filter. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "visible",
+        "selector": "#details-panel",
+        "expected": true
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#session-title",
+        "expected": "Responsive interfaces in practice"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 57,
+    "max_seconds": 178.1417578329565,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Access code",
+      "Attendee email",
+      "Attendee name",
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "visible",
+      "selector": "#details-panel",
+      "expected": true,
+      "passed": false,
+      "reason": "visibility_mismatch"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#session-title",
+      "expected": "Responsive interfaces in practice",
+      "passed": false,
+      "reason": "text_target_not_visible"
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 122,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 172
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 188,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 172
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 485,
+  "trace": "trace.jsonl",
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

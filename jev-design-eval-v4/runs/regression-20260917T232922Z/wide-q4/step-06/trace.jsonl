@@ -1,0 +1,7 @@
+{"elapsed_ms":71,"event":"observe","url":"http://127.0.0.1:56903/holdout?build=q4","title":"Civic Library room reservations","action_count":20}
+{"elapsed_ms":585,"event":"decision","operation":"SELECT","target":"6:2","confidence":0.99,"target_confidence":0.99}
+{"elapsed_ms":586,"event":"action_intent","action":"e9","kind":"select","label":"Start time → 2:00 PM","confidence":0.99,"target_confidence":0.99}
+{"elapsed_ms":594,"event":"action_result","action":"e9","ok":true,"result":{"executed":"e9"}}
+{"elapsed_ms":1059,"event":"observe","url":"http://127.0.0.1:56903/holdout?build=q4","title":"Civic Library room reservations","action_count":20}
+{"elapsed_ms":1063,"event":"assertions_passed","count":1}
+{"elapsed_ms":1108,"event":"observe","reason":"final","url":"http://127.0.0.1:56903/holdout?build=q4","title":"Civic Library room reservations"}

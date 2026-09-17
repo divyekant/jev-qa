@@ -1,0 +1,110 @@
+{
+  "stages": {
+    "create": {
+      "status": "pass",
+      "exit_code": 0,
+      "wall_ms": 2973,
+      "runner_ms": 2788,
+      "model_latency_ms": 1241,
+      "model_responses": 6,
+      "input_tokens": 12008,
+      "output_tokens": 789,
+      "models": [
+        "jev-1.13.0"
+      ],
+      "actions": 5
+    },
+    "qa-a": {
+      "status": "pass",
+      "exit_code": 0,
+      "wall_ms": 1910,
+      "runner_ms": 1741,
+      "model_latency_ms": 636,
+      "model_responses": 1,
+      "input_tokens": 1084,
+      "output_tokens": 126,
+      "models": [
+        "jev-1.13.0"
+      ],
+      "actions": 0
+    },
+    "qa-b": {
+      "status": "fail",
+      "exit_code": 1,
+      "wall_ms": 1071,
+      "runner_ms": 929,
+      "model_latency_ms": 293,
+      "model_responses": 1,
+      "input_tokens": 1077,
+      "output_tokens": 126,
+      "models": [
+        "jev-1.13.0"
+      ],
+      "actions": 0
+    }
+  },
+  "oracle": {
+    "single_submission": true,
+    "single_record": true,
+    "fields": {
+      "customer": true,
+      "email": true,
+      "quantity": true,
+      "unit_cents": true,
+      "total_cents": true,
+      "status": true,
+      "payment": true
+    },
+    "pass": true
+  },
+  "qa_scores": {
+    "qa-a": {
+      "expected_judgments": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "actual_judgments": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "correct": 3,
+      "total": 3,
+      "overall_status_correct": true,
+      "failed_assertions": []
+    },
+    "qa-b": {
+      "expected_judgments": [
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "actual_judgments": [
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "correct": 3,
+      "total": 3,
+      "overall_status_correct": true,
+      "failed_assertions": [
+        "#total"
+      ]
+    }
+  },
+  "totals": {
+    "wall_ms": 5954,
+    "model_latency_ms": 2170,
+    "model_responses": 8,
+    "input_tokens": 14169,
+    "output_tokens": 1041
+  },
+  "limitations": [
+    "One attempt per stage; no estimate of general accuracy or repeatability.",
+    "QA sees browser text, not source or expected result labels.",
+    "Model judgments are scored separately from deterministic assertions.",
+    "Usage is provider-reported Jev usage, excluding parent orchestration tokens and any unreported failed requests.",
+    "Wall time includes launcher and browser setup; no native subagent dispatch measured."
+  ]
+}

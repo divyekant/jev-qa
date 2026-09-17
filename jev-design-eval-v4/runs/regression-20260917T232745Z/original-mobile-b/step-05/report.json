@@ -1,0 +1,76 @@
+{
+  "status": "needs_review",
+  "terminal_status": "low_confidence",
+  "execution_status": "blocked",
+  "assertion_status": "fail",
+  "product_status": "not_tested",
+  "task": {
+    "url": "http://127.0.0.1:56511/original?build=m4",
+    "goal": "Current objective: Click Reserve seats.\nVerified previous objectives: Track; Search; Filter; Details. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "visible",
+        "selector": "#booking-panel",
+        "expected": true
+      }
+    ],
+    "criteria": [],
+    "max_steps": 55,
+    "max_seconds": 177.22683766600676,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Access code",
+      "Attendee email",
+      "Attendee name",
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "visible",
+      "selector": "#booking-panel",
+      "expected": true,
+      "passed": false,
+      "reason": "visibility_mismatch"
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 120,
+        "usage": {
+          "input_tokens": 1350,
+          "output_tokens": 57
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 145,
+        "usage": {
+          "input_tokens": 1350,
+          "output_tokens": 57
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 428,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json",
+    "decision-002.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

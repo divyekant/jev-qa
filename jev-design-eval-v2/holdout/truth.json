@@ -1,0 +1,50 @@
+{
+  "wide-q4": {
+    "room-note-unclipped": "pass",
+    "room-title-ellipsis": "pass",
+    "brand-artwork": "uncertain",
+    "time-hint-contrast": "pass",
+    "after-hours-disabled": "pass",
+    "review-aligned": "pass",
+    "review-unobstructed": "pass",
+    "details-horizontal-fit": "pass",
+    "header-badge-overlap": "pass",
+    "prepared-status-context": "pass"
+  },
+  "wide-q9": {
+    "room-note-unclipped": "fail",
+    "room-title-ellipsis": "pass",
+    "brand-artwork": "uncertain",
+    "time-hint-contrast": "fail",
+    "after-hours-disabled": "pass",
+    "review-aligned": "pass",
+    "review-unobstructed": "fail",
+    "details-horizontal-fit": "pass",
+    "header-badge-overlap": "pass",
+    "prepared-status-context": "pass"
+  },
+  "narrow-q4": {
+    "room-note-unclipped": "pass",
+    "room-title-ellipsis": "pass",
+    "brand-artwork": "uncertain",
+    "time-hint-contrast": "pass",
+    "after-hours-disabled": "pass",
+    "review-aligned": "pass",
+    "review-unobstructed": "pass",
+    "details-horizontal-fit": "pass",
+    "header-badge-overlap": "pass",
+    "prepared-status-context": "pass"
+  },
+  "narrow-q9": {
+    "room-note-unclipped": "fail",
+    "room-title-ellipsis": "pass",
+    "brand-artwork": "uncertain",
+    "time-hint-contrast": "fail",
+    "after-hours-disabled": "pass",
+    "review-aligned": "pass",
+    "review-unobstructed": "fail",
+    "details-horizontal-fit": "fail",
+    "header-badge-overlap": "pass",
+    "prepared-status-context": "pass"
+  }
+}

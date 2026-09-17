@@ -1,0 +1,149 @@
+{
+  "cases": [
+    [
+      "desktop-a",
+      "k7",
+      1280,
+      900
+    ],
+    [
+      "mobile-b",
+      "m4",
+      390,
+      844
+    ],
+    [
+      "desktop-b",
+      "m4",
+      1280,
+      900
+    ],
+    [
+      "mobile-a",
+      "k7",
+      390,
+      844
+    ]
+  ],
+  "checks": {
+    "details": {
+      "title": "The full session title must be readable in its box, without clipping. Compare textBox with box, overflow styles and scroll dimensions. Offscreen scrolling is not clipping.",
+      "badge": "An availability status badge may overlap the decorative session-art color band. It must remain visible and must not cover any session-title text. The art band is not meaningful text or a control. Classify this observed overlap against that policy.",
+      "artwork": "The canvas brand artwork must depict the approved brand mark. Decide whether the supplied measurements establish this visual requirement. Pixel content was not inspected; do not infer it from dimensions or surrounding text."
+    },
+    "booking": {
+      "status": "The enabled booking status message must have text contrast of at least 4.5 against its solid background. Unsupported contrast evidence means uncertain.",
+      "disabled": "The Email receipt control is unavailable until confirmation. Reduced contrast is permitted for a genuinely disabled control with that role. It must be disabled, not an enabled action merely styled as disabled. Decide whether this disabled-control presentation meets that rule.",
+      "alignment": "The stacked Attendee name and Attendee email input boxes must have matching left edges and widths, each within 2 CSS pixels. Both must be visible."
+    },
+    "review": {
+      "confirm": "The Confirm reservation action must remain visible and unobstructed. Its center and sampled interior points must receive hits on the control or its descendants, not on an unrelated element. Being elsewhere in a scrollable document is not itself a defect; missing usable hit evidence is uncertain.",
+      "overflow": "At this viewport, the page must fit horizontally without document-wide horizontal scrolling. A documentWidth greater than viewport width by over 1 CSS pixel violates the rule.",
+      "reference": "This project reference is secondary information. Single-line ellipsis is permitted if a native title attribute exposes exactly the same full reference text. The visible label need not show the complete text at once. Decide if the observed truncation follows this policy."
+    }
+  },
+  "expected": {
+    "desktop-a": {
+      "details": {
+        "title": "pass",
+        "badge": "pass",
+        "artwork": "uncertain"
+      },
+      "booking": {
+        "status": "pass",
+        "disabled": "pass",
+        "alignment": "pass"
+      },
+      "review": {
+        "confirm": "pass",
+        "overflow": "pass",
+        "reference": "pass"
+      }
+    },
+    "mobile-b": {
+      "details": {
+        "title": "fail",
+        "badge": "pass",
+        "artwork": "uncertain"
+      },
+      "booking": {
+        "status": "fail",
+        "disabled": "pass",
+        "alignment": "pass"
+      },
+      "review": {
+        "confirm": "fail",
+        "overflow": "fail",
+        "reference": "pass"
+      }
+    },
+    "desktop-b": {
+      "details": {
+        "title": "fail",
+        "badge": "pass",
+        "artwork": "uncertain"
+      },
+      "booking": {
+        "status": "fail",
+        "disabled": "pass",
+        "alignment": "pass"
+      },
+      "review": {
+        "confirm": "fail",
+        "overflow": "pass",
+        "reference": "pass"
+      }
+    },
+    "mobile-a": {
+      "details": {
+        "title": "pass",
+        "badge": "pass",
+        "artwork": "uncertain"
+      },
+      "booking": {
+        "status": "pass",
+        "disabled": "pass",
+        "alignment": "pass"
+      },
+      "review": {
+        "confirm": "pass",
+        "overflow": "pass",
+        "reference": "pass"
+      }
+    }
+  },
+  "attempts_per_case": 1,
+  "reduced_motion": true,
+  "navigation_max_steps_per_checkpoint": 12,
+  "navigation_seconds_per_checkpoint": 60,
+  "continue_policy": "Assess design only after independent checkpoint oracle passes; retain non-pass navigation statuses.",
+  "source_sha256": {
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval/index.html": "533624d826fd70e86d477c12d19bab5a632f2ad5f8e20787c0623e09f9f4e38f",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval/measure.js": "8399355296efd8e429b051cff82c1dc83c6a94ff7620e44a5a606332a2dbd936",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval/design.py": "570850b3464bada9b769598d47e2219a904e166d6d2144d1b2bdaab1fbf28e9d",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval/evaluate.py": "20f68cb2f978c3b1f25536919b8c0744921a1fe2a5041b7cb7cc5ede1d16fc43",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval/PRODUCT.md": "37aae8339858157f8fb8a4a7d164728aa226405060aeea9a17a320e8069b2a40",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/runner.py": "38f0dcc477e3276539837b03adac3337a23e5ecd43bb01fa3c0f925c3ff09bf1",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/__init__.py": "cc3cd6a42f3a313e7ed621dee14d34fe9d4e2b1fd77fc028d78aecb8f59aa07f",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/browser.py": "0a53bd62fab2b53e1599b514963efe7c732ed13ded7424de9525ba42a245bb5e",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/__main__.py": "1f7b1dd4fa90bc998f3f58295280a246b95a0331594eb57f67beff76a933e50d",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/.venv/lib/python3.14/site-packages/jev_ultrafast/model.py": "a85ada8458d23642c5c8a4095acf0565e6268f81dcda26f6308942b653e9c9f3",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/.venv/lib/python3.14/site-packages/jev_ultrafast/browser.py": "ee08dafa93d731bd292aa0263a578a29c8001cf22eef3c59fe44a159649155ee",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/.venv/lib/python3.14/site-packages/jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+    "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/.venv/lib/python3.14/site-packages/jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422"
+  },
+  "model_routing": {
+    "requested": "jev-latest",
+    "resolved": "recorded per response",
+    "optional_text_helper": "disabled"
+  },
+  "design_review_input_excludes": [
+    "expected labels",
+    "build identity",
+    "source code",
+    "private event log",
+    "screenshots"
+  ],
+  "navigation_input_note": "Navigation sees the opaque build URL, but never the answer key or defect mapping.",
+  "coverage": "Nine scoped checks at three interaction states, two viewports, paired builds. Canvas content is deliberately unknown."
+}

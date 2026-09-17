@@ -1,0 +1,104 @@
+{
+  "status": "fail",
+  "checks": [
+    {
+      "id": "time-hint-contrast",
+      "kind": "contrast",
+      "assessment": "fail",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 50,
+          "y": 489.95,
+          "width": 290,
+          "height": 18.09,
+          "right": 340,
+          "bottom": 508.05
+        },
+        "foreground": [
+          166,
+          177,
+          171
+        ],
+        "background": [
+          247,
+          250,
+          247
+        ],
+        "contrastSupported": true,
+        "contrastRatio": 2.1
+      },
+      "reason": "contrast_below_minimum"
+    },
+    {
+      "id": "after-hours-disabled",
+      "kind": "disabled",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 50,
+          "y": 794.8,
+          "width": 290,
+          "height": 42,
+          "right": 340,
+          "bottom": 836.8
+        },
+        "nativeDisabled": true,
+        "ariaDisabled": false,
+        "tag": "button",
+        "role": null
+      }
+    },
+    {
+      "id": "review-aligned",
+      "kind": "aligned",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "first": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 50,
+            "y": 596.55,
+            "width": 290,
+            "height": 42,
+            "right": 340,
+            "bottom": 638.55
+          }
+        },
+        "second": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 50,
+            "y": 279.45,
+            "width": 290,
+            "height": 42,
+            "right": 340,
+            "bottom": 321.45
+          }
+        }
+      }
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": false,
+    "contrast": true,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

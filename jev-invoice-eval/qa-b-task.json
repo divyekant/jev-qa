@@ -1,0 +1,48 @@
+{
+  "url": "http://127.0.0.1:50331/invoice/b",
+  "mode": "check",
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#customer",
+      "expected": "Ada Example"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#email",
+      "expected": "ada@example.com"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#quantity",
+      "expected": "3"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#unit_price",
+      "expected": "$19.95"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#total",
+      "expected": "$59.85"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#status",
+      "expected": "Draft"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#payment",
+      "expected": "Unpaid"
+    }
+  ],
+  "criteria": [
+    "The invoice identifies customer Ada Example and email ada@example.com.",
+    "The invoice has quantity 3 at unit price $19.95 and shows the mathematically correct total $59.85.",
+    "The invoice remains Draft and Unpaid."
+  ],
+  "max_seconds": 90,
+  "min_confidence": 0.8
+}

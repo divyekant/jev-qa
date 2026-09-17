@@ -1,0 +1,7 @@
+{"elapsed_ms":44,"event":"observe","url":"http://127.0.0.1:62889/original?build=m4","title":"Fieldwork / Studio sessions","action_count":11}
+{"elapsed_ms":178,"event":"decision","operation":"TYPE_TEXT","target":"2","confidence":0.99,"target_confidence":1.0}
+{"elapsed_ms":178,"event":"action_intent","action":"e3","kind":"fill","label":"Attendee email","confidence":0.99,"target_confidence":1.0}
+{"elapsed_ms":249,"event":"action_result","action":"e3","ok":true,"result":{"executed":"e3"}}
+{"elapsed_ms":308,"event":"observe","url":"http://127.0.0.1:62889/original?build=m4","title":"Fieldwork / Studio sessions","action_count":11}
+{"elapsed_ms":310,"event":"assertions_passed","count":1}
+{"elapsed_ms":341,"event":"observe","reason":"final","url":"http://127.0.0.1:62889/original?build=m4","title":"Fieldwork / Studio sessions"}

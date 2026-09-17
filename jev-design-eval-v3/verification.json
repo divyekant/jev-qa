@@ -1,0 +1,41 @@
+{
+  "source_fingerprints_match": true,
+  "decision_records": 94,
+  "private_exact_records_verified": true,
+  "confirmed_reveal_actions": [
+    [
+      "original-mobile-b",
+      {
+        "action": "REVEAL_R1",
+        "kind": "reveal",
+        "label": "Reveal below: button Inspect session"
+      }
+    ],
+    [
+      "original-mobile-a",
+      {
+        "action": "REVEAL_R1",
+        "kind": "reveal",
+        "label": "Reveal below: button Inspect session"
+      }
+    ],
+    [
+      "narrow-q4",
+      {
+        "action": "REVEAL_R1",
+        "kind": "reveal",
+        "label": "Reveal below: button View room"
+      }
+    ],
+    [
+      "narrow-q9",
+      {
+        "action": "REVEAL_R1",
+        "kind": "reveal",
+        "label": "Reveal below: button View room"
+      }
+    ]
+  ],
+  "model": "jev-1.13.0",
+  "local_tests": 56
+}

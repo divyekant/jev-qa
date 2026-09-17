@@ -1,0 +1,372 @@
+{
+  "status": "fail",
+  "report": "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v4/runs/regression-20260917T232745Z/original-mobile-b/report.json",
+  "result": {
+    "steps": [
+      {
+        "name": "Track",
+        "navigation_status": "pass",
+        "navigation_report": "step-01/report.json",
+        "assertions": [
+          {
+            "kind": "value_equals",
+            "selector": "#track-select",
+            "expected": "design-systems",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Search",
+        "navigation_status": "pass",
+        "navigation_report": "step-02/report.json",
+        "assertions": [
+          {
+            "kind": "value_equals",
+            "selector": "#search-sessions",
+            "expected": "Responsive interfaces",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Filter",
+        "navigation_status": "pass",
+        "navigation_report": "step-03/report.json",
+        "assertions": [
+          {
+            "kind": "text_equals",
+            "selector": "#filter-feedback",
+            "expected": "Showing 1 session",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Details",
+        "navigation_status": "pass",
+        "design": {
+          "status": "fail",
+          "checks": [
+            {
+              "id": "title",
+              "kind": "unclipped",
+              "assessment": "fail",
+              "source": "rule",
+              "evidence": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 16,
+                  "y": 347.5,
+                  "width": 330,
+                  "height": 22,
+                  "right": 346,
+                  "bottom": 369.5
+                },
+                "textBox": {
+                  "x": 16,
+                  "y": 348.5,
+                  "width": 239.7,
+                  "height": 62,
+                  "right": 255.7,
+                  "bottom": 410.5
+                },
+                "fullText": "Responsive interfaces in practice",
+                "fullTextTruncated": false,
+                "overflowX": "hidden",
+                "overflowY": "hidden",
+                "whiteSpace": "normal",
+                "textOverflow": "clip",
+                "clientWidth": 330,
+                "scrollWidth": 330,
+                "clientHeight": 22,
+                "scrollHeight": 64
+              },
+              "reason": "content_clipped"
+            },
+            {
+              "id": "badge",
+              "kind": "decorative_overlap",
+              "assessment": "pass",
+              "source": "rule",
+              "evidence": {
+                "status": "measured",
+                "visible": true,
+                "subject": {
+                  "x": 35,
+                  "y": 264,
+                  "width": 104.48,
+                  "height": 31,
+                  "right": 139.48,
+                  "bottom": 295
+                },
+                "decorative": {
+                  "x": 16,
+                  "y": 94,
+                  "width": 358,
+                  "height": 190,
+                  "right": 374,
+                  "bottom": 284
+                },
+                "content": {
+                  "x": 16,
+                  "y": 347.5,
+                  "width": 330,
+                  "height": 22,
+                  "right": 346,
+                  "bottom": 369.5
+                },
+                "decorativeIntersectionPx2": 2089.6,
+                "contentIntersectionPx2": 0
+              }
+            },
+            {
+              "id": "artwork",
+              "kind": "artwork",
+              "assessment": "uncertain",
+              "source": "unsupported",
+              "evidence": {
+                "status": "unsupported",
+                "visible": true,
+                "box": {
+                  "x": 16,
+                  "y": 513.5,
+                  "width": 94,
+                  "height": 94,
+                  "right": 110,
+                  "bottom": 607.5
+                },
+                "pixelContentInspected": false,
+                "reason": "pixel_content_not_inspected"
+              },
+              "reason": "pixel_content_not_inspected"
+            }
+          ],
+          "model_usage": [],
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "documentWidth": 390
+          },
+          "coverage": {
+            "geometry": true,
+            "textBounds": true,
+            "contrast": false,
+            "hitTesting": false,
+            "pixelContentInspected": false
+          }
+        },
+        "navigation_report": "step-04/report.json",
+        "assertions": [
+          {
+            "kind": "visible",
+            "selector": "#details-panel",
+            "expected": true,
+            "passed": true,
+            "reason": ""
+          },
+          {
+            "kind": "text_equals",
+            "selector": "#session-title",
+            "expected": "Responsive interfaces in practice",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 2,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      },
+      {
+        "name": "Reserve",
+        "navigation_status": "blocked",
+        "navigation_report": "step-05/report.json",
+        "assertions": [
+          {
+            "kind": "visible",
+            "selector": "#booking-panel",
+            "expected": true,
+            "passed": false,
+            "reason": "visibility_mismatch"
+          }
+        ],
+        "actions": 0,
+        "execution_status": "blocked",
+        "assertion_status": "fail",
+        "product_status": "not_tested"
+      },
+      {
+        "name": "Name",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Email",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Seats",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Code",
+        "navigation_status": "not_reached"
+      },
+      {
+        "name": "Apply code",
+        "navigation_status": "not_reached",
+        "design": {
+          "status": "needs_review",
+          "reason": "navigation_not_reached",
+          "checks": [
+            {
+              "id": "status",
+              "kind": "contrast",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "disabled",
+              "kind": "disabled",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "alignment",
+              "kind": "aligned",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "acceptance_message",
+              "kind": "contextual",
+              "assessment": "not_reached",
+              "source": "not_run"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Review",
+        "navigation_status": "not_reached",
+        "design": {
+          "status": "needs_review",
+          "reason": "navigation_not_reached",
+          "checks": [
+            {
+              "id": "confirm",
+              "kind": "unobstructed",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "overflow",
+              "kind": "horizontal_fit",
+              "assessment": "not_reached",
+              "source": "not_run"
+            },
+            {
+              "id": "reference",
+              "kind": "ellipsis",
+              "assessment": "not_reached",
+              "source": "not_run"
+            }
+          ]
+        }
+      }
+    ],
+    "routing": {
+      "decision_model": "jev-latest",
+      "text_helper": "disabled"
+    },
+    "model_usage": {
+      "operation": [
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 237,
+          "usage": {
+            "input_tokens": 1904,
+            "output_tokens": 131
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 127,
+          "usage": {
+            "input_tokens": 1935,
+            "output_tokens": 131
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 191,
+          "usage": {
+            "input_tokens": 1975,
+            "output_tokens": 131
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 120,
+          "usage": {
+            "input_tokens": 1783,
+            "output_tokens": 105
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 146,
+          "usage": {
+            "input_tokens": 1852,
+            "output_tokens": 105
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 120,
+          "usage": {
+            "input_tokens": 1350,
+            "output_tokens": 57
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 145,
+          "usage": {
+            "input_tokens": 1350,
+            "output_tokens": 57
+          }
+        }
+      ],
+      "text": [],
+      "review": [],
+      "design": []
+    },
+    "errors": [],
+    "status": "fail",
+    "navigation_status": "blocked",
+    "design_status": "fail",
+    "reached": 4,
+    "total": 11,
+    "execution_status": "blocked",
+    "product_status": "fail",
+    "elapsed_ms": 3397,
+    "actions": 5
+  }
+}

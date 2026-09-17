@@ -1,0 +1,144 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:56511/holdout?build=q9",
+    "goal": "Current objective: Open the local review summary for the prepared reservation.\nVerified previous objectives: Choose the start time; Choose the length; Enter your name; Enter your email; Accept the room rules. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "visible",
+        "selector": "#review-state",
+        "expected": true
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#review-room",
+        "expected": "Willow Room"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#review-date",
+        "expected": "October 14, 2026"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#review-time",
+        "expected": "2:00 PM · 60 minutes"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#review-guest",
+        "expected": "Avery Chen"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#review-email",
+        "expected": "avery.chen@example.test"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#prepared-status",
+        "expected": "Prepared for review · no request sent."
+      }
+    ],
+    "criteria": [],
+    "max_steps": 50,
+    "max_seconds": 172.90240787505172,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Email",
+      "Search rooms",
+      "Your name"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "visible",
+      "selector": "#review-state",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#review-room",
+      "expected": "Willow Room",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#review-date",
+      "expected": "October 14, 2026",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#review-time",
+      "expected": "2:00 PM · 60 minutes",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#review-guest",
+      "expected": "Avery Chen",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#review-email",
+      "expected": "avery.chen@example.test",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#prepared-status",
+      "expected": "Prepared for review · no request sent.",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e19",
+      "kind": "click",
+      "label": "Review reservation"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 134,
+        "usage": {
+          "input_tokens": 3339,
+          "output_tokens": 204
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 568,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

@@ -1,0 +1,50 @@
+{
+  "equipment-wide-s3": {
+    "kit-description": "pass",
+    "kit-reference": "pass",
+    "catalog-width": "pass",
+    "kit-artwork": "uncertain",
+    "pickup-contrast": "pass",
+    "delivery-disabled": "pass",
+    "summary-alignment": "pass",
+    "ready-unobstructed": "pass",
+    "summary-message": "pass",
+    "summary-context": "pass"
+  },
+  "equipment-wide-s8": {
+    "kit-description": "fail",
+    "kit-reference": "pass",
+    "catalog-width": "pass",
+    "kit-artwork": "uncertain",
+    "pickup-contrast": "fail",
+    "delivery-disabled": "pass",
+    "summary-alignment": "fail",
+    "ready-unobstructed": "pass",
+    "summary-message": "pass",
+    "summary-context": "pass"
+  },
+  "equipment-narrow-s3": {
+    "kit-description": "pass",
+    "kit-reference": "pass",
+    "catalog-width": "pass",
+    "kit-artwork": "uncertain",
+    "pickup-contrast": "pass",
+    "delivery-disabled": "pass",
+    "summary-alignment": "pass",
+    "ready-unobstructed": "pass",
+    "summary-message": "pass",
+    "summary-context": "pass"
+  },
+  "equipment-narrow-s8": {
+    "kit-description": "fail",
+    "kit-reference": "pass",
+    "catalog-width": "pass",
+    "kit-artwork": "uncertain",
+    "pickup-contrast": "fail",
+    "delivery-disabled": "pass",
+    "summary-alignment": "fail",
+    "ready-unobstructed": "pass",
+    "summary-message": "pass",
+    "summary-context": "pass"
+  }
+}

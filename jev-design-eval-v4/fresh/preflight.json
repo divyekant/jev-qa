@@ -1,0 +1,58 @@
+[
+  {
+    "kind": "select",
+    "label": "Category",
+    "selector": "#category",
+    "value": "audio"
+  },
+  {
+    "kind": "fill",
+    "label": "Search equipment",
+    "selector": "#search",
+    "value": "sound"
+  },
+  {
+    "kind": "click",
+    "label": "Find equipment",
+    "selector": "#find"
+  },
+  {
+    "kind": "click",
+    "label": "Inspect sound kit",
+    "selector": "#inspect"
+  },
+  {
+    "kind": "select",
+    "label": "Loan length",
+    "selector": "#duration",
+    "value": "3"
+  },
+  {
+    "kind": "select",
+    "label": "Collection window",
+    "selector": "#pickup",
+    "value": "afternoon"
+  },
+  {
+    "kind": "fill",
+    "label": "Borrower name",
+    "selector": "#borrower",
+    "value": "Taylor Reed"
+  },
+  {
+    "kind": "fill",
+    "label": "Contact email",
+    "selector": "#email",
+    "value": "taylor.reed@example.test"
+  },
+  {
+    "kind": "click",
+    "label": "I accept the equipment care terms",
+    "selector": "#terms"
+  },
+  {
+    "kind": "click",
+    "label": "Review equipment request",
+    "selector": "#review"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "url": "http://127.0.0.1:8769/form.html",
+  "goal": "Enter tester@example.com in Email, click Subscribe once, then stop after the submission response appears.",
+  "values": {"Email": "tester@example.com"},
+  "assertions": [
+    {"kind": "value_equals", "selector": "#email", "expected": "tester@example.com"},
+    {"kind": "text_equals", "selector": "#status", "expected": "Subscription saved."}
+  ],
+  "criteria": ["The visible submission response confirms that the subscription was saved."],
+  "max_steps": 8,
+  "max_seconds": 60
+}

@@ -1,0 +1,133 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "task": {
+    "url": "http://127.0.0.1:49867/form.html",
+    "goal": "Enter tester@example.com in Email, click Subscribe once, then stop after the submission response appears.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#email",
+        "expected": "tester@example.com"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#status",
+        "expected": "Subscription saved."
+      }
+    ],
+    "criteria": [
+      "The visible submission response confirms that the subscription was saved."
+    ],
+    "max_steps": 8,
+    "max_seconds": 60.0,
+    "min_confidence": 0.8,
+    "value_labels": [
+      "Email"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#email",
+      "expected": "tester@example.com",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#status",
+      "expected": "Subscription saved.",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [
+    {
+      "criterion": "The visible submission response confirms that the subscription was saved.",
+      "assessment": "pass",
+      "confidence": 0.96,
+      "probabilities": {
+        "uncertain": 0.02,
+        "pass": 0.97,
+        "fail": 0.01
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 226
+    }
+  ],
+  "model_assessments": [
+    {
+      "criterion": "The visible submission response confirms that the subscription was saved.",
+      "assessment": "pass",
+      "confidence": 0.96,
+      "probabilities": {
+        "uncertain": 0.02,
+        "pass": 0.97,
+        "fail": 0.01
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 226
+    }
+  ],
+  "actions": [
+    {
+      "action": "e1",
+      "kind": "fill",
+      "label": "Email"
+    },
+    {
+      "action": "e3",
+      "kind": "click",
+      "label": "Subscribe"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 431,
+        "usage": {
+          "input_tokens": 1627,
+          "output_tokens": 108
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 148,
+        "usage": {
+          "input_tokens": 1670,
+          "output_tokens": 107
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 141,
+        "usage": {
+          "input_tokens": 1700,
+          "output_tokens": 107
+        }
+      }
+    ],
+    "text": [],
+    "review": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 226,
+        "usage": {
+          "input_tokens": 1307,
+          "output_tokens": 44
+        }
+      }
+    ]
+  },
+  "elapsed_ms": 2408,
+  "trace": "trace.jsonl",
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

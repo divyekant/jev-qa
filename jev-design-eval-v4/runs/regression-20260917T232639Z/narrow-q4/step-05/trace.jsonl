@@ -1,0 +1,7 @@
+{"elapsed_ms":51,"event":"observe","url":"http://127.0.0.1:56267/holdout?build=q4","title":"Civic Library room reservations","action_count":18}
+{"elapsed_ms":308,"event":"decision","operation":"SELECT","target":"2:2","confidence":0.9,"target_confidence":0.9}
+{"elapsed_ms":308,"event":"action_intent","action":"e3","kind":"select","label":"Date → October 14, 2026","confidence":0.9,"target_confidence":0.9}
+{"elapsed_ms":332,"event":"action_result","action":"e3","ok":true,"result":{"executed":"e3"}}
+{"elapsed_ms":400,"event":"observe","url":"http://127.0.0.1:56267/holdout?build=q4","title":"Civic Library room reservations","action_count":18}
+{"elapsed_ms":404,"event":"assertions_passed","count":1}
+{"elapsed_ms":436,"event":"observe","reason":"final","url":"http://127.0.0.1:56267/holdout?build=q4","title":"Civic Library room reservations"}

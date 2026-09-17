@@ -1,0 +1,102 @@
+{
+  "case": "mobile-b",
+  "stages": {
+    "details": {
+      "navigation_status": "scripted",
+      "navigation_oracle": {
+        "visible": true,
+        "log": [
+          "filter",
+          "inspect"
+        ],
+        "reservation": null,
+        "codeText": "Enter attendee details and your code."
+      },
+      "navigation_usage": {},
+      "navigation_elapsed_ms": null,
+      "actions": [],
+      "status": "measured",
+      "rules": {
+        "title": "fail",
+        "badge": "uncertain",
+        "artwork": "uncertain"
+      },
+      "elapsed_ms": 283
+    },
+    "booking": {
+      "navigation_status": "scripted",
+      "navigation_oracle": {
+        "visible": true,
+        "log": [
+          "filter",
+          "inspect",
+          "reserve",
+          "apply_code"
+        ],
+        "reservation": null,
+        "codeText": "Access code accepted. Two seats reserved for review."
+      },
+      "navigation_usage": {},
+      "navigation_elapsed_ms": null,
+      "actions": [],
+      "status": "measured",
+      "rules": {
+        "status": "fail",
+        "disabled": "pass",
+        "alignment": "pass"
+      },
+      "elapsed_ms": 244
+    },
+    "review": {
+      "navigation_status": "scripted",
+      "navigation_oracle": {
+        "visible": true,
+        "log": [
+          "filter",
+          "inspect",
+          "reserve",
+          "apply_code",
+          "review"
+        ],
+        "reservation": {
+          "name": "Avery Example",
+          "email": "avery@example.com",
+          "seats": 2,
+          "code": "OPEN",
+          "status": "review"
+        },
+        "codeText": "Access code accepted. Two seats reserved for review."
+      },
+      "navigation_usage": {},
+      "navigation_elapsed_ms": null,
+      "actions": [],
+      "status": "measured",
+      "rules": {
+        "confirm": "fail",
+        "overflow": "fail",
+        "reference": "uncertain"
+      },
+      "elapsed_ms": 83
+    }
+  },
+  "mode": "preflight",
+  "final_oracle": {
+    "visible": true,
+    "log": [
+      "filter",
+      "inspect",
+      "reserve",
+      "apply_code",
+      "review"
+    ],
+    "reservation": {
+      "name": "Avery Example",
+      "email": "avery@example.com",
+      "seats": 2,
+      "code": "OPEN",
+      "status": "review"
+    },
+    "codeText": "Access code accepted. Two seats reserved for review."
+  },
+  "elapsed_ms": 1294
+}

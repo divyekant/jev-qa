@@ -1,0 +1,111 @@
+{
+  "status": "needs_review",
+  "checks": [
+    {
+      "id": "title",
+      "kind": "unclipped",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 16,
+          "y": 347.5,
+          "width": 330,
+          "height": 64,
+          "right": 346,
+          "bottom": 411.5
+        },
+        "textBox": {
+          "x": 16,
+          "y": 348.5,
+          "width": 239.7,
+          "height": 62,
+          "right": 255.7,
+          "bottom": 410.5
+        },
+        "fullText": "Responsive interfaces in practice",
+        "fullTextTruncated": false,
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "clientWidth": 330,
+        "scrollWidth": 330,
+        "clientHeight": 64,
+        "scrollHeight": 64
+      }
+    },
+    {
+      "id": "badge",
+      "kind": "decorative_overlap",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "subject": {
+          "x": 35,
+          "y": 264,
+          "width": 104.48,
+          "height": 31,
+          "right": 139.48,
+          "bottom": 295
+        },
+        "decorative": {
+          "x": 16,
+          "y": 94,
+          "width": 358,
+          "height": 190,
+          "right": 374,
+          "bottom": 284
+        },
+        "content": {
+          "x": 16,
+          "y": 347.5,
+          "width": 330,
+          "height": 64,
+          "right": 346,
+          "bottom": 411.5
+        },
+        "decorativeIntersectionPx2": 2089.6,
+        "contentIntersectionPx2": 0
+      }
+    },
+    {
+      "id": "artwork",
+      "kind": "artwork",
+      "assessment": "uncertain",
+      "source": "unsupported",
+      "evidence": {
+        "status": "unsupported",
+        "visible": true,
+        "box": {
+          "x": 16,
+          "y": 555.5,
+          "width": 94,
+          "height": 94,
+          "right": 110,
+          "bottom": 649.5
+        },
+        "pixelContentInspected": false,
+        "reason": "pixel_content_not_inspected"
+      },
+      "reason": "pixel_content_not_inspected"
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": false,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

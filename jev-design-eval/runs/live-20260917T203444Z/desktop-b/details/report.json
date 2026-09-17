@@ -1,0 +1,55 @@
+{
+  "status": "fail",
+  "terminal_status": "low_confidence",
+  "task": {
+    "url": "http://127.0.0.1:50042/?build=m4",
+    "goal": "Choose Design systems in Track. Enter Responsive interfaces in Search sessions. Click Apply filters. Then click Inspect session for Responsive interfaces in practice. Stop with session details open; do not reserve seats yet.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "visible",
+        "selector": "#details-panel",
+        "expected": true
+      }
+    ],
+    "criteria": [],
+    "max_steps": 12,
+    "max_seconds": 60.0,
+    "min_confidence": 0.8,
+    "value_labels": [
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "visible",
+      "selector": "#details-panel",
+      "expected": true,
+      "passed": false,
+      "reason": "visibility_mismatch"
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 340,
+        "usage": {
+          "input_tokens": 3102,
+          "output_tokens": 199
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 433,
+  "trace": "trace.jsonl",
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

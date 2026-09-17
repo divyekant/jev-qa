@@ -1,0 +1,13 @@
+[
+  {"kind": "select", "label": "Floor", "value": "Level 2"},
+  {"kind": "fill", "label": "Search rooms", "value": "Willow"},
+  {"kind": "click", "label": "Find rooms"},
+  {"kind": "click", "label": "View room"},
+  {"kind": "select", "label": "Date", "value": "2026-10-14"},
+  {"kind": "select", "label": "Start time", "value": "2:00 PM"},
+  {"kind": "select", "label": "Length", "value": "60 minutes"},
+  {"kind": "fill", "label": "Your name", "value": "Avery Chen"},
+  {"kind": "fill", "label": "Email", "value": "avery.chen@example.test"},
+  {"kind": "click", "label": "I agree to the room rules"},
+  {"kind": "click", "label": "Review reservation"}
+]

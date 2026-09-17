@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:55910/holdout?build=q4",
+    "goal": "Current objective: Select 60 minutes in Length.\nVerified previous objectives: Search for Willow; Apply the room search; Open Willow Room; Choose the date; Choose the start time. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#length-select",
+        "expected": "60 minutes"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 53,
+    "max_seconds": 175.37568433396518,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Email",
+      "Search rooms",
+      "Your name"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#length-select",
+      "expected": "60 minutes",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e9",
+      "kind": "select",
+      "label": "Length → 60 minutes"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 300,
+        "usage": {
+          "input_tokens": 2812,
+          "output_tokens": 194
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 472,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

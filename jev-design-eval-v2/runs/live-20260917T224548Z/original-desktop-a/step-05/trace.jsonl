@@ -1,0 +1,7 @@
+{"elapsed_ms":95,"event":"observe","url":"http://127.0.0.1:51495/original?build=k7","title":"Fieldwork / Studio sessions","action_count":3}
+{"elapsed_ms":265,"event":"decision","operation":"CLICK","target":"2","confidence":0.99,"target_confidence":1.0}
+{"elapsed_ms":265,"event":"action_intent","action":"e2","kind":"click","label":"Reserve seats","confidence":0.99,"target_confidence":1.0}
+{"elapsed_ms":297,"event":"action_result","action":"e2","ok":true,"result":{"executed":"e2"}}
+{"elapsed_ms":400,"event":"observe","url":"http://127.0.0.1:51495/original?build=k7","title":"Fieldwork / Studio sessions","action_count":11}
+{"elapsed_ms":403,"event":"assertions_passed","count":1}
+{"elapsed_ms":448,"event":"observe","reason":"final","url":"http://127.0.0.1:51495/original?build=k7","title":"Fieldwork / Studio sessions"}

@@ -1,0 +1,84 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57628/holdout?build=q4",
+    "goal": "Current objective: Check I agree to the room rules.\nVerified previous objectives: Choose the date; Choose the start time; Choose the length; Enter your name; Enter your email. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "checked",
+        "selector": "#rules-check",
+        "expected": true
+      },
+      {
+        "kind": "visible",
+        "selector": "#review-button",
+        "expected": true
+      }
+    ],
+    "criteria": [],
+    "max_steps": 50,
+    "max_seconds": 174.83418262505438,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Email",
+      "Search rooms",
+      "Your name"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "checked",
+      "selector": "#rules-check",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "visible",
+      "selector": "#review-button",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e15",
+      "kind": "click",
+      "label": "I agree to the room rules"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 215,
+        "usage": {
+          "input_tokens": 3042,
+          "output_tokens": 195
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 392,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

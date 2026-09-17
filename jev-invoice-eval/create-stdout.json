@@ -1,0 +1,200 @@
+{
+  "status": "pass",
+  "report": "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-invoice-eval/create/report.json",
+  "result": {
+    "status": "pass",
+    "terminal_status": "done",
+    "task": {
+      "url": "http://127.0.0.1:50331/",
+      "goal": "Create exactly one draft invoice for Ada Example, email ada@example.com, quantity 3, unit price 19.95. Fill all four fields, click Save draft once, then stop when the saved invoice appears. Keep it Draft and Unpaid. Do not send it.",
+      "mode": "run",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#customer",
+          "expected": "Ada Example"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#email",
+          "expected": "ada@example.com"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#quantity",
+          "expected": "3"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#unit_price",
+          "expected": "$19.95"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#total",
+          "expected": "$59.85"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#status",
+          "expected": "Draft"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#payment",
+          "expected": "Unpaid"
+        }
+      ],
+      "criteria": [],
+      "max_steps": 12,
+      "max_seconds": 90.0,
+      "min_confidence": 0.8,
+      "value_labels": [
+        "Customer email",
+        "Customer name",
+        "Quantity",
+        "Unit price"
+      ]
+    },
+    "assertions": [
+      {
+        "kind": "text_equals",
+        "selector": "#customer",
+        "expected": "Ada Example",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#email",
+        "expected": "ada@example.com",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#quantity",
+        "expected": "3",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#unit_price",
+        "expected": "$19.95",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#total",
+        "expected": "$59.85",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#status",
+        "expected": "Draft",
+        "passed": true,
+        "reason": ""
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#payment",
+        "expected": "Unpaid",
+        "passed": true,
+        "reason": ""
+      }
+    ],
+    "judgments": [],
+    "model_assessments": [],
+    "actions": [
+      {
+        "action": "e1",
+        "kind": "fill",
+        "label": "Customer name"
+      },
+      {
+        "action": "e3",
+        "kind": "fill",
+        "label": "Customer email"
+      },
+      {
+        "action": "e5",
+        "kind": "fill",
+        "label": "Quantity"
+      },
+      {
+        "action": "e7",
+        "kind": "fill",
+        "label": "Unit price"
+      },
+      {
+        "action": "e9",
+        "kind": "click",
+        "label": "Save draft"
+      }
+    ],
+    "omitted_actions": [],
+    "errors": [],
+    "model_usage": {
+      "operation": [
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 448,
+          "usage": {
+            "input_tokens": 2138,
+            "output_tokens": 150
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 249,
+          "usage": {
+            "input_tokens": 2178,
+            "output_tokens": 150
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 110,
+          "usage": {
+            "input_tokens": 2223,
+            "output_tokens": 150
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 225,
+          "usage": {
+            "input_tokens": 2259,
+            "output_tokens": 150
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 120,
+          "usage": {
+            "input_tokens": 2312,
+            "output_tokens": 149
+          }
+        },
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 89,
+          "usage": {
+            "input_tokens": 898,
+            "output_tokens": 40
+          }
+        }
+      ],
+      "text": [],
+      "review": []
+    },
+    "elapsed_ms": 2788,
+    "trace": "trace.jsonl",
+    "probable_defects": [],
+    "final_screenshot": "final.jpg"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "scope": "Target-first Jev selection and owned-tab cleanup; no visual-model or new workflow integration",
+  "confidence": 0.8,
+  "final_regression_repeats": 3,
+  "fresh_repeats": 1,
+  "max_steps_per_case": 60,
+  "max_seconds_per_case": 180,
+  "regression_gate": {
+    "journeys": 8,
+    "checkpoints": 88,
+    "supported_checks": 64,
+    "seeded_defects": 14,
+    "false_passes": 0,
+    "false_failures": 0
+  },
+  "fresh_gate": {
+    "journeys": 4,
+    "checkpoints": 40,
+    "supported_checks": 32,
+    "seeded_defects": 6,
+    "false_passes": 0,
+    "false_failures": 0
+  },
+  "notes": [
+    "Preserve all development attempts. Freeze runtime before final repeats.",
+    "Artwork remains uncertain. Contextual judgments remain advisory.",
+    "Do not adjust confidence, expected truth, viewport, or fixture to turn failures into passes.",
+    "Run fresh cases only after the intended candidate is fixed; report any follow-up correction separately.",
+    "Record wrapper time separately; do not infer unavailable wrapper tokens.",
+    "Before any paid v4 call, corrected fresh README after geometry probe: offscreen equipment button and termscheckbox, not necessarily finalreviewbutton. No fixturecode/task/truth changes."
+  ],
+  "fixture_sha256": {
+    "outputs/jev-design-eval/index.html": "533624d826fd70e86d477c12d19bab5a632f2ad5f8e20787c0623e09f9f4e38f",
+    "outputs/jev-design-eval-v2/holdout/index.html": "3679d1ae27a649346610cbe0da8651dca0b284b497a52c18c55ea8825ac6b838",
+    "outputs/jev-design-eval-v4/fresh/manifest.sha256": "2609d014e230e56289d165f6b771958b1c8d49478354938548c49c66fd2f5dad",
+    "outputs/jev-design-eval-v4/fresh/index.html": "eec9fc38c0a8afb11a51959b23749fd9aa74fb00176d98e351950e539432ae94",
+    "outputs/jev-design-eval-v4/fresh/README.md": "0ad2abad8d0aff3da2d35b296317f7a14fd4aca8452f40256996c8f95067eaa2",
+    "outputs/jev-design-eval-v4/fresh/cases.json": "03a6b800cb94f6fa4c60faeb3f135f7b8bcd294042d485c61e00133ccf8fa24d",
+    "outputs/jev-design-eval-v4/fresh/truth.json": "b9b01525c8c0c9dd9748714f632ea130e123f98ef15d3878d675f23009b5f6f7",
+    "outputs/jev-design-eval-v4/fresh/preflight.json": "010f8acfc1d47f56aab6d6321a2935b8a7bb6ddd37d30998b8a52c58e7638b63"
+  }
+}

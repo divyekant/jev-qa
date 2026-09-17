@@ -1,0 +1,14 @@
+{"elapsed_ms":14,"event":"observe","url":"http://127.0.0.1:56267/original?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":250,"event":"decision","operation":"REVEAL_R1","target":null,"confidence":0.96,"target_confidence":null}
+{"elapsed_ms":250,"event":"action_intent","action":"REVEAL_R1","kind":"reveal","label":"Reveal below: button Inspect session","confidence":0.96,"target_confidence":null}
+{"elapsed_ms":309,"event":"action_result","action":"REVEAL_R1","ok":true,"result":{"executed":"REVEAL_R1","direction":"below","delta_x":0,"delta_y":844}}
+{"elapsed_ms":436,"event":"observe","url":"http://127.0.0.1:56267/original?build=k7","title":"Fieldwork / Studio sessions","action_count":7}
+{"elapsed_ms":695,"event":"decision","operation":"CLICK","target":"4","confidence":0.79,"target_confidence":0.79}
+{"elapsed_ms":695,"event":"recovery","reason":"low_target_first_confidence","attempt":1}
+{"elapsed_ms":718,"event":"observe","reason":"recovery","url":"http://127.0.0.1:56267/original?build=k7","title":"Fieldwork / Studio sessions"}
+{"elapsed_ms":945,"event":"decision","operation":"CLICK","target":"4","confidence":0.82,"target_confidence":0.82}
+{"elapsed_ms":945,"event":"action_intent","action":"e5","kind":"click","label":"Inspect session","confidence":0.82,"target_confidence":0.82}
+{"elapsed_ms":977,"event":"action_result","action":"e5","ok":true,"result":{"executed":"e5"}}
+{"elapsed_ms":1119,"event":"observe","url":"http://127.0.0.1:56267/original?build=k7","title":"Fieldwork / Studio sessions","action_count":5}
+{"elapsed_ms":1124,"event":"assertions_passed","count":2}
+{"elapsed_ms":1167,"event":"observe","reason":"final","url":"http://127.0.0.1:56267/original?build=k7","title":"Fieldwork / Studio sessions"}

@@ -1,0 +1,123 @@
+{
+  "status": "needs_review",
+  "checks": [
+    {
+      "id": "kit-description",
+      "kind": "unclipped",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 652,
+          "y": 619.44,
+          "width": 477,
+          "height": 48,
+          "right": 1129,
+          "bottom": 667.44
+        },
+        "textBox": {
+          "x": 652,
+          "y": 622.44,
+          "width": 465,
+          "height": 42,
+          "right": 1117,
+          "bottom": 664.44
+        },
+        "fullText": "A portable recorder, two microphones, a stand, and headphones for small interviews and community projects.",
+        "fullTextTruncated": false,
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "clientWidth": 477,
+        "scrollWidth": 477,
+        "clientHeight": 48,
+        "scrollHeight": 48
+      }
+    },
+    {
+      "id": "kit-reference",
+      "kind": "ellipsis",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 652,
+          "y": 563.53,
+          "width": 240,
+          "height": 36,
+          "right": 892,
+          "bottom": 599.53
+        },
+        "textBox": {
+          "x": 652,
+          "y": 567.53,
+          "width": 491.55,
+          "height": 28,
+          "right": 1143.55,
+          "bottom": 595.53
+        },
+        "fullText": "Portable sound kit — complete recording set",
+        "fullTextTruncated": false,
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "whiteSpace": "nowrap",
+        "textOverflow": "ellipsis",
+        "clientWidth": 240,
+        "scrollWidth": 492,
+        "clientHeight": 36,
+        "scrollHeight": 36,
+        "title": "Portable sound kit — complete recording set"
+      }
+    },
+    {
+      "id": "catalog-width",
+      "kind": "horizontal_fit",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "viewportWidth": 1280,
+        "documentWidth": 1280
+      }
+    },
+    {
+      "id": "kit-artwork",
+      "kind": "artwork",
+      "assessment": "uncertain",
+      "source": "unsupported",
+      "evidence": {
+        "status": "unsupported",
+        "visible": true,
+        "box": {
+          "x": 151,
+          "y": 511.63,
+          "width": 477,
+          "height": 150,
+          "right": 628,
+          "bottom": 661.63
+        },
+        "pixelContentInspected": false,
+        "reason": "pixel_content_not_inspected"
+      },
+      "reason": "pixel_content_not_inspected"
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 1280,
+    "height": 900,
+    "documentWidth": 1280
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": false,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

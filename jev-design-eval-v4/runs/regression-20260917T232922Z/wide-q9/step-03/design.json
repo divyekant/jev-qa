@@ -1,0 +1,113 @@
+{
+  "status": "fail",
+  "checks": [
+    {
+      "id": "room-note-unclipped",
+      "kind": "unclipped",
+      "assessment": "fail",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 364,
+          "y": 654.25,
+          "width": 373,
+          "height": 13.75,
+          "right": 737,
+          "bottom": 668
+        },
+        "textBox": {
+          "x": 364,
+          "y": 655.25,
+          "width": 367.38,
+          "height": 35.95,
+          "right": 731.38,
+          "bottom": 691.2
+        },
+        "fullText": "Soft daylight, power at every seat, and a small whiteboard for quiet planning or one-to-one study.",
+        "fullTextTruncated": false,
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "clientWidth": 373,
+        "scrollWidth": 373,
+        "clientHeight": 14,
+        "scrollHeight": 40
+      },
+      "reason": "content_clipped"
+    },
+    {
+      "id": "room-title-ellipsis",
+      "kind": "ellipsis",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 364,
+          "y": 596.45,
+          "width": 230,
+          "height": 19.31,
+          "right": 594,
+          "bottom": 615.77
+        },
+        "textBox": {
+          "x": 364,
+          "y": 595.45,
+          "width": 247.63,
+          "height": 20,
+          "right": 611.63,
+          "bottom": 615.45
+        },
+        "fullText": "Willow Room for Quiet Reading",
+        "fullTextTruncated": false,
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "whiteSpace": "nowrap",
+        "textOverflow": "ellipsis",
+        "clientWidth": 230,
+        "scrollWidth": 248,
+        "clientHeight": 19,
+        "scrollHeight": 19,
+        "title": "Willow Room for Quiet Reading"
+      }
+    },
+    {
+      "id": "brand-artwork",
+      "kind": "artwork",
+      "assessment": "uncertain",
+      "source": "unsupported",
+      "evidence": {
+        "status": "unsupported",
+        "visible": true,
+        "box": {
+          "x": 50,
+          "y": 16,
+          "width": 56,
+          "height": 56,
+          "right": 106,
+          "bottom": 72
+        },
+        "pixelContentInspected": false,
+        "reason": "pixel_content_not_inspected"
+      },
+      "reason": "pixel_content_not_inspected"
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 1280,
+    "height": 900,
+    "documentWidth": 1280
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": false,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

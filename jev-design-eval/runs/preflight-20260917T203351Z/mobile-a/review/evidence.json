@@ -1,0 +1,286 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "scrollX": 0,
+    "scrollY": 0,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "computedStyles": true,
+    "hitTesting": "nine sampled points per visible element",
+    "images": false,
+    "canvasContents": false,
+    "complexBackgroundContrast": false
+  },
+  "elements": {
+    "confirm-button": {
+      "tag": "button",
+      "role": null,
+      "text": "Confirm reservation",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 16,
+        "y": 504.97,
+        "width": 184,
+        "height": 44,
+        "right": 200,
+        "bottom": 548.97
+      },
+      "textBox": {
+        "x": 34.83,
+        "y": 517.72,
+        "width": 146.34,
+        "height": 18,
+        "right": 181.17,
+        "bottom": 535.72
+      },
+      "clientWidth": 182,
+      "scrollWidth": 182,
+      "clientHeight": 42,
+      "scrollHeight": 42,
+      "style": {
+        "fontSize": "15px",
+        "lineHeight": "22.5px",
+        "color": "oklch(1 0 0)",
+        "backgroundColor": "oklch(0.58 0.19 16)",
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 43.6,
+          "y": 513.77,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 43.6,
+          "y": 526.97,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 43.6,
+          "y": 540.17,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 108,
+          "y": 513.77,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 108,
+          "y": 526.97,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 108,
+          "y": 540.17,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 172.4,
+          "y": 513.77,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 172.4,
+          "y": 526.97,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        },
+        {
+          "x": 172.4,
+          "y": 540.17,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Confirm reservation"
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    },
+    "project-label": {
+      "tag": "span",
+      "role": null,
+      "text": "Workshop reservation for the regional interface research team",
+      "title": "Workshop reservation for the regional interface research team",
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 216,
+        "y": 451.97,
+        "width": 140,
+        "height": 14.3,
+        "right": 356,
+        "bottom": 466.27
+      },
+      "textBox": {
+        "x": 216,
+        "y": 451.97,
+        "width": 325.42,
+        "height": 13,
+        "right": 541.42,
+        "bottom": 464.97
+      },
+      "clientWidth": 140,
+      "scrollWidth": 325,
+      "clientHeight": 14,
+      "scrollHeight": 14,
+      "style": {
+        "fontSize": "11px",
+        "lineHeight": "14.3px",
+        "color": "oklch(0.5 0.028 170)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "whiteSpace": "nowrap",
+        "textOverflow": "ellipsis"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 237,
+          "y": 454.83,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 237,
+          "y": 459.12,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 237,
+          "y": 463.41,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 286,
+          "y": 454.83,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 286,
+          "y": 459.12,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 286,
+          "y": 463.41,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 335,
+          "y": 454.83,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 335,
+          "y": 459.12,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        },
+        {
+          "x": 335,
+          "y": 463.41,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "span",
+            "role": null,
+            "text": "Workshop reservation for the regional interface research team"
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    }
+  },
+  "relationships": {}
+}

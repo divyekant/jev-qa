@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57931/fresh?build=s3",
+    "goal": "Current objective: Accept the equipment care terms.\nVerified previous objectives: Inspect kit; Choose length; Choose window; Enter borrower; Enter contact. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "checked",
+        "selector": "#terms",
+        "expected": true
+      }
+    ],
+    "criteria": [],
+    "max_steps": 52,
+    "max_seconds": 176.01019295793958,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Borrower name",
+      "Contact email",
+      "Search equipment"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "checked",
+      "selector": "#terms",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e13",
+      "kind": "click",
+      "label": "I accept the equipment care terms"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 149,
+        "usage": {
+          "input_tokens": 2492,
+          "output_tokens": 159
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 312,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

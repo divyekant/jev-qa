@@ -1,0 +1,122 @@
+{
+  "steps": [
+    {
+      "name": "Email entered",
+      "navigation_status": "pass",
+      "navigation_report": "step-01/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#email",
+          "expected": "tester@example.com",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1
+    },
+    {
+      "name": "Subscription saved",
+      "navigation_status": "pass",
+      "navigation_report": "step-02/report.json",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#status",
+          "expected": "Subscription saved.",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "design": {
+        "status": "pass",
+        "checks": [
+          {
+            "id": "message-readable",
+            "kind": "unclipped",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 0,
+                "y": 399.11,
+                "width": 390,
+                "height": 53,
+                "right": 390,
+                "bottom": 452.11
+              },
+              "textBox": {
+                "x": 16,
+                "y": 415.11,
+                "width": 157.83,
+                "height": 21,
+                "right": 173.83,
+                "bottom": 436.11
+              },
+              "fullText": "Subscription saved.",
+              "fullTextTruncated": false,
+              "overflowX": "visible",
+              "overflowY": "visible",
+              "whiteSpace": "normal",
+              "textOverflow": "clip",
+              "clientWidth": 390,
+              "scrollWidth": 390,
+              "clientHeight": 53,
+              "scrollHeight": 53
+            }
+          },
+          {
+            "id": "page-width",
+            "kind": "horizontal_fit",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "viewportWidth": 390,
+              "documentWidth": 390
+            }
+          }
+        ],
+        "model_usage": []
+      }
+    }
+  ],
+  "routing": {
+    "decision_model": "jev-latest",
+    "text_helper": "disabled"
+  },
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 257,
+        "usage": {
+          "input_tokens": 1695,
+          "output_tokens": 108
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 94,
+        "usage": {
+          "input_tokens": 1695,
+          "output_tokens": 107
+        }
+      }
+    ],
+    "text": [],
+    "review": [],
+    "design": []
+  },
+  "errors": [],
+  "status": "pass",
+  "navigation_status": "pass",
+  "design_status": "pass",
+  "reached": 2,
+  "total": 2,
+  "elapsed_ms": 2028,
+  "actions": 2
+}

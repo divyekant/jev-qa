@@ -1,0 +1,67 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:51496/jev-session-2bbe959a49964adf92610a612fb6fdfd/app",
+    "goal": "Current objective: Click Verify session.\nVerified previous objectives: none. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "text_equals",
+        "selector": "#status",
+        "expected": "Existing session verified."
+      }
+    ],
+    "criteria": [],
+    "max_steps": 5,
+    "max_seconds": 29.95879479101859,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true
+  },
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#status",
+      "expected": "Existing session verified.",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e1",
+      "kind": "click",
+      "label": "Verify session"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 243,
+        "usage": {
+          "input_tokens": 1181,
+          "output_tokens": 69
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 489,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

@@ -1,0 +1,168 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "id": "confirm",
+      "kind": "unobstructed",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 16,
+          "y": 504.97,
+          "width": 184,
+          "height": 44,
+          "right": 200,
+          "bottom": 548.97
+        },
+        "inViewport": true,
+        "hitSamples": [
+          {
+            "x": 43.6,
+            "y": 513.77,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 43.6,
+            "y": 526.97,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 43.6,
+            "y": 540.17,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 108,
+            "y": 513.77,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 108,
+            "y": 526.97,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 108,
+            "y": 540.17,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 172.4,
+            "y": 513.77,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 172.4,
+            "y": 526.97,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 172.4,
+            "y": 540.17,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "overflow",
+      "kind": "horizontal_fit",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "viewportWidth": 390,
+        "documentWidth": 390
+      }
+    },
+    {
+      "id": "reference",
+      "kind": "ellipsis",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 216,
+          "y": 451.97,
+          "width": 140,
+          "height": 14.3,
+          "right": 356,
+          "bottom": 466.27
+        },
+        "textBox": {
+          "x": 216,
+          "y": 451.97,
+          "width": 325.42,
+          "height": 13,
+          "right": 541.42,
+          "bottom": 464.97
+        },
+        "fullText": "Workshop reservation for the regional interface research team",
+        "fullTextTruncated": false,
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "whiteSpace": "nowrap",
+        "textOverflow": "ellipsis",
+        "clientWidth": 140,
+        "scrollWidth": 325,
+        "clientHeight": 14,
+        "scrollHeight": 14,
+        "title": "Workshop reservation for the regional interface research team"
+      }
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": false,
+    "hitTesting": true,
+    "pixelContentInspected": false
+  }
+}

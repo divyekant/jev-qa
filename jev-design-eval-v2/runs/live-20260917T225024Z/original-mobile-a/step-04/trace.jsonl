@@ -1,0 +1,11 @@
+{"elapsed_ms":48,"event":"observe","url":"http://127.0.0.1:62889/original?build=k7","title":"Fieldwork / Studio sessions","action_count":9}
+{"elapsed_ms":179,"event":"decision","operation":"REVEAL_R1","target":null,"confidence":0.88,"target_confidence":null}
+{"elapsed_ms":179,"event":"action_intent","action":"REVEAL_R1","kind":"reveal","label":"Reveal below: button Inspect session","confidence":0.88,"target_confidence":null}
+{"elapsed_ms":312,"event":"action_result","action":"REVEAL_R1","ok":true,"result":{"executed":"REVEAL_R1","direction":"below","delta_x":0,"delta_y":844}}
+{"elapsed_ms":421,"event":"observe","url":"http://127.0.0.1:62889/original?build=k7","title":"Fieldwork / Studio sessions","action_count":7}
+{"elapsed_ms":673,"event":"decision","operation":"CLICK","target":"4","confidence":0.99,"target_confidence":1.0}
+{"elapsed_ms":673,"event":"action_intent","action":"e5","kind":"click","label":"Inspect session","confidence":0.99,"target_confidence":1.0}
+{"elapsed_ms":860,"event":"action_result","action":"e5","ok":true,"result":{"executed":"e5"}}
+{"elapsed_ms":1138,"event":"observe","url":"http://127.0.0.1:62889/original?build=k7","title":"Fieldwork / Studio sessions","action_count":5}
+{"elapsed_ms":1143,"event":"assertions_passed","count":2}
+{"elapsed_ms":1185,"event":"observe","reason":"final","url":"http://127.0.0.1:62889/original?build=k7","title":"Fieldwork / Studio sessions"}

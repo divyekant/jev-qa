@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "id": "time-hint-contrast",
+      "kind": "contrast",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 50,
+          "y": 485.95,
+          "width": 290,
+          "height": 18.09,
+          "right": 340,
+          "bottom": 504.05
+        },
+        "foreground": [
+          35,
+          79,
+          67
+        ],
+        "background": [
+          247,
+          250,
+          247
+        ],
+        "contrastSupported": true,
+        "contrastRatio": 8.79
+      }
+    },
+    {
+      "id": "after-hours-disabled",
+      "kind": "disabled",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 50,
+          "y": 790.8,
+          "width": 290,
+          "height": 42,
+          "right": 340,
+          "bottom": 832.8
+        },
+        "nativeDisabled": true,
+        "ariaDisabled": false,
+        "tag": "button",
+        "role": null
+      }
+    },
+    {
+      "id": "review-aligned",
+      "kind": "aligned",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "first": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 50,
+            "y": 592.55,
+            "width": 290,
+            "height": 42,
+            "right": 340,
+            "bottom": 634.55
+          }
+        },
+        "second": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 50,
+            "y": 275.45,
+            "width": 290,
+            "height": 42,
+            "right": 340,
+            "bottom": 317.45
+          }
+        }
+      }
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": false,
+    "contrast": true,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

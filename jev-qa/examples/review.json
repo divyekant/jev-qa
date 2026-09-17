@@ -1,0 +1,8 @@
+{
+  "evidence": {
+    "requirement": "An empty email must be rejected.",
+    "input": {"email": ""},
+    "observed_response": "Subscription saved."
+  },
+  "criteria": ["The observed behavior meets the stated requirement to reject an empty email."]
+}

@@ -1,0 +1,104 @@
+{
+  "status": "fail",
+  "terminal_status": "done",
+  "task": {
+    "url": "http://127.0.0.1:8769/form.html?broken=1",
+    "goal": "Leave Email empty. Click Subscribe exactly once. Stop after the submission response appears, even if the response is incorrect.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "text_equals",
+        "selector": "#status",
+        "expected": "Email is required."
+      }
+    ],
+    "criteria": [
+      "The observed submission response clearly tells the user that an email address is required."
+    ],
+    "max_steps": 6,
+    "max_seconds": 60.0,
+    "min_confidence": 0.8
+  },
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#status",
+      "expected": "Email is required.",
+      "passed": false,
+      "reason": "text_mismatch"
+    }
+  ],
+  "judgments": [
+    {
+      "criterion": "The observed submission response clearly tells the user that an email address is required.",
+      "assessment": "fail",
+      "confidence": 0.89,
+      "probabilities": {
+        "uncertain": 0.07,
+        "pass": 0.0,
+        "fail": 0.93
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 138
+    }
+  ],
+  "model_assessments": [
+    {
+      "criterion": "The observed submission response clearly tells the user that an email address is required.",
+      "assessment": "fail",
+      "confidence": 0.89,
+      "probabilities": {
+        "uncertain": 0.07,
+        "pass": 0.0,
+        "fail": 0.93
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 138
+    }
+  ],
+  "actions": [
+    {
+      "action": "e3",
+      "kind": "click",
+      "label": "Subscribe"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 406,
+        "usage": {
+          "input_tokens": "[truncated]",
+          "output_tokens": "[truncated]"
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 245,
+        "usage": {
+          "input_tokens": "[truncated]",
+          "output_tokens": "[truncated]"
+        }
+      }
+    ],
+    "text": [],
+    "review": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 138,
+        "usage": {
+          "input_tokens": "[truncated]",
+          "output_tokens": "[truncated]"
+        }
+      }
+    ]
+  },
+  "elapsed_ms": 1765,
+  "trace": "trace.jsonl",
+  "final_screenshot": "final.jpg"
+}

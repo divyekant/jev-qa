@@ -1,0 +1,47 @@
+{
+  "case": "Create and audit a fictional draft invoice",
+  "expected_record": {
+    "customer": "Ada Example",
+    "email": "ada@example.com",
+    "quantity": 3,
+    "unit_cents": 1995,
+    "total_cents": 5985,
+    "status": "Draft",
+    "payment": "Unpaid"
+  },
+  "criteria": [
+    "The invoice identifies customer Ada Example and email ada@example.com.",
+    "The invoice has quantity 3 at unit price $19.95 and shows the mathematically correct total $59.85.",
+    "The invoice remains Draft and Unpaid."
+  ],
+  "expected_qa": {
+    "qa-a": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "qa-b": [
+      "pass",
+      "fail",
+      "pass"
+    ]
+  },
+  "seeded_defect": "View b adds $10.00 to displayed total; stored record remains unchanged.",
+  "attempts_per_stage": 1,
+  "max_steps": 12,
+  "max_seconds": 90,
+  "min_confidence": 0.8,
+  "scope": "Live installed runner. Native Codex role dispatch is outside this eval.",
+  "source_sha256": {
+    "jev-invoice-eval/evaluate.py": "b50737d6107cd8722701dd2ff4694e6a560d4d3f8aaf2c75d7a15760014ae461",
+    "jev-qa/jev_qa/__init__.py": "cc3cd6a42f3a313e7ed621dee14d34fe9d4e2b1fd77fc028d78aecb8f59aa07f",
+    "jev-qa/jev_qa/__main__.py": "1f7b1dd4fa90bc998f3f58295280a246b95a0331594eb57f67beff76a933e50d",
+    "jev-qa/jev_qa/browser.py": "0a53bd62fab2b53e1599b514963efe7c732ed13ded7424de9525ba42a245bb5e",
+    "jev-qa/jev_qa/runner.py": "38f0dcc477e3276539837b03adac3337a23e5ecd43bb01fa3c0f925c3ff09bf1"
+  },
+  "arm": "Default-model Codex subagent with computer-use tools, no Jev",
+  "history": "No inherited conversation; expected QA labels and seeded-defect implementation withheld",
+  "fixture_source_sha256": "b50737d6107cd8722701dd2ff4694e6a560d4d3f8aaf2c75d7a15760014ae461",
+  "limits": "One attempt per stage; creation under 12 UI mutations; report any over-90-second stage rather than hiding it",
+  "timing": "Parent dispatch-start to child result-ready; per-phase times from child tool timestamps. Setup before dispatch excluded."
+}

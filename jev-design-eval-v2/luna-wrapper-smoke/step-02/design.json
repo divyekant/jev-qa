@@ -1,0 +1,53 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "id": "message-readable",
+      "kind": "unclipped",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 0,
+          "y": 399.11,
+          "width": 390,
+          "height": 53,
+          "right": 390,
+          "bottom": 452.11
+        },
+        "textBox": {
+          "x": 16,
+          "y": 415.11,
+          "width": 157.83,
+          "height": 21,
+          "right": 173.83,
+          "bottom": 436.11
+        },
+        "fullText": "Subscription saved.",
+        "fullTextTruncated": false,
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "clientHeight": 53,
+        "scrollHeight": 53
+      }
+    },
+    {
+      "id": "page-width",
+      "kind": "horizontal_fit",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "viewportWidth": 390,
+        "documentWidth": 390
+      }
+    }
+  ],
+  "model_usage": []
+}

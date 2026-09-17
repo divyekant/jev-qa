@@ -1,0 +1,540 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "scrollX": 0,
+    "scrollY": 76,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "computedStyles": true,
+    "hitTesting": "nine sampled points per visible element",
+    "images": false,
+    "canvasContents": false,
+    "complexBackgroundContrast": false
+  },
+  "elements": {
+    "code-status": {
+      "tag": "p",
+      "role": "status",
+      "text": "Access code accepted. Two seats reserved for review.",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 16,
+        "y": 613.22,
+        "width": 358,
+        "height": 74.38,
+        "right": 374,
+        "bottom": 687.59
+      },
+      "textBox": {
+        "x": 31,
+        "y": 629.22,
+        "width": 313.44,
+        "height": 41.19,
+        "right": 344.44,
+        "bottom": 670.41
+      },
+      "clientWidth": 356,
+      "scrollWidth": 356,
+      "clientHeight": 72,
+      "scrollHeight": 72,
+      "style": {
+        "fontSize": "16px",
+        "lineHeight": "23.2px",
+        "color": "rgb(190, 198, 202)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": 1.73,
+      "contrastMeasurementSupported": true,
+      "hitSamples": [
+        {
+          "x": 69.7,
+          "y": 628.09,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 69.7,
+          "y": 650.41,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 69.7,
+          "y": 672.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 195,
+          "y": 628.09,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 195,
+          "y": 650.41,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 195,
+          "y": 672.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 628.09,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 650.41,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 672.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "p",
+            "role": "status",
+            "text": "Access code accepted. Two seats reserved for review."
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    },
+    "receipt-button": {
+      "tag": "button",
+      "role": null,
+      "text": "Email receipt",
+      "title": null,
+      "disabled": true,
+      "visible": true,
+      "box": {
+        "x": 16,
+        "y": 813.59,
+        "width": 99.06,
+        "height": 38,
+        "right": 115.06,
+        "bottom": 851.59
+      },
+      "textBox": {
+        "x": 29,
+        "y": 824.59,
+        "width": 73.06,
+        "height": 15,
+        "right": 102.06,
+        "bottom": 839.59
+      },
+      "clientWidth": 97,
+      "scrollWidth": 97,
+      "clientHeight": 36,
+      "scrollHeight": 36,
+      "style": {
+        "fontSize": "12px",
+        "lineHeight": "18px",
+        "color": "oklch(0.63 0.021 170)",
+        "backgroundColor": "oklch(0.94 0.004 170)",
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 30.86,
+          "y": 821.19,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Email receipt"
+          }
+        },
+        {
+          "x": 30.86,
+          "y": 832.59,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Email receipt"
+          }
+        },
+        {
+          "x": 30.86,
+          "y": 843.99,
+          "targetReceivesHit": false,
+          "topElement": null
+        },
+        {
+          "x": 65.53,
+          "y": 821.19,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Email receipt"
+          }
+        },
+        {
+          "x": 65.53,
+          "y": 832.59,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Email receipt"
+          }
+        },
+        {
+          "x": 65.53,
+          "y": 843.99,
+          "targetReceivesHit": false,
+          "topElement": null
+        },
+        {
+          "x": 100.2,
+          "y": 821.19,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Email receipt"
+          }
+        },
+        {
+          "x": 100.2,
+          "y": 832.59,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "button",
+            "role": null,
+            "text": "Email receipt"
+          }
+        },
+        {
+          "x": 100.2,
+          "y": 843.99,
+          "targetReceivesHit": false,
+          "topElement": null
+        }
+      ],
+      "pixelContentInspected": false
+    },
+    "attendee-name": {
+      "tag": "input",
+      "role": null,
+      "text": "",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 16,
+        "y": 236.22,
+        "width": 358,
+        "height": 45,
+        "right": 374,
+        "bottom": 281.22
+      },
+      "textBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "clientWidth": 356,
+      "scrollWidth": 356,
+      "clientHeight": 43,
+      "scrollHeight": 43,
+      "style": {
+        "fontSize": "15px",
+        "lineHeight": "22.5px",
+        "color": "oklch(0.25 0.028 170)",
+        "backgroundColor": "oklch(1 0 0)",
+        "overflowX": "clip",
+        "overflowY": "clip",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 69.7,
+          "y": 245.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 69.7,
+          "y": 258.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 69.7,
+          "y": 272.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 195,
+          "y": 245.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 195,
+          "y": 258.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 195,
+          "y": 272.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 245.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 258.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 272.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    },
+    "attendee-email": {
+      "tag": "input",
+      "role": null,
+      "text": "",
+      "title": null,
+      "disabled": false,
+      "visible": true,
+      "box": {
+        "x": 16,
+        "y": 323.22,
+        "width": 358,
+        "height": 45,
+        "right": 374,
+        "bottom": 368.22
+      },
+      "textBox": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "clientWidth": 356,
+      "scrollWidth": 356,
+      "clientHeight": 43,
+      "scrollHeight": 43,
+      "style": {
+        "fontSize": "15px",
+        "lineHeight": "22.5px",
+        "color": "oklch(0.25 0.028 170)",
+        "backgroundColor": "oklch(1 0 0)",
+        "overflowX": "clip",
+        "overflowY": "clip",
+        "whiteSpace": "normal",
+        "textOverflow": "clip"
+      },
+      "contrastRatio": null,
+      "contrastMeasurementSupported": false,
+      "hitSamples": [
+        {
+          "x": 69.7,
+          "y": 332.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 69.7,
+          "y": 345.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 69.7,
+          "y": 359.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 195,
+          "y": 332.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 195,
+          "y": 345.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 195,
+          "y": 359.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 332.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 345.72,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        },
+        {
+          "x": 320.3,
+          "y": 359.22,
+          "targetReceivesHit": true,
+          "topElement": {
+            "tag": "input",
+            "role": null,
+            "text": ""
+          }
+        }
+      ],
+      "pixelContentInspected": false
+    }
+  },
+  "relationships": {}
+}

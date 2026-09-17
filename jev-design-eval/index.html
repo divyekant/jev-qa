@@ -1,0 +1,1568 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="oklch(1 0 0)">
+  <title>Fieldwork / Studio sessions</title>
+  <style>
+    :root {
+      --bg: oklch(1 0 0);
+      --surface: oklch(.985 .004 11);
+      --surface-soft: oklch(.965 .009 11);
+      --surface-deep: oklch(.935 .014 11);
+      --ink: oklch(.25 .028 170);
+      --muted: oklch(.50 .028 170);
+      --quiet: oklch(.63 .021 170);
+      --line: oklch(.88 .018 11);
+      --coral: oklch(.58 .19 16);
+      --coral-deep: oklch(.42 .14 16);
+      --moss: oklch(.36 .07 170);
+      --lime: oklch(.82 .095 106);
+      --focus: oklch(.58 .19 16 / .42);
+      --shadow: 0 7px 8px oklch(.22 .024 170 / .1);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-width: 320px;
+      background: var(--bg);
+      scroll-behavior: auto;
+    }
+
+    body {
+      min-width: 0;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: visible;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      min-height: 44px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 0 17px;
+      color: var(--ink);
+      background: var(--surface-soft);
+      cursor: pointer;
+      transition: background-color 180ms ease-out, border-color 180ms ease-out, color 180ms ease-out, transform 180ms ease-out;
+    }
+
+    button:hover:not(:disabled) {
+      border-color: var(--coral);
+      background: oklch(.94 .028 16);
+    }
+
+    button:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    button:disabled {
+      color: var(--quiet);
+      background: oklch(.94 .004 170);
+      cursor: not-allowed;
+    }
+
+    .button-primary {
+      color: oklch(1 0 0);
+      background: var(--coral);
+      border-color: var(--coral);
+      font-weight: 700;
+    }
+
+    .button-primary:hover:not(:disabled) {
+      color: oklch(1 0 0);
+      background: var(--coral-deep);
+      border-color: var(--coral-deep);
+    }
+
+    .button-quiet {
+      min-height: 36px;
+      padding: 0 12px;
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .button-quiet:hover:not(:disabled) {
+      color: var(--ink);
+      background: var(--surface-soft);
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: oklch(1 0 0 / .94);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(1320px, calc(100% - 64px));
+      min-height: 76px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px 10px 10px 3px;
+      color: oklch(1 0 0);
+      background: var(--coral);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .brand-name {
+      display: block;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 760;
+      letter-spacing: -.01em;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.1;
+    }
+
+    .topbar-meta {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .topbar-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .topbar-note::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--lime);
+      content: "";
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--moss);
+      background: var(--surface-soft);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .app-shell {
+      display: grid;
+      grid-template-columns: 238px minmax(0, 1fr);
+      gap: 68px;
+      width: min(1320px, calc(100% - 64px));
+      margin: 0 auto;
+      padding: 52px 0 76px;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      min-height: 510px;
+      padding: 4px 0 0;
+    }
+
+    .sidebar-label,
+    .section-kicker,
+    .panel-kicker,
+    .detail-meta,
+    .session-track,
+    .review-step {
+      color: var(--coral-deep);
+      font-size: 11px;
+      font-weight: 780;
+      letter-spacing: .105em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .sidebar h1 {
+      max-width: 200px;
+      margin: 17px 0 12px;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.17;
+      letter-spacing: -.025em;
+      text-wrap: balance;
+    }
+
+    .sidebar-intro p {
+      max-width: 210px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .side-nav {
+      display: grid;
+      gap: 4px;
+      margin: 44px 0 0;
+    }
+
+    .side-nav button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 40px;
+      border: 0;
+      border-radius: 7px;
+      padding: 0 10px;
+      color: var(--muted);
+      background: transparent;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .side-nav button::after {
+      color: var(--quiet);
+      content: "↗";
+      font-size: 13px;
+    }
+
+    .side-nav button[aria-current="page"] {
+      color: var(--ink);
+      background: var(--surface-soft);
+      font-weight: 700;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .sidebar-footer strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .content-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .content-heading h2 {
+      max-width: 580px;
+      margin: 13px 0 9px;
+      color: var(--ink);
+      font-size: 35px;
+      line-height: 1.08;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+
+    .content-heading p {
+      max-width: 600px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .week-note {
+      flex: 0 0 auto;
+      max-width: 190px;
+      border-top: 2px solid var(--coral);
+      padding-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .week-note strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .filter-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 19px 20px 16px;
+      background: var(--surface);
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: minmax(150px, .7fr) minmax(220px, 1.5fr) auto;
+      align-items: end;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .field label,
+    .field-label {
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 45px;
+      border: 1px solid oklch(.79 .022 170);
+      border-radius: var(--radius-sm);
+      padding: 0 12px;
+      color: var(--ink);
+      background: oklch(1 0 0);
+    }
+
+    .field input::placeholder {
+      color: var(--muted);
+      opacity: 1;
+    }
+
+    .filter-grid > button {
+      min-height: 45px;
+    }
+
+    .filter-feedback {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .session-list {
+      margin-top: 34px;
+    }
+
+    .list-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .list-heading strong {
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .session-row {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 23px;
+      min-height: 103px;
+      border-top: 1px solid var(--line);
+      padding: 17px 0;
+    }
+
+    .session-row:nth-of-type(2) {
+      grid-template-columns: 110px minmax(0, 1fr) auto;
+      padding-right: 32px;
+    }
+
+    .session-row:nth-of-type(3) {
+      grid-template-columns: 68px minmax(0, 1fr) auto;
+      padding-left: 24px;
+    }
+
+    .session-time {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 720;
+      line-height: 1.25;
+    }
+
+    .session-time span {
+      display: block;
+      margin-top: 4px;
+      color: var(--quiet);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .session-title {
+      display: block;
+      margin: 5px 0 2px;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 720;
+      letter-spacing: -.02em;
+      line-height: 1.25;
+    }
+
+    .session-description {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .session-row > button {
+      white-space: nowrap;
+    }
+
+    .empty-state {
+      margin-top: 26px;
+      border: 1px dashed oklch(.78 .018 170);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      color: var(--muted);
+      background: var(--surface);
+    }
+
+    .empty-state strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .panel {
+      border-top: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .panel-inner {
+      width: min(1180px, calc(100% - 64px));
+      margin: 0 auto;
+      padding: 46px 0 72px;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 37px;
+    }
+
+    .panel-header p {
+      margin: 0;
+    }
+
+    .panel-header > span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .detail-hero {
+      display: grid;
+      grid-template-columns: minmax(270px, .78fr) minmax(0, 1.22fr);
+      align-items: center;
+      gap: clamp(32px, 7vw, 100px);
+    }
+
+    .session-art {
+      position: relative;
+      min-height: 228px;
+      overflow: visible;
+      border-radius: 18px 18px 18px 4px;
+      background: var(--moss);
+    }
+
+    .session-art::before,
+    .session-art::after {
+      position: absolute;
+      border: 1px solid oklch(1 0 0 / .35);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .session-art::before {
+      width: 175px;
+      height: 175px;
+      top: 27px;
+      right: 27px;
+    }
+
+    .session-art::after {
+      width: 105px;
+      height: 105px;
+      top: 62px;
+      right: 62px;
+      background: var(--coral);
+      border-color: transparent;
+    }
+
+    .art-word {
+      position: absolute;
+      top: 20px;
+      left: 22px;
+      color: oklch(1 0 0 / .7);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .art-number {
+      position: absolute;
+      right: 25px;
+      bottom: 20px;
+      color: oklch(1 0 0 / .72);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    #availability-badge {
+      position: absolute;
+      z-index: 1;
+      bottom: -11px;
+      left: 19px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      border-radius: var(--radius-pill);
+      padding: 0 13px;
+      color: var(--moss);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .detail-copy {
+      min-width: 0;
+    }
+
+    .detail-copy h2 {
+      max-width: 380px;
+      margin: 14px 0 15px;
+      color: var(--ink);
+      font-size: 26px;
+      font-weight: 760;
+      letter-spacing: -.035em;
+      line-height: 32px;
+      text-wrap: balance;
+    }
+
+    .detail-copy > p:last-child {
+      max-width: 50ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .seeded #session-title {
+      height: 22px;
+      overflow: hidden;
+    }
+
+    .detail-lower {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 1.15fr;
+      gap: 24px;
+      margin-top: 58px;
+    }
+
+    .detail-aside,
+    .detail-facts {
+      border-top: 1px solid var(--line);
+      padding-top: 17px;
+    }
+
+    .detail-aside {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      align-items: center;
+      gap: 20px;
+    }
+
+    #brand-art {
+      display: block;
+      width: 120px;
+      height: 120px;
+      border-radius: 12px 12px 12px 3px;
+      background: var(--surface-deep);
+    }
+
+    .detail-aside p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .detail-aside strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 0;
+    }
+
+    .facts div {
+      min-width: 0;
+    }
+
+    .facts dt {
+      margin-bottom: 4px;
+      color: var(--quiet);
+      font-size: 11px;
+    }
+
+    .facts dd {
+      margin: 0;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .detail-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .detail-action p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .narrow-panel {
+      max-width: 980px;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 264px;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .booking-copy h2,
+    .review-copy h2 {
+      margin: 0 0 11px;
+      color: var(--ink);
+      font-size: 29px;
+      font-weight: 760;
+      letter-spacing: -.04em;
+      line-height: 1.12;
+    }
+
+    .booking-copy > p,
+    .review-copy > p {
+      max-width: 53ch;
+      margin: 0 0 29px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .booking-form {
+      max-width: 550px;
+    }
+
+    .field-stack {
+      display: grid;
+      gap: 17px;
+    }
+
+    .code-line {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 9px;
+    }
+
+    #code-status {
+      min-height: 52px;
+      margin: 1px 0 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 13px 14px;
+      color: rgb(30, 55, 48);
+      background: rgb(255, 255, 255);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .seeded #code-status {
+      color: rgb(190, 198, 202);
+    }
+
+    .form-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .form-actions p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .booking-aside {
+      border-top: 2px solid var(--coral);
+      padding-top: 14px;
+    }
+
+    .booking-aside strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .booking-aside p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .review-layout {
+      display: grid;
+      grid-template-columns: minmax(200px, .72fr) minmax(0, 1.28fr);
+      gap: 75px;
+      align-items: start;
+    }
+
+    .review-copy > p {
+      max-width: 31ch;
+    }
+
+    .review-summary {
+      display: grid;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: oklch(1 0 0);
+      overflow: visible;
+    }
+
+    .summary-row,
+    .summary-total,
+    .reference-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 54px;
+      border-bottom: 1px solid var(--line);
+      padding: 13px 17px;
+    }
+
+    .summary-row span:first-child,
+    .summary-total span:first-child,
+    .reference-row > span:first-child {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .summary-row strong,
+    .summary-total strong {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 720;
+      text-align: right;
+    }
+
+    .summary-total {
+      min-height: 67px;
+      border-bottom: 0;
+    }
+
+    .summary-total strong {
+      color: var(--coral-deep);
+      font-size: 19px;
+      letter-spacing: -.025em;
+    }
+
+    .reference-row {
+      align-items: baseline;
+      min-height: 48px;
+      border-top: 1px solid var(--line);
+      border-bottom: 0;
+    }
+
+    #project-label {
+      display: block;
+      width: 140px;
+      min-width: 140px;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+      text-align: right;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .review-actions {
+      grid-column: 2;
+      margin-top: 23px;
+    }
+
+    .confirm-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    #confirm-button {
+      min-width: 184px;
+    }
+
+    #review-obstruction {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      border-radius: 5px;
+      padding: 0 10px;
+      color: var(--ink);
+      background: oklch(1 0 0 / .96);
+      box-shadow: 0 3px 7px oklch(.2 .02 170 / .18);
+      font-size: 12px;
+      font-weight: 760;
+      pointer-events: auto;
+      white-space: nowrap;
+    }
+
+    .receipt-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    #receipt-button {
+      min-height: 38px;
+      border-color: var(--line);
+      padding: 0 12px;
+      font-size: 12px;
+    }
+
+    .receipt-row span,
+    .charge-note {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .charge-note {
+      margin: 15px 0 0;
+    }
+
+    #confirmation-status {
+      margin: 14px 0 0;
+      color: var(--moss);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .app-shell {
+        gap: 38px;
+      }
+
+      .detail-hero {
+        gap: 38px;
+      }
+
+      .booking-layout,
+      .review-layout {
+        gap: 38px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner,
+      .app-shell,
+      .panel-inner {
+        width: min(100% - 40px, 1180px);
+      }
+
+      .topbar-inner {
+        min-height: 68px;
+      }
+
+      .topbar-note {
+        display: none;
+      }
+
+      .app-shell {
+        display: block;
+        padding: 30px 0 52px;
+      }
+
+      .sidebar {
+        display: block;
+        min-height: 0;
+        padding: 0;
+      }
+
+      .sidebar h1,
+      .sidebar-intro p,
+      .sidebar-footer {
+        display: none;
+      }
+
+      .side-nav {
+        display: flex;
+        gap: 4px;
+        margin: 0 0 31px;
+        overflow-x: auto;
+        padding-bottom: 3px;
+      }
+
+      .side-nav button {
+        flex: 0 0 auto;
+        min-height: 36px;
+        border: 1px solid var(--line);
+        padding: 0 11px;
+        white-space: nowrap;
+      }
+
+      .side-nav button::after {
+        display: none;
+      }
+
+      .content-heading {
+        display: block;
+        margin-bottom: 24px;
+      }
+
+      .content-heading h2 {
+        margin-top: 10px;
+        font-size: 30px;
+      }
+
+      .week-note {
+        max-width: none;
+        margin-top: 18px;
+      }
+
+      .filter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-grid > button {
+        width: 100%;
+      }
+
+      .session-list {
+        margin-top: 28px;
+      }
+
+      .session-row,
+      .session-row:nth-of-type(2),
+      .session-row:nth-of-type(3) {
+        grid-template-columns: 62px minmax(0, 1fr);
+        gap: 14px;
+        padding: 16px 0;
+      }
+
+      .session-row > button {
+        grid-column: 2;
+        justify-self: start;
+      }
+
+      .session-title {
+        font-size: 17px;
+      }
+
+      .panel-inner {
+        padding: 30px 0 54px;
+      }
+
+      .panel-header {
+        align-items: flex-start;
+        margin-bottom: 27px;
+      }
+
+      .detail-hero,
+      .detail-lower,
+      .booking-layout,
+      .review-layout {
+        display: block;
+      }
+
+      .session-art {
+        min-height: 190px;
+      }
+
+      .detail-copy {
+        margin-top: 27px;
+      }
+
+      .detail-copy h2 {
+        max-width: 330px;
+      }
+
+      .detail-lower {
+        margin-top: 39px;
+      }
+
+      .detail-facts {
+        margin-top: 29px;
+      }
+
+      .detail-action {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        gap: 11px;
+      }
+
+      .booking-aside {
+        margin-top: 36px;
+      }
+
+      .review-copy > p {
+        max-width: 42ch;
+        margin-bottom: 25px;
+      }
+
+      .review-summary {
+        width: 100%;
+      }
+
+      .review-actions {
+        margin-top: 20px;
+      }
+
+      .receipt-row {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .seeded #review-summary {
+        min-width: 520px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .topbar-inner,
+      .app-shell,
+      .panel-inner {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .topbar-meta {
+        gap: 0;
+      }
+
+      .content-heading h2 {
+        font-size: 28px;
+      }
+
+      .panel-header > span {
+        white-space: nowrap;
+      }
+
+      .detail-aside {
+        grid-template-columns: 94px minmax(0, 1fr);
+        gap: 15px;
+      }
+
+      #brand-art {
+        width: 94px;
+        height: 94px;
+      }
+
+      .facts {
+        gap: 9px;
+      }
+
+      .facts dd {
+        font-size: 12px;
+      }
+
+      .code-line {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .code-line button {
+        width: 100%;
+      }
+
+      .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .form-actions button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="Fieldwork Studio sessions">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span>
+          <span class="brand-name">Fieldwork</span>
+          <span class="brand-subtitle">Studio sessions</span>
+        </span>
+      </div>
+      <div class="topbar-meta">
+        <span class="topbar-note">Local schedule · September 2026</span>
+        <span class="avatar" aria-label="Account initials AS">AS</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell" id="session-browser">
+    <aside class="sidebar" aria-label="Workshop navigation">
+      <div class="sidebar-intro">
+        <span class="sidebar-label">Workshop desk</span>
+        <h1>Make room for useful questions.</h1>
+        <p>Small group sessions for people who design the way teams work.</p>
+      </div>
+      <nav class="side-nav" aria-label="Sections">
+        <button type="button" aria-current="page">Sessions</button>
+        <button type="button">Saved notes</button>
+        <button type="button">About Fieldwork</button>
+      </nav>
+      <div class="sidebar-footer">
+        <strong>Quiet logistics</strong>
+        Every reservation stays in this browser. There are no payments in the review.
+      </div>
+    </aside>
+
+    <section class="content" aria-labelledby="sessions-heading">
+      <div class="content-heading">
+        <div>
+          <span class="section-kicker">Sessions / Autumn</span>
+          <h2 id="sessions-heading">Reserve time to think together.</h2>
+          <p>Choose a track, find a room, and keep the next useful conversation on your calendar.</p>
+        </div>
+        <div class="week-note">
+          <strong>Next open room</strong>
+          Thursday · 14:00<br>
+          North light, 8 seats
+        </div>
+      </div>
+
+      <div class="filter-panel" aria-label="Session filters">
+        <div class="filter-grid">
+          <div class="field">
+            <label for="track-select">Track</label>
+            <select id="track-select">
+              <option value="all">All tracks</option>
+              <option value="design-systems">Design systems</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="search-sessions">Search sessions</label>
+            <input id="search-sessions" type="search" placeholder="Try a topic or phrase">
+          </div>
+          <button id="apply-filters" class="button-primary" type="button">Apply filters</button>
+        </div>
+        <p id="filter-feedback" class="filter-feedback" role="status">Showing all sessions</p>
+      </div>
+
+      <div id="session-list" class="session-list" aria-live="polite">
+        <div class="list-heading"><strong>Upcoming sessions</strong><span>4 rooms this month</span></div>
+        <article class="session-row" data-track="design-systems" data-title="Responsive interfaces in practice">
+          <div class="session-time">Thu 17<span>14:00 · 2h</span></div>
+          <div>
+            <span class="session-track">Design systems</span>
+            <span class="session-title">Responsive interfaces in practice</span>
+            <p class="session-description">A hands-on critique of layouts that keep their promise at every width.</p>
+          </div>
+          <button class="button-primary inspect-session" type="button">Inspect session</button>
+        </article>
+        <article class="session-row" data-track="design-systems" data-title="The shared language workshop">
+          <div class="session-time">Tue 22<span>09:30 · 90m</span></div>
+          <div>
+            <span class="session-track">Design systems</span>
+            <span class="session-title">The shared language workshop</span>
+            <p class="session-description">Align naming, states, and the small decisions that keep a product legible.</p>
+          </div>
+          <button class="button-primary inspect-session" type="button">Inspect session</button>
+        </article>
+        <article class="session-row" data-track="field-notes" data-title="Field notes for new spaces">
+          <div class="session-time">Fri 25<span>11:00 · 2h</span></div>
+          <div>
+            <span class="session-track">Field notes</span>
+            <span class="session-title">Field notes for new spaces</span>
+            <p class="session-description">A slow observation lab for teams starting from a blank wall.</p>
+          </div>
+          <button class="button-primary inspect-session" type="button">Inspect session</button>
+        </article>
+        <article class="session-row" data-track="field-notes" data-title="A better brief in one afternoon">
+          <div class="session-time">Wed 30<span>15:30 · 75m</span></div>
+          <div>
+            <span class="session-track">Field notes</span>
+            <span class="session-title">A better brief in one afternoon</span>
+            <p class="session-description">Turn a loose request into a clear invitation for the people doing the work.</p>
+          </div>
+          <button class="button-primary inspect-session" type="button">Inspect session</button>
+        </article>
+      </div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>No sessions match those filters.</strong>
+        Try a broader phrase or return to all tracks.
+      </div>
+    </section>
+  </main>
+
+  <section id="details-panel" class="panel" aria-labelledby="session-title" hidden>
+    <div class="panel-inner">
+      <div class="panel-header">
+        <p class="panel-kicker">Session detail</p>
+        <button id="details-back" class="button-quiet" type="button">Back to sessions</button>
+      </div>
+      <div class="detail-hero">
+        <div id="session-art" class="session-art" aria-label="Abstract green and coral session artwork">
+          <span class="art-word">FIELD / 04</span>
+          <span class="art-number">17—09—26</span>
+          <span id="availability-badge">6 seats open</span>
+        </div>
+        <div class="detail-copy">
+          <span class="detail-meta">Design systems · 2 hours</span>
+          <h2 id="session-title">Responsive interfaces in practice</h2>
+          <p>Bring one screen that matters to your team. We will test its structure, its language, and the quiet moments where a person decides what to do next.</p>
+        </div>
+      </div>
+
+      <div class="detail-lower">
+        <aside class="detail-aside">
+          <canvas id="brand-art" width="120" height="120" aria-label="Abstract Fieldwork brand icon"></canvas>
+          <p><strong>What to bring</strong>A screen, a question, and enough curiosity to redraw one assumption.</p>
+        </aside>
+        <div class="detail-facts">
+          <dl class="facts">
+            <div><dt>When</dt><dd>Thu 17 · 14:00</dd></div>
+            <div><dt>Where</dt><dd>North light room</dd></div>
+            <div><dt>Capacity</dt><dd>8 people</dd></div>
+          </dl>
+          <div class="detail-action">
+            <p>Reserve a place for your working group.</p>
+            <button id="reserve-button" class="button-primary" type="button">Reserve seats</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking-panel" class="panel" aria-labelledby="booking-heading" hidden>
+    <div class="panel-inner narrow-panel">
+      <div class="panel-header">
+        <p class="panel-kicker">Session detail / Reserve</p>
+        <span>Step 2 of 3</span>
+      </div>
+      <div class="booking-layout">
+        <div class="booking-copy">
+          <h2 id="booking-heading">Reserve your seats.</h2>
+          <p>Tell us who will join the room. The access code keeps this review private until you are ready to continue.</p>
+          <form id="booking-form" class="booking-form">
+            <div class="field-stack">
+              <div class="field">
+                <label for="attendee-name">Attendee name</label>
+                <input id="attendee-name" name="attendee-name" type="text" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="attendee-email">Attendee email</label>
+                <input id="attendee-email" name="attendee-email" type="email" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="seats-select">Seats</label>
+                <select id="seats-select" name="seats">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="access-code">Access code</label>
+                <div class="code-line">
+                  <input id="access-code" name="access-code" type="text" autocomplete="off">
+                  <button id="apply-code" type="button">Apply code</button>
+                </div>
+              </div>
+              <p id="code-status" role="status">Enter attendee details and your code.</p>
+            </div>
+            <div class="form-actions">
+              <button id="review-button" class="button-primary" type="button" disabled>Review reservation</button>
+              <p>Seat totals are shown before you confirm.</p>
+            </div>
+            <div class="receipt-row">
+              <button id="receipt-button" type="button" disabled>Email receipt</button>
+              <span>Available after confirmation.</span>
+            </div>
+          </form>
+        </div>
+        <aside class="booking-aside">
+          <strong>Private by default</strong>
+          <p>Your details stay in this local review. This sample does not send messages or process a payment.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="review-panel" class="panel" aria-labelledby="review-heading" hidden>
+    <div class="panel-inner narrow-panel">
+      <div class="panel-header">
+        <p class="panel-kicker">Session detail / Reserve / Review</p>
+        <span>Step 3 of 3</span>
+      </div>
+      <div class="review-layout">
+        <div class="review-copy">
+          <h2 id="review-heading">Review reservation</h2>
+          <p>Check the room details and attendee information before you confirm the hold.</p>
+        </div>
+        <div id="review-summary" class="review-summary" aria-label="Reservation summary">
+          <div class="summary-row"><span>Attendee</span><strong id="review-attendee">—</strong></div>
+          <div class="summary-row"><span>Seats</span><strong id="review-seats">—</strong></div>
+          <div class="summary-total"><span>Total</span><strong id="review-total">—</strong></div>
+          <div class="reference-row"><span>Reference</span><span id="project-label" title="Workshop reservation for the regional interface research team">Workshop reservation for the regional interface research team</span></div>
+        </div>
+        <div class="review-actions">
+          <div class="confirm-wrap">
+            <button id="confirm-button" class="button-primary" type="button">Confirm reservation</button>
+            <span id="review-obstruction" hidden>Preview notice</span>
+          </div>
+          <p class="charge-note">No actual charges are made in this review.</p>
+          <p id="confirmation-status" role="status" hidden></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const seeded = params.get("build") === "m4";
+      const eventLog = [];
+      window.eventLog = eventLog;
+      window.reservation = null;
+      document.documentElement.classList.toggle("seeded", seeded);
+
+      const sessionBrowser = document.getElementById("session-browser");
+      const detailsPanel = document.getElementById("details-panel");
+      const bookingPanel = document.getElementById("booking-panel");
+      const reviewPanel = document.getElementById("review-panel");
+      const trackSelect = document.getElementById("track-select");
+      const searchInput = document.getElementById("search-sessions");
+      const filterFeedback = document.getElementById("filter-feedback");
+      const emptyState = document.getElementById("empty-state");
+      const sessionRows = [...document.querySelectorAll(".session-row")];
+      const attendeeName = document.getElementById("attendee-name");
+      const attendeeEmail = document.getElementById("attendee-email");
+      const seatsSelect = document.getElementById("seats-select");
+      const accessCode = document.getElementById("access-code");
+      const codeStatus = document.getElementById("code-status");
+      const reviewButton = document.getElementById("review-button");
+      const reviewObstruction = document.getElementById("review-obstruction");
+      const confirmationStatus = document.getElementById("confirmation-status");
+
+      const log = (action) => eventLog.push(action);
+
+      function showPanel(panel) {
+        sessionBrowser.hidden = true;
+        detailsPanel.hidden = panel !== detailsPanel;
+        bookingPanel.hidden = panel !== bookingPanel;
+        reviewPanel.hidden = panel !== reviewPanel;
+        panel.scrollIntoView({ block: "start" });
+      }
+
+      function showSessions() {
+        sessionBrowser.hidden = false;
+        detailsPanel.hidden = true;
+        bookingPanel.hidden = true;
+        reviewPanel.hidden = true;
+        sessionBrowser.scrollIntoView({ block: "start" });
+      }
+
+      function applyFilters() {
+        const track = trackSelect.value;
+        const query = searchInput.value.trim().toLowerCase();
+        let visible = 0;
+        sessionRows.forEach((row) => {
+          const trackMatches = track === "all" || row.dataset.track === track;
+          const queryMatches = !query || row.dataset.title.toLowerCase().includes(query);
+          row.hidden = !(trackMatches && queryMatches);
+          if (!row.hidden) visible += 1;
+        });
+        emptyState.hidden = visible !== 0;
+        filterFeedback.textContent = visible === 1 ? "Showing 1 session" : `Showing ${visible} sessions`;
+        log("filter");
+      }
+
+      document.getElementById("apply-filters").addEventListener("click", applyFilters);
+      document.getElementById("details-back").addEventListener("click", showSessions);
+
+      document.querySelectorAll(".inspect-session").forEach((button) => {
+        button.addEventListener("click", () => {
+          window.selectedSession = button.closest(".session-row").dataset.title;
+          log("inspect");
+          showPanel(detailsPanel);
+        });
+      });
+
+      document.getElementById("reserve-button").addEventListener("click", () => {
+        log("reserve");
+        showPanel(bookingPanel);
+        attendeeName.focus();
+      });
+
+      function invalidateReview() {
+        if (window.reservation?.status !== "confirmed") {
+          reviewButton.disabled = true;
+        }
+      }
+
+      [attendeeName, attendeeEmail, accessCode].forEach((field) => field.addEventListener("input", invalidateReview));
+
+      document.getElementById("apply-code").addEventListener("click", () => {
+        log("apply_code");
+        const valid = attendeeName.value.trim() && attendeeEmail.value.trim() && accessCode.value.trim() === "OPEN";
+        if (valid) {
+          codeStatus.textContent = "Access code accepted. Two seats reserved for review.";
+          reviewButton.disabled = false;
+        } else {
+          codeStatus.textContent = "Enter attendee details and the OPEN access code.";
+          reviewButton.disabled = true;
+        }
+      });
+
+      reviewButton.addEventListener("click", () => {
+        if (reviewButton.disabled) return;
+        log("review");
+        const seats = Number(seatsSelect.value);
+        window.reservation = {
+          name: attendeeName.value.trim(),
+          email: attendeeEmail.value.trim(),
+          seats,
+          code: accessCode.value.trim(),
+          status: "review"
+        };
+        document.getElementById("review-attendee").textContent = window.reservation.name;
+        document.getElementById("review-seats").textContent = `${seats} ${seats === 1 ? "seat" : "seats"}`;
+        document.getElementById("review-total").textContent = "$0 total";
+        if (seeded) reviewObstruction.hidden = false;
+        showPanel(reviewPanel);
+      });
+
+      document.getElementById("confirm-button").addEventListener("click", () => {
+        if (!window.reservation) return;
+        log("confirm");
+        window.reservation.status = "confirmed";
+        document.getElementById("receipt-button").disabled = false;
+        confirmationStatus.hidden = false;
+        confirmationStatus.textContent = "Reservation held locally for review.";
+      });
+
+      const canvas = document.getElementById("brand-art");
+      const context = canvas.getContext("2d");
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.fillStyle = "oklch(.36 .07 170)";
+      context.fillRect(18, 18, 84, 84);
+      context.fillStyle = "oklch(.58 .19 16)";
+      context.beginPath();
+      context.arc(60, 60, 27, 0, Math.PI * 2);
+      context.fill();
+      context.fillStyle = "oklch(1 0 0)";
+      context.beginPath();
+      context.arc(60, 60, 8, 0, Math.PI * 2);
+      context.fill();
+      context.strokeStyle = "oklch(1 0 0 / .72)";
+      context.lineWidth = 2;
+      context.beginPath();
+      context.moveTo(29, 91);
+      context.lineTo(91, 29);
+      context.stroke();
+    })();
+  </script>
+</body>
+</html>

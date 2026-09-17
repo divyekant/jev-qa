@@ -1,0 +1,29 @@
+{
+  "status": "needs_review",
+  "judgments": [
+    {
+      "criterion": "The observed behavior meets the stated requirement to reject an empty email.",
+      "assessment": "fail",
+      "confidence": 1.0,
+      "probabilities": {
+        "fail": 1.0,
+        "uncertain": 0.0,
+        "pass": 0.0
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 292
+    }
+  ],
+  "all_pass": false,
+  "model_usage": [
+    {
+      "model": "jev-1.13.0",
+      "latency_ms": 292,
+      "usage": {
+        "input_tokens": 432,
+        "output_tokens": 44
+      }
+    }
+  ]
+}

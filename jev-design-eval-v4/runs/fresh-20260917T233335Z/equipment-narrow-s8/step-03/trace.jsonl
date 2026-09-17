@@ -1,0 +1,7 @@
+{"elapsed_ms":48,"event":"observe","url":"http://127.0.0.1:57931/fresh?build=s8","title":"Borrow Studio — equipment desk","action_count":8}
+{"elapsed_ms":180,"event":"decision","operation":"CLICK","target":"5","confidence":0.99,"target_confidence":0.99}
+{"elapsed_ms":180,"event":"action_intent","action":"e7","kind":"click","label":"Find equipment","confidence":0.99,"target_confidence":0.99}
+{"elapsed_ms":231,"event":"action_result","action":"e7","ok":true,"result":{"executed":"e7"}}
+{"elapsed_ms":291,"event":"observe","url":"http://127.0.0.1:57931/fresh?build=s8","title":"Borrow Studio — equipment desk","action_count":9}
+{"elapsed_ms":331,"event":"assertions_passed","count":1}
+{"elapsed_ms":362,"event":"observe","reason":"final","url":"http://127.0.0.1:57931/fresh?build=s8","title":"Borrow Studio — equipment desk"}

@@ -1,0 +1,98 @@
+{
+  "navigation": {
+    "wall_ms": 6547,
+    "reached": 0,
+    "checkpoints": 12,
+    "actions": 6,
+    "requests": 10,
+    "api_latency_ms": 2540,
+    "input_tokens": 27164,
+    "output_tokens": 1760,
+    "models": [
+      "jev-1.13.0"
+    ]
+  },
+  "assessment": {
+    "elapsed_ms": 2416,
+    "requests": 12,
+    "api_latency_ms": 2269,
+    "input_tokens": 50417,
+    "output_tokens": 1520,
+    "models": [
+      "jev-1.13.0"
+    ]
+  },
+  "quality": {
+    "model": {
+      "correct": 23,
+      "total": 36,
+      "defects_detected": 3,
+      "defects": 7,
+      "false_passes": 0,
+      "false_alarms": 0,
+      "unsupported_correct": 4,
+      "healthy_unresolved": 9,
+      "confusion": {
+        "pass -> pass": 16,
+        "pass -> uncertain": 9,
+        "uncertain -> uncertain": 4,
+        "fail -> uncertain": 4,
+        "fail -> fail": 3
+      }
+    },
+    "rules": {
+      "correct": 28,
+      "total": 36,
+      "defects_detected": 7,
+      "defects": 7,
+      "false_passes": 0,
+      "false_alarms": 0,
+      "unsupported_correct": 4,
+      "healthy_unresolved": 8,
+      "confusion": {
+        "pass -> pass": 17,
+        "pass -> uncertain": 8,
+        "uncertain -> uncertain": 4,
+        "fail -> fail": 7
+      }
+    },
+    "combined": {
+      "correct": 27,
+      "total": 36,
+      "defects_detected": 7,
+      "defects": 7,
+      "false_passes": 0,
+      "false_alarms": 0,
+      "unsupported_correct": 4,
+      "healthy_unresolved": 9,
+      "confusion": {
+        "pass -> pass": 16,
+        "pass -> uncertain": 9,
+        "uncertain -> uncertain": 4,
+        "fail -> fail": 7
+      }
+    }
+  },
+  "case_quality": {
+    "desktop-a": {
+      "model": 7,
+      "rules": 7,
+      "combined": 7
+    },
+    "mobile-b": {
+      "model": 5,
+      "rules": 7,
+      "combined": 7
+    },
+    "desktop-b": {
+      "model": 5,
+      "rules": 7,
+      "combined": 7
+    },
+    "mobile-a": {
+      "model": 6,
+      "rules": 7,
+      "combined": 6
+    }
+  }
+}

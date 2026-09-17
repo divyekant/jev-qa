@@ -1,0 +1,9 @@
+{
+  "visible": true,
+  "log": [
+    "filter",
+    "inspect"
+  ],
+  "reservation": null,
+  "codeText": "Enter attendee details and your code."
+}

@@ -1,0 +1,107 @@
+{
+  "case": "mobile-b",
+  "stages": {
+    "details": {
+      "navigation_status": "fail",
+      "navigation_oracle": {
+        "visible": false,
+        "log": [
+          "filter"
+        ],
+        "reservation": null,
+        "track": "design-systems",
+        "search": "Responsive interfaces",
+        "filtered": [
+          "Responsive interfaces in practice"
+        ],
+        "selected": null,
+        "fields": {
+          "name": "",
+          "email": "",
+          "seats": "1",
+          "code": ""
+        },
+        "codeText": "Enter attendee details and your code."
+      },
+      "navigation_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 240,
+            "usage": {
+              "input_tokens": 2568,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 134,
+            "usage": {
+              "input_tokens": 2599,
+              "output_tokens": 171
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 148,
+            "usage": {
+              "input_tokens": 2640,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 283,
+            "usage": {
+              "input_tokens": 2673,
+              "output_tokens": 170
+            }
+          }
+        ],
+        "text": [],
+        "review": []
+      },
+      "navigation_elapsed_ms": 1205,
+      "actions": [
+        {
+          "action": "e4",
+          "kind": "select",
+          "label": "Track \u2192 Design systems"
+        },
+        {
+          "action": "e5",
+          "kind": "fill",
+          "label": "Search sessions"
+        },
+        {
+          "action": "e7",
+          "kind": "click",
+          "label": "Apply filters"
+        }
+      ],
+      "status": "not_reached"
+    }
+  },
+  "mode": "live",
+  "final_oracle": {
+    "visible": false,
+    "log": [
+      "filter"
+    ],
+    "reservation": null,
+    "track": "design-systems",
+    "search": "Responsive interfaces",
+    "filtered": [
+      "Responsive interfaces in practice"
+    ],
+    "selected": null,
+    "fields": {
+      "name": "",
+      "email": "",
+      "seats": "1",
+      "code": ""
+    },
+    "codeText": "Enter attendee details and your code."
+  },
+  "elapsed_ms": 1878
+}

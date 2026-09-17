@@ -1,0 +1,157 @@
+{
+  "status": "needs_review",
+  "checks": [
+    {
+      "id": "status",
+      "kind": "contrast",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 16,
+          "y": 620.22,
+          "width": 358,
+          "height": 74.38,
+          "right": 374,
+          "bottom": 694.59
+        },
+        "foreground": [
+          30,
+          55,
+          48
+        ],
+        "background": [
+          255,
+          255,
+          255
+        ],
+        "contrastSupported": true,
+        "contrastRatio": 12.77
+      }
+    },
+    {
+      "id": "disabled",
+      "kind": "disabled",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 16,
+          "y": 820.59,
+          "width": 99.06,
+          "height": 38,
+          "right": 115.06,
+          "bottom": 858.59
+        },
+        "nativeDisabled": true,
+        "ariaDisabled": false,
+        "tag": "button",
+        "role": null
+      }
+    },
+    {
+      "id": "alignment",
+      "kind": "aligned",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "first": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 243.22,
+            "width": 358,
+            "height": 45,
+            "right": 374,
+            "bottom": 288.22
+          }
+        },
+        "second": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 330.22,
+            "width": 358,
+            "height": 45,
+            "right": 374,
+            "bottom": 375.22
+          }
+        }
+      }
+    },
+    {
+      "id": "acceptance_message",
+      "kind": "contextual",
+      "assessment": "pass",
+      "source": "jev",
+      "evidence": {
+        "status": "measured",
+        "observation": {
+          "tag": "p",
+          "role": "status",
+          "visible": true,
+          "box": {
+            "x": 16,
+            "y": 620.22,
+            "width": 358,
+            "height": 74.38,
+            "right": 374,
+            "bottom": 694.59
+          },
+          "textBox": {
+            "x": 31,
+            "y": 636.22,
+            "width": 313.44,
+            "height": 41.19,
+            "right": 344.44,
+            "bottom": 677.41
+          },
+          "text": "Access code accepted. Two seats reserved for review."
+        },
+        "model": {
+          "criterion": "Assess observation 0 only. The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred.",
+          "assessment": "pass",
+          "confidence": 0.99,
+          "probabilities": {
+            "pass": 1.0,
+            "fail": 0.0,
+            "uncertain": 0.0
+          },
+          "model_assessment": true,
+          "model": "jev-1.13.0",
+          "latency_ms": 166
+        }
+      },
+      "advisory": true
+    }
+  ],
+  "model_usage": [
+    {
+      "model": "jev-1.13.0",
+      "latency_ms": 166,
+      "usage": {
+        "input_tokens": 603,
+        "output_tokens": 44
+      }
+    }
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": true,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

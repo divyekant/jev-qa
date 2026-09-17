@@ -1,0 +1,258 @@
+{
+  "steps": [
+    {
+      "name": "Track",
+      "navigation_status": "pass",
+      "navigation_report": "step-01/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#track-select",
+          "expected": "design-systems",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Search",
+      "navigation_status": "pass",
+      "navigation_report": "step-02/report.json",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#search-sessions",
+          "expected": "Responsive interfaces",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Filter",
+      "navigation_status": "pass",
+      "navigation_report": "step-03/report.json",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#filter-feedback",
+          "expected": "Showing 1 session",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "actions": 1,
+      "execution_status": "completed",
+      "assertion_status": "pass",
+      "product_status": "pass"
+    },
+    {
+      "name": "Details",
+      "navigation_status": "blocked",
+      "design": {
+        "status": "needs_review",
+        "reason": "navigation_not_reached",
+        "checks": [
+          {
+            "id": "title",
+            "kind": "unclipped",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "badge",
+            "kind": "decorative_overlap",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "artwork",
+            "kind": "artwork",
+            "assessment": "not_reached",
+            "source": "not_run"
+          }
+        ]
+      },
+      "navigation_report": "step-04/report.json",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#details-panel",
+          "expected": true,
+          "passed": false,
+          "reason": "visibility_mismatch"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#session-title",
+          "expected": "Responsive interfaces in practice",
+          "passed": false,
+          "reason": "text_target_not_visible"
+        }
+      ],
+      "actions": 1,
+      "execution_status": "blocked",
+      "assertion_status": "fail",
+      "product_status": "not_tested"
+    },
+    {
+      "name": "Reserve",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Name",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Email",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Seats",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Code",
+      "navigation_status": "not_reached"
+    },
+    {
+      "name": "Apply code",
+      "navigation_status": "not_reached",
+      "design": {
+        "status": "needs_review",
+        "reason": "navigation_not_reached",
+        "checks": [
+          {
+            "id": "status",
+            "kind": "contrast",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "disabled",
+            "kind": "disabled",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "alignment",
+            "kind": "aligned",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "acceptance_message",
+            "kind": "contextual",
+            "assessment": "not_reached",
+            "source": "not_run"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Review",
+      "navigation_status": "not_reached",
+      "design": {
+        "status": "needs_review",
+        "reason": "navigation_not_reached",
+        "checks": [
+          {
+            "id": "confirm",
+            "kind": "unobstructed",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "overflow",
+            "kind": "horizontal_fit",
+            "assessment": "not_reached",
+            "source": "not_run"
+          },
+          {
+            "id": "reference",
+            "kind": "ellipsis",
+            "assessment": "not_reached",
+            "source": "not_run"
+          }
+        ]
+      }
+    }
+  ],
+  "routing": {
+    "decision_model": "jev-latest",
+    "text_helper": "disabled"
+  },
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 280,
+        "usage": {
+          "input_tokens": 1904,
+          "output_tokens": 131
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 128,
+        "usage": {
+          "input_tokens": 1935,
+          "output_tokens": 131
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 136,
+        "usage": {
+          "input_tokens": 1975,
+          "output_tokens": 131
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 197,
+        "usage": {
+          "input_tokens": 1783,
+          "output_tokens": 105
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 192,
+        "usage": {
+          "input_tokens": 1852,
+          "output_tokens": 105
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 285,
+        "usage": {
+          "input_tokens": 1852,
+          "output_tokens": 105
+        }
+      }
+    ],
+    "text": [],
+    "review": [],
+    "design": []
+  },
+  "errors": [],
+  "status": "blocked",
+  "navigation_status": "blocked",
+  "design_status": "needs_review",
+  "reached": 3,
+  "total": 11,
+  "execution_status": "blocked",
+  "product_status": "not_tested",
+  "elapsed_ms": 2756,
+  "actions": 4
+}

@@ -1,0 +1,221 @@
+{
+  "status": "needs_review",
+  "checks": [
+    {
+      "id": "review-unobstructed",
+      "kind": "unobstructed",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 29,
+          "y": 720.16,
+          "width": 230.17,
+          "height": 42,
+          "right": 259.17,
+          "bottom": 762.16
+        },
+        "inViewport": true,
+        "hitSamples": [
+          {
+            "x": 63.53,
+            "y": 728.56,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 63.53,
+            "y": 741.16,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 63.53,
+            "y": 753.76,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 144.08,
+            "y": 728.56,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 144.08,
+            "y": 741.16,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 144.08,
+            "y": 753.76,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 224.64,
+            "y": 728.56,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 224.64,
+            "y": 741.16,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "x": 224.64,
+            "y": 753.76,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "button",
+              "role": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "header-badge-overlap",
+      "kind": "decorative_overlap",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "subject": {
+          "x": 4.56,
+          "y": 6,
+          "width": 82.44,
+          "height": 23.77,
+          "right": 87,
+          "bottom": 29.77
+        },
+        "decorative": {
+          "x": 37,
+          "y": 12,
+          "width": 48,
+          "height": 48,
+          "right": 85,
+          "bottom": 60
+        },
+        "content": {
+          "x": 99,
+          "y": 12.03,
+          "width": 188,
+          "height": 26.69,
+          "right": 287,
+          "bottom": 38.72
+        },
+        "decorativeIntersectionPx2": 852.96,
+        "contentIntersectionPx2": 0
+      }
+    },
+    {
+      "id": "prepared-status-context",
+      "kind": "contextual",
+      "assessment": "pass",
+      "source": "jev",
+      "evidence": {
+        "status": "measured",
+        "observation": {
+          "tag": "p",
+          "role": null,
+          "visible": true,
+          "box": {
+            "x": 29,
+            "y": 305.09,
+            "width": 332,
+            "height": 23.19,
+            "right": 361,
+            "bottom": 328.28
+          },
+          "textBox": {
+            "x": 29,
+            "y": 307.09,
+            "width": 271.98,
+            "height": 18,
+            "right": 300.98,
+            "bottom": 325.09
+          },
+          "text": "Prepared for review · no request sent."
+        },
+        "model": {
+          "criterion": "Assess observation 0 only. clearly states no request was sent",
+          "assessment": "pass",
+          "confidence": 1.0,
+          "probabilities": {
+            "fail": 0.0,
+            "pass": 1.0,
+            "uncertain": 0.0
+          },
+          "model_assessment": true,
+          "model": "jev-1.13.0",
+          "latency_ms": 290
+        }
+      },
+      "advisory": true
+    },
+    {
+      "id": "details-horizontal-fit",
+      "kind": "horizontal_fit",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "viewportWidth": 390,
+        "documentWidth": 390
+      }
+    }
+  ],
+  "model_usage": [
+    {
+      "model": "jev-1.13.0",
+      "latency_ms": 290,
+      "usage": {
+        "input_tokens": 577,
+        "output_tokens": 44
+      }
+    }
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": false,
+    "hitTesting": true,
+    "pixelContentInspected": false
+  }
+}

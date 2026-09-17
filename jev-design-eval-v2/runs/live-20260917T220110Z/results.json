@@ -1,0 +1,4363 @@
+[
+  {
+    "case": "original-desktop-a",
+    "wall_ms": 5814,
+    "exit_code": 2,
+    "actual": {
+      "title": "pass",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "pass",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "uncertain",
+      "confirm": "pass",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "expected": {
+      "title": "pass",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "pass",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "pass",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 9,
+      "total": 10,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Track",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#track-select",
+              "expected": "design-systems",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-sessions",
+              "expected": "Responsive interfaces",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Filter",
+          "navigation_status": "pass",
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-feedback",
+              "expected": "Showing 1 session",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Details",
+          "navigation_status": "pass",
+          "design": {
+            "status": "needs_review",
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 564.84,
+                    "y": 269.75,
+                    "width": 380,
+                    "height": 32,
+                    "right": 944.84,
+                    "bottom": 301.75
+                  },
+                  "textBox": {
+                    "x": 564.84,
+                    "y": 270.75,
+                    "width": 377.64,
+                    "height": 30,
+                    "right": 942.48,
+                    "bottom": 300.75
+                  },
+                  "fullText": "Responsive interfaces in practice",
+                  "fullTextTruncated": false,
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "whiteSpace": "normal",
+                  "textOverflow": "clip",
+                  "clientWidth": 380,
+                  "scrollWidth": 380,
+                  "clientHeight": 32,
+                  "scrollHeight": 32
+                }
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "subject": {
+                    "x": 69,
+                    "y": 405,
+                    "width": 104.48,
+                    "height": 31,
+                    "right": 173.48,
+                    "bottom": 436
+                  },
+                  "decorative": {
+                    "x": 50,
+                    "y": 197,
+                    "width": 425.25,
+                    "height": 228,
+                    "right": 475.25,
+                    "bottom": 425
+                  },
+                  "content": {
+                    "x": 564.84,
+                    "y": 269.75,
+                    "width": 380,
+                    "height": 32,
+                    "right": 944.84,
+                    "bottom": 301.75
+                  },
+                  "decorativeIntersectionPx2": 2089.6,
+                  "contentIntersectionPx2": 0
+                }
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "assessment": "uncertain",
+                "source": "unsupported",
+                "evidence": {
+                  "status": "unsupported",
+                  "visible": true,
+                  "box": {
+                    "x": 50,
+                    "y": 501,
+                    "width": 120,
+                    "height": 120,
+                    "right": 170,
+                    "bottom": 621
+                  },
+                  "pixelContentInspected": false,
+                  "reason": "pixel_content_not_inspected"
+                },
+                "reason": "pixel_content_not_inspected"
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-panel",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#session-title",
+              "expected": "Responsive interfaces in practice",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Reserve",
+          "navigation_status": "pass",
+          "navigation_report": "step-05/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#booking-panel",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Name",
+          "navigation_status": "pass",
+          "navigation_report": "step-06/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#attendee-name",
+              "expected": "Avery Example",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Email",
+          "navigation_status": "pass",
+          "navigation_report": "step-07/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#attendee-email",
+              "expected": "avery@example.com",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Seats",
+          "navigation_status": "pass",
+          "navigation_report": "step-08/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#seats-select",
+              "expected": "2",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Code",
+          "navigation_status": "pass",
+          "navigation_report": "step-09/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#access-code",
+              "expected": "OPEN",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Apply code",
+          "navigation_status": "pass",
+          "design": {
+            "status": "needs_review",
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 150,
+                    "y": 643.97,
+                    "width": 550,
+                    "height": 52,
+                    "right": 700,
+                    "bottom": 695.97
+                  },
+                  "foreground": [
+                    30,
+                    55,
+                    48
+                  ],
+                  "background": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "contrastSupported": true,
+                  "contrastRatio": 12.77
+                }
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 150,
+                    "y": 789.97,
+                    "width": 99.06,
+                    "height": 38,
+                    "right": 249.06,
+                    "bottom": 827.97
+                  },
+                  "nativeDisabled": true,
+                  "ariaDisabled": false,
+                  "tag": "button",
+                  "role": null
+                }
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "first": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "second": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "assessment": "uncertain",
+                "source": "jev",
+                "evidence": {
+                  "status": "measured",
+                  "observation": {
+                    "tag": "p",
+                    "role": "status",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    },
+                    "textBox": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "model": {
+                    "criterion": "Assess observation 0 only. The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred.",
+                    "assessment": "uncertain",
+                    "confidence": 0.81,
+                    "probabilities": {
+                      "pass": "[truncated]",
+                      "uncertain": "[truncated]",
+                      "fail": "[truncated]"
+                    },
+                    "model_assessment": true,
+                    "model": "jev-1.13.0",
+                    "latency_ms": 214
+                  }
+                },
+                "reason": "model_uncertain"
+              }
+            ],
+            "model_usage": [
+              {
+                "model": "jev-1.13.0",
+                "latency_ms": 214,
+                "usage": {
+                  "input_tokens": 582,
+                  "output_tokens": 46
+                }
+              }
+            ],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": true,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-10/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#code-status",
+              "expected": "Access code accepted. Two seats reserved for review.",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Review",
+          "navigation_status": "pass",
+          "design": {
+            "status": "pass",
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 550.8,
+                    "y": 502,
+                    "width": 184,
+                    "height": 44,
+                    "right": 734.8,
+                    "bottom": 546
+                  },
+                  "inViewport": true,
+                  "hitSamples": [
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "viewportWidth": 1280,
+                  "documentWidth": 1280
+                }
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 972,
+                    "y": 371,
+                    "width": 140,
+                    "height": 14.3,
+                    "right": 1112,
+                    "bottom": 385.3
+                  },
+                  "textBox": {
+                    "x": 972,
+                    "y": 371,
+                    "width": 325.42,
+                    "height": 13,
+                    "right": 1297.42,
+                    "bottom": 384
+                  },
+                  "fullText": "Workshop reservation for the regional interface research team",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "nowrap",
+                  "textOverflow": "ellipsis",
+                  "clientWidth": 140,
+                  "scrollWidth": 325,
+                  "clientHeight": 14,
+                  "scrollHeight": 14,
+                  "title": "Workshop reservation for the regional interface research team"
+                }
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": true,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-11/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#review-panel",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-attendee",
+              "expected": "Avery Example",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-seats",
+              "expected": "2 seats",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 740,
+            "usage": {
+              "input_tokens": 3110,
+              "output_tokens": 199
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 202,
+            "usage": {
+              "input_tokens": 3112,
+              "output_tokens": 200
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 99,
+            "usage": {
+              "input_tokens": 3114,
+              "output_tokens": 199
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 183,
+            "usage": {
+              "input_tokens": 2754,
+              "output_tokens": 168
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 200,
+            "usage": {
+              "input_tokens": 1384,
+              "output_tokens": 76
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 153,
+            "usage": {
+              "input_tokens": 2707,
+              "output_tokens": 187
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 139,
+            "usage": {
+              "input_tokens": 2724,
+              "output_tokens": 187
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 167,
+            "usage": {
+              "input_tokens": 2717,
+              "output_tokens": 186
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 170,
+            "usage": {
+              "input_tokens": 2717,
+              "output_tokens": 187
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 552,
+            "usage": {
+              "input_tokens": 2712,
+              "output_tokens": 186
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 178,
+            "usage": {
+              "input_tokens": 2825,
+              "output_tokens": 193
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 214,
+            "usage": {
+              "input_tokens": 582,
+              "output_tokens": 46
+            }
+          }
+        ]
+      },
+      "errors": [],
+      "status": "needs_review",
+      "navigation_status": "pass",
+      "design_status": "needs_review",
+      "reached": 11,
+      "total": 11,
+      "elapsed_ms": 5650,
+      "actions": 11
+    }
+  },
+  {
+    "case": "original-mobile-b",
+    "wall_ms": 2574,
+    "exit_code": 1,
+    "actual": {
+      "title": "not_reached",
+      "badge": "not_reached",
+      "artwork": "not_reached",
+      "status": "not_reached",
+      "disabled": "not_reached",
+      "alignment": "not_reached",
+      "acceptance_message": "not_reached",
+      "confirm": "not_reached",
+      "overflow": "not_reached",
+      "reference": "not_reached"
+    },
+    "expected": {
+      "title": "fail",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "fail",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "fail",
+      "overflow": "fail",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 10,
+      "missed_defects": 4,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Track",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#track-select",
+              "expected": "design-systems",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-sessions",
+              "expected": "Responsive interfaces",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Filter",
+          "navigation_status": "pass",
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-feedback",
+              "expected": "Showing 1 session",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Details",
+          "navigation_status": "fail",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-panel",
+              "expected": true,
+              "passed": false,
+              "reason": "visibility_mismatch"
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#session-title",
+              "expected": "Responsive interfaces in practice",
+              "passed": false,
+              "reason": "text_target_not_visible"
+            }
+          ],
+          "actions": 0
+        },
+        {
+          "name": "Reserve",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Name",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Email",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Seats",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Code",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Apply code",
+          "navigation_status": "not_reached",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Review",
+          "navigation_status": "not_reached",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          }
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 300,
+            "usage": {
+              "input_tokens": 2576,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 163,
+            "usage": {
+              "input_tokens": 2578,
+              "output_tokens": 171
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 152,
+            "usage": {
+              "input_tokens": 2580,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 186,
+            "usage": {
+              "input_tokens": 2613,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 149,
+            "usage": {
+              "input_tokens": 2613,
+              "output_tokens": 170
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": []
+      },
+      "errors": [],
+      "status": "fail",
+      "navigation_status": "fail",
+      "design_status": "needs_review",
+      "reached": 3,
+      "total": 11,
+      "elapsed_ms": 2422,
+      "actions": 3
+    }
+  },
+  {
+    "case": "original-desktop-b",
+    "wall_ms": 5555,
+    "exit_code": 1,
+    "actual": {
+      "title": "fail",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "fail",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "uncertain",
+      "confirm": "fail",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "expected": {
+      "title": "fail",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "fail",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "fail",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 9,
+      "total": 10,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Track",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#track-select",
+              "expected": "design-systems",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-sessions",
+              "expected": "Responsive interfaces",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Filter",
+          "navigation_status": "pass",
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-feedback",
+              "expected": "Showing 1 session",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Details",
+          "navigation_status": "pass",
+          "design": {
+            "status": "fail",
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "assessment": "fail",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 564.84,
+                    "y": 274.75,
+                    "width": 380,
+                    "height": 22,
+                    "right": 944.84,
+                    "bottom": 296.75
+                  },
+                  "textBox": {
+                    "x": 564.84,
+                    "y": 275.75,
+                    "width": 377.64,
+                    "height": 30,
+                    "right": 942.48,
+                    "bottom": 305.75
+                  },
+                  "fullText": "Responsive interfaces in practice",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "normal",
+                  "textOverflow": "clip",
+                  "clientWidth": 380,
+                  "scrollWidth": 380,
+                  "clientHeight": 22,
+                  "scrollHeight": 32
+                },
+                "reason": "content_clipped"
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "subject": {
+                    "x": 69,
+                    "y": 405,
+                    "width": 104.48,
+                    "height": 31,
+                    "right": 173.48,
+                    "bottom": 436
+                  },
+                  "decorative": {
+                    "x": 50,
+                    "y": 197,
+                    "width": 425.25,
+                    "height": 228,
+                    "right": 475.25,
+                    "bottom": 425
+                  },
+                  "content": {
+                    "x": 564.84,
+                    "y": 274.75,
+                    "width": 380,
+                    "height": 22,
+                    "right": 944.84,
+                    "bottom": 296.75
+                  },
+                  "decorativeIntersectionPx2": 2089.6,
+                  "contentIntersectionPx2": 0
+                }
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "assessment": "uncertain",
+                "source": "unsupported",
+                "evidence": {
+                  "status": "unsupported",
+                  "visible": true,
+                  "box": {
+                    "x": 50,
+                    "y": 501,
+                    "width": 120,
+                    "height": 120,
+                    "right": 170,
+                    "bottom": 621
+                  },
+                  "pixelContentInspected": false,
+                  "reason": "pixel_content_not_inspected"
+                },
+                "reason": "pixel_content_not_inspected"
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-panel",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#session-title",
+              "expected": "Responsive interfaces in practice",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Reserve",
+          "navigation_status": "pass",
+          "navigation_report": "step-05/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#booking-panel",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Name",
+          "navigation_status": "pass",
+          "navigation_report": "step-06/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#attendee-name",
+              "expected": "Avery Example",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Email",
+          "navigation_status": "pass",
+          "navigation_report": "step-07/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#attendee-email",
+              "expected": "avery@example.com",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Seats",
+          "navigation_status": "pass",
+          "navigation_report": "step-08/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#seats-select",
+              "expected": "2",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Code",
+          "navigation_status": "pass",
+          "navigation_report": "step-09/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#access-code",
+              "expected": "OPEN",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Apply code",
+          "navigation_status": "pass",
+          "design": {
+            "status": "fail",
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "assessment": "fail",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 150,
+                    "y": 643.97,
+                    "width": 550,
+                    "height": 52,
+                    "right": 700,
+                    "bottom": 695.97
+                  },
+                  "foreground": [
+                    190,
+                    198,
+                    202
+                  ],
+                  "background": [
+                    255,
+                    255,
+                    255
+                  ],
+                  "contrastSupported": true,
+                  "contrastRatio": 1.73
+                },
+                "reason": "contrast_below_minimum"
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 150,
+                    "y": 789.97,
+                    "width": 99.06,
+                    "height": 38,
+                    "right": 249.06,
+                    "bottom": 827.97
+                  },
+                  "nativeDisabled": true,
+                  "ariaDisabled": false,
+                  "tag": "button",
+                  "role": null
+                }
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "first": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "second": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "assessment": "uncertain",
+                "source": "jev",
+                "evidence": {
+                  "status": "measured",
+                  "observation": {
+                    "tag": "p",
+                    "role": "status",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    },
+                    "textBox": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "model": {
+                    "criterion": "Assess observation 0 only. The status message explicitly says the access code was accepted and two seats are reserved for review. It does not claim a payment occurred.",
+                    "assessment": "uncertain",
+                    "confidence": 0.82,
+                    "probabilities": {
+                      "fail": "[truncated]",
+                      "pass": "[truncated]",
+                      "uncertain": "[truncated]"
+                    },
+                    "model_assessment": true,
+                    "model": "jev-1.13.0",
+                    "latency_ms": 220
+                  }
+                },
+                "reason": "model_uncertain"
+              }
+            ],
+            "model_usage": [
+              {
+                "model": "jev-1.13.0",
+                "latency_ms": 220,
+                "usage": {
+                  "input_tokens": 582,
+                  "output_tokens": 46
+                }
+              }
+            ],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": true,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-10/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#code-status",
+              "expected": "Access code accepted. Two seats reserved for review.",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Review",
+          "navigation_status": "pass",
+          "design": {
+            "status": "fail",
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "assessment": "fail",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 550.8,
+                    "y": 502,
+                    "width": 184,
+                    "height": 44,
+                    "right": 734.8,
+                    "bottom": 546
+                  },
+                  "inViewport": true,
+                  "hitSamples": [
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    }
+                  ]
+                },
+                "reason": "target_is_obstructed"
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "viewportWidth": 1280,
+                  "documentWidth": 1280
+                }
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 972,
+                    "y": 371,
+                    "width": 140,
+                    "height": 14.3,
+                    "right": 1112,
+                    "bottom": 385.3
+                  },
+                  "textBox": {
+                    "x": 972,
+                    "y": 371,
+                    "width": 325.42,
+                    "height": 13,
+                    "right": 1297.42,
+                    "bottom": 384
+                  },
+                  "fullText": "Workshop reservation for the regional interface research team",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "nowrap",
+                  "textOverflow": "ellipsis",
+                  "clientWidth": 140,
+                  "scrollWidth": 325,
+                  "clientHeight": 14,
+                  "scrollHeight": 14,
+                  "title": "Workshop reservation for the regional interface research team"
+                }
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": true,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-11/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#review-panel",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-attendee",
+              "expected": "Avery Example",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-seats",
+              "expected": "2 seats",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 288,
+            "usage": {
+              "input_tokens": 3110,
+              "output_tokens": 199
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 213,
+            "usage": {
+              "input_tokens": 3112,
+              "output_tokens": 200
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 180,
+            "usage": {
+              "input_tokens": 3114,
+              "output_tokens": 199
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 294,
+            "usage": {
+              "input_tokens": 2754,
+              "output_tokens": 168
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 145,
+            "usage": {
+              "input_tokens": 1384,
+              "output_tokens": 76
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 102,
+            "usage": {
+              "input_tokens": 2707,
+              "output_tokens": 187
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 265,
+            "usage": {
+              "input_tokens": 2724,
+              "output_tokens": 187
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 141,
+            "usage": {
+              "input_tokens": 2717,
+              "output_tokens": 186
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 260,
+            "usage": {
+              "input_tokens": 2717,
+              "output_tokens": 187
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 167,
+            "usage": {
+              "input_tokens": 2712,
+              "output_tokens": 186
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 129,
+            "usage": {
+              "input_tokens": 2825,
+              "output_tokens": 193
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 220,
+            "usage": {
+              "input_tokens": 582,
+              "output_tokens": 46
+            }
+          }
+        ]
+      },
+      "errors": [],
+      "status": "fail",
+      "navigation_status": "pass",
+      "design_status": "fail",
+      "reached": 11,
+      "total": 11,
+      "elapsed_ms": 5389,
+      "actions": 11
+    }
+  },
+  {
+    "case": "original-mobile-a",
+    "wall_ms": 2742,
+    "exit_code": 1,
+    "actual": {
+      "title": "not_reached",
+      "badge": "not_reached",
+      "artwork": "not_reached",
+      "status": "not_reached",
+      "disabled": "not_reached",
+      "alignment": "not_reached",
+      "acceptance_message": "not_reached",
+      "confirm": "not_reached",
+      "overflow": "not_reached",
+      "reference": "not_reached"
+    },
+    "expected": {
+      "title": "pass",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "pass",
+      "disabled": "pass",
+      "alignment": "pass",
+      "acceptance_message": "pass",
+      "confirm": "pass",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 10,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Track",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#track-select",
+              "expected": "design-systems",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-sessions",
+              "expected": "Responsive interfaces",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Filter",
+          "navigation_status": "pass",
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-feedback",
+              "expected": "Showing 1 session",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Details",
+          "navigation_status": "fail",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "title",
+                "kind": "unclipped",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "badge",
+                "kind": "decorative_overlap",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "artwork",
+                "kind": "artwork",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-panel",
+              "expected": true,
+              "passed": false,
+              "reason": "visibility_mismatch"
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#session-title",
+              "expected": "Responsive interfaces in practice",
+              "passed": false,
+              "reason": "text_target_not_visible"
+            }
+          ],
+          "actions": 0
+        },
+        {
+          "name": "Reserve",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Name",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Email",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Seats",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Code",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Apply code",
+          "navigation_status": "not_reached",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "status",
+                "kind": "contrast",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "disabled",
+                "kind": "disabled",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "alignment",
+                "kind": "aligned",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "acceptance_message",
+                "kind": "contextual",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Review",
+          "navigation_status": "not_reached",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "confirm",
+                "kind": "unobstructed",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "overflow",
+                "kind": "horizontal_fit",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "reference",
+                "kind": "ellipsis",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          }
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 271,
+            "usage": {
+              "input_tokens": 2576,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 237,
+            "usage": {
+              "input_tokens": 2578,
+              "output_tokens": 171
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 282,
+            "usage": {
+              "input_tokens": 2580,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 163,
+            "usage": {
+              "input_tokens": 2613,
+              "output_tokens": 170
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 167,
+            "usage": {
+              "input_tokens": 2613,
+              "output_tokens": 170
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": []
+      },
+      "errors": [],
+      "status": "fail",
+      "navigation_status": "fail",
+      "design_status": "needs_review",
+      "reached": 3,
+      "total": 11,
+      "elapsed_ms": 2584,
+      "actions": 3
+    }
+  },
+  {
+    "case": "wide-q4",
+    "wall_ms": 5903,
+    "exit_code": 2,
+    "actual": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "pass",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "pass",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "uncertain",
+      "details-horizontal-fit": "pass"
+    },
+    "expected": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "pass",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "pass",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    },
+    "score": {
+      "correct": 9,
+      "total": 10,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Choose the floor",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#floor-select",
+              "expected": "Level 2",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search for Willow",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-rooms",
+              "expected": "Willow",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Apply the room search",
+          "navigation_status": "pass",
+          "design": {
+            "status": "needs_review",
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 364,
+                    "y": 654.25,
+                    "width": 373,
+                    "height": 41.95,
+                    "right": 737,
+                    "bottom": 696.2
+                  },
+                  "textBox": {
+                    "x": 364,
+                    "y": 655.25,
+                    "width": 367.38,
+                    "height": 35.95,
+                    "right": 731.38,
+                    "bottom": 691.2
+                  },
+                  "fullText": "Soft daylight, power at every seat, and a small whiteboard for quiet planning or one-to-one study.",
+                  "fullTextTruncated": false,
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "whiteSpace": "normal",
+                  "textOverflow": "clip",
+                  "clientWidth": 373,
+                  "scrollWidth": 373,
+                  "clientHeight": 42,
+                  "scrollHeight": 42
+                }
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 364,
+                    "y": 596.45,
+                    "width": 230,
+                    "height": 19.31,
+                    "right": 594,
+                    "bottom": 615.77
+                  },
+                  "textBox": {
+                    "x": 364,
+                    "y": 595.45,
+                    "width": 247.63,
+                    "height": 20,
+                    "right": 611.63,
+                    "bottom": 615.45
+                  },
+                  "fullText": "Willow Room for Quiet Reading",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "nowrap",
+                  "textOverflow": "ellipsis",
+                  "clientWidth": 230,
+                  "scrollWidth": 248,
+                  "clientHeight": 19,
+                  "scrollHeight": 19,
+                  "title": "Willow Room for Quiet Reading"
+                }
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "assessment": "uncertain",
+                "source": "unsupported",
+                "evidence": {
+                  "status": "unsupported",
+                  "visible": true,
+                  "box": {
+                    "x": 50,
+                    "y": 16,
+                    "width": 56,
+                    "height": 56,
+                    "right": 106,
+                    "bottom": 72
+                  },
+                  "pixelContentInspected": false,
+                  "reason": "pixel_content_not_inspected"
+                },
+                "reason": "pixel_content_not_inspected"
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-status",
+              "expected": "Showing 1 room",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "visible",
+              "selector": "#room-card-willow",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Open Willow Room",
+          "navigation_status": "pass",
+          "design": {
+            "status": "pass",
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 368,
+                    "y": 462.27,
+                    "width": 435.89,
+                    "height": 18.09,
+                    "right": 803.89,
+                    "bottom": 480.36
+                  },
+                  "foreground": [
+                    35,
+                    79,
+                    67
+                  ],
+                  "background": [
+                    247,
+                    250,
+                    247
+                  ],
+                  "contrastSupported": true,
+                  "contrastRatio": 8.79
+                }
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 368,
+                    "y": 685.86,
+                    "width": 435.89,
+                    "height": 42,
+                    "right": 803.89,
+                    "bottom": 727.86
+                  },
+                  "nativeDisabled": true,
+                  "ariaDisabled": false,
+                  "tag": "button",
+                  "role": null
+                }
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "first": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "second": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  }
+                }
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": false,
+              "contrast": true,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-state",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#details-title",
+              "expected": "Willow Room",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Choose the date",
+          "navigation_status": "pass",
+          "navigation_report": "step-05/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#reservation-date",
+              "expected": "2026-10-14",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Choose the start time",
+          "navigation_status": "pass",
+          "navigation_report": "step-06/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#start-time",
+              "expected": "2:00 PM",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Choose the length",
+          "navigation_status": "pass",
+          "navigation_report": "step-07/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#length-select",
+              "expected": "60 minutes",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Enter your name",
+          "navigation_status": "pass",
+          "navigation_report": "step-08/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#guest-name",
+              "expected": "Avery Chen",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Enter your email",
+          "navigation_status": "pass",
+          "navigation_report": "step-09/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#guest-email",
+              "expected": "avery.chen@example.test",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Accept the room rules",
+          "navigation_status": "pass",
+          "navigation_report": "step-10/report.json",
+          "assertions": [
+            {
+              "kind": "checked",
+              "selector": "#rules-check",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "visible",
+              "selector": "#review-button",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Open the review",
+          "navigation_status": "pass",
+          "design": {
+            "status": "needs_review",
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 347,
+                    "y": 642.39,
+                    "width": 230.17,
+                    "height": 42,
+                    "right": 577.17,
+                    "bottom": 684.39
+                  },
+                  "inViewport": true,
+                  "hitSamples": [
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "subject": {
+                    "x": 25.56,
+                    "y": 10,
+                    "width": 82.44,
+                    "height": 23.77,
+                    "right": 108,
+                    "bottom": 33.77
+                  },
+                  "decorative": {
+                    "x": 50,
+                    "y": 16,
+                    "width": 56,
+                    "height": 56,
+                    "right": 106,
+                    "bottom": 72
+                  },
+                  "content": {
+                    "x": 120,
+                    "y": 20.03,
+                    "width": 188,
+                    "height": 26.69,
+                    "right": 308,
+                    "bottom": 46.72
+                  },
+                  "decorativeIntersectionPx2": 995.12,
+                  "contentIntersectionPx2": 0
+                }
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "assessment": "uncertain",
+                "source": "jev",
+                "evidence": {
+                  "status": "measured",
+                  "observation": {
+                    "tag": "p",
+                    "role": null,
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    },
+                    "textBox": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "model": {
+                    "criterion": "Assess observation 0 only. clearly states no request was sent",
+                    "assessment": "uncertain",
+                    "confidence": 0.95,
+                    "probabilities": {
+                      "pass": "[truncated]",
+                      "uncertain": "[truncated]",
+                      "fail": "[truncated]"
+                    },
+                    "model_assessment": true,
+                    "model": "jev-1.13.0",
+                    "latency_ms": 218
+                  }
+                },
+                "reason": "model_uncertain"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "viewportWidth": 1280,
+                  "documentWidth": 1280
+                }
+              }
+            ],
+            "model_usage": [
+              {
+                "model": "jev-1.13.0",
+                "latency_ms": 218,
+                "usage": {
+                  "input_tokens": 563,
+                  "output_tokens": 46
+                }
+              }
+            ],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": true,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-11/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#review-state",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-room",
+              "expected": "Willow Room",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-date",
+              "expected": "October 14, 2026",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-time",
+              "expected": "2:00 PM \u00b7 60 minutes",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-guest",
+              "expected": "Avery Chen",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-email",
+              "expected": "avery.chen@example.test",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#prepared-status",
+              "expected": "Prepared for review \u00b7 no request sent.",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 296,
+            "usage": {
+              "input_tokens": 2965,
+              "output_tokens": 202
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 138,
+            "usage": {
+              "input_tokens": 2968,
+              "output_tokens": 203
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 483,
+            "usage": {
+              "input_tokens": 3006,
+              "output_tokens": 202
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 232,
+            "usage": {
+              "input_tokens": 2885,
+              "output_tokens": 186
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 227,
+            "usage": {
+              "input_tokens": 3823,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 161,
+            "usage": {
+              "input_tokens": 3831,
+              "output_tokens": 264
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 120,
+            "usage": {
+              "input_tokens": 3820,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 151,
+            "usage": {
+              "input_tokens": 3811,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 254,
+            "usage": {
+              "input_tokens": 3828,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 178,
+            "usage": {
+              "input_tokens": 3835,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 205,
+            "usage": {
+              "input_tokens": 3932,
+              "output_tokens": 273
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 218,
+            "usage": {
+              "input_tokens": 563,
+              "output_tokens": 46
+            }
+          }
+        ]
+      },
+      "errors": [],
+      "status": "needs_review",
+      "navigation_status": "pass",
+      "design_status": "needs_review",
+      "reached": 11,
+      "total": 11,
+      "elapsed_ms": 5738,
+      "actions": 11
+    }
+  },
+  {
+    "case": "wide-q9",
+    "wall_ms": 7528,
+    "exit_code": 1,
+    "actual": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "fail",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "fail",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "uncertain",
+      "details-horizontal-fit": "pass"
+    },
+    "expected": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "fail",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "fail",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    },
+    "score": {
+      "correct": 9,
+      "total": 10,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Choose the floor",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#floor-select",
+              "expected": "Level 2",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search for Willow",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-rooms",
+              "expected": "Willow",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Apply the room search",
+          "navigation_status": "pass",
+          "design": {
+            "status": "fail",
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "assessment": "fail",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 364,
+                    "y": 654.25,
+                    "width": 373,
+                    "height": 13.75,
+                    "right": 737,
+                    "bottom": 668
+                  },
+                  "textBox": {
+                    "x": 364,
+                    "y": 655.25,
+                    "width": 367.38,
+                    "height": 35.95,
+                    "right": 731.38,
+                    "bottom": 691.2
+                  },
+                  "fullText": "Soft daylight, power at every seat, and a small whiteboard for quiet planning or one-to-one study.",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "normal",
+                  "textOverflow": "clip",
+                  "clientWidth": 373,
+                  "scrollWidth": 373,
+                  "clientHeight": 14,
+                  "scrollHeight": 40
+                },
+                "reason": "content_clipped"
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 364,
+                    "y": 596.45,
+                    "width": 230,
+                    "height": 19.31,
+                    "right": 594,
+                    "bottom": 615.77
+                  },
+                  "textBox": {
+                    "x": 364,
+                    "y": 595.45,
+                    "width": 247.63,
+                    "height": 20,
+                    "right": 611.63,
+                    "bottom": 615.45
+                  },
+                  "fullText": "Willow Room for Quiet Reading",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "nowrap",
+                  "textOverflow": "ellipsis",
+                  "clientWidth": 230,
+                  "scrollWidth": 248,
+                  "clientHeight": 19,
+                  "scrollHeight": 19,
+                  "title": "Willow Room for Quiet Reading"
+                }
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "assessment": "uncertain",
+                "source": "unsupported",
+                "evidence": {
+                  "status": "unsupported",
+                  "visible": true,
+                  "box": {
+                    "x": 50,
+                    "y": 16,
+                    "width": 56,
+                    "height": 56,
+                    "right": 106,
+                    "bottom": 72
+                  },
+                  "pixelContentInspected": false,
+                  "reason": "pixel_content_not_inspected"
+                },
+                "reason": "pixel_content_not_inspected"
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-status",
+              "expected": "Showing 1 room",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "visible",
+              "selector": "#room-card-willow",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Open Willow Room",
+          "navigation_status": "pass",
+          "design": {
+            "status": "fail",
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "assessment": "fail",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 368,
+                    "y": 462.27,
+                    "width": 435.89,
+                    "height": 18.09,
+                    "right": 803.89,
+                    "bottom": 480.36
+                  },
+                  "foreground": [
+                    166,
+                    177,
+                    171
+                  ],
+                  "background": [
+                    247,
+                    250,
+                    247
+                  ],
+                  "contrastSupported": true,
+                  "contrastRatio": 2.1
+                },
+                "reason": "contrast_below_minimum"
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 368,
+                    "y": 685.86,
+                    "width": 435.89,
+                    "height": 42,
+                    "right": 803.89,
+                    "bottom": 727.86
+                  },
+                  "nativeDisabled": true,
+                  "ariaDisabled": false,
+                  "tag": "button",
+                  "role": null
+                }
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "first": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "second": {
+                    "status": "measured",
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  }
+                }
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": false,
+              "contrast": true,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-state",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#details-title",
+              "expected": "Willow Room",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Choose the date",
+          "navigation_status": "pass",
+          "navigation_report": "step-05/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#reservation-date",
+              "expected": "2026-10-14",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Choose the start time",
+          "navigation_status": "pass",
+          "navigation_report": "step-06/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#start-time",
+              "expected": "2:00 PM",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Choose the length",
+          "navigation_status": "pass",
+          "navigation_report": "step-07/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#length-select",
+              "expected": "60 minutes",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Enter your name",
+          "navigation_status": "pass",
+          "navigation_report": "step-08/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#guest-name",
+              "expected": "Avery Chen",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Enter your email",
+          "navigation_status": "pass",
+          "navigation_report": "step-09/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#guest-email",
+              "expected": "avery.chen@example.test",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Accept the room rules",
+          "navigation_status": "pass",
+          "navigation_report": "step-10/report.json",
+          "assertions": [
+            {
+              "kind": "checked",
+              "selector": "#rules-check",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "visible",
+              "selector": "#review-button",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Open the review",
+          "navigation_status": "pass",
+          "design": {
+            "status": "fail",
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "assessment": "fail",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 347,
+                    "y": 642.39,
+                    "width": 230.17,
+                    "height": 42,
+                    "right": 577.17,
+                    "bottom": 684.39
+                  },
+                  "inViewport": true,
+                  "hitSamples": [
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    },
+                    {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "targetReceivesHit": "[truncated]",
+                      "topElement": "[truncated]"
+                    }
+                  ]
+                },
+                "reason": "target_is_obstructed"
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "subject": {
+                    "x": 25.56,
+                    "y": 10,
+                    "width": 82.44,
+                    "height": 23.77,
+                    "right": 108,
+                    "bottom": 33.77
+                  },
+                  "decorative": {
+                    "x": 50,
+                    "y": 16,
+                    "width": 56,
+                    "height": 56,
+                    "right": 106,
+                    "bottom": 72
+                  },
+                  "content": {
+                    "x": 120,
+                    "y": 20.03,
+                    "width": 188,
+                    "height": 26.69,
+                    "right": 308,
+                    "bottom": 46.72
+                  },
+                  "decorativeIntersectionPx2": 995.12,
+                  "contentIntersectionPx2": 0
+                }
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "assessment": "uncertain",
+                "source": "jev",
+                "evidence": {
+                  "status": "measured",
+                  "observation": {
+                    "tag": "p",
+                    "role": null,
+                    "visible": true,
+                    "box": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    },
+                    "textBox": {
+                      "x": "[truncated]",
+                      "y": "[truncated]",
+                      "width": "[truncated]",
+                      "height": "[truncated]",
+                      "right": "[truncated]",
+                      "bottom": "[truncated]"
+                    }
+                  },
+                  "model": {
+                    "criterion": "Assess observation 0 only. clearly states no request was sent",
+                    "assessment": "uncertain",
+                    "confidence": 0.95,
+                    "probabilities": {
+                      "uncertain": "[truncated]",
+                      "pass": "[truncated]",
+                      "fail": "[truncated]"
+                    },
+                    "model_assessment": true,
+                    "model": "jev-1.13.0",
+                    "latency_ms": 143
+                  }
+                },
+                "reason": "model_uncertain"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "viewportWidth": 1280,
+                  "documentWidth": 1280
+                }
+              }
+            ],
+            "model_usage": [
+              {
+                "model": "jev-1.13.0",
+                "latency_ms": 143,
+                "usage": {
+                  "input_tokens": 563,
+                  "output_tokens": 46
+                }
+              }
+            ],
+            "viewport": {
+              "width": 1280,
+              "height": 900,
+              "documentWidth": 1280
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": true,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-11/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#review-state",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-room",
+              "expected": "Willow Room",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-date",
+              "expected": "October 14, 2026",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-time",
+              "expected": "2:00 PM \u00b7 60 minutes",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-guest",
+              "expected": "Avery Chen",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#review-email",
+              "expected": "avery.chen@example.test",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#prepared-status",
+              "expected": "Prepared for review \u00b7 no request sent.",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 340,
+            "usage": {
+              "input_tokens": 2965,
+              "output_tokens": 202
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 702,
+            "usage": {
+              "input_tokens": 2968,
+              "output_tokens": 203
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 218,
+            "usage": {
+              "input_tokens": 3006,
+              "output_tokens": 202
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 238,
+            "usage": {
+              "input_tokens": 2885,
+              "output_tokens": 186
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 208,
+            "usage": {
+              "input_tokens": 3823,
+              "output_tokens": 264
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 586,
+            "usage": {
+              "input_tokens": 3831,
+              "output_tokens": 264
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 672,
+            "usage": {
+              "input_tokens": 3820,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 212,
+            "usage": {
+              "input_tokens": 3811,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 204,
+            "usage": {
+              "input_tokens": 3828,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 594,
+            "usage": {
+              "input_tokens": 3835,
+              "output_tokens": 265
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 161,
+            "usage": {
+              "input_tokens": 3932,
+              "output_tokens": 273
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 143,
+            "usage": {
+              "input_tokens": 563,
+              "output_tokens": 46
+            }
+          }
+        ]
+      },
+      "errors": [],
+      "status": "fail",
+      "navigation_status": "pass",
+      "design_status": "fail",
+      "reached": 11,
+      "total": 11,
+      "elapsed_ms": 7361,
+      "actions": 11
+    }
+  },
+  {
+    "case": "narrow-q4",
+    "wall_ms": 2625,
+    "exit_code": 1,
+    "actual": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "not_reached",
+      "after-hours-disabled": "not_reached",
+      "review-aligned": "not_reached",
+      "review-unobstructed": "not_reached",
+      "header-badge-overlap": "not_reached",
+      "prepared-status-context": "not_reached",
+      "details-horizontal-fit": "not_reached"
+    },
+    "expected": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "pass",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "pass",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    },
+    "score": {
+      "correct": 3,
+      "total": 10,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Choose the floor",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#floor-select",
+              "expected": "Level 2",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search for Willow",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-rooms",
+              "expected": "Willow",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Apply the room search",
+          "navigation_status": "pass",
+          "design": {
+            "status": "needs_review",
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 46,
+                    "y": 828.66,
+                    "width": 298,
+                    "height": 59.86,
+                    "right": 344,
+                    "bottom": 888.52
+                  },
+                  "textBox": {
+                    "x": 46,
+                    "y": 829.66,
+                    "width": 292.38,
+                    "height": 55.91,
+                    "right": 338.38,
+                    "bottom": 885.56
+                  },
+                  "fullText": "Soft daylight, power at every seat, and a small whiteboard for quiet planning or one-to-one study.",
+                  "fullTextTruncated": false,
+                  "overflowX": "visible",
+                  "overflowY": "visible",
+                  "whiteSpace": "normal",
+                  "textOverflow": "clip",
+                  "clientWidth": 298,
+                  "scrollWidth": 298,
+                  "clientHeight": 60,
+                  "scrollHeight": 60
+                }
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 46,
+                    "y": 770.86,
+                    "width": 230,
+                    "height": 19.31,
+                    "right": 276,
+                    "bottom": 790.17
+                  },
+                  "textBox": {
+                    "x": 46,
+                    "y": 769.86,
+                    "width": 247.63,
+                    "height": 20,
+                    "right": 293.63,
+                    "bottom": 789.86
+                  },
+                  "fullText": "Willow Room for Quiet Reading",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "nowrap",
+                  "textOverflow": "ellipsis",
+                  "clientWidth": 230,
+                  "scrollWidth": 248,
+                  "clientHeight": 19,
+                  "scrollHeight": 19,
+                  "title": "Willow Room for Quiet Reading"
+                }
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "assessment": "uncertain",
+                "source": "unsupported",
+                "evidence": {
+                  "status": "unsupported",
+                  "visible": true,
+                  "box": {
+                    "x": 37,
+                    "y": 12,
+                    "width": 48,
+                    "height": 48,
+                    "right": 85,
+                    "bottom": 60
+                  },
+                  "pixelContentInspected": false,
+                  "reason": "pixel_content_not_inspected"
+                },
+                "reason": "pixel_content_not_inspected"
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 390,
+              "height": 844,
+              "documentWidth": 390
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-status",
+              "expected": "Showing 1 room",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "visible",
+              "selector": "#room-card-willow",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Open Willow Room",
+          "navigation_status": "fail",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-state",
+              "expected": true,
+              "passed": false,
+              "reason": "visibility_mismatch"
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#details-title",
+              "expected": "Willow Room",
+              "passed": false,
+              "reason": "text_target_not_visible"
+            }
+          ],
+          "actions": 0
+        },
+        {
+          "name": "Choose the date",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Choose the start time",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Choose the length",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Enter your name",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Enter your email",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Accept the room rules",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Open the review",
+          "navigation_status": "not_reached",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          }
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 350,
+            "usage": {
+              "input_tokens": 2746,
+              "output_tokens": 188
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 150,
+            "usage": {
+              "input_tokens": 2749,
+              "output_tokens": 189
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 111,
+            "usage": {
+              "input_tokens": 2787,
+              "output_tokens": 188
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 212,
+            "usage": {
+              "input_tokens": 2795,
+              "output_tokens": 188
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 178,
+            "usage": {
+              "input_tokens": 2795,
+              "output_tokens": 188
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": []
+      },
+      "errors": [],
+      "status": "fail",
+      "navigation_status": "fail",
+      "design_status": "needs_review",
+      "reached": 3,
+      "total": 11,
+      "elapsed_ms": 2474,
+      "actions": 3
+    }
+  },
+  {
+    "case": "narrow-q9",
+    "wall_ms": 2808,
+    "exit_code": 1,
+    "actual": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "not_reached",
+      "after-hours-disabled": "not_reached",
+      "review-aligned": "not_reached",
+      "review-unobstructed": "not_reached",
+      "header-badge-overlap": "not_reached",
+      "prepared-status-context": "not_reached",
+      "details-horizontal-fit": "not_reached"
+    },
+    "expected": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "uncertain",
+      "time-hint-contrast": "fail",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "fail",
+      "details-horizontal-fit": "fail",
+      "header-badge-overlap": "pass",
+      "prepared-status-context": "pass"
+    },
+    "score": {
+      "correct": 3,
+      "total": 10,
+      "missed_defects": 3,
+      "false_passes": 0
+    },
+    "report": {
+      "steps": [
+        {
+          "name": "Choose the floor",
+          "navigation_status": "pass",
+          "navigation_report": "step-01/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#floor-select",
+              "expected": "Level 2",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Search for Willow",
+          "navigation_status": "pass",
+          "navigation_report": "step-02/report.json",
+          "assertions": [
+            {
+              "kind": "value_equals",
+              "selector": "#search-rooms",
+              "expected": "Willow",
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Apply the room search",
+          "navigation_status": "pass",
+          "design": {
+            "status": "fail",
+            "checks": [
+              {
+                "id": "room-note-unclipped",
+                "kind": "unclipped",
+                "assessment": "fail",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 46,
+                    "y": 828.66,
+                    "width": 298,
+                    "height": 13.75,
+                    "right": 344,
+                    "bottom": 842.41
+                  },
+                  "textBox": {
+                    "x": 46,
+                    "y": 829.66,
+                    "width": 292.38,
+                    "height": 55.91,
+                    "right": 338.38,
+                    "bottom": 885.56
+                  },
+                  "fullText": "Soft daylight, power at every seat, and a small whiteboard for quiet planning or one-to-one study.",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "normal",
+                  "textOverflow": "clip",
+                  "clientWidth": 298,
+                  "scrollWidth": 298,
+                  "clientHeight": 14,
+                  "scrollHeight": 60
+                },
+                "reason": "content_clipped"
+              },
+              {
+                "id": "room-title-ellipsis",
+                "kind": "ellipsis",
+                "assessment": "pass",
+                "source": "rule",
+                "evidence": {
+                  "status": "measured",
+                  "visible": true,
+                  "box": {
+                    "x": 46,
+                    "y": 770.86,
+                    "width": 230,
+                    "height": 19.31,
+                    "right": 276,
+                    "bottom": 790.17
+                  },
+                  "textBox": {
+                    "x": 46,
+                    "y": 769.86,
+                    "width": 247.63,
+                    "height": 20,
+                    "right": 293.63,
+                    "bottom": 789.86
+                  },
+                  "fullText": "Willow Room for Quiet Reading",
+                  "fullTextTruncated": false,
+                  "overflowX": "hidden",
+                  "overflowY": "hidden",
+                  "whiteSpace": "nowrap",
+                  "textOverflow": "ellipsis",
+                  "clientWidth": 230,
+                  "scrollWidth": 248,
+                  "clientHeight": 19,
+                  "scrollHeight": 19,
+                  "title": "Willow Room for Quiet Reading"
+                }
+              },
+              {
+                "id": "brand-artwork",
+                "kind": "artwork",
+                "assessment": "uncertain",
+                "source": "unsupported",
+                "evidence": {
+                  "status": "unsupported",
+                  "visible": true,
+                  "box": {
+                    "x": 37,
+                    "y": 12,
+                    "width": 48,
+                    "height": 48,
+                    "right": 85,
+                    "bottom": 60
+                  },
+                  "pixelContentInspected": false,
+                  "reason": "pixel_content_not_inspected"
+                },
+                "reason": "pixel_content_not_inspected"
+              }
+            ],
+            "model_usage": [],
+            "viewport": {
+              "width": 390,
+              "height": 844,
+              "documentWidth": 390
+            },
+            "coverage": {
+              "geometry": true,
+              "textBounds": true,
+              "contrast": false,
+              "hitTesting": false,
+              "pixelContentInspected": false
+            }
+          },
+          "navigation_report": "step-03/report.json",
+          "assertions": [
+            {
+              "kind": "text_equals",
+              "selector": "#filter-status",
+              "expected": "Showing 1 room",
+              "passed": true,
+              "reason": ""
+            },
+            {
+              "kind": "visible",
+              "selector": "#room-card-willow",
+              "expected": true,
+              "passed": true,
+              "reason": ""
+            }
+          ],
+          "actions": 1
+        },
+        {
+          "name": "Open Willow Room",
+          "navigation_status": "fail",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "time-hint-contrast",
+                "kind": "contrast",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "after-hours-disabled",
+                "kind": "disabled",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "review-aligned",
+                "kind": "aligned",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          },
+          "navigation_report": "step-04/report.json",
+          "assertions": [
+            {
+              "kind": "visible",
+              "selector": "#details-state",
+              "expected": true,
+              "passed": false,
+              "reason": "visibility_mismatch"
+            },
+            {
+              "kind": "text_equals",
+              "selector": "#details-title",
+              "expected": "Willow Room",
+              "passed": false,
+              "reason": "text_target_not_visible"
+            }
+          ],
+          "actions": 0
+        },
+        {
+          "name": "Choose the date",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Choose the start time",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Choose the length",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Enter your name",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Enter your email",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Accept the room rules",
+          "navigation_status": "not_reached"
+        },
+        {
+          "name": "Open the review",
+          "navigation_status": "not_reached",
+          "design": {
+            "status": "needs_review",
+            "reason": "navigation_not_reached",
+            "checks": [
+              {
+                "id": "review-unobstructed",
+                "kind": "unobstructed",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "header-badge-overlap",
+                "kind": "decorative_overlap",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "prepared-status-context",
+                "kind": "contextual",
+                "assessment": "not_reached",
+                "source": "not_run"
+              },
+              {
+                "id": "details-horizontal-fit",
+                "kind": "horizontal_fit",
+                "assessment": "not_reached",
+                "source": "not_run"
+              }
+            ]
+          }
+        }
+      ],
+      "routing": {
+        "decision_model": "jev-latest",
+        "text_helper": "disabled"
+      },
+      "model_usage": {
+        "operation": [
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 326,
+            "usage": {
+              "input_tokens": 2746,
+              "output_tokens": 188
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 172,
+            "usage": {
+              "input_tokens": 2749,
+              "output_tokens": 189
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 339,
+            "usage": {
+              "input_tokens": 2787,
+              "output_tokens": 188
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 309,
+            "usage": {
+              "input_tokens": 2795,
+              "output_tokens": 188
+            }
+          },
+          {
+            "model": "jev-1.13.0",
+            "latency_ms": 159,
+            "usage": {
+              "input_tokens": 2795,
+              "output_tokens": 188
+            }
+          }
+        ],
+        "text": [],
+        "review": [],
+        "design": []
+      },
+      "errors": [],
+      "status": "fail",
+      "navigation_status": "fail",
+      "design_status": "fail",
+      "reached": 3,
+      "total": 11,
+      "elapsed_ms": 2650,
+      "actions": 3
+    }
+  }
+]

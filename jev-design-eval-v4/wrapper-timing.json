@@ -1,0 +1,22 @@
+{
+  "run": "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v4/runs/regression-20260917T233222Z",
+  "command_start_unix": 1789687942.8534029,
+  "command_end_unix": 1789687996.621255,
+  "batch_wall_ms": 53767,
+  "case_process_sum_ms": 53371,
+  "api_sum_ms": 21078,
+  "requests": 102,
+  "input_tokens": 222279,
+  "output_tokens": 13771,
+  "journeys_complete": 8,
+  "journeys_total": 8,
+  "wrapper_model": "gpt-5.6-luna",
+  "wrapper_role": "reused luna_dev, reasoning max",
+  "wrapper_tokens": null,
+  "scope": "Warm existing agent launched one fixed batch; not a fresh native jev_qa role timing.",
+  "dispatch_start_unix": 1789687922.7324212,
+  "completion_observed_unix": 1789688015.034517,
+  "dispatch_to_observed_completion_ms": 92302,
+  "dispatch_to_command_start_ms": 20121,
+  "command_end_to_observed_completion_ms": 18413
+}

@@ -1,0 +1,87 @@
+{
+  "status": "needs_review",
+  "terminal_status": "low_confidence",
+  "execution_status": "blocked",
+  "assertion_status": "fail",
+  "product_status": "not_tested",
+  "task": {
+    "url": "http://127.0.0.1:61026/holdout?build=q9",
+    "goal": "Current objective: Apply the filters so one matching room remains visible.\nVerified previous objectives: Choose the floor; Search for Willow. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "text_equals",
+        "selector": "#filter-status",
+        "expected": "Showing 1 room"
+      },
+      {
+        "kind": "visible",
+        "selector": "#room-card-willow",
+        "expected": true
+      }
+    ],
+    "criteria": [],
+    "max_steps": 58,
+    "max_seconds": 178.46712779195514,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Email",
+      "Search rooms",
+      "Your name"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#filter-status",
+      "expected": "Showing 1 room",
+      "passed": false,
+      "reason": "text_mismatch"
+    },
+    {
+      "kind": "visible",
+      "selector": "#room-card-willow",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 180,
+        "usage": {
+          "input_tokens": 1989,
+          "output_tokens": 140
+        }
+      },
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 201,
+        "usage": {
+          "input_tokens": 1989,
+          "output_tokens": 140
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 487,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json",
+    "decision-002.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

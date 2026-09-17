@@ -1,0 +1,212 @@
+{
+  "goal": "Prepare a local sound-kit loan summary for Taylor Reed, taylor.reed@example.test, for 3 days with afternoon collection. Do not send a request.",
+  "values": {
+    "Search equipment": "sound",
+    "Borrower name": "Taylor Reed",
+    "Contact email": "taylor.reed@example.test"
+  },
+  "steps": [
+    {
+      "name": "Choose category",
+      "goal": "Select Audio in Category.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#category",
+          "expected": "audio"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "name": "Search equipment",
+      "goal": "Enter sound in Search equipment.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#search",
+          "expected": "sound"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "name": "Apply search",
+      "goal": "Click Find equipment to apply the search.",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#filter-status",
+          "expected": "Showing 1 equipment kit"
+        }
+      ],
+      "checks": [
+        {
+          "id": "kit-description",
+          "kind": "unclipped",
+          "selector": "#kit-description"
+        },
+        {
+          "id": "kit-reference",
+          "kind": "ellipsis",
+          "selector": "#kit-title"
+        },
+        {
+          "id": "catalog-width",
+          "kind": "horizontal_fit"
+        },
+        {
+          "id": "kit-artwork",
+          "kind": "artwork",
+          "selector": "#kit-art"
+        }
+      ]
+    },
+    {
+      "name": "Inspect kit",
+      "goal": "Open the sound kit details.",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#details",
+          "expected": true
+        }
+      ],
+      "checks": [
+        {
+          "id": "pickup-contrast",
+          "kind": "contrast",
+          "selector": "#pickup-hint"
+        },
+        {
+          "id": "delivery-disabled",
+          "kind": "disabled",
+          "selector": "#delivery"
+        }
+      ]
+    },
+    {
+      "name": "Choose length",
+      "goal": "Select 3 days in Loan length.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#duration",
+          "expected": "3"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "name": "Choose window",
+      "goal": "Select Afternoon \u00b7 14\u201316 in Collection window.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#pickup",
+          "expected": "afternoon"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "name": "Enter borrower",
+      "goal": "Enter Taylor Reed in Borrower name.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#borrower",
+          "expected": "Taylor Reed"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "name": "Enter contact",
+      "goal": "Enter taylor.reed@example.test in Contact email.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#email",
+          "expected": "taylor.reed@example.test"
+        }
+      ],
+      "checks": []
+    },
+    {
+      "name": "Accept terms",
+      "goal": "Accept the equipment care terms.",
+      "assertions": [
+        {
+          "kind": "checked",
+          "selector": "#terms",
+          "expected": true
+        }
+      ],
+      "checks": []
+    },
+    {
+      "name": "Review request",
+      "goal": "Open the local equipment request summary.",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#summary",
+          "expected": true
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-name",
+          "expected": "Taylor Reed"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-email",
+          "expected": "taylor.reed@example.test"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-loan",
+          "expected": "3 days \u00b7 Afternoon \u00b7 14\u201316"
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#summary-status",
+          "expected": "Draft prepared locally. No request has been sent."
+        }
+      ],
+      "checks": [
+        {
+          "id": "summary-alignment",
+          "kind": "aligned",
+          "selector": "#summary-name",
+          "other": "#summary-email"
+        },
+        {
+          "id": "ready-unobstructed",
+          "kind": "unobstructed",
+          "selector": "#ready"
+        },
+        {
+          "id": "summary-message",
+          "kind": "unclipped",
+          "selector": "#summary-status"
+        },
+        {
+          "id": "summary-context",
+          "kind": "contextual",
+          "selector": "#summary-status",
+          "criterion": "The text clearly says that a draft exists locally and no request has been sent."
+        }
+      ]
+    }
+  ],
+  "url": "http://127.0.0.1:58825/fresh?build=s3",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "max_steps": 60,
+  "max_seconds": 180,
+  "min_confidence": 0.8
+}

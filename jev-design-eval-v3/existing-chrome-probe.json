@@ -1,0 +1,69 @@
+{
+  "scope": "fictional local HttpOnly session only; no private account pages",
+  "visits": [
+    {
+      "path": "seed",
+      "authenticated": false
+    },
+    {
+      "path": "app",
+      "authenticated": true
+    }
+  ],
+  "authenticated_new_tab": true,
+  "journey": {
+    "steps": [
+      {
+        "name": "Verify",
+        "navigation_status": "pass",
+        "navigation_report": "step-01/report.json",
+        "assertions": [
+          {
+            "kind": "text_equals",
+            "selector": "#status",
+            "expected": "Existing session verified.",
+            "passed": true,
+            "reason": ""
+          }
+        ],
+        "actions": 1,
+        "execution_status": "completed",
+        "assertion_status": "pass",
+        "product_status": "pass"
+      }
+    ],
+    "routing": {
+      "decision_model": "jev-latest",
+      "text_helper": "disabled"
+    },
+    "model_usage": {
+      "operation": [
+        {
+          "model": "jev-1.13.0",
+          "latency_ms": 243,
+          "usage": {
+            "input_tokens": 1181,
+            "output_tokens": 69
+          }
+        }
+      ],
+      "text": [],
+      "review": [],
+      "design": []
+    },
+    "errors": [],
+    "status": "pass",
+    "navigation_status": "pass",
+    "design_status": "pass",
+    "reached": 1,
+    "total": 1,
+    "execution_status": "completed",
+    "product_status": "pass",
+    "elapsed_ms": 532,
+    "actions": 1
+  },
+  "preexisting_targets_preserved_during_probe": true,
+  "probe_child_tab_closed": true,
+  "cookie_cleanup_requested": true,
+  "connection_closed": true
+}

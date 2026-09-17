@@ -1,0 +1,84 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57221/holdout?build=q4",
+    "goal": "Current objective: Apply the filters so one matching room remains visible.\nVerified previous objectives: Choose the floor; Search for Willow. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "text_equals",
+        "selector": "#filter-status",
+        "expected": "Showing 1 room"
+      },
+      {
+        "kind": "visible",
+        "selector": "#room-card-willow",
+        "expected": true
+      }
+    ],
+    "criteria": [],
+    "max_steps": 58,
+    "max_seconds": 178.54742941597942,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Email",
+      "Search rooms",
+      "Your name"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#filter-status",
+      "expected": "Showing 1 room",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "visible",
+      "selector": "#room-card-willow",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e9",
+      "kind": "click",
+      "label": "Find rooms"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 228,
+        "usage": {
+          "input_tokens": 2156,
+          "output_tokens": 140
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 639,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

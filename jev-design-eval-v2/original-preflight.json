@@ -1,0 +1,57 @@
+[
+  {
+    "kind": "select",
+    "label": "Track",
+    "value": "Design systems"
+  },
+  {
+    "kind": "fill",
+    "label": "Search sessions",
+    "value": "Responsive interfaces"
+  },
+  {
+    "kind": "click",
+    "label": "Apply filters",
+    "value": null
+  },
+  {
+    "kind": "click",
+    "label": "Inspect session",
+    "value": null
+  },
+  {
+    "kind": "click",
+    "label": "Reserve seats",
+    "value": null
+  },
+  {
+    "kind": "fill",
+    "label": "Attendee name",
+    "value": "Avery Example"
+  },
+  {
+    "kind": "fill",
+    "label": "Attendee email",
+    "value": "avery@example.com"
+  },
+  {
+    "kind": "select",
+    "label": "Seats",
+    "value": "2"
+  },
+  {
+    "kind": "fill",
+    "label": "Access code",
+    "value": "OPEN"
+  },
+  {
+    "kind": "click",
+    "label": "Apply code",
+    "value": null
+  },
+  {
+    "kind": "click",
+    "label": "Review reservation",
+    "value": null
+  }
+]

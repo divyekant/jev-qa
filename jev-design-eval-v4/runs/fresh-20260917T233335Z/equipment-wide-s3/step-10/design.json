@@ -1,0 +1,243 @@
+{
+  "status": "needs_review",
+  "checks": [
+    {
+      "id": "summary-alignment",
+      "kind": "aligned",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "first": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 151,
+            "y": 339.44,
+            "width": 978,
+            "height": 52,
+            "right": 1129,
+            "bottom": 391.44
+          }
+        },
+        "second": {
+          "status": "measured",
+          "visible": true,
+          "box": {
+            "x": 151,
+            "y": 399.44,
+            "width": 978,
+            "height": 52,
+            "right": 1129,
+            "bottom": 451.44
+          }
+        }
+      }
+    },
+    {
+      "id": "ready-unobstructed",
+      "kind": "unobstructed",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 124,
+          "y": 120,
+          "width": 131.63,
+          "height": 32,
+          "right": 255.63,
+          "bottom": 152
+        },
+        "inViewport": true,
+        "hitSamples": [
+          {
+            "x": 143.74,
+            "y": 126.4,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 143.74,
+            "y": 136,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 143.74,
+            "y": 145.6,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 189.82,
+            "y": 126.4,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 189.82,
+            "y": 136,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 189.82,
+            "y": 145.6,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 235.89,
+            "y": 126.4,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 235.89,
+            "y": 136,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          },
+          {
+            "x": 235.89,
+            "y": 145.6,
+            "targetReceivesHit": true,
+            "topElement": {
+              "tag": "span",
+              "role": null
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "summary-message",
+      "kind": "unclipped",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 151,
+          "y": 507.44,
+          "width": 978,
+          "height": 24,
+          "right": 1129,
+          "bottom": 531.44
+        },
+        "textBox": {
+          "x": 151,
+          "y": 510.44,
+          "width": 354.31,
+          "height": 18,
+          "right": 505.31,
+          "bottom": 528.44
+        },
+        "fullText": "Draft prepared locally. No request has been sent.",
+        "fullTextTruncated": false,
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "whiteSpace": "normal",
+        "textOverflow": "clip",
+        "clientWidth": 978,
+        "scrollWidth": 978,
+        "clientHeight": 24,
+        "scrollHeight": 24
+      }
+    },
+    {
+      "id": "summary-context",
+      "kind": "contextual",
+      "assessment": "pass",
+      "source": "jev",
+      "evidence": {
+        "status": "measured",
+        "observation": {
+          "tag": "p",
+          "role": null,
+          "visible": true,
+          "box": {
+            "x": 151,
+            "y": 507.44,
+            "width": 978,
+            "height": 24,
+            "right": 1129,
+            "bottom": 531.44
+          },
+          "textBox": {
+            "x": 151,
+            "y": 510.44,
+            "width": 354.31,
+            "height": 18,
+            "right": 505.31,
+            "bottom": 528.44
+          },
+          "text": "Draft prepared locally. No request has been sent."
+        },
+        "model": {
+          "criterion": "Assess observation 0 only. The text clearly says that a draft exists locally and no request has been sent.",
+          "assessment": "pass",
+          "confidence": 1.0,
+          "probabilities": {
+            "pass": 1.0,
+            "uncertain": 0.0,
+            "fail": 0.0
+          },
+          "model_assessment": true,
+          "model": "jev-1.13.0",
+          "latency_ms": 118
+        }
+      },
+      "advisory": true
+    }
+  ],
+  "model_usage": [
+    {
+      "model": "jev-1.13.0",
+      "latency_ms": 118,
+      "usage": {
+        "input_tokens": 588,
+        "output_tokens": 44
+      }
+    }
+  ],
+  "viewport": {
+    "width": 1280,
+    "height": 900,
+    "documentWidth": 1280
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": true,
+    "contrast": false,
+    "hitTesting": true,
+    "pixelContentInspected": false
+  }
+}

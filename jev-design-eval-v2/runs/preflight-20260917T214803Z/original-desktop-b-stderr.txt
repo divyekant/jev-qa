@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/evaluate.py", line 146, in <module>
+    preflight(json.loads(args.preflight_case.read_text()), json.loads(args.actions.read_text()), args.output)
+  File "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-design-eval-v2/evaluate.py", line 54, in preflight
+    from jev_qa.runner import _check_assertions
+  File "/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs/jev-qa/jev_qa/runner.py", line 15, in <module>
+    from jev_ultrafast.model import (
+ModuleNotFoundError: No module named 'jev_ultrafast'

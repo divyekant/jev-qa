@@ -1,0 +1,14 @@
+{
+  "single_submission": true,
+  "single_record": true,
+  "fields": {
+    "customer": true,
+    "email": true,
+    "quantity": true,
+    "unit_cents": true,
+    "total_cents": true,
+    "status": true,
+    "payment": true
+  },
+  "pass": true
+}

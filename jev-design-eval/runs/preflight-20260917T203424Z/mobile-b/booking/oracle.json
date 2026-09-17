@@ -1,0 +1,23 @@
+{
+  "visible": true,
+  "log": [
+    "filter",
+    "inspect",
+    "reserve",
+    "apply_code"
+  ],
+  "reservation": null,
+  "track": "design-systems",
+  "search": "Responsive interfaces",
+  "filtered": [
+    "Responsive interfaces in practice"
+  ],
+  "selected": "Responsive interfaces in practice",
+  "fields": {
+    "name": "Avery Example",
+    "email": "avery@example.com",
+    "seats": "2",
+    "code": "OPEN"
+  },
+  "codeText": "Access code accepted. Two seats reserved for review."
+}

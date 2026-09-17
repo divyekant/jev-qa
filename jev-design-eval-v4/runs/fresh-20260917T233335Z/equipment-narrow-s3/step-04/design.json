@@ -1,0 +1,70 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "id": "pickup-contrast",
+      "kind": "contrast",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 37,
+          "y": 348.69,
+          "width": 316,
+          "height": 48,
+          "right": 353,
+          "bottom": 396.69
+        },
+        "foreground": [
+          32,
+          40,
+          36
+        ],
+        "background": [
+          255,
+          253,
+          247
+        ],
+        "contrastSupported": true,
+        "contrastRatio": 14.85
+      }
+    },
+    {
+      "id": "delivery-disabled",
+      "kind": "disabled",
+      "assessment": "pass",
+      "source": "rule",
+      "evidence": {
+        "status": "measured",
+        "visible": true,
+        "box": {
+          "x": 37,
+          "y": 598.69,
+          "width": 227.13,
+          "height": 48,
+          "right": 264.13,
+          "bottom": 646.69
+        },
+        "nativeDisabled": true,
+        "ariaDisabled": false,
+        "tag": "button",
+        "role": null
+      }
+    }
+  ],
+  "model_usage": [],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390
+  },
+  "coverage": {
+    "geometry": true,
+    "textBounds": false,
+    "contrast": true,
+    "hitTesting": false,
+    "pixelContentInspected": false
+  }
+}

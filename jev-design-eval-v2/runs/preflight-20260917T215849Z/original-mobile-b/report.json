@@ -1,0 +1,585 @@
+{
+  "steps": [
+    {
+      "name": "Track",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#track-select",
+          "expected": "design-systems",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Search",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#search-sessions",
+          "expected": "Responsive interfaces",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Filter",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#filter-feedback",
+          "expected": "Showing 1 session",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Details",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#details-panel",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#session-title",
+          "expected": "Responsive interfaces in practice",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "status": "fail",
+        "checks": [
+          {
+            "id": "title",
+            "kind": "unclipped",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 347.5,
+                "width": 330,
+                "height": 22,
+                "right": 346,
+                "bottom": 369.5
+              },
+              "textBox": {
+                "x": 16,
+                "y": 348.5,
+                "width": 239.7,
+                "height": 62,
+                "right": 255.7,
+                "bottom": 410.5
+              },
+              "fullText": "Responsive interfaces in practice",
+              "fullTextTruncated": false,
+              "overflowX": "hidden",
+              "overflowY": "hidden",
+              "whiteSpace": "normal",
+              "textOverflow": "clip",
+              "clientWidth": 330,
+              "scrollWidth": 330,
+              "clientHeight": 22,
+              "scrollHeight": 64
+            },
+            "reason": "content_clipped"
+          },
+          {
+            "id": "badge",
+            "kind": "decorative_overlap",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "subject": {
+                "x": 35,
+                "y": 264,
+                "width": 104.48,
+                "height": 31,
+                "right": 139.48,
+                "bottom": 295
+              },
+              "decorative": {
+                "x": 16,
+                "y": 94,
+                "width": 358,
+                "height": 190,
+                "right": 374,
+                "bottom": 284
+              },
+              "content": {
+                "x": 16,
+                "y": 347.5,
+                "width": 330,
+                "height": 22,
+                "right": 346,
+                "bottom": 369.5
+              },
+              "decorativeIntersectionPx2": 2089.6,
+              "contentIntersectionPx2": 0
+            }
+          },
+          {
+            "id": "artwork",
+            "kind": "artwork",
+            "assessment": "uncertain",
+            "source": "unsupported",
+            "evidence": {
+              "status": "unsupported",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 513.5,
+                "width": 94,
+                "height": 94,
+                "right": 110,
+                "bottom": 607.5
+              },
+              "pixelContentInspected": false,
+              "reason": "pixel_content_not_inspected"
+            },
+            "reason": "pixel_content_not_inspected"
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": true,
+          "contrast": false,
+          "hitTesting": false,
+          "pixelContentInspected": false
+        }
+      }
+    },
+    {
+      "name": "Reserve",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#booking-panel",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Name",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#attendee-name",
+          "expected": "Avery Example",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Email",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#attendee-email",
+          "expected": "avery@example.com",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Seats",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#seats-select",
+          "expected": "2",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Code",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#access-code",
+          "expected": "OPEN",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "checks": []
+      }
+    },
+    {
+      "name": "Apply code",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#code-status",
+          "expected": "Access code accepted. Two seats reserved for review.",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "status": "fail",
+        "checks": [
+          {
+            "id": "status",
+            "kind": "contrast",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 616.22,
+                "width": 358,
+                "height": 74.38,
+                "right": 374,
+                "bottom": 690.59
+              },
+              "foreground": [
+                190,
+                198,
+                202
+              ],
+              "background": [
+                255,
+                255,
+                255
+              ],
+              "contrastSupported": true,
+              "contrastRatio": 1.73
+            },
+            "reason": "contrast_below_minimum"
+          },
+          {
+            "id": "disabled",
+            "kind": "disabled",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 816.59,
+                "width": 99.06,
+                "height": 38,
+                "right": 115.06,
+                "bottom": 854.59
+              },
+              "nativeDisabled": true,
+              "ariaDisabled": false,
+              "tag": "button",
+              "role": null
+            }
+          },
+          {
+            "id": "alignment",
+            "kind": "aligned",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "first": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 16,
+                  "y": 239.22,
+                  "width": 358,
+                  "height": 45,
+                  "right": 374,
+                  "bottom": 284.22
+                }
+              },
+              "second": {
+                "status": "measured",
+                "visible": true,
+                "box": {
+                  "x": 16,
+                  "y": 326.22,
+                  "width": 358,
+                  "height": 45,
+                  "right": 374,
+                  "bottom": 371.22
+                }
+              }
+            }
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 390
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": false,
+          "contrast": true,
+          "hitTesting": false,
+          "pixelContentInspected": false
+        }
+      }
+    },
+    {
+      "name": "Review",
+      "assertions": [
+        {
+          "kind": "visible",
+          "selector": "#review-panel",
+          "expected": true,
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#review-attendee",
+          "expected": "Avery Example",
+          "passed": true,
+          "reason": ""
+        },
+        {
+          "kind": "text_equals",
+          "selector": "#review-seats",
+          "expected": "2 seats",
+          "passed": true,
+          "reason": ""
+        }
+      ],
+      "design": {
+        "status": "fail",
+        "checks": [
+          {
+            "id": "confirm",
+            "kind": "unobstructed",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 16,
+                "y": 504.97,
+                "width": 184,
+                "height": 44,
+                "right": 200,
+                "bottom": 548.97
+              },
+              "inViewport": true,
+              "hitSamples": [
+                {
+                  "x": 43.6,
+                  "y": 513.77,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "button",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 43.6,
+                  "y": 526.97,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "button",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 43.6,
+                  "y": 540.17,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "button",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 108,
+                  "y": 513.77,
+                  "targetReceivesHit": false,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 108,
+                  "y": 526.97,
+                  "targetReceivesHit": false,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 108,
+                  "y": 540.17,
+                  "targetReceivesHit": false,
+                  "topElement": {
+                    "tag": "span",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 172.4,
+                  "y": 513.77,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "button",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 172.4,
+                  "y": 526.97,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "button",
+                    "role": null
+                  }
+                },
+                {
+                  "x": 172.4,
+                  "y": 540.17,
+                  "targetReceivesHit": true,
+                  "topElement": {
+                    "tag": "button",
+                    "role": null
+                  }
+                }
+              ]
+            },
+            "reason": "target_is_obstructed"
+          },
+          {
+            "id": "overflow",
+            "kind": "horizontal_fit",
+            "assessment": "fail",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "viewportWidth": 390,
+              "documentWidth": 536
+            },
+            "reason": "horizontal_overflow"
+          },
+          {
+            "id": "reference",
+            "kind": "ellipsis",
+            "assessment": "pass",
+            "source": "rule",
+            "evidence": {
+              "status": "measured",
+              "visible": true,
+              "box": {
+                "x": 378,
+                "y": 451.97,
+                "width": 140,
+                "height": 14.3,
+                "right": 518,
+                "bottom": 466.27
+              },
+              "textBox": {
+                "x": 378,
+                "y": 451.97,
+                "width": 325.42,
+                "height": 13,
+                "right": 703.42,
+                "bottom": 464.97
+              },
+              "fullText": "Workshop reservation for the regional interface research team",
+              "fullTextTruncated": false,
+              "overflowX": "hidden",
+              "overflowY": "hidden",
+              "whiteSpace": "nowrap",
+              "textOverflow": "ellipsis",
+              "clientWidth": 140,
+              "scrollWidth": 325,
+              "clientHeight": 14,
+              "scrollHeight": 14,
+              "title": "Workshop reservation for the regional interface research team"
+            }
+          }
+        ],
+        "model_usage": [],
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "documentWidth": 536
+        },
+        "coverage": {
+          "geometry": true,
+          "textBounds": true,
+          "contrast": false,
+          "hitTesting": true,
+          "pixelContentInspected": false
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "oracle": {
+    "testState": null,
+    "reservation": {
+      "name": "Avery Example",
+      "email": "avery@example.com",
+      "seats": 2,
+      "code": "OPEN",
+      "status": "review"
+    },
+    "eventLog": [
+      "filter",
+      "inspect",
+      "reserve",
+      "apply_code",
+      "review"
+    ]
+  }
+}

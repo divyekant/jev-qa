@@ -1,0 +1,335 @@
+{
+  "run": "outputs/jev-design-eval-v4/runs/regression-20260917T232745Z",
+  "totals": {
+    "steps": 57,
+    "steps_total": 88,
+    "actions": 63,
+    "runner_ms": 49917,
+    "process_ms": 51760,
+    "api_ms": 14408,
+    "calls": 75,
+    "input_tokens": 170191,
+    "output_tokens": 11044,
+    "journeys_completed": 4,
+    "journeys_total": 8,
+    "median_process_ms": 6033.5,
+    "groups": {
+      "rule": {
+        "correct": 34,
+        "total": 64
+      },
+      "artwork": {
+        "correct": 5,
+        "total": 8
+      },
+      "contextual": {
+        "correct": 4,
+        "total": 8
+      }
+    },
+    "score": {
+      "correct": 43,
+      "total": 80,
+      "missed_defects": 6,
+      "false_passes": 0
+    }
+  },
+  "cases": [
+    {
+      "case": "original-desktop-a",
+      "status": "blocked",
+      "navigation": "blocked",
+      "steps": 3,
+      "steps_total": 11,
+      "actions": 3,
+      "score": {
+        "correct": 0,
+        "total": 10,
+        "missed_defects": 0,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 0,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 0,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "runner_ms": 2976,
+      "process_ms": 3142,
+      "api_ms": 826,
+      "calls": 5,
+      "input_tokens": 9870,
+      "output_tokens": 603,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "original-mobile-b",
+      "status": "fail",
+      "navigation": "blocked",
+      "steps": 4,
+      "steps_total": 11,
+      "actions": 5,
+      "score": {
+        "correct": 3,
+        "total": 10,
+        "missed_defects": 3,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 2,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 1,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "runner_ms": 3397,
+      "process_ms": 3546,
+      "api_ms": 1086,
+      "calls": 7,
+      "input_tokens": 12149,
+      "output_tokens": 717,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "original-desktop-b",
+      "status": "blocked",
+      "navigation": "blocked",
+      "steps": 3,
+      "steps_total": 11,
+      "actions": 3,
+      "score": {
+        "correct": 0,
+        "total": 10,
+        "missed_defects": 3,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 0,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 0,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "runner_ms": 2906,
+      "process_ms": 3082,
+      "api_ms": 908,
+      "calls": 5,
+      "input_tokens": 9870,
+      "output_tokens": 603,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "original-mobile-a",
+      "status": "blocked",
+      "navigation": "blocked",
+      "steps": 3,
+      "steps_total": 11,
+      "actions": 4,
+      "score": {
+        "correct": 0,
+        "total": 10,
+        "missed_defects": 0,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 0,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 0,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "runner_ms": 4005,
+      "process_ms": 4163,
+      "api_ms": 1349,
+      "calls": 6,
+      "input_tokens": 11301,
+      "output_tokens": 708,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "wide-q4",
+      "status": "needs_review",
+      "navigation": "pass",
+      "steps": 11,
+      "steps_total": 11,
+      "actions": 11,
+      "score": {
+        "correct": 10,
+        "total": 10,
+        "missed_defects": 0,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 8,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 1,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "runner_ms": 7732,
+      "process_ms": 7904,
+      "api_ms": 2402,
+      "calls": 12,
+      "input_tokens": 29408,
+      "output_tokens": 1959,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "wide-q9",
+      "status": "fail",
+      "navigation": "pass",
+      "steps": 11,
+      "steps_total": 11,
+      "actions": 11,
+      "score": {
+        "correct": 10,
+        "total": 10,
+        "missed_defects": 0,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 8,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 1,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "runner_ms": 8011,
+      "process_ms": 8165,
+      "api_ms": 2617,
+      "calls": 12,
+      "input_tokens": 29408,
+      "output_tokens": 1959,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "narrow-q4",
+      "status": "needs_review",
+      "navigation": "pass",
+      "steps": 11,
+      "steps_total": 11,
+      "actions": 13,
+      "score": {
+        "correct": 10,
+        "total": 10,
+        "missed_defects": 0,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 8,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 1,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "runner_ms": 9686,
+      "process_ms": 9859,
+      "api_ms": 2571,
+      "calls": 14,
+      "input_tokens": 34112,
+      "output_tokens": 2247,
+      "models": [
+        "jev-1.13.0"
+      ]
+    },
+    {
+      "case": "narrow-q9",
+      "status": "fail",
+      "navigation": "pass",
+      "steps": 11,
+      "steps_total": 11,
+      "actions": 13,
+      "score": {
+        "correct": 10,
+        "total": 10,
+        "missed_defects": 0,
+        "false_passes": 0
+      },
+      "groups": {
+        "rule": {
+          "correct": 8,
+          "total": 8
+        },
+        "artwork": {
+          "correct": 1,
+          "total": 1
+        },
+        "contextual": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "runner_ms": 11204,
+      "process_ms": 11899,
+      "api_ms": 2649,
+      "calls": 14,
+      "input_tokens": 34073,
+      "output_tokens": 2248,
+      "models": [
+        "jev-1.13.0"
+      ]
+    }
+  ]
+}

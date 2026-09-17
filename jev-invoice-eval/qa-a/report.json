@@ -1,0 +1,208 @@
+{
+  "status": "pass",
+  "terminal_status": "check",
+  "task": {
+    "url": "http://127.0.0.1:50331/invoice/a",
+    "goal": "",
+    "mode": "check",
+    "assertions": [
+      {
+        "kind": "text_equals",
+        "selector": "#customer",
+        "expected": "Ada Example"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#email",
+        "expected": "ada@example.com"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#quantity",
+        "expected": "3"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#unit_price",
+        "expected": "$19.95"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#total",
+        "expected": "$59.85"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#status",
+        "expected": "Draft"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#payment",
+        "expected": "Unpaid"
+      }
+    ],
+    "criteria": [
+      "The invoice identifies customer Ada Example and email ada@example.com.",
+      "The invoice has quantity 3 at unit price $19.95 and shows the mathematically correct total $59.85.",
+      "The invoice remains Draft and Unpaid."
+    ],
+    "max_steps": 20,
+    "max_seconds": 90.0,
+    "min_confidence": 0.8
+  },
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#customer",
+      "expected": "Ada Example",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#email",
+      "expected": "ada@example.com",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#quantity",
+      "expected": "3",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#unit_price",
+      "expected": "$19.95",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#total",
+      "expected": "$59.85",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#status",
+      "expected": "Draft",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#payment",
+      "expected": "Unpaid",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [
+    {
+      "criterion": "The invoice identifies customer Ada Example and email ada@example.com.",
+      "assessment": "pass",
+      "confidence": 0.99,
+      "probabilities": {
+        "uncertain": 0.01,
+        "pass": 0.99,
+        "fail": 0.0
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 636
+    },
+    {
+      "criterion": "The invoice has quantity 3 at unit price $19.95 and shows the mathematically correct total $59.85.",
+      "assessment": "pass",
+      "confidence": 0.97,
+      "probabilities": {
+        "uncertain": 0.02,
+        "pass": 0.98,
+        "fail": 0.0
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 636
+    },
+    {
+      "criterion": "The invoice remains Draft and Unpaid.",
+      "assessment": "pass",
+      "confidence": 0.99,
+      "probabilities": {
+        "uncertain": 0.0,
+        "pass": 1.0,
+        "fail": 0.0
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 636
+    }
+  ],
+  "model_assessments": [
+    {
+      "criterion": "The invoice identifies customer Ada Example and email ada@example.com.",
+      "assessment": "pass",
+      "confidence": 0.99,
+      "probabilities": {
+        "uncertain": 0.01,
+        "pass": 0.99,
+        "fail": 0.0
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 636
+    },
+    {
+      "criterion": "The invoice has quantity 3 at unit price $19.95 and shows the mathematically correct total $59.85.",
+      "assessment": "pass",
+      "confidence": 0.97,
+      "probabilities": {
+        "uncertain": 0.02,
+        "pass": 0.98,
+        "fail": 0.0
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 636
+    },
+    {
+      "criterion": "The invoice remains Draft and Unpaid.",
+      "assessment": "pass",
+      "confidence": 0.99,
+      "probabilities": {
+        "uncertain": 0.0,
+        "pass": 1.0,
+        "fail": 0.0
+      },
+      "model_assessment": true,
+      "model": "jev-1.13.0",
+      "latency_ms": 636
+    }
+  ],
+  "actions": [],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [],
+    "text": [],
+    "review": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 636,
+        "usage": {
+          "input_tokens": 1084,
+          "output_tokens": 126
+        }
+      }
+    ]
+  },
+  "elapsed_ms": 1741,
+  "trace": "trace.jsonl",
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

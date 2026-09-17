@@ -1,0 +1,97 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57628/original?build=m4",
+    "goal": "Current objective: Click Review reservation. Do not click Confirm reservation.\nVerified previous objectives: Name; Email; Seats; Code; Apply code. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "visible",
+        "selector": "#review-panel",
+        "expected": true
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#review-attendee",
+        "expected": "Avery Example"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#review-seats",
+        "expected": "2 seats"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 50,
+    "max_seconds": 174.47485012502875,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Access code",
+      "Attendee email",
+      "Attendee name",
+      "Search sessions"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "visible",
+      "selector": "#review-panel",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#review-attendee",
+      "expected": "Avery Example",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#review-seats",
+      "expected": "2 seats",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e10",
+      "kind": "click",
+      "label": "Review reservation"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 117,
+        "usage": {
+          "input_tokens": 2288,
+          "output_tokens": 123
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 399,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

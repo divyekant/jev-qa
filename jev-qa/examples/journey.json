@@ -1,0 +1,49 @@
+{
+  "url": "http://127.0.0.1:8769/form.html",
+  "goal": "Subscribe a fictional tester and inspect the result.",
+  "values": {
+    "Email": "tester@example.com"
+  },
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "max_steps": 20,
+  "max_seconds": 120,
+  "min_confidence": 0.8,
+  "steps": [
+    {
+      "name": "Email entered",
+      "goal": "Enter tester@example.com in Email.",
+      "assertions": [
+        {
+          "kind": "value_equals",
+          "selector": "#email",
+          "expected": "tester@example.com"
+        }
+      ]
+    },
+    {
+      "name": "Subscription saved",
+      "goal": "Click Subscribe.",
+      "assertions": [
+        {
+          "kind": "text_equals",
+          "selector": "#status",
+          "expected": "Subscription saved."
+        }
+      ],
+      "checks": [
+        {
+          "id": "message-readable",
+          "kind": "unclipped",
+          "selector": "#status"
+        },
+        {
+          "id": "page-width",
+          "kind": "horizontal_fit"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+[
+  {
+    "case": "original-desktop-a",
+    "wall_ms": 41,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "title": "pass",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "pass",
+      "disabled": "pass",
+      "alignment": "pass",
+      "confirm": "pass",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  },
+  {
+    "case": "original-mobile-b",
+    "wall_ms": 32,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "title": "fail",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "fail",
+      "disabled": "pass",
+      "alignment": "pass",
+      "confirm": "fail",
+      "overflow": "fail",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 4,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  },
+  {
+    "case": "original-desktop-b",
+    "wall_ms": 33,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "title": "fail",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "fail",
+      "disabled": "pass",
+      "alignment": "pass",
+      "confirm": "fail",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 3,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  },
+  {
+    "case": "original-mobile-a",
+    "wall_ms": 34,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "title": "pass",
+      "badge": "pass",
+      "artwork": "uncertain",
+      "status": "pass",
+      "disabled": "pass",
+      "alignment": "pass",
+      "confirm": "pass",
+      "overflow": "pass",
+      "reference": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  },
+  {
+    "case": "wide-q4",
+    "wall_ms": 32,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "pass",
+      "time-hint-contrast": "pass",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "pass",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  },
+  {
+    "case": "wide-q9",
+    "wall_ms": 33,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "pass",
+      "time-hint-contrast": "fail",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "fail",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 3,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  },
+  {
+    "case": "narrow-q4",
+    "wall_ms": 31,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "room-note-unclipped": "pass",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "pass",
+      "time-hint-contrast": "pass",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "pass",
+      "details-horizontal-fit": "pass",
+      "header-badge-overlap": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 0,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  },
+  {
+    "case": "narrow-q9",
+    "wall_ms": 29,
+    "exit_code": 1,
+    "actual": {},
+    "expected": {
+      "room-note-unclipped": "fail",
+      "room-title-ellipsis": "pass",
+      "brand-artwork": "pass",
+      "time-hint-contrast": "fail",
+      "after-hours-disabled": "pass",
+      "review-aligned": "pass",
+      "review-unobstructed": "fail",
+      "details-horizontal-fit": "fail",
+      "header-badge-overlap": "pass"
+    },
+    "score": {
+      "correct": 0,
+      "total": 9,
+      "missed_defects": 4,
+      "false_passes": 0
+    },
+    "report": {
+      "status": "error",
+      "steps": []
+    }
+  }
+]

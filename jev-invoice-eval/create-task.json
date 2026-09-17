@@ -1,0 +1,50 @@
+{
+  "url": "http://127.0.0.1:50331/",
+  "goal": "Create exactly one draft invoice for Ada Example, email ada@example.com, quantity 3, unit price 19.95. Fill all four fields, click Save draft once, then stop when the saved invoice appears. Keep it Draft and Unpaid. Do not send it.",
+  "values": {
+    "Customer name": "Ada Example",
+    "Customer email": "ada@example.com",
+    "Quantity": "3",
+    "Unit price": "19.95"
+  },
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#customer",
+      "expected": "Ada Example"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#email",
+      "expected": "ada@example.com"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#quantity",
+      "expected": "3"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#unit_price",
+      "expected": "$19.95"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#total",
+      "expected": "$59.85"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#status",
+      "expected": "Draft"
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#payment",
+      "expected": "Unpaid"
+    }
+  ],
+  "max_steps": 12,
+  "max_seconds": 90,
+  "min_confidence": 0.8
+}

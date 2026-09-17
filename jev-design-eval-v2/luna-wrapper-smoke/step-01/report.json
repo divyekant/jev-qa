@@ -1,0 +1,64 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "task": {
+    "url": "http://127.0.0.1:8769/form.html",
+    "goal": "Current objective: Enter tester@example.com in Email.\nVerified previous objectives: none. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "value_equals",
+        "selector": "#email",
+        "expected": "tester@example.com"
+      }
+    ],
+    "criteria": [],
+    "max_steps": 20,
+    "max_seconds": 118.96069208404515,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Email"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "value_equals",
+      "selector": "#email",
+      "expected": "tester@example.com",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e1",
+      "kind": "fill",
+      "label": "Email"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 257,
+        "usage": {
+          "input_tokens": 1695,
+          "output_tokens": 108
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 520,
+  "trace": "trace.jsonl",
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

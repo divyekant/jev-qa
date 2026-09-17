@@ -1,0 +1,120 @@
+{
+  "status": "pass",
+  "terminal_status": "done",
+  "execution_status": "completed",
+  "assertion_status": "pass",
+  "product_status": "pass",
+  "task": {
+    "url": "http://127.0.0.1:57931/fresh?build=s3",
+    "goal": "Current objective: Open the local equipment request summary.\nVerified previous objectives: Choose length; Choose window; Enter borrower; Enter contact; Accept terms. Work only on the current objective. Scroll if its control is outside the viewport. Do not repeat completed objectives or perform later work.",
+    "mode": "run",
+    "assertions": [
+      {
+        "kind": "visible",
+        "selector": "#summary",
+        "expected": true
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#summary-name",
+        "expected": "Taylor Reed"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#summary-email",
+        "expected": "taylor.reed@example.test"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#summary-loan",
+        "expected": "3 days · Afternoon · 14–16"
+      },
+      {
+        "kind": "text_equals",
+        "selector": "#summary-status",
+        "expected": "Draft prepared locally. No request has been sent."
+      }
+    ],
+    "criteria": [],
+    "max_steps": 49,
+    "max_seconds": 175.53918045805767,
+    "min_confidence": 0.8,
+    "stop_when_assertions_pass": true,
+    "recovery_attempts": 1,
+    "jev_only": true,
+    "value_labels": [
+      "Borrower name",
+      "Contact email",
+      "Search equipment"
+    ]
+  },
+  "assertions": [
+    {
+      "kind": "visible",
+      "selector": "#summary",
+      "expected": true,
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#summary-name",
+      "expected": "Taylor Reed",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#summary-email",
+      "expected": "taylor.reed@example.test",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#summary-loan",
+      "expected": "3 days · Afternoon · 14–16",
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "kind": "text_equals",
+      "selector": "#summary-status",
+      "expected": "Draft prepared locally. No request has been sent.",
+      "passed": true,
+      "reason": ""
+    }
+  ],
+  "judgments": [],
+  "model_assessments": [],
+  "actions": [
+    {
+      "action": "e11",
+      "kind": "click",
+      "label": "Review equipment request"
+    }
+  ],
+  "omitted_actions": [],
+  "errors": [],
+  "model_usage": {
+    "operation": [
+      {
+        "model": "jev-1.13.0",
+        "latency_ms": 99,
+        "usage": {
+          "input_tokens": 2811,
+          "output_tokens": 159
+        }
+      }
+    ],
+    "text": [],
+    "review": []
+  },
+  "elapsed_ms": 343,
+  "trace": "trace.jsonl",
+  "decision_evidence": [
+    "decision-001.json"
+  ],
+  "probable_defects": [],
+  "final_screenshot": "final.jpg"
+}

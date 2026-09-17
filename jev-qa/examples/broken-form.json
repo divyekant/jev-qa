@@ -1,0 +1,16 @@
+{
+  "url": "http://127.0.0.1:8769/form.html?broken=1",
+  "goal": "Leave Email empty. Click Subscribe exactly once. Stop after the submission response appears, even if the response is incorrect.",
+  "assertions": [
+    {
+      "kind": "text_equals",
+      "selector": "#status",
+      "expected": "Email is required."
+    }
+  ],
+  "criteria": [
+    "The observed submission response clearly tells the user that an email address is required."
+  ],
+  "max_steps": 6,
+  "max_seconds": 60
+}
