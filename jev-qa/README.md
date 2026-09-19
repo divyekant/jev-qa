@@ -127,10 +127,37 @@ Design checks are explicit requirements, not an automatic full-page audit:
 | `aligned` | `selector`, `other`, optional `tolerance` (2 px) | Left edges and widths match |
 | `unobstructed` | `selector` | Nine visible interior points receive pointer hits |
 | `horizontal_fit` | optional `tolerance` (1 px) | Document fits the viewport width |
+| `image_contained` | `selector`, `container`, optional `tolerance` (1 px) | Visible image content stays inside the named ancestor container |
+| `image_crop` | `selector`, `expected` (`full` or `allowed`), optional `tolerance` (1 px) | Full image content is visible, or measured cropping is explicitly allowed |
 | `ellipsis` | `selector` | Truncated reference exposes exactly the full native title |
 | `decorative_overlap` | `selector`, `decorative`, `content` | Badge may overlap decoration but not meaningful content |
 | `artwork` | `selector` | Always unsupported without pixel evidence |
 | `contextual` | `selector`, `criterion` | Jev assesses compact observed text and facts |
+
+Image checks require a loaded `<img>` and explicit selectors. For example, add these
+checks to a step that shows a product image:
+
+```json
+[
+  {"id": "photo-bounds", "kind": "image_contained", "selector": "#product-photo", "container": "#product-card"},
+  {"id": "photo-full", "kind": "image_crop", "selector": "#product-photo", "expected": "full"}
+]
+```
+
+Use `expected: "allowed"` when cropping is intentional. A card that clips an oversized
+image can pass containment and fail the full-image check. Containment measures visible
+image content after clipping; it does not require the image element's entire box to fit.
+The measurements account for intrinsic image size, border and padding, `object-fit`,
+supported `object-position` values, and rectangular ancestor overflow clipping. Normal
+page scrolling does not count as cropping. Checks apply at the requested viewport size.
+
+Missing, unloaded, hidden, or unsupported images remain uncertain, even when cropping is
+allowed. Transforms, masks, rounded clipping, and absolute, fixed, or sticky positioning
+require review. Root/body overflow clipping, non-default `overflow-clip-margin`, and
+complex `object-position` expressions also remain unsupported. Measurements are rounded
+to 0.01 CSS pixels. These checks do not inspect pixels, detect cropping already present
+in a source file, or decide whether an allowed crop removes important content. Artwork
+review remains separate.
 
 Rules keep both their passes and failures. Jev does not override deterministic results.
 Contextual assessments are advisory and cannot create a verified overall pass. Unsupported

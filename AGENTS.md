@@ -10,6 +10,11 @@
 - Do not commit or publish without user authorization.
 <!-- APOLLO:END -->
 
+## Releases
+- Every release must include written release notes and a Git tag named `vX.Y.Z`.
+- Publish the tag and a GitHub Release with the release notes for the same release commit.
+- These project requirements override Apollo template defaults that disable release notes or tags.
+
 ## Runtime and evidence boundaries
 - Preserve Jev-only decisions, confidence guards, fresh observations, and meaningful postconditions.
 - Use Luna for launch/report wrappers. A wrapper must not rescue failed browser actions with another model.
