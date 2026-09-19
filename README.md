@@ -2,7 +2,7 @@
 
 Jev-only browser user acceptance testing (UAT) and measured design conformance checks, with an optional Luna wrapper.
 
-The current version passed 28/28 synthetic journeys, 304/304 checkpoints, 224/224 supported design checks, and 48/48 seeded-defect instances. These are bounded tests, including repeated defects, not a general reliability rate. Artwork judgment and dedicated nested-container scrolling remain unsupported.
+The retained v4 evaluation passed 28/28 synthetic journeys, 304/304 checkpoints, 224/224 supported design checks, and 48/48 seeded-defect instances. These historical results are bounded tests, including repeated defects, not a general reliability rate or a new evaluation of v0.1.1. Artwork judgment and dedicated nested-container scrolling remain unsupported.
 
 ## Start
 
@@ -39,7 +39,7 @@ The sibling directory layout is retained so evaluation scripts and relative evid
 
 This project was copied from `/Users/dk/Documents/Codex/2026-09-17/ok-x20/outputs` to `/Users/dk/projects/jev-qa`. Replace the old `outputs` prefix with this repository root to locate a historical file. Original outputs remain an archive; the installed launcher and skill use this project.
 
-[MIGRATION.json](MIGRATION.json) records hashes before relocation-only edits. Historical JSON, reports, screenshots, and source fingerprints retain their original contents and absolute paths. They are evidence of the earlier runs, not newly measured performance after migration. Runtime Python source and fixture behavior are unchanged.
+[MIGRATION.json](MIGRATION.json) records hashes before relocation-only edits. Historical JSON, reports, screenshots, and source fingerprints retain their original contents and absolute paths. They are evidence of the earlier runs, not newly measured performance after migration. The migration preserved runtime Python source and fixture behavior; subsequent runtime fixes are recorded in Git.
 
 The committed browser evidence comes from fictional local fixtures. New run folders are ignored by default because browser evidence can contain page text and form values. Check content before deliberately adding any new evidence. Virtual environments, caches, build products, credentials, and browser profiles are not source artifacts.
 

@@ -112,7 +112,7 @@ retry; uncertain mutations cannot.
 ```
 
 Steps accept `name`, `goal`, `assertions`, and optional `checks`. Known input values use
-exact observed field labels. No model generates selectors or executable scripts. The
+observed field labels with whitespace normalized. No model generates selectors or executable scripts. The
 parent supplies the test contract; the runner selects observed actions to satisfy it.
 Navigation stops on an unverified step. A measured design defect is recorded without
 preventing later authorized navigation. Later unperformed steps remain `not_reached`.
@@ -167,7 +167,8 @@ assertions, check mode needs no model call. Assertion kinds are `text_contains`,
 element. Supply selectors yourself; Jev cannot generate executable code or selectors.
 Use boolean `expected` for `checked` and `visible`, and strings for other kinds.
 
-Known input values use exact field labels. If a value is missing, an optional text helper can
+Known input values use field labels with whitespace normalized; duplicate normalized labels are rejected.
+Input values are preserved unchanged. If a value is missing, an optional text helper can
 generate it; without that helper the run returns for review. Passwords are not supported.
 
 ## Evidence review
