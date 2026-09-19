@@ -32,6 +32,8 @@ KINDS = frozenset(
         "decorative_overlap",
         "artwork",
         "contextual",
+        "image_contained",
+        "image_crop",
     }
 )
 _FIELDS = {
@@ -45,6 +47,8 @@ _FIELDS = {
     "decorative_overlap": {"id", "kind", "selector", "decorative", "content"},
     "artwork": {"id", "kind", "selector"},
     "contextual": {"id", "kind", "selector", "criterion"},
+    "image_contained": {"id", "kind", "selector", "container", "tolerance"},
+    "image_crop": {"id", "kind", "selector", "expected", "tolerance"},
 }
 
 
@@ -103,6 +107,15 @@ def validate_checks(checks: Any) -> list[dict[str, Any]]:
             result["content"] = _text(item.get("content"), f"checks[{index}].content", MAX_SELECTOR)
         elif kind == "contextual":
             result["criterion"] = _text(item.get("criterion"), f"checks[{index}].criterion", MAX_CRITERION)
+        elif kind == "image_contained":
+            result["container"] = _text(item.get("container"), f"checks[{index}].container", MAX_SELECTOR)
+            result["tolerance"] = _number(item.get("tolerance", 1.0), f"checks[{index}].tolerance", 0.0, MAX_TOLERANCE)
+        elif kind == "image_crop":
+            expected = item.get("expected")
+            if not isinstance(expected, str) or expected not in {"full", "allowed"}:
+                raise ValueError(f"checks[{index}].expected must be 'full' or 'allowed'")
+            result["expected"] = expected
+            result["tolerance"] = _number(item.get("tolerance", 1.0), f"checks[{index}].tolerance", 0.0, MAX_TOLERANCE)
         normalized.append(result)
     return normalized
 
@@ -149,6 +162,57 @@ def _unsupported(evidence: Any) -> bool:
 
 def _visible(evidence: Any) -> bool:
     return _measured(evidence) and evidence.get("visible") is True
+
+
+def _positive_rect(value: Any) -> dict[str, float] | None:
+    result = _rect(value)
+    if result is None or result["width"] <= 0 or result["height"] <= 0:
+        return None
+    if result["right"] < result["x"] or result["bottom"] < result["y"]:
+        return None
+    if (
+        abs(result["right"] - (result["x"] + result["width"])) > 0.01
+        or abs(result["bottom"] - (result["y"] + result["height"])) > 0.01
+    ):
+        return None
+    return result
+
+
+def _image_geometry(evidence: Any) -> tuple[dict[str, float], dict[str, float], dict[str, float]] | None:
+    if (
+        not _visible(evidence)
+        or evidence.get("tag") != "img"
+        or not _finite(evidence.get("naturalWidth"))
+        or not _finite(evidence.get("naturalHeight"))
+        or float(evidence["naturalWidth"]) <= 0
+        or float(evidence["naturalHeight"]) <= 0
+    ):
+        return None
+    content = _positive_rect(evidence.get("contentBox"))
+    painted = _positive_rect(evidence.get("paintedBox"))
+    visible = _positive_rect(evidence.get("visibleBox"))
+    if content is None or painted is None or visible is None:
+        return None
+    if "sourceClipped" in evidence and type(evidence.get("sourceClipped")) is not bool:
+        return None
+    if "sourceClipPx" in evidence and (not _finite(evidence.get("sourceClipPx")) or evidence["sourceClipPx"] < 0):
+        return None
+    for key in ("sourceBox", "visibleSourceBox"):
+        if key in evidence and _positive_rect(evidence.get(key)) is None:
+            return None
+    if (
+        visible["x"] < content["x"] - 0.01
+        or visible["y"] < content["y"] - 0.01
+        or visible["right"] > content["right"] + 0.01
+        or visible["bottom"] > content["bottom"] + 0.01
+        or
+        visible["x"] < painted["x"] - 0.01
+        or visible["y"] < painted["y"] - 0.01
+        or visible["right"] > painted["right"] + 0.01
+        or visible["bottom"] > painted["bottom"] + 0.01
+    ):
+        return None
+    return content, painted, visible
 
 
 def _unknown(evidence: Any, reason: str = "measurement_unavailable") -> dict[str, Any]:
@@ -312,6 +376,43 @@ def classify_measurement(check: Mapping[str, Any], evidence: Any) -> dict[str, A
         covered = float(content) > 0.01
         return _entry("fail" if covered else "pass", evidence,
                       reason="meaningful_content_covered" if covered else None)
+
+    if kind in {"image_contained", "image_crop"}:
+        geometry = _image_geometry(evidence)
+        if geometry is None:
+            return _unknown(evidence, "image_measurement_unavailable")
+        _content, _painted, visible = geometry
+        if kind == "image_contained":
+            if evidence.get("containerIsAncestor") is not True:
+                return _unknown(evidence, "image_container_unavailable")
+            container = _positive_rect(evidence.get("containerInnerBox"))
+            if container is None:
+                return _unknown(evidence, "image_container_unavailable")
+            tolerance = normalized["tolerance"]
+            contained = (
+                visible["x"] >= container["x"] - tolerance
+                and visible["y"] >= container["y"] - tolerance
+                and visible["right"] <= container["right"] + tolerance
+                and visible["bottom"] <= container["bottom"] + tolerance
+            )
+            return _entry(
+                "pass" if contained else "fail",
+                evidence,
+                reason="image_outside_container" if not contained else None,
+            )
+        if "sourceClipped" in evidence and type(evidence.get("sourceClipped")) is not bool:
+            return _unknown(evidence, "image_crop_measurement_unavailable")
+        if normalized["expected"] == "allowed":
+            return _entry("pass", evidence)
+        _content, painted, visible = geometry
+        crop_px = max(
+            abs(visible["x"] - painted["x"]),
+            abs(visible["y"] - painted["y"]),
+            abs(visible["right"] - painted["right"]),
+            abs(visible["bottom"] - painted["bottom"]),
+        )
+        cropped = crop_px > normalized["tolerance"]
+        return _entry("fail" if cropped else "pass", evidence, reason="image_source_cropped" if cropped else None)
 
     if kind == "contextual":
         return _unknown(evidence, "contextual_requires_jev")

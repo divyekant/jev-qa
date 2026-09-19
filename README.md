@@ -2,7 +2,7 @@
 
 Jev-only browser user acceptance testing (UAT) and measured design conformance checks, with an optional Luna wrapper.
 
-The retained v4 evaluation passed 28/28 synthetic journeys, 304/304 checkpoints, 224/224 supported design checks, and 48/48 seeded-defect instances. These historical results are bounded tests, including repeated defects, not a general reliability rate or a new evaluation of v0.1.1. Artwork judgment and dedicated nested-container scrolling remain unsupported.
+The retained v4 evaluation passed 28/28 synthetic journeys, 304/304 checkpoints, 224/224 supported design checks, and 48/48 seeded-defect instances. These historical results are bounded tests, including repeated defects, not a general reliability rate or a new evaluation of v0.2.0. Artwork judgment and dedicated nested-container scrolling remain unsupported.
 
 ## Start
 

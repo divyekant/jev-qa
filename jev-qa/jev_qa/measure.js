@@ -45,6 +45,137 @@
     }
     return [...new Set(reasons)];
   };
+  const numberStyle = (style, property) => {
+    const value = Number.parseFloat(style[property]);
+    return finite(value) ? value : 0;
+  };
+  const imageBox = (element, style, bounds) => {
+    const borderLeft = numberStyle(style, "borderLeftWidth");
+    const borderRight = numberStyle(style, "borderRightWidth");
+    const borderTop = numberStyle(style, "borderTopWidth");
+    const borderBottom = numberStyle(style, "borderBottomWidth");
+    const paddingLeft = numberStyle(style, "paddingLeft");
+    const paddingRight = numberStyle(style, "paddingRight");
+    const paddingTop = numberStyle(style, "paddingTop");
+    const paddingBottom = numberStyle(style, "paddingBottom");
+    const width = bounds.width - borderLeft - borderRight - paddingLeft - paddingRight;
+    const height = bounds.height - borderTop - borderBottom - paddingTop - paddingBottom;
+    if (!finite(width) || !finite(height) || width <= 0 || height <= 0) return null;
+    return rect({
+      x: bounds.x + borderLeft + paddingLeft,
+      y: bounds.y + borderTop + paddingTop,
+      width, height, right: bounds.x + borderLeft + paddingLeft + width,
+      bottom: bounds.y + borderTop + paddingTop + height
+    });
+  };
+  const clientBox = (element, style, bounds) => {
+    const borderLeft = numberStyle(style, "borderLeftWidth");
+    const borderTop = numberStyle(style, "borderTopWidth");
+    const clientLeft = Number(element.clientLeft);
+    const clientTop = Number(element.clientTop);
+    const width = Number(element.clientWidth);
+    const height = Number(element.clientHeight);
+    if (!finite(width) || !finite(height) || width <= 0 || height <= 0) return null;
+    const left = finite(clientLeft) ? clientLeft : borderLeft;
+    const top = finite(clientTop) ? clientTop : borderTop;
+    return rect({x: bounds.x + left, y: bounds.y + top, width, height,
+      right: bounds.x + left + width, bottom: bounds.y + top + height});
+  };
+  const makeBox = (x, y, width, height) => {
+    if (![x, y, width, height].every(finite) || width <= 0 || height <= 0) return null;
+    return rect({x, y, width, height, right: x + width, bottom: y + height});
+  };
+  const intersectBox = (first, second) => {
+    if (!first || !second) return null;
+    const x = Math.max(first.x, second.x);
+    const y = Math.max(first.y, second.y);
+    const right = Math.min(first.right, second.right);
+    const bottom = Math.min(first.bottom, second.bottom);
+    return makeBox(x, y, right - x, bottom - y);
+  };
+  const positionTerm = (value, axis) => {
+    const text = String(value).toLowerCase();
+    const keyword = {
+      x: {left: 0, center: 0.5, right: 1},
+      y: {top: 0, center: 0.5, bottom: 1}
+    }[axis];
+    if (Object.prototype.hasOwnProperty.call(keyword, text)) return {percent: keyword[text], pixels: 0};
+    const match = /^([+-]?(?:\d+\.?\d*|\.\d+))(px|%)$/.exec(text);
+    if (!match) return null;
+    const number = Number(match[1]);
+    if (!finite(number)) return null;
+    return match[2] === "%" ? {percent: number / 100, pixels: 0} : {percent: 0, pixels: number};
+  };
+  const objectPosition = (value, paintedWidth, paintedHeight, contentWidth, contentHeight) => {
+    if (typeof value !== "string") return null;
+    const parts = value.trim().split(/\s+/);
+    if (parts.length !== 2) return null;
+    const x = positionTerm(parts[0], "x");
+    const y = positionTerm(parts[1], "y");
+    if (!x || !y) return null;
+    const left = (contentWidth - paintedWidth) * x.percent + x.pixels;
+    const top = (contentHeight - paintedHeight) * y.percent + y.pixels;
+    return finite(left) && finite(top) ? {left, top} : null;
+  };
+  const clippedAxes = value => ["hidden", "clip", "auto", "scroll"].includes(value);
+  const imageUnsupported = element => {
+    const reasons = [];
+    for (let node = element; node; node = node.parentElement) {
+      const style = getComputedStyle(node);
+      if (Number(style.opacity) !== 1) reasons.push("ancestor_opacity");
+      if (style.filter && style.filter !== "none") reasons.push("ancestor_filter");
+      if (style.transform && style.transform !== "none") reasons.push("ancestor_transform");
+      if (style.rotate && style.rotate !== "none" && style.rotate !== "0deg") reasons.push("ancestor_rotate");
+      if (style.scale && style.scale !== "none" && style.scale !== "1") reasons.push("ancestor_scale");
+      if (style.translate && style.translate !== "none" && style.translate !== "0px") reasons.push("ancestor_translate");
+      if (style.clipPath && style.clipPath !== "none") reasons.push("ancestor_clip_path");
+      if ((style.mask && style.mask !== "none") || (style.maskImage && style.maskImage !== "none")) reasons.push("ancestor_mask");
+      if ((node === document.body || node === document.documentElement) &&
+          (style.overflowX === "hidden" || style.overflowX === "clip" ||
+           style.overflowY === "hidden" || style.overflowY === "clip")) {
+        reasons.push("root_overflow_geometry");
+      }
+      if (style.overflowX === "clip" || style.overflowY === "clip") {
+        const clipMargin = String(style.overflowClipMargin || "0px").trim();
+        if (clipMargin !== "0px" && !(node === element && clipMargin === "content-box")) {
+          reasons.push("overflow_clip_margin");
+        }
+      }
+      if (style.borderRadius && style.borderRadius !== "0px" &&
+          (node === element || clippedAxes(style.overflowX) || clippedAxes(style.overflowY))) {
+        reasons.push("ancestor_rounded_clipping");
+      }
+      if (style.zoom && style.zoom !== "1" && style.zoom !== "normal") reasons.push("ancestor_zoom");
+      if (style.contain && style.contain !== "none" && /(?:^|\s)(?:paint|strict|content)(?:\s|$)/.test(style.contain)) {
+        reasons.push("ancestor_paint_containment");
+      }
+      if (["absolute", "fixed", "sticky"].includes(style.position)) reasons.push("complex_positioning");
+    }
+    return [...new Set(reasons)];
+  };
+  const imageAncestorClips = (element, initial) => {
+    let visibleBox = initial;
+    for (let node = element.parentElement; node; node = node.parentElement) {
+      // Body and html scrolling moves the page; it does not crop the image source.
+      const style = getComputedStyle(node);
+      if ((node === document.body || node === document.documentElement) &&
+          !["hidden", "clip"].some(value => style.overflowX === value || style.overflowY === value)) continue;
+      if (!clippedAxes(style.overflowX) && !clippedAxes(style.overflowY)) continue;
+      const bounds = rect(node.getBoundingClientRect());
+      const clip = bounds && clientBox(node, style, bounds);
+      if (!clip) return {visibleBox: null, reason: "invalid_ancestor_clip_geometry"};
+      if (clippedAxes(style.overflowX)) {
+        visibleBox = intersectBox(visibleBox, {x: clip.x, y: -1e9, width: clip.width, height: 2e9,
+          right: clip.right, bottom: 1e9});
+      }
+      if (clippedAxes(style.overflowY)) {
+        visibleBox = intersectBox(visibleBox, {x: -1e9, y: clip.y, width: 2e9, height: clip.height,
+          right: 1e9, bottom: clip.bottom});
+      }
+      if (!visibleBox) break;
+    }
+    return {visibleBox};
+  };
   const visible = (element, style, bounds) => {
     let checked = true;
     try {
@@ -193,6 +324,123 @@
     addEffects(resolved);
     return resolved.info;
   };
+  const imageMeasurement = check => {
+    const resolved = resolve(check.selector);
+    const info = resolved.info;
+    const image = resolved.element;
+    if (!image) return info;
+    if (image.tagName.toLowerCase() !== "img") {
+      info.status = "measurement_error";
+      info.reason = "image_element_required";
+      return info;
+    }
+    if (info.status !== "measured") return info;
+    const naturalWidth = Number(image.naturalWidth);
+    const naturalHeight = Number(image.naturalHeight);
+    if (!finite(naturalWidth) || !finite(naturalHeight) || naturalWidth <= 0 || naturalHeight <= 0 || image.complete !== true) {
+      info.status = "measurement_error";
+      info.reason = "image_not_loaded";
+      return info;
+    }
+    const unsupported = imageUnsupported(image);
+    if (unsupported.length) {
+      info.status = "unsupported";
+      info.reason = "unsupported_image_effect";
+      info.unsupported = unsupported;
+      return info;
+    }
+    const content = imageBox(image, resolved.style, info.box);
+    if (!content) {
+      info.status = "measurement_error";
+      info.reason = "invalid_image_content_geometry";
+      return info;
+    }
+    const fit = resolved.style.objectFit || "fill";
+    if (!["fill", "contain", "cover", "none", "scale-down"].includes(fit)) {
+      info.status = "unsupported";
+      info.reason = "unsupported_object_fit";
+      return info;
+    }
+    const containScale = Math.min(content.width / naturalWidth, content.height / naturalHeight);
+    let scale = 1;
+    if (fit === "contain") scale = containScale;
+    if (fit === "cover") scale = Math.max(content.width / naturalWidth, content.height / naturalHeight);
+    if (fit === "scale-down") scale = Math.min(1, containScale);
+    const paintedWidth = fit === "fill" ? content.width : naturalWidth * scale;
+    const paintedHeight = fit === "fill" ? content.height : naturalHeight * scale;
+    if (![scale, paintedWidth, paintedHeight].every(value => finite(value) && value > 0)) {
+      info.status = "measurement_error";
+      info.reason = "invalid_image_paint_geometry";
+      return info;
+    }
+    const position = objectPosition(resolved.style.objectPosition, paintedWidth, paintedHeight,
+      content.width, content.height);
+    if (!position) {
+      info.status = "unsupported";
+      info.reason = "unsupported_object_position";
+      return info;
+    }
+    const painted = makeBox(content.x + position.left, content.y + position.top, paintedWidth, paintedHeight);
+    let visibleBox = intersectBox(painted, content);
+    if (!painted || !visibleBox) {
+      info.status = "measurement_error";
+      info.reason = "image_not_visible";
+      return info;
+    }
+    const clipped = imageAncestorClips(image, visibleBox);
+    visibleBox = clipped.visibleBox;
+    if (!visibleBox) {
+      info.status = "measurement_error";
+      info.reason = "image_not_visible";
+      return info;
+    }
+    let containerBox = null;
+    let containerInnerBox = null;
+    if (check.kind === "image_contained") {
+      const containerResolved = resolve(check.container);
+      if (!containerResolved.element || containerResolved.info.status !== "measured" ||
+          containerResolved.element === image || !containerResolved.element.contains(image)) {
+        info.status = "measurement_error";
+        info.reason = "invalid_image_container";
+        return info;
+      }
+      containerBox = containerResolved.info.box;
+      containerInnerBox = clientBox(containerResolved.element, containerResolved.style, containerBox);
+      if (!containerInnerBox) {
+        info.status = "measurement_error";
+        info.reason = "invalid_image_container_geometry";
+        return info;
+      }
+      info.containerBox = containerBox;
+      info.containerInnerBox = containerInnerBox;
+      info.containerIsAncestor = true;
+    }
+    const sourceBox = makeBox(0, 0, naturalWidth, naturalHeight);
+    const scaleX = paintedWidth / naturalWidth;
+    const scaleY = paintedHeight / naturalHeight;
+    const sourceLeft = Math.max(0, Math.min(naturalWidth, (visibleBox.x - painted.x) / scaleX));
+    const sourceTop = Math.max(0, Math.min(naturalHeight, (visibleBox.y - painted.y) / scaleY));
+    const sourceRight = Math.max(sourceLeft, Math.min(naturalWidth, (visibleBox.right - painted.x) / scaleX));
+    const sourceBottom = Math.max(sourceTop, Math.min(naturalHeight, (visibleBox.bottom - painted.y) / scaleY));
+    const visibleSourceBox = makeBox(sourceLeft, sourceTop, sourceRight - sourceLeft, sourceBottom - sourceTop);
+    const sourceClipPx = Math.max(
+      Math.abs(visibleBox.x - painted.x), Math.abs(visibleBox.y - painted.y),
+      Math.abs(visibleBox.right - painted.right), Math.abs(visibleBox.bottom - painted.bottom)
+    );
+    info.tag = "img";
+    info.naturalWidth = round(naturalWidth);
+    info.naturalHeight = round(naturalHeight);
+    info.contentBox = content;
+    info.sourceBox = sourceBox;
+    info.paintedBox = painted;
+    info.visibleBox = visibleBox;
+    info.visibleSourceBox = visibleSourceBox;
+    info.objectFit = fit;
+    info.objectPosition = resolved.style.objectPosition;
+    info.sourceClipPx = round(sourceClipPx);
+    info.sourceClipped = sourceClipPx > 0.01;
+    return info;
+  };
   const intersection = (first, second) => {
     if (!first || !second) return null;
     const width = Math.max(0, Math.min(first.right, second.right) - Math.max(first.x, second.x));
@@ -254,6 +502,9 @@
         decorativeIntersectionPx2: intersection(subject.box, decorative.box),
         contentIntersectionPx2: intersection(subject.box, content.box)
       };
+    }
+    if (check.kind === "image_contained" || check.kind === "image_crop") {
+      return imageMeasurement(check);
     }
     if (check.kind === "artwork") {
       const resolved = resolve(check.selector);

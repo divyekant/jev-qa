@@ -16,6 +16,23 @@ def box(x=0, y=0, width=100, height=20):
     return {"x": x, "y": y, "width": width, "height": height, "right": x + width, "bottom": y + height}
 
 
+def image_evidence(*, visible_box=None, container_box=None, source_clipped=False, status="measured"):
+    return {
+        "status": status,
+        "visible": True,
+        "tag": "img",
+        "naturalWidth": 200,
+        "naturalHeight": 100,
+        "box": box(width=100, height=50),
+        "contentBox": box(x=2, y=2, width=96, height=46),
+        "paintedBox": box(x=2, y=2, width=96, height=46),
+        "visibleBox": visible_box or box(x=2, y=2, width=96, height=46),
+        "containerInnerBox": container_box or box(x=0, y=0, width=100, height=50),
+        "containerIsAncestor": True,
+        "sourceClipped": source_clipped,
+    }
+
+
 class FakeBrowser:
     def __init__(self, result):
         self.result = result
@@ -63,6 +80,73 @@ class DesignTests(unittest.TestCase):
             design.validate_checks(
                 [{"id": str(index), "kind": "artwork", "selector": "#art"} for index in range(21)]
             )
+
+    def test_image_check_schema_requires_crop_expectation_and_normalizes_tolerance(self):
+        checks = design.validate_checks(
+            [
+                {"id": "inside", "kind": "image_contained", "selector": "#image", "container": ".card"},
+                {"id": "crop", "kind": "image_crop", "selector": "#image", "expected": "allowed"},
+            ]
+        )
+        self.assertEqual(checks[1]["tolerance"], 1.0)
+        for descriptor in (
+            {"id": "crop", "kind": "image_crop", "selector": "#image"},
+            {"id": "crop", "kind": "image_crop", "selector": "#image", "expected": "sometimes"},
+            {"id": "crop", "kind": "image_crop", "selector": "#image", "expected": []},
+            {"id": "crop", "kind": "image_crop", "selector": "#image", "expected": {}},
+            {"id": "inside", "kind": "image_contained", "selector": "#image"},
+            {"id": "crop", "kind": "image_crop", "selector": "#image", "expected": "full", "tolerance": math.nan},
+        ):
+            with self.subTest(descriptor=descriptor), self.assertRaises(ValueError):
+                design.validate_checks([descriptor])
+
+    def test_image_rules_classify_containment_and_crop_without_model_input(self):
+        contained = {"id": "inside", "kind": "image_contained", "selector": "#image", "container": ".card"}
+        crop_full = {"id": "full", "kind": "image_crop", "selector": "#image", "expected": "full"}
+        crop_allowed = {"id": "allowed", "kind": "image_crop", "selector": "#image", "expected": "allowed"}
+
+        self.assertEqual(design.classify_measurement(contained, image_evidence())["assessment"], "pass")
+        self.assertEqual(
+            design.classify_measurement(
+                contained,
+                image_evidence(container_box=box(x=0, y=0, width=50, height=50)),
+            )["assessment"],
+            "fail",
+        )
+        clipped = image_evidence(source_clipped=True, visible_box=box(x=2, y=2, width=70, height=46))
+        self.assertEqual(design.classify_measurement(crop_full, clipped)["assessment"], "fail")
+        self.assertEqual(design.classify_measurement(crop_allowed, clipped)["assessment"], "pass")
+
+    def test_image_rules_fail_closed_and_aggregate_fail_or_uncertain(self):
+        contained = {"id": "inside", "kind": "image_contained", "selector": "#image", "container": ".card"}
+        crop = {"id": "crop", "kind": "image_crop", "selector": "#image", "expected": "full"}
+        missing = design.classify_measurement(crop, {"status": "measurement_error", "reason": "selector_not_found"})
+        self.assertEqual(missing["assessment"], "uncertain")
+        unsupported = design.classify_measurement(crop, {"status": "unsupported", "reason": "clip_path"})
+        self.assertEqual(unsupported["assessment"], "uncertain")
+
+        browser = FakeBrowser(
+            {
+                "checks": {
+                    "inside": image_evidence(container_box=box(x=0, y=0, width=50, height=50)),
+                    "crop": {"status": "unsupported", "reason": "clip_path"},
+                },
+                "viewport": {"width": 800, "height": 600, "documentWidth": 800},
+            }
+        )
+        report = design.inspect_design(browser, [contained, crop])
+        self.assertEqual(report["status"], "fail")
+        self.assertEqual(report["checks"][0]["assessment"], "fail")
+        self.assertEqual(report["checks"][1]["assessment"], "uncertain")
+
+        browser = FakeBrowser(
+            {
+                "checks": {"crop": {"status": "unsupported", "reason": "clip_path"}},
+                "viewport": {"width": 800, "height": 600, "documentWidth": 800},
+            }
+        )
+        report = design.inspect_design(browser, [crop])
+        self.assertEqual(report["status"], "needs_review")
 
     def test_rule_classification_keeps_measurement_failure_uncertain(self):
         check = {"id": "title", "kind": "unclipped", "selector": "#title"}
