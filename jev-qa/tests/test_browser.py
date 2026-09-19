@@ -13,6 +13,7 @@ import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+from urllib.parse import quote
 
 
 class BrowserLifecycleTest(unittest.TestCase):
@@ -269,6 +270,86 @@ class BrowserLifecycleTest(unittest.TestCase):
                 self.assertTrue(Path(os.environ["BH_HOME"]).is_relative_to(root))
             self.assertFalse((root / "chrome" / "SingletonLock").exists())
         self.assertFalse(root.exists())
+
+    def test_compatibility_snapshot_names_controls_and_enforces_fresh_clicks(self):
+        if not os.environ.get("JEV_QA_BROWSER_TEST_CHILD"):
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    __file__,
+                    "BrowserLifecycleTest.test_compatibility_snapshot_names_controls_and_enforces_fresh_clicks",
+                ],
+                env={
+                    **os.environ,
+                    "JEV_QA_BROWSER_TEST_CHILD": "1",
+                    "PYTHONPATH": str(Path(__file__).resolve().parents[1]),
+                },
+                capture_output=True,
+                text=True,
+                timeout=60,
+            )
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            return
+
+        from jev_qa import browser as module
+
+        html = """<!doctype html>
+<dialog id="dialog" open>
+  <label for="language">Preferred language <span> (optional) </span></label>
+  <input id="language" type="text">
+  <button id="keep" type="button" value="cancel">Keep records</button>
+  <button id="delete" type="reset" value="reset">Delete demo records</button>
+  <input id="submit" type="submit" value="Submit records">
+  <button id="aria" type="button" value="wrong" aria-label="Accessible action">Visible text</button>
+</dialog>
+<script>
+  document.getElementById("keep").addEventListener("click", () => document.getElementById("dialog").close());
+</script>"""
+        url = "data:text/html," + quote(html)
+        with module.isolated_runtime():
+            _, first_browser_class = module._load_harness()
+            first_read_state = module.sys.modules["jev_ultrafast.browser"].READ_STATE
+            first_marker = module.sys.modules["jev_ultrafast.browser"].MARKER
+            _, second_browser_class = module._load_harness()
+            jev_browser = module.sys.modules["jev_ultrafast.browser"]
+            self.assertIs(first_browser_class, second_browser_class)
+            self.assertEqual(first_read_state, jev_browser.READ_STATE)
+            self.assertEqual(first_marker, jev_browser.MARKER)
+
+            with module.browser_session(url) as browser:
+                state = browser.observe(screenshot=False)
+                self.assertTrue(browser.fresh(state))
+                labels = {action["label"] for action in state["actions"]}
+                self.assertIn("Preferred language (optional)", labels)
+                self.assertIn("Keep records", labels)
+                self.assertIn("Delete demo records", labels)
+                self.assertIn("Submit records", labels)
+                self.assertIn("Accessible action", labels)
+
+                language = next(
+                    action
+                    for action in state["actions"]
+                    if action["kind"] == "fill" and action["label"] == "Preferred language (optional)"
+                )
+                entered = "हिन्दी  value"
+                self.assertEqual(browser.act(language, state, text=entered), {"executed": language["id"]})
+                state = browser.observe(screenshot=False)
+                self.assertEqual(browser.evaluate("document.getElementById('language').value"), entered)
+
+                keep = next(action for action in state["actions"] if action["label"] == "Keep records")
+                self.assertTrue(browser.fresh(state, keep))
+                browser.evaluate("document.getElementById('keep').textContent = 'Keep records changed'")
+                self.assertFalse(browser.fresh(state, keep))
+                with self.assertRaisesRegex(ValueError, "changed since this decision"):
+                    browser.act(keep, state)
+
+                changed = browser.observe(screenshot=False)
+                changed_keep = next(
+                    action for action in changed["actions"] if action["label"] == "Keep records changed"
+                )
+                self.assertTrue(browser.fresh(changed, changed_keep))
+                self.assertEqual(browser.act(changed_keep, changed), {"executed": changed_keep["id"]})
+                self.assertFalse(browser.evaluate("document.getElementById('dialog').open"))
 
     def test_deadline_stops_browser_and_daemon(self):
         if not os.environ.get("JEV_QA_BROWSER_TEST_CHILD"):

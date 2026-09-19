@@ -171,10 +171,40 @@ def isolated_runtime():
 
 def _load_harness():
     # Import only after isolated_runtime has set the private IPC environment.
+    # Compatibility shim for the pinned Jev snapshot; re-read source for idempotent loads.
     from browser_harness import admin
-    from jev_ultrafast.browser import Browser
+    from jev_ultrafast import browser as jev_browser
 
-    return admin, Browser
+    source_path = Path(jev_browser.__file__).with_name("snapshot.js")
+    try:
+        read_state = source_path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise BrowserSetupError(f"Pinned Jev snapshot could not be read: {source_path}") from exc
+    replacements = (
+        (
+            "(['button','submit','reset'].includes(e.type) ? e.value : '')",
+            "(e.tagName==='INPUT' && ['button','submit','reset'].includes(e.type) ? e.value : '')",
+            "button name source",
+        ),
+        (
+            "    return referenced || e.getAttribute('aria-label') ||",
+            "    return String(referenced || e.getAttribute('aria-label') ||",
+            "label return source",
+        ),
+        (
+            "      e.getAttribute('title') || e.getAttribute('placeholder') || '';",
+            "      e.getAttribute('title') || e.getAttribute('placeholder') || '').replace(/\\s+/g,' ').trim();",
+            "label return terminator",
+        ),
+    )
+    for expected, replacement, description in replacements:
+        if read_state.count(expected) != 1:
+            raise BrowserSetupError(f"Pinned Jev snapshot is incompatible: missing unique {description}.")
+        read_state = read_state.replace(expected, replacement, 1)
+    jev_browser.READ_STATE = read_state
+    jev_browser.MARKER = f"(() => {{ const state={read_state}; return state?.marker ?? null; }})()"
+
+    return admin, jev_browser.Browser
 
 
 def _close_target(target):

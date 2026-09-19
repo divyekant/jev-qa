@@ -127,6 +127,34 @@ class RunnerTests(unittest.TestCase):
                 {"url": "https://example.test", "goal": "x", "assertions": [{"kind": "visible", "selector": "#x"}]}
             )
 
+    def test_fill_value_keys_match_normalized_observed_labels_and_preserve_text(self):
+        browser = FakeBrowser()
+        browser.current["actions"] = [
+            {"id": "fill-1", "kind": "fill", "label": "Preferred   language", "role": "textbox", "node": 1}
+        ]
+        choice = {
+            **decision("fill-1"),
+            "operation": "TYPE_TEXT",
+            "target": "1",
+            "operation_probabilities": {"TYPE_TEXT": 1.0, "DONE": 0.0, "BLOCKED": 0.0},
+            "target_probabilities": {"1": 1.0},
+        }
+        text = "हिन्दी  value"
+        result, _ = self.run_with(
+            browser,
+            self.task(values={" Preferred   language ": text}, max_steps=1),
+            chooser=lambda *_args: choice,
+        )
+        self.assertEqual(len(browser.acts), 1)
+        self.assertEqual(browser.acts[0][1], text)
+        self.assertFalse(any(error["code"] == "missing_text_value" for error in result["errors"]))
+
+    def test_validation_rejects_conflicting_whitespace_normalized_value_keys(self):
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            runner.validate_task(
+                self.task(values={"Preferred language": "हिन्दी", " Preferred   language ": "English"})
+            )
+
     def test_run_options_default_and_validate_bounds(self):
         normalized = runner.validate_task(self.task())
         self.assertFalse(normalized["stop_when_assertions_pass"])

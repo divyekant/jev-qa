@@ -98,6 +98,10 @@ def _text(value: Any, name: str, *, max_length: int = MAX_TEXT, empty: bool = Fa
     return value
 
 
+def _normalize_label(value: str) -> str:
+    return " ".join(value.split())
+
+
 def _criteria(value: Any) -> list[str]:
     if value is None:
         return []
@@ -150,7 +154,10 @@ def _values(value: Any) -> dict[str, str]:
     for label, text in value.items():
         _text(label, "values label", max_length=MAX_TEXT)
         _text(text, f"values[{label!r}]")
-        result[label] = text
+        normalized_label = _normalize_label(label)
+        if normalized_label in result:
+            raise ValueError("values contains duplicate labels after whitespace normalization")
+        result[normalized_label] = text
     return result
 
 
@@ -1477,7 +1484,7 @@ def run_task(
                             text = None
                             helper = None
                             if action.get("kind") == "fill":
-                                label = action.get("label", "")
+                                label = _normalize_label(action.get("label", ""))
                                 if label in normalized["values"]:
                                     text = normalized["values"][label]
                                 elif normalized["jev_only"] or not os.environ.get("TEXT_MODEL_API_KEY"):
