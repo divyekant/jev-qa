@@ -117,7 +117,7 @@ parent supplies the test contract; the runner selects observed actions to satisf
 Navigation stops on an unverified step. A measured design defect is recorded without
 preventing later authorized navigation. Later unperformed steps remain `not_reached`.
 
-Design checks are explicit requirements, not an automatic full-page audit:
+Design checks are explicit requirements. The `audit` kind adds a rule-based sweep of a page or component.
 
 | Kind | Fields beyond `id` and `kind` | Requirement |
 |---|---|---|
@@ -133,6 +133,7 @@ Design checks are explicit requirements, not an automatic full-page audit:
 | `decorative_overlap` | `selector`, `decorative`, `content` | Badge may overlap decoration but not meaningful content |
 | `artwork` | `selector` | Always unsupported without pixel evidence |
 | `contextual` | `selector`, `criterion` | Jev assesses compact observed text and facts |
+| `audit` | optional `scope` (`body`), `min_ratio` (4.5), `large_text_min_ratio` (3.0), `max_elements` (300, at most 1000) | Each visible element in the scope meets the page audit rules below |
 
 Image checks require a loaded `<img>` and explicit selectors. For example, add these
 checks to a step that shows a product image:
@@ -158,6 +159,60 @@ complex `object-position` expressions also remain unsupported. Measurements are 
 to 0.01 CSS pixels. These checks do not inspect pixels, detect cropping already present
 in a source file, or decide whether an allowed crop removes important content. Artwork
 review remains separate.
+
+### Page audit
+
+Add one `audit` check to a step to review the page state after that step. No selector list
+is necessary, and the sweep makes no model call:
+
+```json
+{"id": "page-review", "kind": "audit"}
+```
+
+The sweep examines up to `max_elements` visible elements in `scope`, in document order:
+
+| Rule | Applies to | Fails when |
+|---|---|---|
+| `unclipped` | Elements with their own text | Same rule as the explicit check |
+| `ellipsis` | Text with `text-overflow: ellipsis` and `white-space: nowrap`, in place of `unclipped` | Same rule as the explicit check |
+| `contrast` | Elements with their own text, except `:disabled` and `aria-disabled="true"` controls | Ratio is below `min_ratio`, or below `large_text_min_ratio` for text of 24 px or more, or bold text of 18.66 px or more |
+| `text_overlap` | Pairs of text elements that are not nested | Line boxes overlap by more than half a line, and no opaque layer covers the lower text |
+| `accessible_name` | Links, buttons, form fields, and focusable ARIA widgets | No name from `aria-labelledby`, `aria-label`, a label, text, image `alt`, `title`, or `placeholder` |
+| `unobstructed` | Controls | Same rule as the explicit check. A control outside the viewport is uncertain |
+| `target_size` | Controls | Smaller than 24 × 24 CSS px, with no WCAG 2.5.8 spacing or inline-link exception |
+| `image_alt` | Images | No `alt`, no label, and not marked decorative |
+| `image_loaded` | Images | The load is complete but the image has no pixels |
+| `document_language`, `document_title`, `horizontal_fit` | The page, when `scope` is `body` or `html` | The `lang` attribute or title is empty, or the document is wider than the viewport |
+
+The `audit` entry in `design.json` reports `counts` per rule, `uncertain_reasons`, and up to
+100 `findings`. Failures come first. Each finding has a unique CSS `selector`, so you can
+convert it into an explicit check. Passes are counted but not listed.
+
+The audit fails if any rule fails. Otherwise it is uncertain if any element is unsupported,
+or if the sweep stops early. `truncated_reason` gives the cause: `element_limit` (more than
+`max_elements` visible elements), `overlap_limit` (50 overlapping text pairs), or
+`time_budget` (3 seconds). Unsupported cases use the same guards as the explicit checks,
+for example ancestor opacity, transforms, clipping, and gradient backgrounds.
+
+Open shadow roots, frames, embedded objects, and text in `display: contents` elements are
+not swept. Each one is reported as an uncertain `unswept` item. Screen-reader-only text, a
+clipped box of 1 px or less, gets no visual rules.
+
+Contrast confirms the backdrop at the centre of the element. Only ancestors of the text can
+paint between the text and the background it measures. Any other layer makes the result
+uncertain. If no element paints a background, contrast uses the default white canvas. If
+the page can use a dark or forced-colors scheme, that result is uncertain. A canvas result
+outside the viewport is also uncertain, because the backdrop cannot be confirmed. Layers
+with `pointer-events: none` are not detected. These contrast rules also apply to explicit
+`contrast` checks.
+
+The accessible-name rule approximates the browser computation. It ignores hidden and
+`aria-hidden` content. A name from CSS generated content stays uncertain. If the scope
+has no visible size, for example a `body` that holds only fixed-position content, the audit
+is uncertain with `not_visible`. Set `scope` to the visible container. The audit measures one viewport and one page state. To review
+other sizes, run the journey again with another `viewport`. To review other states, add
+an `audit` to each step. The audit does not inspect pixels, judge visual taste, or check
+heading order, keyboard focus order, or motion.
 
 Rules keep both their passes and failures. Jev does not override deterministic results.
 Contextual assessments are advisory and cannot create a verified overall pass. Unsupported
@@ -285,5 +340,5 @@ uv build
 Tests use controlled model responses; the browser lifecycle check opens local `data:` HTML
 without model calls. Live examples make paid API calls. Source dependency:
 [Browser Use jev-ultrafast](https://github.com/browser-use/jev-ultrafast), pinned at
-`452c1ad2dd628008f1d5608f28158d76e49e6cc0` (MIT). The wrapper uses its observation,
+`1231850a0bf1a0c0341fe408ef1668dbbfdfac46` (MIT). The wrapper uses its observation,
 action execution, and typed decision helpers without modifying upstream.

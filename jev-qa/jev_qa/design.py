@@ -18,6 +18,9 @@ MAX_SELECTOR = 500
 MAX_CRITERION = 2000
 MAX_TOLERANCE = 10_000.0
 MAX_MEASUREMENT_VALUE = 10_000_000.0
+MAX_AUDIT_ELEMENTS = 1000
+MAX_AUDIT_FINDINGS = 100
+MIN_TARGET_PX = 24.0
 _VIEWPORT_FIELDS = ("width", "height", "documentWidth")
 _COVERAGE_FIELDS = ("geometry", "textBounds", "contrast", "hitTesting", "pixelContentInspected")
 KINDS = frozenset(
@@ -34,6 +37,7 @@ KINDS = frozenset(
         "contextual",
         "image_contained",
         "image_crop",
+        "audit",
     }
 )
 _FIELDS = {
@@ -49,6 +53,7 @@ _FIELDS = {
     "contextual": {"id", "kind", "selector", "criterion"},
     "image_contained": {"id", "kind", "selector", "container", "tolerance"},
     "image_crop": {"id", "kind", "selector", "expected", "tolerance"},
+    "audit": {"id", "kind", "scope", "min_ratio", "large_text_min_ratio", "max_elements"},
 }
 
 
@@ -116,6 +121,16 @@ def validate_checks(checks: Any) -> list[dict[str, Any]]:
                 raise ValueError(f"checks[{index}].expected must be 'full' or 'allowed'")
             result["expected"] = expected
             result["tolerance"] = _number(item.get("tolerance", 1.0), f"checks[{index}].tolerance", 0.0, MAX_TOLERANCE)
+        elif kind == "audit":
+            result["scope"] = _text(item.get("scope", "body"), f"checks[{index}].scope", MAX_SELECTOR)
+            result["min_ratio"] = _number(item.get("min_ratio", 4.5), f"checks[{index}].min_ratio", 1.0, 21.0)
+            result["large_text_min_ratio"] = _number(
+                item.get("large_text_min_ratio", 3.0), f"checks[{index}].large_text_min_ratio", 1.0, 21.0
+            )
+            max_elements = item.get("max_elements", 300)
+            if type(max_elements) is not int or not 1 <= max_elements <= MAX_AUDIT_ELEMENTS:
+                raise ValueError(f"checks[{index}].max_elements must be an integer from 1 to {MAX_AUDIT_ELEMENTS}")
+            result["max_elements"] = max_elements
         normalized.append(result)
     return normalized
 
@@ -416,7 +431,120 @@ def classify_measurement(check: Mapping[str, Any], evidence: Any) -> dict[str, A
 
     if kind == "contextual":
         return _unknown(evidence, "contextual_requires_jev")
+    if kind == "audit":
+        return _classify_audit(normalized, evidence)
     return _unknown(evidence, "unsupported_kind")
+
+
+def _large_text(evidence: Mapping[str, Any]) -> bool:
+    """WCAG large text: at least 24 px, or at least 18.66 px and bold."""
+    size, weight = evidence.get("fontSizePx"), evidence.get("fontWeight")
+    if not _finite(size):
+        return False
+    return float(size) >= 24 or (float(size) >= 18.66 and _finite(weight) and float(weight) >= 700)
+
+
+def _audit_item(check: Mapping[str, Any], kind: Any, evidence: Any) -> dict[str, Any]:
+    """Classify one swept element with the same rules as an explicit check."""
+    if not _measured(evidence) or _unsupported(evidence):
+        return _unknown(evidence)
+    selector = "*"  # Validation only; a deep DOM path can exceed MAX_SELECTOR.
+    if kind in {"unclipped", "ellipsis", "unobstructed"}:
+        return classify_measurement({"id": "item", "kind": kind, "selector": selector}, evidence)
+    if kind == "contrast":
+        ratio = check["large_text_min_ratio"] if _large_text(evidence) else check["min_ratio"]
+        return classify_measurement({"id": "item", "kind": kind, "selector": selector, "min_ratio": ratio}, evidence)
+    if kind == "accessible_name":
+        if isinstance(evidence.get("name"), str) and evidence["name"].strip():
+            return _entry("pass", evidence)
+        if evidence.get("pseudoContent") is True:
+            return _unknown(evidence, "generated_content_name")
+        return _entry("fail", evidence, reason="control_missing_accessible_name")
+    if kind == "target_size":
+        target = _rect(evidence.get("box"))
+        if target is None:
+            return _unknown(evidence, "target_geometry_unavailable")
+        if (target["width"] >= MIN_TARGET_PX and target["height"] >= MIN_TARGET_PX) or evidence.get("exempt") == "inline":
+            return _entry("pass", evidence)
+        if evidence.get("exempt") == "user_agent":
+            return _unknown(evidence, "user_agent_control_size")
+        if evidence.get("spacingClear") is True:
+            return _entry("pass", evidence)
+        return _entry("fail", evidence, reason="target_too_small")
+    if kind == "image_alt":
+        named = evidence.get("hasAlt") is True or evidence.get("decorative") is True or evidence.get("labelled") is True
+        return _entry("pass" if named else "fail", evidence, reason=None if named else "image_missing_alt")
+    if kind == "image_loaded":
+        if evidence.get("complete") is not True:
+            return _unknown(evidence, "image_not_loaded")
+        loaded = _finite(evidence.get("naturalWidth")) and float(evidence["naturalWidth"]) > 0
+        return _entry("pass" if loaded else "fail", evidence, reason=None if loaded else "image_broken")
+    if kind == "text_overlap":
+        if type(evidence.get("covered")) is not bool:
+            return _unknown(evidence, "overlap_stacking_unavailable")
+        return _entry("pass" if evidence["covered"] else "fail", evidence,
+                      reason=None if evidence["covered"] else "text_overlaps_text")
+    return _unknown(evidence, "unsupported_audit_item")
+
+
+def _classify_audit(check: Mapping[str, Any], evidence: Mapping[str, Any]) -> dict[str, Any]:
+    """Sweep results keep every failure first; passes are only counted."""
+    items = evidence.get("items")
+    if not isinstance(items, list) or type(evidence.get("truncated")) is not bool:
+        return _unknown(evidence, "audit_measurement_unavailable")
+    rows: list[tuple[str, Any, dict[str, Any]]] = []
+    for item in items:
+        if not isinstance(item, Mapping):
+            rows.append(("unknown", None, _unknown(item, "malformed_audit_item")))
+            continue
+        kind, selector = item.get("kind"), item.get("selector")
+        rows.append((str(kind)[:40], selector, _audit_item(check, kind, item.get("evidence"))))
+    page = evidence.get("page") if isinstance(evidence.get("page"), Mapping) else {}
+    if "lang" in page:
+        lang_ok = isinstance(page.get("lang"), str) and bool(page["lang"])
+        rows.append(("document_language", "html", _entry("pass" if lang_ok else "fail", {"lang": page.get("lang")},
+                                                         reason=None if lang_ok else "document_language_missing")))
+    if "title" in page:
+        title_ok = isinstance(page.get("title"), str) and bool(page["title"])
+        rows.append(("document_title", "title", _entry("pass" if title_ok else "fail", {"title": page.get("title")},
+                                                       reason=None if title_ok else "document_title_missing")))
+    if "horizontal" in page:
+        rows.append(("horizontal_fit", "html", classify_measurement({"id": "item", "kind": "horizontal_fit"},
+                                                                    page["horizontal"])))
+
+    counts: dict[str, dict[str, int]] = {}
+    reasons: dict[str, int] = {}
+    for kind, _selector, result in rows:
+        tally = counts.setdefault(kind, {"pass": 0, "fail": 0, "uncertain": 0})
+        tally[result["assessment"]] += 1
+        if result["assessment"] == "uncertain":
+            key = str(result.get("reason", "uncertain"))[:100]
+            reasons[key] = reasons.get(key, 0) + 1
+    ordered = sorted((row for row in rows if row[2]["assessment"] != "pass"), key=lambda row: row[2]["assessment"] != "fail")
+    findings = [
+        {"kind": kind, "selector": _compact(selector), "assessment": result["assessment"],
+         "reason": result.get("reason"), "evidence": result["evidence"]}
+        for kind, selector, result in ordered[:MAX_AUDIT_FINDINGS]
+    ]
+    failed = any(result["assessment"] == "fail" for _kind, _selector, result in rows)
+    uncertain = evidence["truncated"] or any(result["assessment"] == "uncertain" for _kind, _selector, result in rows)
+    summary = {
+        "status": "measured",
+        "scope": _compact(evidence.get("scope")),
+        "element_count": _safe_measurement_number(evidence.get("elementCount")),
+        "audited_count": _safe_measurement_number(evidence.get("auditedCount")),
+        "truncated": evidence["truncated"],
+        "truncated_reason": _compact(evidence.get("truncatedReason")),
+        "offscreen_controls": _safe_measurement_number(evidence.get("offscreenControls")),
+        "counts": counts,
+        "uncertain_reasons": reasons,
+        "findings_omitted": max(0, len(ordered) - MAX_AUDIT_FINDINGS),
+    }
+    reason = "audit_failures" if failed else "audit_truncated" if evidence["truncated"] else (
+        "audit_partial_coverage" if uncertain else None)
+    result = _entry("fail" if failed else "uncertain" if uncertain else "pass", summary, reason=reason)
+    result["findings"] = findings
+    return result
 
 
 def _context_observation(evidence: Mapping[str, Any], index: int | None = None) -> dict[str, Any]:

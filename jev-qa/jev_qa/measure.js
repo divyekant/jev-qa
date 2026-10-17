@@ -199,7 +199,9 @@
     if (nodes.length !== 1) {
       return {info: {status: "measurement_error", reason: "selector_ambiguous", matchCount: nodes.length}};
     }
-    const element = nodes[0];
+    return fromElement(nodes[0]);
+  };
+  const fromElement = element => {
     const style = getComputedStyle(element);
     const bounds = rect(element.getBoundingClientRect());
     if (!bounds) return {info: {status: "measurement_error", reason: "invalid_geometry"}};
@@ -244,11 +246,36 @@
     }
     return resolved.info;
   };
+  // With no painted background, text sits on the canvas. Only the light canvas is a known colour.
+  const canvasBackground = () => {
+    if (matchMedia("(forced-colors: active)").matches) return null;
+    const meta = document.querySelector('meta[name="color-scheme"]');
+    const scheme = `${getComputedStyle(document.documentElement).colorScheme} ${meta ? meta.content : ""}`;
+    if (!/\bdark\b/.test(scheme)) return [255, 255, 255];
+    return /\blight\b/.test(scheme) && !matchMedia("(prefers-color-scheme: dark)").matches ? [255, 255, 255] : null;
+  };
+  // True if only ancestors of the element paint between it and the background owner (null: canvas).
+  // Null if the point is outside the viewport. Elements with pointer-events:none are not seen.
+  const backdropVerified = (element, box, owner) => {
+    if (!box) return null;
+    const x = box.x + box.width / 2;
+    const y = box.y + box.height / 2;
+    if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) return null;
+    const stack = document.elementsFromPoint(x, y);
+    const index = stack.findIndex(node => element.contains(node));
+    if (index < 0) return false;
+    const end = owner ? stack.indexOf(owner) : stack.length;
+    if (end < index) return false;
+    return stack.slice(index + 1, end).every(node => node.contains(element));
+  };
   const addContrast = resolved => {
     if (!resolved.element) return resolved.info;
     const reasons = effects(resolved.element);
+    // SVG text paints with fill and stroke, not color.
+    if (resolved.element instanceof SVGElement) reasons.push("svg_text_paint");
     const foreground = opaqueRgb(resolved.style.color);
     let background = null;
+    let owner = null;
     for (let node = resolved.element; node; node = node.parentElement) {
       const style = getComputedStyle(node);
       if (style.backgroundImage && style.backgroundImage !== "none") reasons.push("complex_background");
@@ -256,9 +283,20 @@
       const parsed = opaqueRgb(color);
       if (parsed) {
         background = parsed;
+        owner = node;
         break;
       }
       if (color && !transparent(color)) reasons.push("non_opaque_rgb_background");
+    }
+    if (!background && !reasons.length) {
+      background = canvasBackground();
+      if (background) resolved.info.backgroundSource = "canvas";
+    }
+    if (background && !reasons.length) {
+      // A positioned sibling layer can paint between the text and the ancestor background.
+      const verified = backdropVerified(resolved.element, resolved.info.box, owner);
+      if (verified === false) reasons.push("backdrop_layer_unknown");
+      if (verified === null && !owner) reasons.push("backdrop_not_verifiable");
     }
     resolved.info.foreground = foreground;
     resolved.info.background = background;
@@ -447,8 +485,262 @@
     const height = Math.max(0, Math.min(first.bottom, second.bottom) - Math.max(first.y, second.y));
     return round(width * height);
   };
+  // A unique CSS path, so a finding can become an explicit check.
+  const describe = element => {
+    const parts = [];
+    for (let node = element; node && node !== document.documentElement; node = node.parentElement) {
+      if (node.id && document.querySelectorAll("#" + CSS.escape(node.id)).length === 1) {
+        parts.unshift("#" + CSS.escape(node.id));
+        return parts.join(" > ");
+      }
+      if (node === document.body) {
+        parts.unshift("body");
+        return parts.join(" > ");
+      }
+      const tag = node.tagName.toLowerCase();
+      const index = [...node.parentElement.children].filter(child => child.tagName === node.tagName).indexOf(node) + 1;
+      parts.unshift(`${tag}:nth-of-type(${index})`);
+    }
+    return ["html", ...parts].join(" > ");
+  };
+  const shortText = info => {
+    if (typeof info.fullText === "string" && info.fullText.length > 200) {
+      info.fullText = info.fullText.slice(0, 200);
+      info.fullTextTruncated = true;
+    }
+    return info;
+  };
+  const CONTROLS = 'a[href],button,input:not([type="hidden"]),select,textarea,summary,[role="button"],[role="link"],' +
+    '[role="checkbox"],[role="radio"],[role="switch"],[role="tab"],[role="menuitem"],[tabindex]:not([tabindex="-1"])';
+  const NO_TEXT_AUDIT = new Set(["script", "style", "noscript", "template", "textarea", "select", "option"]);
+  const NOT_SWEPT = new Set(["iframe", "frame", "object", "embed"]);
+  const AUDIT_BUDGET_MS = 3000;
+  const MAX_OVERLAP_ITEMS = 50;
+  const words = value => typeof value === "string" ? value.replace(/\s+/g, " ").trim() : "";
+  const ownText = element =>
+    [...element.childNodes].some(child => child.nodeType === Node.TEXT_NODE && words(child.textContent));
+  // Text a screen reader gets from the subtree: hidden and aria-hidden branches are skipped.
+  const exposedText = node => {
+    if (node.nodeType === Node.TEXT_NODE) return node.textContent;
+    if (node.nodeType !== Node.ELEMENT_NODE) return "";
+    const tag = node.tagName.toLowerCase();
+    if (["script", "style", "template", "noscript"].includes(tag) || node.getAttribute("aria-hidden") === "true") return "";
+    const style = getComputedStyle(node);
+    if (style.display === "none" || style.visibility === "hidden") return "";
+    if (tag === "img") return " " + (node.getAttribute("alt") || "") + " ";
+    const label = words(node.getAttribute("aria-label"));
+    if (label) return " " + label + " ";
+    return " " + [...node.childNodes].map(exposedText).join("") + " ";
+  };
+  // ponytail: approximate accessible name; use CDP Accessibility.getPartialAXTree if false fails appear.
+  const accessibleName = element => {
+    const ids = (element.getAttribute("aria-labelledby") || "").split(/\s+/).filter(Boolean);
+    const labelled = words(ids.map(id => document.getElementById(id)).filter(Boolean).map(node => node.textContent).join(" "));
+    if (labelled) return labelled;
+    if (words(element.getAttribute("aria-label"))) return words(element.getAttribute("aria-label"));
+    const tag = element.tagName.toLowerCase();
+    const type = (element.getAttribute("type") || "").toLowerCase();
+    if (tag === "input" && ["button", "submit", "reset"].includes(type)) {
+      return words(element.value) || (type === "submit" ? "Submit" : type === "reset" ? "Reset" : "");
+    }
+    if (tag === "input" && type === "image") return words(element.getAttribute("alt"));
+    if (["input", "select", "textarea"].includes(tag)) {
+      const labels = words([...(element.labels || [])].map(exposedText).join(" "));
+      return labels || words(element.getAttribute("title")) || words(element.getAttribute("placeholder"));
+    }
+    return words([...element.childNodes].map(exposedText).join("")) || words(element.getAttribute("title"));
+  };
+  const pseudoContent = element => ["::before", "::after"].some(pseudo => {
+    const content = getComputedStyle(element, pseudo).content;
+    return content && !["none", "normal", '""', "''"].includes(content);
+  });
+  // Screen-reader-only text: a box of 1 px or less that clips its content.
+  const visuallyHidden = element => {
+    for (let node = element; node && node !== document.documentElement; node = node.parentElement) {
+      const style = getComputedStyle(node);
+      const bounds = node.getBoundingClientRect();
+      const clips = ["hidden", "clip"].includes(style.overflowX) || ["hidden", "clip"].includes(style.overflowY) ||
+        (style.clip && style.clip !== "auto") || (style.clipPath && style.clipPath !== "none");
+      if (clips && (bounds.width <= 1 || bounds.height <= 1)) return true;
+    }
+    return false;
+  };
+  const inactive = element => !!element.closest(':disabled,[aria-disabled="true"]');
+  // True: an opaque layer. False: no paint. Null: paint that cannot be classified.
+  const layerPaint = node => {
+    const style = getComputedStyle(node);
+    if (style.backgroundImage && style.backgroundImage !== "none") return null;
+    if (!opaqueRgb(style.backgroundColor)) return transparent(style.backgroundColor) ? false : null;
+    for (let layer = node; layer; layer = layer.parentElement) {
+      if (Number(getComputedStyle(layer).opacity) !== 1) return null;
+    }
+    return true;
+  };
+  const lineBoxes = element => {
+    const boxes = [];
+    for (const child of element.childNodes) {
+      if (child.nodeType !== Node.TEXT_NODE || !words(child.textContent)) continue;
+      const range = document.createRange();
+      range.selectNodeContents(child);
+      for (const line of range.getClientRects()) {
+        const box = rect(line);
+        if (box && box.width > 0 && box.height > 0) boxes.push(box);
+      }
+    }
+    return boxes;
+  };
+  const unionBox = boxes => boxes.length ? boxes.reduce((all, box) => makeBox(Math.min(all.x, box.x), Math.min(all.y, box.y),
+    Math.max(all.right, box.right) - Math.min(all.x, box.x), Math.max(all.bottom, box.bottom) - Math.min(all.y, box.y))) : null;
+  // At the overlap centre, the lower text is hidden if an opaque layer paints above it. Layers include
+  // the upper text and its ancestors, for example a sticky header. Null means unknown.
+  const overlapCovered = (first, second, area) => {
+    const x = area.x + area.width / 2;
+    const y = area.y + area.height / 2;
+    if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) return null;
+    const stack = document.elementsFromPoint(x, y);
+    const firstIndex = stack.findIndex(node => first.contains(node));
+    const secondIndex = stack.findIndex(node => second.contains(node));
+    if (firstIndex < 0 || secondIndex < 0) return null;
+    const [upper, lower] = firstIndex < secondIndex ? [firstIndex, secondIndex] : [secondIndex, firstIndex];
+    const lowerElement = stack[lower];
+    let unknown = false;
+    for (const node of stack.slice(upper, lower)) {
+      if (node.contains(lowerElement)) continue;
+      const paint = layerPaint(node);
+      if (paint === true) return true;
+      if (paint === null) unknown = true;
+    }
+    return unknown ? null : false;
+  };
+  const audit = check => {
+    const started = performance.now();
+    const overBudget = () => performance.now() - started > AUDIT_BUDGET_MS;
+    const scope = resolve(check.scope);
+    if (!scope.element || scope.info.status !== "measured") return scope.info;
+    const items = [];
+    const add = (kind, element, evidence) => items.push({kind, selector: describe(element), evidence});
+    const all = [];
+    for (const element of [scope.element, ...scope.element.querySelectorAll("*")]) {
+      const style = getComputedStyle(element);
+      const bounds = rect(element.getBoundingClientRect());
+      const shown = bounds && visible(element, style, bounds);
+      const tag = element.tagName.toLowerCase();
+      // Content the sweep cannot reach stays uncertain instead of silently passing.
+      if (element.shadowRoot) add("unswept", element, {status: "unsupported", reason: "shadow_root_not_swept"});
+      else if (shown && NOT_SWEPT.has(tag)) add("unswept", element, {status: "unsupported", reason: "embedded_document_not_swept"});
+      else if (style.display === "contents" && ownText(element)) {
+        add("unswept", element, {status: "unsupported", reason: "display_contents_text"});
+      }
+      if (shown) all.push(element);
+    }
+    const elements = all.slice(0, check.max_elements);
+    let truncatedReason = all.length > elements.length ? "element_limit" : null;
+    const texts = [];
+    const targets = [];
+    let offscreenControls = 0;
+    for (const element of elements) {
+      if (overBudget()) {
+        truncatedReason = "time_budget";
+        break;
+      }
+      const tag = element.tagName.toLowerCase();
+      if (ownText(element) && !NO_TEXT_AUDIT.has(tag) && !visuallyHidden(element)) {
+        const clip = fromElement(element);
+        addText(clip);
+        addOverflow(clip);
+        const ellipsis = clip.style.textOverflow === "ellipsis" && clip.style.whiteSpace === "nowrap";
+        if (ellipsis) clip.info.title = element.getAttribute("title");
+        add(ellipsis ? "ellipsis" : "unclipped", element, shortText(addEffects(clip)));
+        if (!inactive(element)) {
+          const color = fromElement(element);
+          addContrast(color);
+          color.info.fontSizePx = round(numberStyle(color.style, "fontSize"));
+          color.info.fontWeight = Number(color.style.fontWeight) || 400;
+          add("contrast", element, color.info);
+        }
+        const boxes = lineBoxes(element);
+        texts.push({element, boxes, bounds: unionBox(boxes)});
+      }
+      if (element.matches(CONTROLS)) {
+        const name = accessibleName(element);
+        add("accessible_name", element, {status: "measured", visible: true, tag, role: element.getAttribute("role"),
+          name: name.slice(0, 200), pseudoContent: !name && pseudoContent(element)});
+        const hits = addHits(fromElement(element));
+        if (!hits.inViewport) offscreenControls += 1;
+        add("unobstructed", element, hits);
+        const display = getComputedStyle(element).display;
+        const parentText = element.parentElement ? words(element.parentElement.textContent) : "";
+        const inlineLink = tag === "a" && display === "inline" && !!parentText && parentText !== words(element.textContent);
+        const type = (element.getAttribute("type") || "").toLowerCase();
+        const userAgent = tag === "input" && ["checkbox", "radio", "range", "color", "file", "date"].includes(type);
+        targets.push({element, tag, box: rect(element.getBoundingClientRect()),
+          exempt: inlineLink ? "inline" : userAgent ? "user_agent" : null});
+      }
+      if (tag === "img") {
+        const role = element.getAttribute("role");
+        add("image_alt", element, {status: "measured", visible: true, tag, hasAlt: element.hasAttribute("alt"),
+          decorative: role === "presentation" || role === "none" || element.getAttribute("aria-hidden") === "true",
+          labelled: !!words(element.getAttribute("aria-label")) || !!element.getAttribute("aria-labelledby")});
+        add("image_loaded", element, {status: "measured", visible: true, tag, complete: element.complete === true,
+          naturalWidth: round(Number(element.naturalWidth)), lazy: element.getAttribute("loading") === "lazy"});
+      }
+    }
+    const small = target => target.box.width < 24 || target.box.height < 24;
+    const centre = box => ({x: box.x + box.width / 2, y: box.y + box.height / 2});
+    for (const target of targets) {
+      if (!small(target)) {
+        add("target_size", target.element, {status: "measured", visible: true, box: target.box, exempt: target.exempt});
+        continue;
+      }
+      // WCAG 2.5.8 spacing exception: a 24 px circle on the target touches no other target or circle.
+      const point = centre(target.box);
+      const spacingClear = targets.every(other => {
+        if (other === target || other.element.contains(target.element) || target.element.contains(other.element)) return true;
+        const nearX = Math.max(other.box.x, Math.min(point.x, other.box.right));
+        const nearY = Math.max(other.box.y, Math.min(point.y, other.box.bottom));
+        if (Math.hypot(point.x - nearX, point.y - nearY) < 12) return false;
+        if (!small(other)) return true;
+        const otherPoint = centre(other.box);
+        return Math.hypot(point.x - otherPoint.x, point.y - otherPoint.y) >= 24;
+      });
+      add("target_size", target.element, {status: "measured", visible: true, box: target.box,
+        exempt: target.exempt, spacingClear});
+    }
+    let overlapPairs = 0;
+    pairs: for (let first = 0; first < texts.length; first += 1) {
+      for (let second = first + 1; second < texts.length; second += 1) {
+        const a = texts[first], b = texts[second];
+        if (!intersectBox(a.bounds, b.bounds) || a.element.contains(b.element) || b.element.contains(a.element)) continue;
+        if (overBudget() || overlapPairs >= MAX_OVERLAP_ITEMS) {
+          truncatedReason = truncatedReason || (overlapPairs >= MAX_OVERLAP_ITEMS ? "overlap_limit" : "time_budget");
+          break pairs;
+        }
+        let worst = null;
+        for (const boxA of a.boxes) for (const boxB of b.boxes) {
+          const area = intersectBox(boxA, boxB);
+          // ponytail: half the smaller line height filters adjacent-line leading; tune if real overlaps slip through.
+          if (!area || area.width <= 2 || area.height <= Math.min(boxA.height, boxB.height) / 2) continue;
+          if (!worst || area.width * area.height > worst.width * worst.height) worst = area;
+        }
+        if (!worst) continue;
+        overlapPairs += 1;
+        add("text_overlap", a.element, {status: "measured", visible: true, other: describe(b.element),
+          intersection: worst, covered: overlapCovered(a.element, b.element, worst)});
+      }
+    }
+    const page = {};
+    if (scope.element === document.body || scope.element === document.documentElement) {
+      page.lang = words(document.documentElement.getAttribute("lang"));
+      page.title = words(document.title).slice(0, 200);
+      page.horizontal = measure({kind: "horizontal_fit"});
+    }
+    return {status: "measured", visible: true, scope: describe(scope.element), elementCount: all.length,
+      auditedCount: elements.length, truncated: !!truncatedReason, truncatedReason, offscreenControls,
+      textOverlapPairs: overlapPairs, elapsedMs: round(performance.now() - started), items, page};
+  };
   const measure = check => {
     if (!check || typeof check.kind !== "string") return {status: "measurement_error", reason: "invalid_check"};
+    if (check.kind === "audit") return audit(check);
     if (check.kind === "horizontal_fit") {
       const width = Number(innerWidth);
       const documentWidth = Math.max(Number(document.documentElement && document.documentElement.scrollWidth) || 0,
@@ -532,8 +824,10 @@
         Number(document.body && document.body.scrollWidth) || 0))
     },
     checks: results,
-    coverage: {geometry: true, textBounds: checks.some(check => ["unclipped", "ellipsis", "contextual"].includes(check.kind)),
-      contrast: checks.some(check => check.kind === "contrast"), hitTesting: checks.some(check => check.kind === "unobstructed"),
+    coverage: {geometry: true,
+      textBounds: checks.some(check => ["unclipped", "ellipsis", "contextual", "audit"].includes(check.kind)),
+      contrast: checks.some(check => ["contrast", "audit"].includes(check.kind)),
+      hitTesting: checks.some(check => ["unobstructed", "audit"].includes(check.kind)),
       pixelContentInspected: false}
   };
 })()

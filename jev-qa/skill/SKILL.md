@@ -1,6 +1,6 @@
 ---
 name: jev-qa
-description: Run browser user acceptance tests and measured design conformance checks with Jev. Use for authorized local or test pages with explicit expected outcomes. Does not judge artwork or general visual taste.
+description: Run browser user acceptance tests and measured design conformance checks with Jev. Use for authorized local or test pages with explicit expected outcomes. Includes a rule-based page audit. Does not judge artwork or general visual taste.
 ---
 
 # Jev design QA and UAT

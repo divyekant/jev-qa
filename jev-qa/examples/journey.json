@@ -42,6 +42,10 @@
         {
           "id": "page-width",
           "kind": "horizontal_fit"
+        },
+        {
+          "id": "page-review",
+          "kind": "audit"
         }
       ]
     }
