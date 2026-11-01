@@ -1,8 +1,8 @@
 # Jev QA
 
-Jev-only browser user acceptance testing (UAT), measured design conformance checks, and a rule-based page audit, with an optional Luna wrapper.
+Jev-only browser user acceptance testing (UAT), measured design conformance checks, a rule-based page audit, and advisory Jev screenshot review, with an optional Luna wrapper.
 
-The retained v4 evaluation passed 28/28 synthetic journeys, 304/304 checkpoints, 224/224 supported design checks, and 48/48 seeded-defect instances. These historical results are bounded tests, including repeated defects, not a general reliability rate or a new evaluation of v0.3.0. Artwork judgment and dedicated nested-container scrolling remain unsupported.
+The retained v4 evaluation passed 28/28 synthetic journeys, 304/304 checkpoints, 224/224 supported design checks, and 48/48 seeded-defect instances. These historical results are bounded tests, including repeated defects, not a general reliability rate or a new evaluation of v0.3.0. Dedicated nested-container scrolling remains unsupported. Jev screenshot review is new in v0.3.0 and has no evaluation yet.
 
 ## Start
 

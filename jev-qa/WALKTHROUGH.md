@@ -35,7 +35,8 @@ flowchart TD
 | Assertions and design rules | Check expected values and states; measure clipping, contrast, alignment, disabled controls, and obstruction. |
 
 Jev does not generate selectors, JavaScript, mouse coordinates, the test plan, or the report
-prose. It does not receive screenshots. Screenshots are retained for independent inspection.
+prose. Navigation decisions do not use screenshots. Jev receives a screenshot only for an
+explicit `visual` check, and that judgment is advisory. Screenshots are retained for independent inspection.
 Known text values come from the test JSON. A missing value stops the Jev-only workflow.
 
 Jev makes one target choice across visible controls, observed offscreen controls, and
@@ -96,8 +97,8 @@ not establish the required outcome. An unreached check means there is no result 
 These are different conditions and must not be combined into a false pass or a false defect.
 
 Confidence is a decision threshold, not measured accuracy for your application. A Jev
-`DONE` response cannot override failed assertions. Unsupported artwork and aesthetic
-judgments remain uncertain.
+`DONE` response cannot override failed assertions. Jev's `visual` judgments on artwork and
+appearance are advisory. They leave the result at `needs_review`.
 
 ## Where the code lives
 

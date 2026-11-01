@@ -25,7 +25,8 @@ jev-qa review evidence.json --output work/qa-review
 
 Output directories must be new. Browser runs save `report.json`, `trace.jsonl`, private
 `decision-NNN.json` request/response evidence, and a final screenshot when available. Treat evidence as private: it can contain page content and form
-values. Model input goes to TypeSafe. Journeys permit only Jev model calls. Legacy standalone
+values. Model input goes to TypeSafe. A `visual` check also sends a screenshot to TypeSafe.
+Use `visual` checks only on pages whose pixels you are allowed to share. Journeys permit only Jev model calls. Legacy standalone
 tasks must explicitly set `jev_only: false` to allow the optional text helper.
 
 ## Existing logged-in Chrome
@@ -131,8 +132,9 @@ Design checks are explicit requirements. The `audit` kind adds a rule-based swee
 | `image_crop` | `selector`, `expected` (`full` or `allowed`), optional `tolerance` (1 px) | Full image content is visible, or measured cropping is explicitly allowed |
 | `ellipsis` | `selector` | Truncated reference exposes exactly the full native title |
 | `decorative_overlap` | `selector`, `decorative`, `content` | Badge may overlap decoration but not meaningful content |
-| `artwork` | `selector` | Always unsupported without pixel evidence |
+| `artwork` | `selector` | Always unsupported. Use `visual` with a criterion to have Jev assess artwork |
 | `contextual` | `selector`, `criterion` | Jev assesses compact observed text and facts |
+| `visual` | `criterion`, optional `selector` | Jev assesses a screenshot of the viewport, or of the region around the element |
 | `audit` | optional `scope` (`body`), `min_ratio` (4.5), `large_text_min_ratio` (3.0), `max_elements` (300, at most 1000) | Each visible element in the scope meets the page audit rules below |
 
 Image checks require a loaded `<img>` and explicit selectors. For example, add these
@@ -214,6 +216,37 @@ other sizes, run the journey again with another `viewport`. To review other stat
 an `audit` to each step. The audit does not inspect pixels, judge visual taste, or check
 heading order, keyboard focus order, or motion.
 
+### Visual review with screenshots
+
+A `visual` check sends Jev one screenshot and one criterion. Without `selector`, the image
+is the current viewport. With `selector`, the image is a viewport region around that
+element, at least 280 × 280 CSS px. The observation gives the element's position in the
+image as `screenshot.target_box`. The element must be fully inside the viewport. Otherwise
+the check is uncertain with `visual_target_not_in_viewport`.
+
+```json
+[
+  {"id": "hero-photo", "kind": "visual", "selector": "#hero img", "criterion": "The photo shows a running shoe."},
+  {"id": "no-overlap", "kind": "visual", "criterion": "No text overlaps other text."},
+  {"id": "no-cutoff", "kind": "visual", "criterion": "No button label is cut off."}
+]
+```
+
+Ask one simple question in each criterion. A criterion with several claims is more often
+uncertain. Each check is its own TypeSafe request, so an image cannot affect another
+question. The runner captures PNG, downscales the image so that no side is more than
+1568 px, and sends one JPEG. TypeSafe accepts sides from 280 to 1568 px and does not resize
+images. Each step folder keeps the image as `visual-NN.jpg` with owner-only permissions.
+
+TypeSafe calls image input experimental and not ready for production. The request uses
+the required `TypeSafe-Danger-Zone-Images: true` header. Image tokens are billed as input
+tokens. A live check of the example form used about 1,500 input tokens for a 390 × 844
+viewport, and about 900 for a 280 × 280 region.
+
+Visual assessments are advisory, like contextual assessments. A visual pass cannot create a
+verified overall pass. A visual fail cannot fail the report or override a rule result. Each
+one leaves the design status at `needs_review` for a person to confirm.
+
 Rules keep both their passes and failures. Jev does not override deterministic results.
 Contextual assessments are advisory and cannot create a verified overall pass. Unsupported
 measurements remain uncertain. An uncertain artwork check therefore leaves the overall
@@ -221,8 +254,8 @@ design status at `needs_review`, even when every supported check passed.
 
 The top-level `report.json` separates `navigation_status` and `design_status`, keeps all
 steps in the denominator, and aggregates provider usage. Step folders retain navigation
-traces, assertions, final screenshots, and optional `design.json`. Screenshots are saved
-for independent inspection; Jev does not receive them. Whole-journey action/time budgets
+traces, assertions, final screenshots, optional `design.json`, and `visual-NN.jpg` images.
+Jev receives a screenshot only for a `visual` check. Navigation decisions use text only. Whole-journey action/time budgets
 include all steps and recovery calls.
 
 ## Browser task

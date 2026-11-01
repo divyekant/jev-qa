@@ -804,6 +804,22 @@
       info.pixelContentInspected = false;
       return info;
     }
+    if (check.kind === "visual") {
+      const viewport = rect({x: 0, y: 0, width: innerWidth, height: innerHeight, right: innerWidth, bottom: innerHeight});
+      const scroll = {x: round(scrollX), y: round(scrollY)};
+      if (!check.selector) return {status: "measured", visible: true, target: "viewport", box: viewport, viewport, scroll};
+      const resolved = resolve(check.selector);
+      addText(resolved);
+      shortText(resolved.info);
+      Object.assign(resolved.info, {target: "element", viewport, scroll});
+      if (resolved.element) {
+        const box = resolved.info.box;
+        resolved.info.tag = resolved.element.tagName.toLowerCase();
+        resolved.info.role = resolved.element.getAttribute("role");
+        resolved.info.inViewport = box.x >= 0 && box.y >= 0 && box.right <= innerWidth && box.bottom <= innerHeight;
+      }
+      return resolved.info;
+    }
     if (check.kind === "contextual") {
       const resolved = resolve(check.selector);
       addText(resolved);
