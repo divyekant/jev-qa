@@ -169,7 +169,7 @@ def run_journey(data, output, browser_factory):
                 if step["checks"]:
                     entry["design"]["reason"] = "assessment_incomplete"
                     persist()
-                    design = inspect_design(browser, step["checks"], task["min_confidence"])
+                    design = inspect_design(browser, step["checks"], task["min_confidence"], folder)
                     _write_json(folder / "design.json", design)
                     entry["design"] = design
                     result["model_usage"]["design"].extend(design.get("model_usage", []))
